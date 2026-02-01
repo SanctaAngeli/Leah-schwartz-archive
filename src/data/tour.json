@@ -1,0 +1,30 @@
+[
+  {
+    "id": "early-years",
+    "title": "Early Years",
+    "description": "Leah's formative period as an artist in the 1960s",
+    "artworkIds": ["early-self-1963", "student-work-1964", "studio-self-1965", "spring-blossoms-1966", "morning-light-tam-1967"],
+    "audioSegments": []
+  },
+  {
+    "id": "san-francisco-period",
+    "title": "The San Francisco Period",
+    "description": "The height of Leah's artistic production in the 1970s",
+    "artworkIds": ["golden-gate-fog-1968", "protest-march-1969", "peace-demo-1970", "wildflowers-tam-1971", "kitchen-table-1972", "bay-at-dusk-1973", "daughter-reading-1974", "newspaper-collage-1975"],
+    "audioSegments": []
+  },
+  {
+    "id": "mature-work",
+    "title": "Mature Work",
+    "description": "Leah's refined style in the 1980s and 1990s",
+    "artworkIds": ["fishermans-wharf-1980", "son-portrait-1981", "abstract-blue-1983", "point-reyes-1984", "friends-dinner-1986", "tam-sunset-1987", "fruit-bowl-1988", "night-city-1994"],
+    "audioSegments": []
+  },
+  {
+    "id": "late-reflections",
+    "title": "Late Reflections",
+    "description": "Leah's final years of artistic expression",
+    "artworkIds": ["grandchild-1998", "coastal-path-1999", "notebook-winter-2000", "bridge-morning-2001", "late-flowers-2002", "family-gathering-2003", "final-landscape-2004"],
+    "audioSegments": []
+  }
+]
