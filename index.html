@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leah Schwartz — A Life in Art</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f9f7f4;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(to bottom, #fff, #f9f7f4);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #666;
+            font-style: italic;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border: 1px solid #ccc;
+            background: white;
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #2c2c2c;
+            color: white;
+            border-color: #2c2c2c;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #ddd;
+        }
+
+        .artwork {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .artwork.hidden {
+            display: none;
+        }
+
+        .artwork:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .artwork-image {
+            width: 45%;
+            aspect-ratio: 4/3;
+            background: #e8e4df;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .artwork-info {
+            width: 45%;
+            padding: 0 2rem;
+        }
+
+        .artwork-year {
+            font-size: 2rem;
+            color: #999;
+            margin-bottom: 0.25rem;
+        }
+
+        .artwork-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .artwork-meta {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .artwork-location {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            background: #f0ebe5;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .timeline::before {
+                left: 1rem;
+            }
+
+            .artwork, .artwork:nth-child(odd) {
+                flex-direction: column;
+            }
+
+            .artwork-image, .artwork-info {
+                width: 100%;
+            }
+
+            .artwork-info {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LEAH SCHWARTZ</h1>
+        <p>San Francisco, 1920–1998</p>
+    </header>
+
+    <nav class="filters">
+        <button class="filter-btn active" data-filter="all">All Works</button>
+        <button class="filter-btn" data-filter="oil">Oil on Canvas</button>
+        <button class="filter-btn" data-filter="sketch">Sketches</button>
+        <button class="filter-btn" data-filter="watercolor">Watercolor</button>
+    </nav>
+
+    <main class="timeline">
+        <article class="artwork" data-medium="oil" data-location="mount-tam">
+            <div class="artwork-image">[ Mount Tam at Dawn ]</div>
+            <div class="artwork-info">
+                <div class="artwork-year">1952</div>
+                <h2 class="artwork-title">Morning Light, Mount Tamalpais</h2>
+                <p class="artwork-meta">Oil on canvas, 24 × 36 in</p>
+                <span class="artwork-location">Mount Tamalpais</span>
+            </div>
+        </article>
+
+        <article class="artwork" data-medium="sketch" data-location="home">
+            <div class="artwork-image">[ Kitchen Window Study ]</div>
+            <div class="artwork-info">
+                <div class="artwork-year">1958</div>
+                <h2 class="artwork-title">View from the Kitchen</h2>
+                <p class="artwork-meta">Graphite on paper, 9 × 12 in</p>
+                <span class="artwork-location">Home Studio</span>
+            </div>
+        </article>
+
+        <article class="artwork" data-medium="watercolor" data-location="bay">
+            <div class="artwork-image">[ Fog Rolling In ]</div>
+            <div class="artwork-info">
+                <div class="artwork-year">1963</div>
+                <h2 class="artwork-title">The Bay in August</h2>
+                <p class="artwork-meta">Watercolor on paper, 12 × 18 in</p>
+                <span class="artwork-location">San Francisco Bay</span>
+            </div>
+        </article>
+
+        <article class="artwork" data-medium="oil" data-location="home">
+            <div class="artwork-image">[ Garden Portrait ]</div>
+            <div class="artwork-info">
+                <div class="artwork-year">1971</div>
+                <h2 class="artwork-title">Julia in the Garden</h2>
+                <p class="artwork-meta">Oil on canvas, 30 × 40 in</p>
+                <span class="artwork-location">Home Studio</span>
+            </div>
+        </article>
+
+        <article class="artwork" data-medium="sketch" data-location="mount-tam">
+            <div class="artwork-image">[ Trail Notes ]</div>
+            <div class="artwork-info">
+                <div class="artwork-year">1979</div>
+                <h2 class="artwork-title">Muir Woods, November</h2>
+                <p class="artwork-meta">Ink and graphite, 8 × 10 in</p>
+                <span class="artwork-location">Mount Tamalpais</span>
+            </div>
+        </article>
+
+        <article class="artwork" data-medium="watercolor" data-location="bay">
+            <div class="artwork-image">[ Golden Gate Study ]</div>
+            <div class="artwork-info">
+                <div class="artwork-year">1985</div>
+                <h2 class="artwork-title">Bridge at Twilight</h2>
+                <p class="artwork-meta">Watercolor on paper, 14 × 20 in</p>
+                <span class="artwork-location">San Francisco Bay</span>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Archive in progress — Julia &amp; Harry, 2025</p>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const artworks = document.querySelectorAll('.artwork');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                artworks.forEach(artwork => {
+                    if (filter === 'all' || artwork.dataset.medium === filter) {
+                        artwork.classList.remove('hidden');
+                    } else {
+                        artwork.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
