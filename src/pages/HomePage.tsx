@@ -1,99 +1,133 @@
-import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { useCallback, useMemo, useEffect, useState, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { ZAxisEntrance } from '../components/home';
 import artworksData from '../data/artworks.json';
 import type { Artwork } from '../types';
 
 const artworks = artworksData as Artwork[];
 
+interface LocationState {
+  fromGallery?: boolean;
+}
+
 function HomePage(): JSX.Element {
   const navigate = useNavigate();
-  const featuredArtworks = artworks.filter((a) => a.featured).slice(0, 12);
+  const location = useLocation();
+  const state = location.state as LocationState | null;
+
+  // Track transition progress (0 = home, 1 = fully entered)
+  const [progress, setProgress] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isReturning, setIsReturning] = useState(state?.fromGallery ?? false);
+
+  // Animation frame ref for smooth transitions
+  const animationRef = useRef<number | null>(null);
+  const transitionStartTime = useRef<number | null>(null);
+  const hasNavigated = useRef(false);
+
+  // Select artworks - need plenty for floating AND corridor (both walls)
+  const galleryArtworks = useMemo(() => {
+    const shuffled = [...artworks].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 50); // 50 artworks for both phases - enough for both walls
+  }, []);
+
+  // Smooth transition animation - DOUBLED duration to 7 seconds
+  const animateTransition = useCallback(
+    (targetProgress: number, duration: number, onComplete?: () => void) => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+
+      hasNavigated.current = false;
+      transitionStartTime.current = performance.now();
+      const startProgress = progress;
+
+      const animate = (currentTime: number): void => {
+        if (!transitionStartTime.current) return;
+
+        const elapsed = currentTime - transitionStartTime.current;
+        const rawProgress = Math.min(elapsed / duration, 1);
+
+        // Fast easing: quick start, fast middle, ACCELERATE at end
+        let eased: number;
+        if (rawProgress < 0.1) {
+          // Brief anticipation
+          eased = Math.pow(rawProgress / 0.1, 1.5) * 0.05;
+        } else if (rawProgress < 0.6) {
+          // Fast cruise through corridor
+          const midProgress = (rawProgress - 0.1) / 0.5;
+          eased = 0.05 + midProgress * 0.5;
+        } else {
+          // SPEED UP dramatically at end
+          const endProgress = (rawProgress - 0.6) / 0.4;
+          eased = 0.55 + Math.pow(endProgress, 1.3) * 0.45;
+        }
+        const currentProgress = startProgress + (targetProgress - startProgress) * eased;
+
+        setProgress(currentProgress);
+
+        // Navigate during the white fade (around 95% progress)
+        if (currentProgress > 0.95 && !hasNavigated.current && onComplete) {
+          hasNavigated.current = true;
+          onComplete();
+        }
+
+        if (rawProgress < 1) {
+          animationRef.current = requestAnimationFrame(animate);
+        } else {
+          setIsTransitioning(false);
+        }
+      };
+
+      setIsTransitioning(true);
+      animationRef.current = requestAnimationFrame(animate);
+    },
+    [progress]
+  );
+
+  // Handle entering the gallery - ONLY via button click
+  // Duration is 4.5 seconds - fast but immersive
+  const handleEnter = useCallback((): void => {
+    if (isTransitioning || progress > 0.1) return;
+
+    animateTransition(1, 4500, () => {
+      navigate('/gallery');
+    });
+  }, [animateTransition, isTransitioning, navigate, progress]);
+
+  // NO scroll trigger - removed
+  // The corridor is entered ONLY by clicking the button
+
+  // Handle reverse animation when returning from gallery
+  useEffect(() => {
+    if (isReturning) {
+      setProgress(1);
+
+      const timer = setTimeout(() => {
+        animateTransition(0, 2500, () => {
+          setIsReturning(false);
+        });
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isReturning, animateTransition]);
+
+  // Cleanup animation on unmount
+  useEffect(() => {
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
-      {/* Floating artwork collage behind title */}
-      <div className="absolute inset-0 pointer-events-none">
-        {featuredArtworks.map((artwork, index) => {
-          const angle = (index / featuredArtworks.length) * Math.PI * 2;
-          const radius = 250 + (index % 3) * 80;
-          const x = Math.cos(angle) * radius;
-          const y = Math.sin(angle) * radius;
-          const rotation = (index - 6) * 5;
-          const size = 80 + (index % 4) * 30;
-
-          return (
-            <motion.div
-              key={artwork.id}
-              className="absolute rounded-lg"
-              style={{
-                backgroundColor: artwork.placeholderColor,
-                width: size,
-                height: size * (artwork.aspectRatio === 'portrait' ? 1.33 : artwork.aspectRatio === 'landscape' ? 0.75 : 1),
-                left: `calc(50% + ${x}px)`,
-                top: `calc(50% + ${y}px)`,
-                transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
-              }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: 0.7,
-                scale: 1,
-                x: [0, 10, -5, 0],
-                y: [0, -5, 10, 0],
-              }}
-              transition={{
-                opacity: { duration: 1, delay: index * 0.1 },
-                scale: { duration: 1, delay: index * 0.1 },
-                x: { duration: 20 + index * 2, repeat: Infinity, ease: 'easeInOut' },
-                y: { duration: 25 + index * 2, repeat: Infinity, ease: 'easeInOut' },
-              }}
-            />
-          );
-        })}
-      </div>
-
-      {/* Main title */}
-      <motion.div
-        className="relative z-10 text-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-      >
-        <h1 className="font-heading text-[clamp(48px,10vw,120px)] text-text-primary leading-none tracking-tight">
-          Leah Schwartz
-        </h1>
-        <p className="font-body text-text-muted text-lg mt-4 tracking-widest uppercase">
-          1945 – 2004
-        </p>
-      </motion.div>
-
-      {/* Enter button */}
-      <motion.button
-        className="relative z-10 mt-12 glass-pill px-8 py-4 font-body text-text-secondary hover:text-text-primary transition-colors duration-300"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.98 }}
-        onClick={() => navigate('/gallery')}
-      >
-        Enter the Archive
-      </motion.button>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{
-          opacity: { duration: 1, delay: 1 },
-          y: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-text-muted/50 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-text-muted/50 rounded-full" />
-        </div>
-      </motion.div>
-    </div>
+    <ZAxisEntrance
+      progress={progress}
+      artworks={galleryArtworks}
+      onEnterClick={handleEnter}
+    />
   );
 }
 
