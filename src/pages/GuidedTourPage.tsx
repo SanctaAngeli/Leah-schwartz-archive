@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
-import GlassCard from '../components/ui/GlassCard';
+import { GlassCard } from '../components/ui/GlassCard';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
-import PillButton from '../components/ui/PillButton';
+import { PillButton } from '../components/ui/PillButton';
 import artworksData from '../data/artworks.json';
 import tourData from '../data/tour.json';
 import type { Artwork, TourChapter } from '../types';

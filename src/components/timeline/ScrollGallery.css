@@ -1,0 +1,167 @@
+/* Scroll Gallery with CSS Scroll-Driven Animation Indicators */
+
+.scroll-gallery {
+  --card-width: 280px;
+  --card-gap: 16px;
+  --indicator-size: 8px;
+
+  /* Hoist view-timelines so indicators can use them */
+  timeline-scope: var(--timeline-scope);
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Horizontal scroll track */
+.scroll-gallery__track {
+  display: flex;
+  gap: var(--card-gap);
+  padding: 20px calc(50% - var(--card-width) / 2);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-gallery__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual cards */
+.scroll-gallery__card {
+  flex: 0 0 var(--card-width);
+  scroll-snap-align: center;
+  cursor: pointer;
+  list-style: none;
+
+  /* Create view-timeline for this card (set via inline style) */
+}
+
+.scroll-gallery__artwork {
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-gallery__card:hover .scroll-gallery__artwork {
+  transform: scale(1.02);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-gallery__title {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Indicators container */
+.scroll-gallery__indicators {
+  /* Using flex with aspect-ratio trick from the tweet */
+  aspect-ratio: calc(var(--card-count, 10) + 4) / 1;
+  max-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  /* No gap - we use transparent borders instead */
+}
+
+/* Individual indicator */
+.scroll-gallery__indicator {
+  flex: 1;
+  height: var(--indicator-size);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  /* Transparent border creates the gap, background uses padding-box */
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  ) padding-box;
+  border: 2px solid transparent;
+  border-radius: 50px;
+
+  transition: background 0.2s ease;
+
+  /* Scroll-driven animation */
+  --size: calc(var(--card-width) * 0.5);
+  animation: indicator-grow both linear;
+  animation-range: contain calc(50% - var(--size)) contain calc(50% + var(--size));
+  /* animation-timeline set via inline style */
+}
+
+.scroll-gallery__indicator:hover {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)
+  ) padding-box;
+}
+
+/* The grow animation - indicator expands when its card is centered */
+@keyframes indicator-grow {
+  0%, 100% {
+    flex: 1;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ) padding-box;
+  }
+  50% {
+    flex: 3;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ) padding-box;
+  }
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: scroll()) {
+  .scroll-gallery__indicator {
+    animation: none;
+  }
+
+  .scroll-gallery__indicator:focus,
+  .scroll-gallery__indicator:active {
+    flex: 2;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ) padding-box;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-gallery {
+    --card-width: 220px;
+    --card-gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-gallery {
+    --card-width: 180px;
+    --card-gap: 8px;
+  }
+}

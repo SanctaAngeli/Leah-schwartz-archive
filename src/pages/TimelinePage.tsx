@@ -1,16 +1,33 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
-import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useMemo, useCallback, useState, useEffect } from 'react';
+import { TimelineCarousel, ScrollGallery, MuseumCard } from '../components/timeline';
 import artworksData from '../data/artworks.json';
 import type { Artwork } from '../types';
+
+// Years that should show the fancy scroll gallery (with many artworks)
+const SCROLL_GALLERY_YEARS = [1970];
 
 const artworks = artworksData as Artwork[];
 
 function TimelinePage(): JSX.Element {
   const navigate = useNavigate();
   const { year: selectedYearParam } = useParams();
-  const [hoveredYear, setHoveredYear] = useState<number | null>(null);
+
+  // Use local state for expanded view (in-place animation)
+  const [expandedYear, setExpandedYear] = useState<number | null>(null);
+  const [currentYear, setCurrentYear] = useState<number>(1984);
+
+  // Sync URL param to state on mount
+  useEffect(() => {
+    if (selectedYearParam) {
+      const year = parseInt(selectedYearParam, 10);
+      setExpandedYear(year);
+      setCurrentYear(year);
+    } else {
+      setExpandedYear(null);
+    }
+  }, [selectedYearParam]);
 
   // Group artworks by year
   const artworksByYear = useMemo(() => {
@@ -26,132 +43,155 @@ function TimelinePage(): JSX.Element {
     return grouped;
   }, []);
 
-  const years = Object.keys(artworksByYear)
-    .map(Number)
-    .sort((a, b) => a - b);
+  // Handle clicking artwork in carousel - expand year view in place
+  const handleArtworkClick = useCallback((_artwork: Artwork, year: number): void => {
+    setExpandedYear(year);
+    // Update URL without full page navigation
+    window.history.pushState({}, '', `/timeline/${year}`);
+  }, []);
 
-  const selectedYear = selectedYearParam ? parseInt(selectedYearParam, 10) : null;
+  // Handle year change from carousel navigation
+  const handleYearChange = useCallback((year: number): void => {
+    setCurrentYear(year);
+  }, []);
 
-  const getRepresentativeArtwork = (year: number): Artwork => {
-    const yearArtworks = artworksByYear[year];
+  // Handle expanding from minimized carousel
+  const handleExpandTimeline = useCallback((): void => {
+    setExpandedYear(null);
+    window.history.pushState({}, '', '/timeline');
+  }, []);
+
+  // Handle individual artwork click in grid
+  const handleGridArtworkClick = useCallback((artworkId: string): void => {
+    navigate(`/artwork/${artworkId}`);
+  }, [navigate]);
+
+  const yearArtworks = expandedYear ? artworksByYear[expandedYear] : null;
+
+  // Get hero artwork for atmosphere
+  const heroArtwork = useMemo(() => {
+    if (!yearArtworks?.length) return null;
     return yearArtworks.find((a) => a.featured) || yearArtworks[0];
-  };
+  }, [yearArtworks]);
+
+  const isExpanded = expandedYear !== null && yearArtworks !== null;
 
   return (
-    <div className="min-h-screen pt-24 pb-8 flex flex-col">
-      {/* Year view header */}
-      {selectedYear && artworksByYear[selectedYear] && (
-        <motion.div
-          className="px-6 mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-7xl mx-auto">
-            <button
-              onClick={() => navigate('/timeline')}
-              className="text-text-muted hover:text-text-primary transition-colors mb-4 font-body text-sm"
-            >
-              ← Back to Timeline
-            </button>
-            <h1 className="font-heading text-5xl text-text-primary">{selectedYear}</h1>
-            <p className="font-body text-text-muted mt-2">
-              {artworksByYear[selectedYear].length} works
-            </p>
-          </div>
-        </motion.div>
-      )}
-
-      {/* Selected year artworks grid */}
-      {selectedYear && artworksByYear[selectedYear] && (
-        <motion.div
-          className="px-6 flex-1"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {artworksByYear[selectedYear].map((artwork, index) => (
-              <motion.div
-                key={artwork.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group cursor-pointer"
-                onClick={() => navigate(`/artwork/${artwork.id}`)}
-              >
-                <PlaceholderArtwork
-                  color={artwork.placeholderColor}
-                  aspectRatio={artwork.aspectRatio}
-                  className="shadow-soft group-hover:shadow-glass mb-3"
-                />
-                <h3 className="font-body text-sm text-text-primary truncate">
-                  {artwork.title}
-                </h3>
-                <p className="font-body text-xs text-text-muted">
-                  {artwork.medium}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
-      {/* Timeline carousel */}
-      <motion.div
-        className={`${selectedYear ? 'mt-auto' : 'flex-1 flex items-center'}`}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {!selectedYear && (
-          <div className="text-center mb-8 px-6">
-            <h1 className="font-heading text-4xl text-text-primary mb-2">Timeline</h1>
-            <p className="font-body text-text-muted">
-              Explore Leah's work across four decades
-            </p>
-          </div>
+    <div className="min-h-screen">
+      {/* Background atmosphere */}
+      <AnimatePresence>
+        {isExpanded && heroArtwork && (
+          <motion.div
+            className="fixed inset-0 z-0 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.06 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div
+              className="w-full h-full"
+              style={{ backgroundColor: heroArtwork.placeholderColor }}
+            />
+          </motion.div>
         )}
+      </AnimatePresence>
 
-        <div className="w-full overflow-x-auto pb-4 pt-4">
-          <div className="flex gap-4 px-6 min-w-max justify-center">
-            {years.map((year) => {
-              const artwork = getRepresentativeArtwork(year);
-              const isSelected = year === selectedYear;
-              const isHovered = year === hoveredYear;
-
-              return (
-                <motion.div
-                  key={year}
-                  className="flex flex-col items-center cursor-pointer"
-                  onMouseEnter={() => setHoveredYear(year)}
-                  onMouseLeave={() => setHoveredYear(null)}
-                  onClick={() => navigate(`/timeline/${year}`)}
-                  animate={{
-                    scale: isSelected || isHovered ? 1.1 : 1,
-                    y: isSelected || isHovered ? -10 : 0,
-                  }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      {/* Main content */}
+      <div className="relative z-10">
+        <AnimatePresence mode="wait">
+          {isExpanded ? (
+            /* Year detail view */
+            <motion.div
+              key="year-view"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Year header */}
+              <div className="text-center px-6 pt-24 pb-6">
+                <motion.button
+                  className="
+                    flex items-center gap-2 mx-auto mb-4
+                    text-text-muted hover:text-text-primary
+                    font-body text-sm transition-colors
+                  "
+                  onClick={handleExpandTimeline}
+                  whileHover={{ x: -4 }}
                 >
-                  <div
-                    className={`w-20 h-24 rounded-lg shadow-soft transition-shadow duration-300 ${
-                      isSelected ? 'ring-2 ring-text-primary shadow-glass' : ''
-                    }`}
-                    style={{ backgroundColor: artwork.placeholderColor }}
-                  />
-                  <p
-                    className={`mt-2 font-body text-xs transition-colors duration-300 ${
-                      isSelected ? 'text-text-primary font-medium' : 'text-text-muted'
-                    }`}
-                  >
-                    {year}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </motion.div>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back to Timeline
+                </motion.button>
+                <h1 className="font-heading text-8xl md:text-9xl text-text-primary leading-none">
+                  {expandedYear}
+                </h1>
+                <p className="font-body text-text-muted mt-2 text-lg">
+                  {yearArtworks?.length} {yearArtworks?.length === 1 ? 'work' : 'works'}
+                </p>
+              </div>
+
+              {/* Artworks */}
+              {yearArtworks && (
+                <div className="pb-12">
+                  {expandedYear && SCROLL_GALLERY_YEARS.includes(expandedYear) ? (
+                    /* Fancy scroll gallery with CSS scroll-driven indicators */
+                    <ScrollGallery
+                      artworks={yearArtworks}
+                      onArtworkClick={(artwork) => handleGridArtworkClick(artwork.id)}
+                    />
+                  ) : (
+                    /* Museum-style grid for other years */
+                    <div className="max-w-7xl mx-auto px-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {yearArtworks.map((artwork, index) => (
+                          <MuseumCard
+                            key={artwork.id}
+                            artwork={artwork}
+                            index={index}
+                            onClick={() => handleGridArtworkClick(artwork.id)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </motion.div>
+          ) : (
+            /* Timeline carousel view */
+            <motion.div
+              key="timeline-view"
+              className="min-h-screen flex flex-col"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Header */}
+              <div className="text-center px-6 pt-20 pb-2">
+                <h1 className="font-heading text-4xl md:text-5xl text-text-primary">
+                  Timeline
+                </h1>
+                <p className="font-body text-text-muted mt-1">
+                  Four decades of Leah Schwartz's artistic journey
+                </p>
+              </div>
+
+              {/* Full carousel */}
+              <div className="flex-1 flex items-center">
+                <TimelineCarousel
+                  artworks={artworks}
+                  initialYear={currentYear}
+                  onYearChange={handleYearChange}
+                  onArtworkClick={handleArtworkClick}
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

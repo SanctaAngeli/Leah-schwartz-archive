@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
-import GlassCard from '../components/ui/GlassCard';
+import { GlassCard } from '../components/ui/GlassCard';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
 import artworksData from '../data/artworks.json';
 import themesData from '../data/themes.json';
