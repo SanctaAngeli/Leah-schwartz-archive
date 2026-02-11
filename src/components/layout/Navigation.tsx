@@ -15,12 +15,16 @@ function Navigation(): JSX.Element {
     { path: '/tour', label: 'Guided Tour' },
   ];
 
+  // Check if current path matches (handle nested routes like /timeline/1977)
+  const isActive = (path: string): boolean => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
+
   // Special handler for home navigation to trigger reverse animation
   const handleHomeClick = useCallback(
     (e: React.MouseEvent): void => {
       e.preventDefault();
-      // Pass state to indicate we're returning from gallery
-      // so the home page can play the reverse animation
       navigate('/', { state: { fromGallery: location.pathname !== '/' } });
     },
     [navigate, location.pathname]
@@ -34,35 +38,60 @@ function Navigation(): JSX.Element {
       className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
     >
       <div className="glass-pill px-2 py-2 flex items-center gap-1">
-        {navItems.map((item) => (
-          item.path === '/' ? (
-            <button
-              key={item.path}
-              onClick={handleHomeClick}
-              className={`px-4 py-2 rounded-full text-sm font-body font-medium transition-all duration-300 ease-smooth ${
-                location.pathname === '/'
-                  ? 'bg-text-primary text-white'
-                  : 'text-text-secondary hover:text-text-primary hover:bg-white/50'
-              }`}
-            >
-              {item.label}
-            </button>
-          ) : (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `px-4 py-2 rounded-full text-sm font-body font-medium transition-all duration-300 ease-smooth ${
-                  isActive
-                    ? 'bg-text-primary text-white'
-                    : 'text-text-secondary hover:text-text-primary hover:bg-white/50'
-                }`
-              }
-            >
-              {item.label}
-            </NavLink>
-          )
-        ))}
+        {navItems.map((item) => {
+          const active = isActive(item.path);
+
+          return (
+            <div key={item.path} className="relative">
+              {/* Sliding pill indicator */}
+              {active && (
+                <motion.div
+                  layoutId="nav-pill"
+                  className="absolute inset-0 bg-text-primary rounded-full"
+                  transition={{
+                    type: 'spring',
+                    stiffness: 350,
+                    damping: 25,
+                    mass: 0.8,
+                  }}
+                />
+              )}
+
+              {/* Nav link/button */}
+              {item.path === '/' ? (
+                <button
+                  onClick={handleHomeClick}
+                  className={`
+                    relative z-10 px-4 py-2 rounded-full
+                    text-sm font-body font-medium
+                    transition-colors duration-200
+                    ${active
+                      ? 'text-white'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-white/50'
+                    }
+                  `}
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <NavLink
+                  to={item.path}
+                  className={`
+                    relative z-10 px-4 py-2 rounded-full block
+                    text-sm font-body font-medium
+                    transition-colors duration-200
+                    ${active
+                      ? 'text-white'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-white/50'
+                    }
+                  `}
+                >
+                  {item.label}
+                </NavLink>
+              )}
+            </div>
+          );
+        })}
       </div>
     </motion.nav>
   );
