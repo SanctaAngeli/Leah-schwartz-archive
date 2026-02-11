@@ -4,6 +4,7 @@ import Navigation from './components/layout/Navigation';
 import SkipLink from './components/layout/SkipLink';
 import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
+import SettingsPanel from './components/ui/SettingsPanel';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import TimelinePage from './pages/TimelinePage';
@@ -11,6 +12,8 @@ import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
 import GuidedTourPage from './pages/GuidedTourPage';
 import ArtworkDetailPage from './pages/ArtworkDetailPage';
+import FavoritesPage from './pages/FavoritesPage';
+import ComparePage from './pages/ComparePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App(): JSX.Element {
@@ -19,7 +22,7 @@ function App(): JSX.Element {
   return (
     <ErrorBoundary>
       <SkipLink />
-      <div className="min-h-screen bg-gallery">
+      <div className="min-h-screen bg-bg-gallery transition-colors duration-500">
         <Navigation />
         <main id="main-content" className="focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
@@ -35,10 +38,13 @@ function App(): JSX.Element {
             <Route path="/tour" element={<PageTransition><GuidedTourPage /></PageTransition>} />
             <Route path="/tour/:chapterId" element={<PageTransition><GuidedTourPage /></PageTransition>} />
             <Route path="/artwork/:artworkId" element={<PageTransition><ArtworkDetailPage /></PageTransition>} />
+            <Route path="/favorites" element={<PageTransition><FavoritesPage /></PageTransition>} />
+            <Route path="/compare" element={<PageTransition><ComparePage /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
           </Routes>
           </AnimatePresence>
         </main>
+        <SettingsPanel />
       </div>
     </ErrorBoundary>
   );

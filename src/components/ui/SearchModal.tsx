@@ -42,7 +42,9 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
       { type: 'page', id: 'timeline', title: 'Timeline', subtitle: 'Chronological view', path: '/timeline' },
       { type: 'page', id: 'locations', title: 'Locations', subtitle: 'Browse by location', path: '/locations' },
       { type: 'page', id: 'themes', title: 'Themes', subtitle: 'Browse by theme', path: '/themes' },
-      { type: 'page', id: 'tour', title: 'Guided Tour', subtitle: 'Audio tour', path: '/tour' }
+      { type: 'page', id: 'tour', title: 'Guided Tour', subtitle: 'Audio tour', path: '/tour' },
+      { type: 'page', id: 'favorites', title: 'My Collection', subtitle: 'Your saved artworks', path: '/favorites' },
+      { type: 'page', id: 'compare', title: 'Compare', subtitle: 'Compare two artworks', path: '/compare' }
     );
 
     // Add locations

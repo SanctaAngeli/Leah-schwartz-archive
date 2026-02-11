@@ -2,6 +2,7 @@ import { useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PlaceholderArtwork from '../ui/PlaceholderArtwork';
+import { useFavorites } from '../../hooks/useFavorites';
 import artworksData from '../../data/artworks.json';
 import locationsData from '../../data/locations.json';
 import type { Artwork, Location } from '../../types';
@@ -19,6 +20,7 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
   const params = useParams();
   const modalRef = useRef<HTMLDivElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const artworkId = propArtworkId || params.artworkId;
   const artwork = artworks.find((a) => a.id === artworkId);
@@ -137,18 +139,45 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         >
-          {/* Close button */}
-          <button
-            onClick={handleClose}
-            className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center
-              rounded-full bg-white/80 backdrop-blur-sm hover:bg-white
-              transition-colors focus:outline-none focus:ring-2 focus:ring-text-primary/20"
-            aria-label="Close modal"
-          >
-            <svg className="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          {/* Action buttons */}
+          <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+            {/* Favorite button */}
+            <button
+              onClick={() => artworkId && toggleFavorite(artworkId)}
+              className={`w-10 h-10 flex items-center justify-center
+                rounded-full backdrop-blur-sm
+                transition-colors focus:outline-none focus:ring-2 focus:ring-text-primary/20
+                ${isFavorite(artworkId || '') ? 'bg-red-50 hover:bg-red-100' : 'bg-white/80 hover:bg-white'}`}
+              aria-label={isFavorite(artworkId || '') ? 'Remove from favorites' : 'Add to favorites'}
+            >
+              <svg
+                className={`w-5 h-5 ${isFavorite(artworkId || '') ? 'text-red-500' : 'text-text-primary'}`}
+                fill={isFavorite(artworkId || '') ? 'currentColor' : 'none'}
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </button>
+
+            {/* Close button */}
+            <button
+              onClick={handleClose}
+              className="w-10 h-10 flex items-center justify-center
+                rounded-full bg-white/80 backdrop-blur-sm hover:bg-white
+                transition-colors focus:outline-none focus:ring-2 focus:ring-text-primary/20"
+              aria-label="Close modal"
+            >
+              <svg className="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
           {/* Navigation arrows */}
           {prevArtwork && (
