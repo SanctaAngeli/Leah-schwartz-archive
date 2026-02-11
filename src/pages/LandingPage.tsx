@@ -1,20 +1,33 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import EraPile from '../components/home/EraPile';
+import { SkeletonEraPile } from '../components/ui/Skeleton';
 import artworksData from '../data/artworks.json';
 import type { Artwork } from '../types';
 
 const artworks = artworksData as Artwork[];
 
 function LandingPage(): JSX.Element {
+  // Add a brief loading state for smoother initial render
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    // Short delay to allow initial paint, then show content
+    const timer = requestAnimationFrame(() => {
+      setIsReady(true);
+    });
+    return () => cancelAnimationFrame(timer);
+  }, []);
+
   // Create three era groupings with more artworks
   const earlyWorks = artworks.filter((a) => a.year && a.year < 1975);
   const middleWorks = artworks.filter((a) => a.year && a.year >= 1975 && a.year < 1990);
   const lateWorks = artworks.filter((a) => a.year && a.year >= 1990);
 
   const eraGroups = [
-    { title: 'Early Works', subtitle: '1963–1974', artworks: earlyWorks },
-    { title: 'Middle Period', subtitle: '1975–1989', artworks: middleWorks },
-    { title: 'Late Works', subtitle: '1990–2004', artworks: lateWorks },
+    { id: 'early', title: 'Early Works', subtitle: '1963–1974', artworks: earlyWorks },
+    { id: 'middle', title: 'The San Francisco Years', subtitle: '1975–1989', artworks: middleWorks },
+    { id: 'late', title: 'Late Reflections', subtitle: '1990–2004', artworks: lateWorks },
   ];
 
   return (
@@ -53,15 +66,23 @@ function LandingPage(): JSX.Element {
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          {eraGroups.map((era, index) => (
-            <EraPile
-              key={era.title}
-              title={era.title}
-              subtitle={era.subtitle}
-              artworks={era.artworks}
-              index={index}
-            />
-          ))}
+          {isReady ? (
+            eraGroups.map((era, index) => (
+              <EraPile
+                key={era.id}
+                eraId={era.id}
+                title={era.title}
+                subtitle={era.subtitle}
+                artworks={era.artworks}
+                index={index}
+              />
+            ))
+          ) : (
+            // Show skeleton loading states
+            Array.from({ length: 3 }).map((_, i) => (
+              <SkeletonEraPile key={i} />
+            ))
+          )}
         </div>
       </div>
 

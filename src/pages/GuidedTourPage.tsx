@@ -1,9 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { GlassCard } from '../components/ui/GlassCard';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
 import { PillButton } from '../components/ui/PillButton';
+import AudioPlayer from '../components/ui/AudioPlayer';
 import artworksData from '../data/artworks.json';
 import tourData from '../data/tour.json';
 import type { Artwork, TourChapter } from '../types';
@@ -31,6 +32,22 @@ function GuidedTourPage(): JSX.Element {
 
   const getChapterHeroArtwork = (chapter: TourChapter): Artwork | undefined => {
     return artworks.find((a) => a.id === chapter.artworkIds[0]);
+  };
+
+  // Auto-advance to next artwork when audio ends
+  const handleAudioEnded = useCallback(() => {
+    if (currentArtworkIndex < chapterArtworks.length - 1) {
+      setCurrentArtworkIndex(currentArtworkIndex + 1);
+    }
+  }, [currentArtworkIndex, chapterArtworks.length]);
+
+  // Generate duration based on artwork complexity
+  const getAudioDuration = (artwork: Artwork): number => {
+    // Base duration of 60-180 seconds depending on artwork
+    const baseDuration = 60;
+    const yearBonus = artwork.year ? 20 : 0;
+    const featuredBonus = artwork.featured ? 30 : 0;
+    return baseDuration + yearBonus + featuredBonus + Math.random() * 60;
   };
 
   // Chapter selection view
@@ -157,12 +174,12 @@ function GuidedTourPage(): JSX.Element {
                 </p>
               </div>
 
-              {/* Audio player placeholder */}
-              <GlassCard className="p-4" hover={false}>
-                <p className="font-body text-text-muted text-sm text-center">
-                  Audio coming soon
-                </p>
-              </GlassCard>
+              {/* Audio player */}
+              <AudioPlayer
+                title={`About "${currentArtwork.title}"`}
+                duration={getAudioDuration(currentArtwork)}
+                onEnded={handleAudioEnded}
+              />
 
               {/* Navigation */}
               <div className="flex items-center justify-between">

@@ -249,8 +249,8 @@ function TimelineCarousel({
     onExpandRequest?.();
   }, [onExpandRequest]);
 
-  // Calculate visible range
-  const visibleRange = minimized ? 4 : 6;
+  // Calculate visible range - reduced for performance
+  const visibleRange = minimized ? 3 : 4;
   const startIndex = Math.max(0, currentIndex - visibleRange);
   const endIndex = Math.min(allYears.length - 1, currentIndex + visibleRange);
 
@@ -373,9 +373,9 @@ function TimelineCarousel({
                   y: yOffset,
                 }}
                 transition={{
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 30,
+                  type: 'tween',
+                  duration: 0.2,
+                  ease: [0.4, 0, 0.2, 1],
                 }}
                 onClick={(e) => {
                   e.stopPropagation();

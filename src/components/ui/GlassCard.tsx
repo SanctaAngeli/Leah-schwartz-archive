@@ -1,7 +1,7 @@
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { forwardRef, ReactNode } from 'react';
 
-type GlassVariant = 'default' | 'subtle' | 'prominent';
+type GlassVariant = 'default' | 'subtle' | 'prominent' | 'image';
 type GlassSize = 'sm' | 'md' | 'lg';
 
 interface GlassCardProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
@@ -27,6 +27,10 @@ const variantStyles: Record<GlassVariant, string> = {
     'bg-white/80 backdrop-blur-2xl',
     'border border-white/40',
     'shadow-[0_12px_40px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.6)]',
+  ].join(' '),
+  image: [
+    'bg-white/0 overflow-hidden',
+    'shadow-[0_8px_32px_rgba(0,0,0,0.12)]',
   ].join(' '),
 };
 

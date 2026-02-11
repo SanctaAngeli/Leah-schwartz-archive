@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { GlassCard } from '../components/ui/GlassCard';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
+import SFBayAreaMap from '../components/locations/SFBayAreaMap';
 import artworksData from '../data/artworks.json';
 import locationsData from '../data/locations.json';
 import type { Artwork, Location } from '../types';
@@ -27,6 +28,18 @@ function LocationsPage(): JSX.Element {
     return artworks.find((a) => a.id === location.heroArtworkId);
   };
 
+  // Artwork counts per location for map
+  const artworkCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    locations.forEach((loc) => {
+      counts[loc.id] = artworks.filter((a) => a.location === loc.id).length;
+    });
+    return counts;
+  }, []);
+
+  // View mode toggle
+  const [viewMode, setViewMode] = useState<'map' | 'grid'>('map');
+
   // Location grid view
   if (!selectedLocation) {
     return (
@@ -37,7 +50,7 @@ function LocationsPage(): JSX.Element {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-heading text-4xl text-text-primary mb-2">
               Locations
             </h1>
@@ -46,7 +59,45 @@ function LocationsPage(): JSX.Element {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* View mode toggle */}
+          <div className="flex justify-center mb-8">
+            <div className="glass-pill p-1 flex gap-1">
+              <button
+                onClick={() => setViewMode('map')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  viewMode === 'map'
+                    ? 'bg-text-primary text-white'
+                    : 'text-text-secondary hover:text-text-primary'
+                }`}
+              >
+                Map View
+              </button>
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  viewMode === 'grid'
+                    ? 'bg-text-primary text-white'
+                    : 'text-text-secondary hover:text-text-primary'
+                }`}
+              >
+                Grid View
+              </button>
+            </div>
+          </div>
+
+          {/* Map View */}
+          {viewMode === 'map' && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mb-12"
+            >
+              <SFBayAreaMap locations={locations} artworkCounts={artworkCounts} />
+            </motion.div>
+          )}
+
+          {/* Grid View */}
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${viewMode === 'map' ? 'mt-8' : ''}`}>
             {locations.map((location, index) => {
               const heroArtwork = getHeroArtwork(location);
               const artworkCount = artworks.filter(
@@ -61,7 +112,8 @@ function LocationsPage(): JSX.Element {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <GlassCard
-                    className="cursor-pointer overflow-hidden p-0"
+                    variant="image"
+                    className="cursor-pointer overflow-hidden p-0 rounded-2xl"
                     onClick={() => navigate(`/locations/${location.id}`)}
                   >
                     <div className="relative">

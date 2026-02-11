@@ -16,31 +16,31 @@ interface MuseumCorridorProps {
   opacity?: number;
 }
 
-// Corridor configuration
+// Corridor configuration - now with forward-facing design
 const CORRIDOR_LENGTH = 4800;
 const WALL_OFFSET = 28; // Distance from center to walls
 
 function generateCorridorArtworks(artworks: Artwork[]): CorridorArtwork[] {
   const result: CorridorArtwork[] = [];
 
-  // We need to fill the ENTIRE corridor with art on BOTH walls
-  // Use more artworks and space them properly to avoid overlap
+  // Artworks are placed AHEAD of the viewer (positive z)
+  // As you walk forward, you approach and pass them
 
-  const artworkSpacing = 280; // Minimum spacing between artworks on same wall
-  const totalDepth = CORRIDOR_LENGTH - 200; // Leave some room at start
+  const artworkSpacing = 300; // Spacing between artworks
+  const startZ = 400; // Start a bit ahead
 
   // Calculate how many artworks per wall
-  const artworksPerWall = Math.floor(totalDepth / artworkSpacing);
+  const artworksPerWall = Math.min(Math.floor(CORRIDOR_LENGTH / artworkSpacing), 16);
 
-  // Generate LEFT wall artworks
+  // Generate LEFT wall artworks - starting ahead, going further
   for (let i = 0; i < artworksPerWall && i < artworks.length; i++) {
-    const z = -150 - i * artworkSpacing;
+    const z = startZ + i * artworkSpacing;
 
     // Varied vertical positions
-    const yVariance = ((i % 5) - 2) * 20;
+    const yVariance = ((i % 5) - 2) * 18;
 
-    // MORE size variance: 120 to 280
-    const sizeBase = 120 + ((i * 7) % 160);
+    // Size variance: closer = potentially larger
+    const sizeBase = 160 + ((i * 7) % 120);
 
     result.push({
       artwork: artworks[i],
@@ -51,13 +51,13 @@ function generateCorridorArtworks(artworks: Artwork[]): CorridorArtwork[] {
     });
   }
 
-  // Generate RIGHT wall artworks - offset by half spacing for visual interest
-  const rightOffset = artworkSpacing / 2;
+  // Generate RIGHT wall artworks - offset for visual rhythm
+  const rightOffset = artworkSpacing / 2 + 50;
   for (let i = 0; i < artworksPerWall && (artworksPerWall + i) < artworks.length; i++) {
-    const z = -150 - rightOffset - i * artworkSpacing;
+    const z = startZ + rightOffset + i * artworkSpacing;
 
     // Different vertical variance pattern
-    const yVariance = (((i + 2) % 5) - 2) * 20;
+    const yVariance = (((i + 2) % 5) - 2) * 18;
 
     // Different size pattern
     const sizeBase = 140 + (((i + 3) * 7) % 140);
@@ -84,7 +84,8 @@ export function MuseumCorridor({
     [artworks]
   );
 
-  // Camera flies through the corridor
+  // Camera MOVES FORWARD through the corridor
+  // Negative translation = corridor moves back = camera moves forward
   const cameraZ = progress * (CORRIDOR_LENGTH - 300);
 
   // The final artwork we fly into
@@ -102,12 +103,12 @@ export function MuseumCorridor({
         opacity,
       }}
     >
-      {/* Corridor container */}
+      {/* Corridor container - negative translation = forward motion */}
       <div
         className="absolute inset-0"
         style={{
           transformStyle: 'preserve-3d',
-          transform: `translateZ(${cameraZ}px)`,
+          transform: `translateZ(${-cameraZ}px)`,
         }}
       >
         {/* Floor */}
@@ -176,8 +177,12 @@ export function MuseumCorridor({
         {corridorArtworks.map((item, index) => {
           const { artwork, side, z, y, size } = item;
 
-          const relativeZ = z + cameraZ;
-          const isVisible = relativeZ < 300 && relativeZ > -2500;
+          // Artwork z is positive (ahead), camera moves forward by cameraZ
+          // Relative z = artwork position - camera position
+          const relativeZ = z - cameraZ;
+
+          // Visible when ahead but not too far, or just passed
+          const isVisible = relativeZ > -600 && relativeZ < 2500;
 
           if (!isVisible) return null;
 
@@ -196,9 +201,11 @@ export function MuseumCorridor({
           // Right wall: rotate Y negative to face left (into corridor)
           const wallRotation = side === 'left' ? 90 : -90;
 
-          // Motion blur when passing close
-          const passingSpeed = Math.abs(relativeZ) < 400 ? (400 - Math.abs(relativeZ)) / 400 : 0;
-          const motionBlur = progress > 0.1 ? passingSpeed * progress * 4 : 0;
+          // Motion blur as artwork passes by (when close and moving fast)
+          const passingClose = relativeZ > -300 && relativeZ < 400;
+          const motionBlur = passingClose && progress > 0.1
+            ? Math.max(0, (1 - Math.abs(relativeZ) / 400) * progress * 5)
+            : 0;
 
           return (
             <motion.div
@@ -239,7 +246,7 @@ export function MuseumCorridor({
           );
         })}
 
-        {/* Vanishing point glow */}
+        {/* Vanishing point glow - ahead in the corridor */}
         <div
           className="absolute"
           style={{
@@ -247,7 +254,7 @@ export function MuseumCorridor({
             top: '50%',
             width: '400px',
             height: '400px',
-            transform: `translate(-50%, -50%) translateZ(${-CORRIDOR_LENGTH + 100}px)`,
+            transform: `translate(-50%, -50%) translateZ(${CORRIDOR_LENGTH}px)`,
             background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%)',
             borderRadius: '50%',
           }}

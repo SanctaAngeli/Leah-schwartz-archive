@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
@@ -5,6 +6,10 @@ import SkipLink from './components/layout/SkipLink';
 import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
+import PagePreloader from './components/ui/PagePreloader';
+import { IntroProvider, useIntroComplete } from './hooks/useIntroComplete';
+import ScrollStoryPage from './pages/ScrollStoryPage';
+import CuratedGalleryPage from './pages/CuratedGalleryPage';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import TimelinePage from './pages/TimelinePage';
@@ -17,18 +22,34 @@ import ComparePage from './pages/ComparePage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-function App(): JSX.Element {
+function AppContent(): JSX.Element {
   const location = useLocation();
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const { hasCompletedIntro } = useIntroComplete();
+
+  // Show nav if: user has completed intro OR they're not on the landing page
+  const isLandingPage = location.pathname === '/';
+  const showNavigation = hasCompletedIntro || !isLandingPage;
 
   return (
-    <ErrorBoundary>
+    <>
+      {/* Show preloader only on initial page load */}
+      {isInitialLoad && (
+        <PagePreloader
+          minDuration={2000}
+          onComplete={() => setIsInitialLoad(false)}
+        />
+      )}
       <SkipLink />
       <div className="min-h-screen bg-bg-gallery transition-colors duration-500">
-        <Navigation />
+        <Navigation visible={showNavigation} />
         <main id="main-content" className="focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
+            <Route path="/" element={<PageTransition><ScrollStoryPage /></PageTransition>} />
+            <Route path="/curated" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
+            <Route path="/curated/:eraId" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
+            <Route path="/classic" element={<PageTransition><HomePage /></PageTransition>} />
             <Route path="/gallery" element={<PageTransition><LandingPage /></PageTransition>} />
             <Route path="/timeline" element={<PageTransition><TimelinePage /></PageTransition>} />
             <Route path="/timeline/:year" element={<PageTransition><TimelinePage /></PageTransition>} />
@@ -48,6 +69,16 @@ function App(): JSX.Element {
         </main>
         <SettingsPanel />
       </div>
+    </>
+  );
+}
+
+function App(): JSX.Element {
+  return (
+    <ErrorBoundary>
+      <IntroProvider>
+        <AppContent />
+      </IntroProvider>
     </ErrorBoundary>
   );
 }

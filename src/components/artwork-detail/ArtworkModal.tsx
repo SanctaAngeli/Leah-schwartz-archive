@@ -1,9 +1,10 @@
-import { useEffect, useCallback, useRef, useMemo } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import PlaceholderArtwork from '../ui/PlaceholderArtwork';
+import ZoomableImage from '../ui/ZoomableImage';
 import ShareButton from '../ui/ShareButton';
 import { useFavorites } from '../../hooks/useFavorites';
+import { useFocusTrap } from '../../hooks/useFocusTrap';
 import artworksData from '../../data/artworks.json';
 import locationsData from '../../data/locations.json';
 import type { Artwork, Location } from '../../types';
@@ -19,8 +20,7 @@ interface ArtworkModalProps {
 function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps): JSX.Element | null {
   const navigate = useNavigate();
   const params = useParams();
-  const modalRef = useRef<HTMLDivElement>(null);
-  const previousFocus = useRef<HTMLElement | null>(null);
+  const modalRef = useFocusTrap<HTMLDivElement>({ enabled: true, returnFocusOnDeactivate: true });
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const artworkId = propArtworkId || params.artworkId;
@@ -70,15 +70,11 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
     }
   }, [navigate]);
 
-  // Lock body scroll and manage focus
+  // Lock body scroll
   useEffect(() => {
-    previousFocus.current = document.activeElement as HTMLElement;
     document.body.style.overflow = 'hidden';
-    modalRef.current?.focus();
-
     return () => {
       document.body.style.overflow = '';
-      previousFocus.current?.focus();
     };
   }, []);
 
@@ -216,7 +212,7 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
 
           {/* Content */}
           <div className="flex flex-col lg:flex-row h-full max-h-[90vh] overflow-y-auto">
-            {/* Artwork image */}
+            {/* Artwork image with zoom/pan */}
             <div className="flex-1 p-6 lg:p-10 flex items-center justify-center bg-gray-50/50">
               <motion.div
                 key={artwork.id}
@@ -225,8 +221,10 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
                 transition={{ duration: 0.3 }}
                 className="w-full max-w-xl"
               >
-                <PlaceholderArtwork
-                  color={artwork.placeholderColor}
+                <ZoomableImage
+                  src={artwork.imagePath}
+                  alt={artwork.title}
+                  placeholderColor={artwork.placeholderColor}
                   aspectRatio={artwork.aspectRatio}
                   className="w-full shadow-glass"
                 />
@@ -347,7 +345,7 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
               {/* Keyboard hint */}
               <div className="pt-4 border-t border-gray-100">
                 <p className="font-body text-text-muted text-xs">
-                  Use ← → to navigate • Esc to close
+                  ← → navigate • +/- zoom • Esc close
                 </p>
               </div>
             </motion.div>

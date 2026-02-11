@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMemo, useCallback, useState, useEffect } from 'react';
 import { TimelineCarousel, ScrollGallery, MuseumCard } from '../components/timeline';
+import { SkeletonGrid } from '../components/ui/Skeleton';
 import artworksData from '../data/artworks.json';
 import type { Artwork } from '../types';
 
@@ -66,7 +67,19 @@ function TimelinePage(): JSX.Element {
     navigate(`/artwork/${artworkId}`);
   }, [navigate]);
 
-  const yearArtworks = expandedYear ? artworksByYear[expandedYear] : null;
+  const yearArtworks = expandedYear ? artworksByYear[expandedYear] || [] : null;
+
+  // Track loading state for smoother transitions
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Set loading briefly when expanding to a new year
+  useEffect(() => {
+    if (expandedYear !== null) {
+      setIsLoading(true);
+      const timer = setTimeout(() => setIsLoading(false), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [expandedYear]);
 
   // Get hero artwork for atmosphere
   const heroArtwork = useMemo(() => {
@@ -135,7 +148,12 @@ function TimelinePage(): JSX.Element {
               {/* Artworks */}
               {yearArtworks && (
                 <div className="pb-12">
-                  {expandedYear && SCROLL_GALLERY_YEARS.includes(expandedYear) ? (
+                  {isLoading ? (
+                    /* Loading skeleton */
+                    <div className="max-w-7xl mx-auto px-6">
+                      <SkeletonGrid count={8} columns={4} />
+                    </div>
+                  ) : expandedYear && SCROLL_GALLERY_YEARS.includes(expandedYear) ? (
                     /* Fancy scroll gallery with CSS scroll-driven indicators */
                     <ScrollGallery
                       artworks={yearArtworks}
@@ -144,16 +162,22 @@ function TimelinePage(): JSX.Element {
                   ) : (
                     /* Museum-style grid for other years */
                     <div className="max-w-7xl mx-auto px-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {yearArtworks.map((artwork, index) => (
-                          <MuseumCard
-                            key={artwork.id}
-                            artwork={artwork}
-                            index={index}
-                            onClick={() => handleGridArtworkClick(artwork.id)}
-                          />
-                        ))}
-                      </div>
+                      {yearArtworks.length === 0 ? (
+                        <p className="text-center text-text-muted py-12">
+                          No artworks found for {expandedYear}
+                        </p>
+                      ) : (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                          {yearArtworks.map((artwork, index) => (
+                            <MuseumCard
+                              key={artwork.id}
+                              artwork={artwork}
+                              index={index}
+                              onClick={() => handleGridArtworkClick(artwork.id)}
+                            />
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
