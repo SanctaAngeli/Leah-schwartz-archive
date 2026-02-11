@@ -2,6 +2,7 @@ import { useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PlaceholderArtwork from '../ui/PlaceholderArtwork';
+import ShareButton from '../ui/ShareButton';
 import { useFavorites } from '../../hooks/useFavorites';
 import artworksData from '../../data/artworks.json';
 import locationsData from '../../data/locations.json';
@@ -141,6 +142,9 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
         >
           {/* Action buttons */}
           <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+            {/* Share button */}
+            <ShareButton title={artwork?.title || ''} />
+
             {/* Favorite button */}
             <button
               onClick={() => artworkId && toggleFavorite(artworkId)}

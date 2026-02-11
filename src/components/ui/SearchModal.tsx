@@ -44,7 +44,8 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
       { type: 'page', id: 'themes', title: 'Themes', subtitle: 'Browse by theme', path: '/themes' },
       { type: 'page', id: 'tour', title: 'Guided Tour', subtitle: 'Audio tour', path: '/tour' },
       { type: 'page', id: 'favorites', title: 'My Collection', subtitle: 'Your saved artworks', path: '/favorites' },
-      { type: 'page', id: 'compare', title: 'Compare', subtitle: 'Compare two artworks', path: '/compare' }
+      { type: 'page', id: 'compare', title: 'Compare', subtitle: 'Compare two artworks', path: '/compare' },
+      { type: 'page', id: 'about', title: 'About Leah', subtitle: 'Artist biography', path: '/about' }
     );
 
     // Add locations

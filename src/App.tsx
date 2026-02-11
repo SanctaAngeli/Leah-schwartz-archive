@@ -14,6 +14,7 @@ import GuidedTourPage from './pages/GuidedTourPage';
 import ArtworkDetailPage from './pages/ArtworkDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
 import ComparePage from './pages/ComparePage';
+import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App(): JSX.Element {
@@ -40,6 +41,7 @@ function App(): JSX.Element {
             <Route path="/artwork/:artworkId" element={<PageTransition><ArtworkDetailPage /></PageTransition>} />
             <Route path="/favorites" element={<PageTransition><FavoritesPage /></PageTransition>} />
             <Route path="/compare" element={<PageTransition><ComparePage /></PageTransition>} />
+            <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
           </Routes>
           </AnimatePresence>
