@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useCallback, useEffect, useRef, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import KeyboardShortcutsModal from '../components/ui/KeyboardShortcutsModal';
+import { getRandomArtwork } from './useRandomArtwork';
 
 interface KeyboardShortcutsContextType {
   showHelp: () => void;
@@ -38,6 +39,14 @@ export function KeyboardShortcutsProvider({ children }: { children: ReactNode })
       if (e.key === '?' && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
         showHelp();
+        return;
+      }
+
+      // R - Random artwork
+      if (e.key.toLowerCase() === 'r' && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        e.preventDefault();
+        const artwork = getRandomArtwork();
+        navigate(`/artwork/${artwork.id}`);
         return;
       }
 

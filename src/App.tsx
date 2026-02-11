@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
+import SkipLink from './components/layout/SkipLink';
 import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import HomePage from './pages/HomePage';
@@ -17,10 +18,12 @@ function App(): JSX.Element {
 
   return (
     <ErrorBoundary>
+      <SkipLink />
       <div className="min-h-screen bg-gallery">
         <Navigation />
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+        <main id="main-content" className="focus:outline-none" tabIndex={-1}>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
             <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
             <Route path="/gallery" element={<PageTransition><LandingPage /></PageTransition>} />
             <Route path="/timeline" element={<PageTransition><TimelinePage /></PageTransition>} />
@@ -34,7 +37,8 @@ function App(): JSX.Element {
             <Route path="/artwork/:artworkId" element={<PageTransition><ArtworkDetailPage /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
           </Routes>
-        </AnimatePresence>
+          </AnimatePresence>
+        </main>
       </div>
     </ErrorBoundary>
   );

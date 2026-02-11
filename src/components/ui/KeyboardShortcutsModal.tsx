@@ -26,6 +26,7 @@ const shortcuts = [
     { keys: ['PgUp', 'PgDn'], description: 'Jump decades' },
   ]},
   { category: 'General', items: [
+    { keys: ['R'], description: 'Random artwork' },
     { keys: ['?'], description: 'Show this help' },
     { keys: ['Esc'], description: 'Close dialogs' },
   ]},
