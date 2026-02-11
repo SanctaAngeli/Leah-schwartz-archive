@@ -1,10 +1,12 @@
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCallback } from 'react';
+import { useSearch } from '../../hooks/useSearch';
 
 function Navigation(): JSX.Element {
   const navigate = useNavigate();
   const location = useLocation();
+  const { open: openSearch } = useSearch();
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -38,6 +40,21 @@ function Navigation(): JSX.Element {
       className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
     >
       <div className="glass-pill px-2 py-2 flex items-center gap-1">
+        {/* Search button */}
+        <button
+          onClick={openSearch}
+          className="relative z-10 px-3 py-2 rounded-full text-text-secondary
+            hover:text-text-primary hover:bg-white/50 transition-colors duration-200"
+          aria-label="Search (Cmd+K)"
+          title="Search (⌘K)"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+
+        <div className="w-px h-5 bg-gray-200 mx-1" aria-hidden="true" />
+
         {navItems.map((item) => {
           const active = isActive(item.path);
 

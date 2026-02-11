@@ -203,7 +203,7 @@ function TimelineCarousel({
     if (!scrubberRef.current) return;
 
     const rect = scrubberRef.current.getBoundingClientRect();
-    const clientX = 'touches' in e ? (e as TouchEvent).touches[0].clientX : (e as MouseEvent).clientX;
+    const clientX = 'touches' in e ? (e as React.TouchEvent).touches[0].clientX : (e as MouseEvent).clientX;
     const relativeX = (clientX - rect.left) / rect.width;
     const clampedX = Math.max(0, Math.min(1, relativeX));
     const targetIndex = clampedX * (allYears.length - 1);

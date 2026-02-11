@@ -41,7 +41,6 @@ function MuseumCard({ artwork, onClick, index = 0 }: MuseumCardProps): JSX.Eleme
   };
 
   const locationDisplay = artwork.location ? locationNames[artwork.location] || artwork.location : null;
-  const primaryTheme = artwork.themes?.[0] ? themeNames[artwork.themes[0]] || artwork.themes[0] : null;
 
   return (
     <motion.article
