@@ -152,6 +152,8 @@ function GuidedTourPage(): JSX.Element {
               transition={{ duration: 0.4 }}
             >
               <PlaceholderArtwork
+                src={currentArtwork.imagePath}
+                alt={currentArtwork.title}
                 color={currentArtwork.placeholderColor}
                 aspectRatio={currentArtwork.aspectRatio}
                 className="w-full max-w-2xl mx-auto shadow-glass"

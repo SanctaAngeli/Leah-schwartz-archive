@@ -172,7 +172,7 @@ export function QuoteReveal({
             transition={{ delay: 0.5 }}
           >
             <span className="font-body text-text-muted tracking-wider">
-              — {author}
+              · {author}
             </span>
           </motion.footer>
         )}

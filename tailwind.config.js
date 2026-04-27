@@ -17,6 +17,9 @@ export default {
       fontFamily: {
         heading: ['EB Garamond', 'Times New Roman', 'serif'],
         body: ['Inter', '-apple-system', 'sans-serif'],
+        // "font-leah" is reserved for Leah's own voice phrases
+        // (chapter taglines, pull-quote attributions). Use sparingly.
+        leah: ['Caveat', 'Homemade Apple', 'Snell Roundhand', 'cursive'],
       },
       boxShadow: {
         'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',

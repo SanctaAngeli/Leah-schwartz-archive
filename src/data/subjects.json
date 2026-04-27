@@ -1,0 +1,1323 @@
+[
+  {
+    "id": "abstract",
+    "name": "Abstract",
+    "parenthetical": null,
+    "book_pages": [
+      35
+    ],
+    "pdf_pages": [
+      48
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "american-book-co",
+    "name": "American Book Co.",
+    "parenthetical": null,
+    "book_pages": [
+      15
+    ],
+    "pdf_pages": [
+      28
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "art-school-love-marriage",
+    "name": "Art School, Love, Marriage",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "autobiography",
+    "name": "Autobiography",
+    "parenthetical": null,
+    "book_pages": [
+      1
+    ],
+    "pdf_pages": [
+      14
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "beaubourg",
+    "name": "Beaubourg",
+    "parenthetical": "Pompidou Center",
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "beetle-paintings",
+    "name": "Beetle Paintings",
+    "parenthetical": null,
+    "book_pages": [
+      25
+    ],
+    "pdf_pages": [
+      38
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "belgian-stallions",
+    "name": "Belgian Stallions",
+    "parenthetical": null,
+    "book_pages": [
+      9
+    ],
+    "pdf_pages": [
+      22
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "bellini",
+    "name": "Bellini",
+    "parenthetical": null,
+    "book_pages": [
+      25
+    ],
+    "pdf_pages": [
+      38
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "beppa",
+    "name": "Beppa",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "boudin",
+    "name": "Boudin",
+    "parenthetical": null,
+    "book_pages": [
+      12
+    ],
+    "pdf_pages": [
+      25
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "children",
+    "name": "Children",
+    "parenthetical": null,
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "children-of-god",
+    "name": "Children of God",
+    "parenthetical": null,
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "cornell",
+    "name": "Cornell",
+    "parenthetical": null,
+    "book_pages": [
+      11,
+      12
+    ],
+    "pdf_pages": [
+      24,
+      25
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "cream-of-tartar",
+    "name": "Cream of Tartar",
+    "parenthetical": null,
+    "book_pages": [
+      158
+    ],
+    "pdf_pages": [
+      171
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "cream-tartar"
+    ]
+  },
+  {
+    "id": "death-of-parents",
+    "name": "Death of Parents",
+    "parenthetical": null,
+    "book_pages": [
+      23
+    ],
+    "pdf_pages": [
+      36
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "degas",
+    "name": "Degas",
+    "parenthetical": null,
+    "book_pages": [
+      12
+    ],
+    "pdf_pages": [
+      25
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "diebenkorn",
+    "name": "Diebenkorn",
+    "parenthetical": null,
+    "book_pages": [
+      26
+    ],
+    "pdf_pages": [
+      39
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "dietrich",
+    "name": "Dietrich",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "dream-of-constantine",
+    "name": "Dream of Constantine",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "flowers",
+    "name": "Flowers",
+    "parenthetical": null,
+    "book_pages": [
+      191
+    ],
+    "pdf_pages": [
+      204
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "ford-econoline-van",
+    "name": "Ford Econoline Van",
+    "parenthetical": null,
+    "book_pages": [
+      83
+    ],
+    "pdf_pages": [
+      96
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "genetic-baggage",
+    "name": "Genetic Baggage",
+    "parenthetical": null,
+    "book_pages": [
+      3
+    ],
+    "pdf_pages": [
+      16
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "george-and-marsha-s-place",
+    "name": "George and Marsha's Place",
+    "parenthetical": null,
+    "book_pages": [
+      63
+    ],
+    "pdf_pages": [
+      76
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "greenfield-family",
+    "name": "Greenfield Family",
+    "parenthetical": "The Pannemanskis",
+    "book_pages": [
+      3
+    ],
+    "pdf_pages": [
+      16
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "",
+    "name": "",
+    "parenthetical": null,
+    "book_pages": [
+      292
+    ],
+    "pdf_pages": [
+      305
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "harpers-bazaar",
+    "name": "Harpers Bazaar",
+    "parenthetical": null,
+    "book_pages": [
+      12
+    ],
+    "pdf_pages": [
+      25
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "heaven-and-hell",
+    "name": "Heaven and Hell",
+    "parenthetical": "Taddeo di Bartolo",
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "high-sierra",
+    "name": "High Sierra",
+    "parenthetical": null,
+    "book_pages": [
+      285
+    ],
+    "pdf_pages": [
+      298
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "hightstown",
+    "name": "Hightstown",
+    "parenthetical": null,
+    "book_pages": [
+      13
+    ],
+    "pdf_pages": [
+      26
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "ile-de-cite",
+    "name": "Ile De Cite",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "immigrants",
+    "name": "Immigrants",
+    "parenthetical": null,
+    "book_pages": [
+      3
+    ],
+    "pdf_pages": [
+      16
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "interiors",
+    "name": "Interiors",
+    "parenthetical": null,
+    "book_pages": [
+      185
+    ],
+    "pdf_pages": [
+      198
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "jeannette",
+    "name": "Jeannette",
+    "parenthetical": null,
+    "book_pages": [
+      28
+    ],
+    "pdf_pages": [
+      41
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "jeanette"
+    ]
+  },
+  {
+    "id": "kaiser-permanente-medical-group",
+    "name": "Kaiser Permanente Medical Group",
+    "parenthetical": null,
+    "book_pages": [
+      21
+    ],
+    "pdf_pages": [
+      34
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "ken-and-barbie-after-the-fall",
+    "name": "Ken and Barbie After the Fall",
+    "parenthetical": null,
+    "book_pages": [
+      59
+    ],
+    "pdf_pages": [
+      72
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "ken-barbie-after-the-fall"
+    ]
+  },
+  {
+    "id": "key-west",
+    "name": "Key West",
+    "parenthetical": null,
+    "book_pages": [
+      20
+    ],
+    "pdf_pages": [
+      33
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "landscape",
+    "name": "Landscape",
+    "parenthetical": null,
+    "book_pages": [
+      83
+    ],
+    "pdf_pages": [
+      96
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "lascaux",
+    "name": "Lascaux",
+    "parenthetical": null,
+    "book_pages": [
+      26
+    ],
+    "pdf_pages": [
+      39
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "les-eyzie",
+    "name": "Les Eyzie",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "lombard",
+    "name": "Lombard",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "los-angeles",
+    "name": "Los Angeles",
+    "parenthetical": null,
+    "book_pages": [
+      6,
+      8,
+      16
+    ],
+    "pdf_pages": [
+      19,
+      21,
+      29
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "lupine-spring",
+    "name": "Lupine Spring",
+    "parenthetical": null,
+    "book_pages": [
+      40
+    ],
+    "pdf_pages": [
+      53
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "marin-county-library",
+    "name": "Marin County Library",
+    "parenthetical": null,
+    "book_pages": [
+      25
+    ],
+    "pdf_pages": [
+      38
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "mexico",
+    "name": "Mexico",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "michigan",
+    "name": "Michigan",
+    "parenthetical": null,
+    "book_pages": [
+      8
+    ],
+    "pdf_pages": [
+      21
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "midori",
+    "name": "Midori",
+    "parenthetical": null,
+    "book_pages": [
+      243
+    ],
+    "pdf_pages": [
+      256
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "mill-creek",
+    "name": "Mill Creek",
+    "parenthetical": null,
+    "book_pages": [
+      21
+    ],
+    "pdf_pages": [
+      34
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "mit",
+    "name": "MIT",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "mrs-stewart-and-the-great-african-remedy",
+    "name": "Mrs. Stewart and the Great African Remedy",
+    "parenthetical": null,
+    "book_pages": [
+      159
+    ],
+    "pdf_pages": [
+      172
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "mrs-stewart-and-the-great-africa-remedy"
+    ]
+  },
+  {
+    "id": "muir-beach-david-isis",
+    "name": "Muir Beach, David & Isis",
+    "parenthetical": null,
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "nairobi",
+    "name": "Nairobi",
+    "parenthetical": null,
+    "book_pages": [
+      269
+    ],
+    "pdf_pages": [
+      282
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "national-academy",
+    "name": "National Academy",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "nefertiti",
+    "name": "Nefertiti",
+    "parenthetical": null,
+    "book_pages": [
+      23
+    ],
+    "pdf_pages": [
+      36
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "new-testament",
+    "name": "New Testament",
+    "parenthetical": "Taddeo di Bartolo",
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "new-jersey",
+    "name": "New Jersey",
+    "parenthetical": null,
+    "book_pages": [
+      9
+    ],
+    "pdf_pages": [
+      22
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "notre-dame",
+    "name": "Notre Dame",
+    "parenthetical": null,
+    "book_pages": [
+      228
+    ],
+    "pdf_pages": [
+      241
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "pont-louis-phillipe"
+    ]
+  },
+  {
+    "id": "old-stuff",
+    "name": "Old Stuff",
+    "parenthetical": null,
+    "book_pages": [
+      27
+    ],
+    "pdf_pages": [
+      40
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "old-testament",
+    "name": "Old Testament",
+    "parenthetical": "Taddeo di Bartolo",
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "p-r-surplus",
+    "name": "P R Surplus",
+    "parenthetical": null,
+    "book_pages": [
+      74
+    ],
+    "pdf_pages": [
+      87
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "p-r-surplus"
+    ]
+  },
+  {
+    "id": "pannemanskis",
+    "name": "Pannemanskis",
+    "parenthetical": "Greenfield Family",
+    "book_pages": [
+      3
+    ],
+    "pdf_pages": [
+      16
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "pont-louis-philloe",
+    "name": "Pont Louis PhillOe",
+    "parenthetical": null,
+    "book_pages": [
+      228
+    ],
+    "pdf_pages": [
+      241
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "pont-louis-phillipe"
+    ]
+  },
+  {
+    "id": "portal-publications",
+    "name": "Portal Publications",
+    "parenthetical": null,
+    "book_pages": [
+      191
+    ],
+    "pdf_pages": [
+      204
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "portraits",
+    "name": "Portraits",
+    "parenthetical": null,
+    "book_pages": [
+      127
+    ],
+    "pdf_pages": [
+      140
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "purple-iris-thicket",
+    "name": "Purple Iris Thicket",
+    "parenthetical": null,
+    "book_pages": [
+      196
+    ],
+    "pdf_pages": [
+      209
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "queen-of-sheba",
+    "name": "Queen of Sheba",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "rainbow-inn",
+    "name": "Rainbow Inn",
+    "parenthetical": null,
+    "book_pages": [
+      63
+    ],
+    "pdf_pages": [
+      76
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "resettlement-administration",
+    "name": "Resettlement Administration",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "roos-brothers",
+    "name": "Roos Brothers",
+    "parenthetical": null,
+    "book_pages": [
+      17
+    ],
+    "pdf_pages": [
+      30
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "samburu",
+    "name": "Samburu",
+    "parenthetical": null,
+    "book_pages": [
+      269
+    ],
+    "pdf_pages": [
+      282
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "san-gimignago",
+    "name": "San Gimignago",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "",
+    "name": "",
+    "parenthetical": null,
+    "book_pages": [
+      293
+    ],
+    "pdf_pages": [
+      306
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "schroeders",
+    "name": "Schroeders",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "secretary-of-state-with-puppet",
+    "name": "Secretary of State with Puppet",
+    "parenthetical": null,
+    "book_pages": [
+      48
+    ],
+    "pdf_pages": [
+      61
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "the-sec-y-of-state-with-puppet"
+    ]
+  },
+  {
+    "id": "self-portrait-with-head-scarf",
+    "name": "Self Portrait with Head Scarf",
+    "parenthetical": null,
+    "book_pages": [
+      143
+    ],
+    "pdf_pages": [
+      156
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "self-portrait-with-scarf"
+    ]
+  },
+  {
+    "id": "shahn-sfegato-italian",
+    "name": "Shahn'sFegato Italian",
+    "parenthetical": null,
+    "book_pages": [
+      14
+    ],
+    "pdf_pages": [
+      27
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "siena",
+    "name": "Siena",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "social-comment",
+    "name": "Social Comment",
+    "parenthetical": null,
+    "book_pages": [
+      41
+    ],
+    "pdf_pages": [
+      54
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "st-clare",
+    "name": "St. Clare",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "state-of-the-union",
+    "name": "State of the Union",
+    "parenthetical": null,
+    "book_pages": [
+      26
+    ],
+    "pdf_pages": [
+      39
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "state-of-the-union-60-s",
+    "name": "State of the Union, 60's",
+    "parenthetical": null,
+    "book_pages": [
+      42
+    ],
+    "pdf_pages": [
+      55
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "state-of-the-union-70-s",
+    "name": "State of the Union, 70's",
+    "parenthetical": null,
+    "book_pages": [
+      43
+    ],
+    "pdf_pages": [
+      56
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "still-lift",
+    "name": "Still Lift",
+    "parenthetical": null,
+    "book_pages": [
+      149
+    ],
+    "pdf_pages": [
+      162
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "still-lift-with-white-glue-bottle",
+    "name": "Still Lift with White Glue Bottle",
+    "parenthetical": null,
+    "book_pages": [
+      183
+    ],
+    "pdf_pages": [
+      196
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "four-pots-one-persimmon"
+    ]
+  },
+  {
+    "id": "strawberry-press",
+    "name": "Strawberry Press",
+    "parenthetical": null,
+    "book_pages": [
+      22
+    ],
+    "pdf_pages": [
+      35
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "sunday",
+    "name": "\"Sunday\"",
+    "parenthetical": "film by Dan Drasin",
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "sunrise",
+    "name": "Sunrise",
+    "parenthetical": null,
+    "book_pages": [
+      8,
+      9
+    ],
+    "pdf_pages": [
+      21,
+      22
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "taddeo-di-bartolo",
+    "name": "Taddeo di Bartolo",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "tamara",
+    "name": "Tamara",
+    "parenthetical": "Drasin",
+    "book_pages": [
+      11,
+      12,
+      15
+    ],
+    "pdf_pages": [
+      24,
+      25,
+      28
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "tannenbaum",
+    "name": "Tannenbaum",
+    "parenthetical": null,
+    "book_pages": [
+      8
+    ],
+    "pdf_pages": [
+      21
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "tintoretto",
+    "name": "Tintoretto",
+    "parenthetical": null,
+    "book_pages": [
+      6
+    ],
+    "pdf_pages": [
+      19
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "toddler-years",
+    "name": "Toddler Years",
+    "parenthetical": null,
+    "book_pages": [
+      22
+    ],
+    "pdf_pages": [
+      35
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "travel",
+    "name": "Travel",
+    "parenthetical": null,
+    "book_pages": [
+      223
+    ],
+    "pdf_pages": [
+      236
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "three-boscs-with-a-cornice",
+    "name": "Three Boscs with a Cornice",
+    "parenthetical": null,
+    "book_pages": [
+      180
+    ],
+    "pdf_pages": [
+      193
+    ],
+    "special_refs": [],
+    "artwork_ids": [
+      "three-boscs-with-a-comice"
+    ]
+  },
+  {
+    "id": "three-penny-opera",
+    "name": "Three Penny Opera",
+    "parenthetical": null,
+    "book_pages": [
+      20
+    ],
+    "pdf_pages": [
+      33
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "victory-of-heraclius",
+    "name": "Victory of Heraclius",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "warhol",
+    "name": "Warhol",
+    "parenthetical": null,
+    "book_pages": [
+      14
+    ],
+    "pdf_pages": [
+      27
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "white-jar",
+    "name": "White Jar",
+    "parenthetical": null,
+    "book_pages": [
+      149
+    ],
+    "pdf_pages": [
+      162
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "wpa",
+    "name": "WPA",
+    "parenthetical": null,
+    "book_pages": [
+      13
+    ],
+    "pdf_pages": [
+      26
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  },
+  {
+    "id": "",
+    "name": "",
+    "parenthetical": null,
+    "book_pages": [
+      294
+    ],
+    "pdf_pages": [
+      307
+    ],
+    "special_refs": [],
+    "artwork_ids": []
+  }
+]

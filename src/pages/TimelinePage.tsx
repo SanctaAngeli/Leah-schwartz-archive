@@ -30,10 +30,36 @@ function TimelinePage(): JSX.Element {
     }
   }, [selectedYearParam]);
 
-  // Group artworks by year
+  // Most works in the book's LIST OF PAINTINGS are undated. We approximate a
+  // year from the chapter they belong to, using rough decade anchors drawn
+  // from Leah's autobiography. Works with real years use them; others get a
+  // synthetic year and display with a "c." modifier elsewhere on the page.
+  const CHAPTER_YEAR: Record<string, number> = {
+    'old-stuff': 1955,
+    'abstract': 1965,
+    'social-comment': 1970,
+    'on-the-road': 1975,
+    'landscape': 1980,
+    'street-scenes': 1982,
+    'portraits': 1985,
+    'still-life': 1988,
+    'interiors': 1990,
+    'flowers': 1992,
+    'travel': 1995,
+  };
+  const yearFor = (a: Artwork): number | null => {
+    if (a.year) return a.year;
+    return a.chapter ? CHAPTER_YEAR[a.chapter] ?? null : null;
+  };
+  const timelineArtworks: Artwork[] = useMemo(() =>
+    artworks.map((a) => {
+      const y = yearFor(a);
+      return y && !a.year ? { ...a, year: y, circa: true } : a;
+    }),
+  []);
   const artworksByYear = useMemo(() => {
     const grouped: Record<number, Artwork[]> = {};
-    artworks.forEach((artwork) => {
+    timelineArtworks.forEach((artwork) => {
       if (artwork.year) {
         if (!grouped[artwork.year]) {
           grouped[artwork.year] = [];
@@ -42,7 +68,7 @@ function TimelinePage(): JSX.Element {
       }
     });
     return grouped;
-  }, []);
+  }, [timelineArtworks]);
 
   // Handle clicking artwork in carousel - expand year view in place
   const handleArtworkClick = useCallback((_artwork: Artwork, year: number): void => {
@@ -206,7 +232,7 @@ function TimelinePage(): JSX.Element {
               {/* Full carousel */}
               <div className="flex-1 flex items-center">
                 <TimelineCarousel
-                  artworks={artworks}
+                  artworks={timelineArtworks}
                   initialYear={currentYear}
                   onYearChange={handleYearChange}
                   onArtworkClick={handleArtworkClick}

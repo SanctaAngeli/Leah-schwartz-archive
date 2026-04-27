@@ -4,14 +4,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import artworksData from '../../data/artworks.json';
 import locationsData from '../../data/locations.json';
 import themesData from '../../data/themes.json';
+import peopleData from '../../data/people.json';
+import placesData from '../../data/places.json';
+import subjectsData from '../../data/subjects.json';
+import { PROSE_SECTIONS } from '../../data/prose';
 import type { Artwork, Location, Theme } from '../../types';
 
 const artworks = artworksData as Artwork[];
 const locations = locationsData as Location[];
 const themes = themesData as Theme[];
+const people = peopleData as any[];
+const places = placesData as any[];
+const subjects = subjectsData as any[];
 
 interface SearchResult {
-  type: 'artwork' | 'location' | 'theme' | 'page';
+  type: 'artwork' | 'location' | 'theme' | 'page' | 'person' | 'place' | 'subject' | 'prose';
   id: string;
   title: string;
   subtitle?: string;
@@ -37,16 +44,57 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
 
     // Add pages
     results.push(
-      { type: 'page', id: 'home', title: 'Home', subtitle: 'Gallery entrance', path: '/' },
-      { type: 'page', id: 'gallery', title: 'Gallery', subtitle: 'Browse all artworks', path: '/gallery' },
+      { type: 'page', id: 'home', title: 'Home', subtitle: 'Her story, in scroll', path: '/' },
+      { type: 'page', id: 'gallery', title: 'Gallery', subtitle: 'Browse all works', path: '/gallery' },
+      { type: 'page', id: 'her-words', title: "Leah's Story", subtitle: 'Autobiography + chapter essays', path: '/her-words' },
+      { type: 'page', id: 'themes', title: 'Themes', subtitle: 'The 12 chapters of her book', path: '/themes' },
+      { type: 'page', id: 'places', title: 'Places', subtitle: 'Where she painted', path: '/places' },
+      { type: 'page', id: 'index', title: 'Index', subtitle: 'Her own back-of-book index', path: '/index' },
       { type: 'page', id: 'timeline', title: 'Timeline', subtitle: 'Chronological view', path: '/timeline' },
-      { type: 'page', id: 'locations', title: 'Locations', subtitle: 'Browse by location', path: '/locations' },
-      { type: 'page', id: 'themes', title: 'Themes', subtitle: 'Browse by theme', path: '/themes' },
-      { type: 'page', id: 'tour', title: 'Guided Tour', subtitle: 'Audio tour', path: '/tour' },
-      { type: 'page', id: 'favorites', title: 'My Collection', subtitle: 'Your saved artworks', path: '/favorites' },
-      { type: 'page', id: 'compare', title: 'Compare', subtitle: 'Compare two artworks', path: '/compare' },
-      { type: 'page', id: 'about', title: 'About Leah', subtitle: 'Artist biography', path: '/about' }
+      { type: 'page', id: 'favorites', title: 'Favorites', subtitle: 'Your saved artworks', path: '/favorites' },
+      { type: 'page', id: 'about', title: 'About Leah', subtitle: 'Who she was', path: '/about' }
     );
+
+    // Add prose sections (from Leah's Story)
+    PROSE_SECTIONS.forEach((s) => {
+      results.push({
+        type: 'prose',
+        id: s.id,
+        title: s.label,
+        subtitle: s.tagline,
+        path: `/her-words/${s.id}`,
+      });
+    });
+
+    // Add people, places, subjects (from the INDEX)
+    people.forEach((p) => {
+      if (p.name?.startsWith('INDEX ')) return;
+      results.push({
+        type: 'person',
+        id: p.id,
+        title: p.display_name || p.name,
+        subtitle: p.parenthetical || (p.artwork_ids?.length ? `${p.artwork_ids.length} related works` : 'In the index'),
+        path: `/people/${p.id}`,
+      });
+    });
+    places.forEach((p) => {
+      results.push({
+        type: 'place',
+        id: p.id,
+        title: p.name,
+        subtitle: p.region ? p.region.replace(/-/g, ' ') : 'Place',
+        path: `/places/${p.id}`,
+      });
+    });
+    subjects.forEach((s) => {
+      results.push({
+        type: 'subject',
+        id: s.id,
+        title: s.name,
+        subtitle: s.parenthetical || 'In the index',
+        path: `/subjects/${s.id}`,
+      });
+    });
 
     // Add locations
     locations.forEach((loc) => {

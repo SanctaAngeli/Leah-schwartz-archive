@@ -1,0 +1,1084 @@
+[
+  {
+    "id": "acapulco",
+    "name": "Acapulco",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "region": "other",
+    "lat": 16.8531,
+    "lng": -99.8237,
+    "artwork_ids": []
+  },
+  {
+    "id": "allentown-high-school",
+    "name": "Allentown High School",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "region": "other",
+    "lat": 40.6084,
+    "lng": -75.4902,
+    "artwork_ids": []
+  },
+  {
+    "id": "american-artists-school",
+    "name": "American Artists School",
+    "parenthetical": null,
+    "book_pages": [
+      11
+    ],
+    "pdf_pages": [
+      24
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "annapurna",
+    "name": "Annapurna",
+    "parenthetical": null,
+    "book_pages": [
+      265
+    ],
+    "pdf_pages": [
+      278
+    ],
+    "special_refs": [],
+    "region": "nepal",
+    "lat": 28.5961,
+    "lng": 83.8203,
+    "artwork_ids": []
+  },
+  {
+    "id": "ankara",
+    "name": "Ankara",
+    "parenthetical": null,
+    "book_pages": [
+      252
+    ],
+    "pdf_pages": [
+      265
+    ],
+    "special_refs": [],
+    "region": "turkey",
+    "lat": 39.9334,
+    "lng": 32.8597,
+    "artwork_ids": []
+  },
+  {
+    "id": "arezzo",
+    "name": "Arezzo",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "region": "italy",
+    "lat": 43.4633,
+    "lng": 11.8795,
+    "artwork_ids": []
+  },
+  {
+    "id": "assisi",
+    "name": "Assisi",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "region": "italy",
+    "lat": 43.0707,
+    "lng": 12.6193,
+    "artwork_ids": []
+  },
+  {
+    "id": "beacon-street",
+    "name": "Beacon Street",
+    "parenthetical": null,
+    "book_pages": [
+      20
+    ],
+    "pdf_pages": [
+      33
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "beading-college",
+    "name": "Beading College",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "bergamo",
+    "name": "Bergamo",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "region": "italy",
+    "lat": 45.6983,
+    "lng": 9.6773,
+    "artwork_ids": []
+  },
+  {
+    "id": "blithedak-canyon",
+    "name": "Blithedak Canyon",
+    "parenthetical": null,
+    "book_pages": [
+      102
+    ],
+    "pdf_pages": [
+      115
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": [
+      "white-country-road"
+    ]
+  },
+  {
+    "id": "bolinas",
+    "name": "Bolinas",
+    "parenthetical": null,
+    "book_pages": [
+      2
+    ],
+    "pdf_pages": [
+      15
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.9086,
+    "lng": -122.6861,
+    "artwork_ids": []
+  },
+  {
+    "id": "bolinas-barn",
+    "name": "Bolinas Barn",
+    "parenthetical": null,
+    "book_pages": [
+      185
+    ],
+    "pdf_pages": [
+      198
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.9086,
+    "lng": -122.6861,
+    "artwork_ids": []
+  },
+  {
+    "id": "boston",
+    "name": "Boston",
+    "parenthetical": null,
+    "book_pages": [
+      20
+    ],
+    "pdf_pages": [
+      33
+    ],
+    "special_refs": [],
+    "region": "other",
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "artwork_ids": []
+  },
+  {
+    "id": "botanizing-in-kenya",
+    "name": "Botanizing in Kenya",
+    "parenthetical": null,
+    "book_pages": [
+      269
+    ],
+    "pdf_pages": [
+      282
+    ],
+    "special_refs": [],
+    "region": "botanizing-in-kenya",
+    "lat": -0.0236,
+    "lng": 37.9062,
+    "artwork_ids": []
+  },
+  {
+    "id": "britain",
+    "name": "Britain",
+    "parenthetical": null,
+    "book_pages": [
+      275
+    ],
+    "pdf_pages": [
+      288
+    ],
+    "special_refs": [],
+    "region": "britain",
+    "lat": 55.3781,
+    "lng": -3.436,
+    "artwork_ids": [
+      "edinburgh"
+    ]
+  },
+  {
+    "id": "carmel",
+    "name": "Carmel",
+    "parenthetical": null,
+    "book_pages": [
+      17
+    ],
+    "pdf_pages": [
+      30
+    ],
+    "special_refs": [],
+    "region": "california",
+    "lat": 36.5552,
+    "lng": -121.9233,
+    "artwork_ids": []
+  },
+  {
+    "id": "cathedral-of-st-john-the-divine",
+    "name": "Cathedral of St. John the Divine",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "cattle-on-a-distant-hill",
+    "name": "Cattle on a Distant Hill",
+    "parenthetical": null,
+    "book_pages": [
+      102
+    ],
+    "pdf_pages": [
+      115
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": [
+      "white-country-road"
+    ]
+  },
+  {
+    "id": "chicago",
+    "name": "Chicago",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "region": "other",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "artwork_ids": []
+  },
+  {
+    "id": "desolation-valley",
+    "name": "Desolation Valley",
+    "parenthetical": null,
+    "book_pages": [
+      285
+    ],
+    "pdf_pages": [
+      298
+    ],
+    "special_refs": [],
+    "region": "high-sierra",
+    "lat": 38.8833,
+    "lng": -120.1333,
+    "artwork_ids": []
+  },
+  {
+    "id": "echo-lake",
+    "name": "Echo Lake",
+    "parenthetical": null,
+    "book_pages": [
+      285
+    ],
+    "pdf_pages": [
+      298
+    ],
+    "special_refs": [],
+    "region": "high-sierra",
+    "lat": 38.8308,
+    "lng": -120.0458,
+    "artwork_ids": []
+  },
+  {
+    "id": "ephesis",
+    "name": "Ephesis",
+    "parenthetical": null,
+    "book_pages": [
+      252
+    ],
+    "pdf_pages": [
+      265
+    ],
+    "special_refs": [],
+    "region": "turkey",
+    "lat": 37.94,
+    "lng": 27.3414,
+    "artwork_ids": []
+  },
+  {
+    "id": "firebaugh-bait-shop",
+    "name": "Firebaugh Bait Shop",
+    "parenthetical": null,
+    "book_pages": [
+      63
+    ],
+    "pdf_pages": [
+      76
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "region": "france",
+    "lat": 46.2276,
+    "lng": 2.2137,
+    "artwork_ids": []
+  },
+  {
+    "id": "gello",
+    "name": "Gello",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "region": "italy",
+    "lat": 43.6,
+    "lng": 10.85,
+    "artwork_ids": []
+  },
+  {
+    "id": "greece",
+    "name": "Greece",
+    "parenthetical": null,
+    "book_pages": [
+      237
+    ],
+    "pdf_pages": [
+      250
+    ],
+    "special_refs": [],
+    "region": "greece",
+    "lat": 39.0742,
+    "lng": 21.8243,
+    "artwork_ids": []
+  },
+  {
+    "id": "harvard-medical-school",
+    "name": "Harvard Medical School",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "hightstown-high-school",
+    "name": "Hightstown High School",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "hotel-des-grottes-cabreret",
+    "name": "Hotel Des Grottes, Cabreret",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "india",
+    "name": "India",
+    "parenthetical": null,
+    "book_pages": [
+      259
+    ],
+    "pdf_pages": [
+      272
+    ],
+    "special_refs": [],
+    "region": "india",
+    "lat": 20.5937,
+    "lng": 78.9629,
+    "artwork_ids": []
+  },
+  {
+    "id": "istanbul",
+    "name": "Istanbul",
+    "parenthetical": null,
+    "book_pages": [
+      252
+    ],
+    "pdf_pages": [
+      265
+    ],
+    "special_refs": [],
+    "region": "turkey",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "artwork_ids": []
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "region": "italy",
+    "lat": 41.8719,
+    "lng": 12.5674,
+    "artwork_ids": []
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "parenthetical": null,
+    "book_pages": [
+      243
+    ],
+    "pdf_pages": [
+      256
+    ],
+    "special_refs": [],
+    "region": "japan",
+    "lat": 36.2048,
+    "lng": 138.2529,
+    "artwork_ids": []
+  },
+  {
+    "id": "kaiser-hospital",
+    "name": "Kaiser Hospital",
+    "parenthetical": null,
+    "book_pages": [
+      23,
+      24
+    ],
+    "pdf_pages": [
+      36,
+      37
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "katmandu",
+    "name": "Katmandu",
+    "parenthetical": null,
+    "book_pages": [
+      265
+    ],
+    "pdf_pages": [
+      278
+    ],
+    "special_refs": [],
+    "region": "nepal",
+    "lat": 27.7172,
+    "lng": 85.324,
+    "artwork_ids": []
+  },
+  {
+    "id": "kyoto",
+    "name": "Kyoto",
+    "parenthetical": null,
+    "book_pages": [
+      245
+    ],
+    "pdf_pages": [
+      258
+    ],
+    "special_refs": [],
+    "region": "japan",
+    "lat": 35.0116,
+    "lng": 135.7681,
+    "artwork_ids": [
+      "our-room-at-mr-sakura-s-ryokan"
+    ]
+  },
+  {
+    "id": "metropolitan-museum",
+    "name": "Metropolitan Museum",
+    "parenthetical": null,
+    "book_pages": [
+      63
+    ],
+    "pdf_pages": [
+      76
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "mill-valley",
+    "name": "Mill Valley",
+    "parenthetical": null,
+    "book_pages": [
+      2,
+      20
+    ],
+    "pdf_pages": [
+      15,
+      33
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.906,
+    "lng": -122.545,
+    "artwork_ids": []
+  },
+  {
+    "id": "motel-room-on-the-aegean-coast",
+    "name": "Motel Room on the Aegean Coast",
+    "parenthetical": null,
+    "book_pages": [
+      234
+    ],
+    "pdf_pages": [
+      247
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": [
+      "san-terenzo-italian-riviera"
+    ]
+  },
+  {
+    "id": "mt-sinai-hospital",
+    "name": "Mt. Sinai Hospital",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "mt-tam-from-sonoma",
+    "name": "Mt. Tam from Sonoma",
+    "parenthetical": null,
+    "book_pages": [
+      87
+    ],
+    "pdf_pages": [
+      100
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.9236,
+    "lng": -122.5966,
+    "artwork_ids": [
+      "mt-tam-from-sonoma"
+    ]
+  },
+  {
+    "id": "naxos",
+    "name": "Naxos",
+    "parenthetical": null,
+    "book_pages": [
+      237
+    ],
+    "pdf_pages": [
+      250
+    ],
+    "special_refs": [],
+    "region": "greece",
+    "lat": 37.1055,
+    "lng": 25.3762,
+    "artwork_ids": []
+  },
+  {
+    "id": "nepal",
+    "name": "Nepal",
+    "parenthetical": null,
+    "book_pages": [
+      265
+    ],
+    "pdf_pages": [
+      278
+    ],
+    "special_refs": [],
+    "region": "nepal",
+    "lat": 28.3949,
+    "lng": 84.124,
+    "artwork_ids": []
+  },
+  {
+    "id": "odeon-hotel",
+    "name": "Odeon Hotel",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "on-the-road",
+    "name": "On the Road",
+    "parenthetical": null,
+    "book_pages": [
+      63
+    ],
+    "pdf_pages": [
+      76
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "paris",
+    "name": "Paris",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "region": "france",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "artwork_ids": []
+  },
+  {
+    "id": "park-hoteli-turkey",
+    "name": "Park Hoteli, Turkey",
+    "parenthetical": null,
+    "book_pages": [
+      254
+    ],
+    "pdf_pages": [
+      267
+    ],
+    "special_refs": [],
+    "region": "turkey",
+    "lat": 38.9637,
+    "lng": 35.2433,
+    "artwork_ids": [
+      "the-park-hoteli"
+    ]
+  },
+  {
+    "id": "pearl-harbor",
+    "name": "Pearl Harbor",
+    "parenthetical": null,
+    "book_pages": [
+      14
+    ],
+    "pdf_pages": [
+      27
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "piero-de-la-francesca",
+    "name": "Piero de la Francesca",
+    "parenthetical": null,
+    "book_pages": [
+      229
+    ],
+    "pdf_pages": [
+      242
+    ],
+    "special_refs": [],
+    "region": "france",
+    "lat": 46.2276,
+    "lng": 2.2137,
+    "artwork_ids": []
+  },
+  {
+    "id": "pontegenori",
+    "name": "Pontegenori",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "region": "italy",
+    "lat": 43.6103,
+    "lng": 10.6917,
+    "artwork_ids": []
+  },
+  {
+    "id": "rock-island-illinois",
+    "name": "Rock Island, Illinois",
+    "parenthetical": null,
+    "book_pages": [
+      3,
+      4
+    ],
+    "pdf_pages": [
+      16,
+      17
+    ],
+    "special_refs": [],
+    "region": "other",
+    "lat": 41.5095,
+    "lng": -90.5787,
+    "artwork_ids": []
+  },
+  {
+    "id": "rumuruti",
+    "name": "Rumuruti",
+    "parenthetical": null,
+    "book_pages": [
+      269
+    ],
+    "pdf_pages": [
+      282
+    ],
+    "special_refs": [],
+    "region": "botanizing-in-kenya",
+    "lat": 0.27,
+    "lng": 36.5378,
+    "artwork_ids": []
+  },
+  {
+    "id": "san-andreas-fault",
+    "name": "San Andreas Fault",
+    "parenthetical": null,
+    "book_pages": [
+      2
+    ],
+    "pdf_pages": [
+      15
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "san-francisco",
+    "name": "San Francisco",
+    "parenthetical": null,
+    "book_pages": [
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "pdf_pages": [
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "artwork_ids": []
+  },
+  {
+    "id": "san-francisco-art-institute",
+    "name": "San Francisco Art Institute",
+    "parenthetical": null,
+    "book_pages": [
+      35
+    ],
+    "pdf_pages": [
+      48
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "artwork_ids": []
+  },
+  {
+    "id": "sausalito",
+    "name": "Sausalito",
+    "parenthetical": null,
+    "book_pages": [
+      18
+    ],
+    "pdf_pages": [
+      31
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.8591,
+    "lng": -122.4853,
+    "artwork_ids": []
+  },
+  {
+    "id": "sausalito-arts-center",
+    "name": "Sausalito Arts Center",
+    "parenthetical": null,
+    "book_pages": [
+      41
+    ],
+    "pdf_pages": [
+      54
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.8591,
+    "lng": -122.4853,
+    "artwork_ids": []
+  },
+  {
+    "id": "sausalito-arts-festival",
+    "name": "Sausalito Arts Festival",
+    "parenthetical": null,
+    "book_pages": [
+      41
+    ],
+    "pdf_pages": [
+      54
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.8591,
+    "lng": -122.4853,
+    "artwork_ids": []
+  },
+  {
+    "id": "sausalito-school-board",
+    "name": "Sausalito School Board",
+    "parenthetical": null,
+    "book_pages": [
+      41
+    ],
+    "pdf_pages": [
+      54
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.8591,
+    "lng": -122.4853,
+    "artwork_ids": []
+  },
+  {
+    "id": "stonehenge",
+    "name": "Stonehenge",
+    "parenthetical": null,
+    "book_pages": [
+      273
+    ],
+    "pdf_pages": [
+      286
+    ],
+    "special_refs": [],
+    "region": "britain",
+    "lat": 51.1789,
+    "lng": -1.8262,
+    "artwork_ids": []
+  },
+  {
+    "id": "street-scenes",
+    "name": "Street Scenes",
+    "parenthetical": null,
+    "book_pages": [
+      109
+    ],
+    "pdf_pages": [
+      122
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "takayama",
+    "name": "Takayama",
+    "parenthetical": null,
+    "book_pages": [
+      243,
+      244
+    ],
+    "pdf_pages": [
+      256,
+      257
+    ],
+    "special_refs": [],
+    "region": "japan",
+    "lat": 36.1407,
+    "lng": 137.2522,
+    "artwork_ids": [
+      "tokyo-side-street"
+    ]
+  },
+  {
+    "id": "turkey",
+    "name": "Turkey",
+    "parenthetical": null,
+    "book_pages": [
+      251
+    ],
+    "pdf_pages": [
+      264
+    ],
+    "special_refs": [],
+    "region": "turkey",
+    "lat": 38.9637,
+    "lng": 35.2433,
+    "artwork_ids": []
+  },
+  {
+    "id": "university-of-california-berkeley",
+    "name": "University of California, Berkeley",
+    "parenthetical": null,
+    "book_pages": [
+      17
+    ],
+    "pdf_pages": [
+      30
+    ],
+    "special_refs": [],
+    "region": "bay-area",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "artwork_ids": []
+  },
+  {
+    "id": "waterbeach-near-cambridge",
+    "name": "Waterbeach near Cambridge",
+    "parenthetical": null,
+    "book_pages": [
+      277
+    ],
+    "pdf_pages": [
+      290
+    ],
+    "special_refs": [],
+    "region": "britain",
+    "lat": 52.2053,
+    "lng": 0.1218,
+    "artwork_ids": [
+      "waterbeach-near-cambridge"
+    ]
+  },
+  {
+    "id": "west-69th-street",
+    "name": "West 69th Street",
+    "parenthetical": null,
+    "book_pages": [
+      20
+    ],
+    "pdf_pages": [
+      33
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": []
+  },
+  {
+    "id": "wool-hat-town",
+    "name": "\"Wool-Hat\" Town",
+    "parenthetical": null,
+    "book_pages": [
+      31
+    ],
+    "pdf_pages": [
+      44
+    ],
+    "special_refs": [],
+    "region": "other",
+    "artwork_ids": [
+      "wool-hap-town"
+    ]
+  }
+]

@@ -19,15 +19,30 @@ function LandingPage(): JSX.Element {
     return () => cancelAnimationFrame(timer);
   }, []);
 
-  // Create three era groupings with more artworks
-  const earlyWorks = artworks.filter((a) => a.year && a.year < 1975);
-  const middleWorks = artworks.filter((a) => a.year && a.year >= 1975 && a.year < 1990);
-  const lateWorks = artworks.filter((a) => a.year && a.year >= 1990);
+  // Era groupings. Most works in the book's LIST OF PAINTINGS are undated, so
+  // fall back to Leah's own chapter ordering when year is missing.
+  const earlyChapters = new Set(['old-stuff', 'abstract', 'social-comment']);
+  const middleChapters = new Set(['on-the-road', 'landscape', 'street-scenes']);
+  const lateChapters = new Set(['portraits', 'still-life', 'interiors', 'flowers', 'travel']);
+  const fallback = (bucket: Artwork[]): Artwork[] =>
+    bucket.length ? bucket : artworks.filter((a) => a.imagePath).slice(0, 9);
+  const earlyWorks = fallback(artworks.filter((a) =>
+    (a.year !== null && a.year !== undefined && a.year < 1975) ||
+    (!a.year && a.chapter != null && earlyChapters.has(a.chapter))
+  ));
+  const middleWorks = fallback(artworks.filter((a) =>
+    (a.year !== null && a.year !== undefined && a.year >= 1975 && a.year < 1990) ||
+    (!a.year && a.chapter != null && middleChapters.has(a.chapter))
+  ));
+  const lateWorks = fallback(artworks.filter((a) =>
+    (a.year !== null && a.year !== undefined && a.year >= 1990) ||
+    (!a.year && a.chapter != null && lateChapters.has(a.chapter))
+  ));
 
   const eraGroups = [
-    { id: 'early', title: 'Early Works', subtitle: '1963–1974', artworks: earlyWorks },
-    { id: 'middle', title: 'The San Francisco Years', subtitle: '1975–1989', artworks: middleWorks },
-    { id: 'late', title: 'Late Reflections', subtitle: '1990–2004', artworks: lateWorks },
+    { id: 'early', title: 'Old Stuff & Early Voice', subtitle: 'Old Stuff · Abstract · Social Comment', artworks: earlyWorks },
+    { id: 'middle', title: 'Road & Landscape', subtitle: 'On the Road · Landscape · Street Scenes', artworks: middleWorks },
+    { id: 'late', title: 'Home, People & Travel', subtitle: 'Portraits · Still Life · Interiors · Flowers · Travel', artworks: lateWorks },
   ];
 
   return (

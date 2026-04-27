@@ -93,6 +93,8 @@ function FavoritesPage(): JSX.Element {
                 }}
               >
                 <PlaceholderArtwork
+                  src={artwork.thumbPath || artwork.imagePath}
+                  alt={artwork.title}
                   color={artwork.placeholderColor}
                   aspectRatio={artwork.aspectRatio}
                   onClick={() => navigate(`/artwork/${artwork.id}`)}

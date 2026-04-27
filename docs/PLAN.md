@@ -1,709 +1,373 @@
-# Leah Schwartz Digital Archive
-## Project Planning Document
+# Leah Schwartz Digital Archive — Living Plan
 
-**Project Type:** Digital art museum / interactive archive  
-**Artist:** Leah Schwartz (1945–2004)  
-**Location Focus:** San Francisco Bay Area  
-**Client:** Leah's son (via Harry)  
-**Lead Developer:** Harry + Claude Code
+**Status:** Active (v2.2, Sprint 1 in progress)
+**Last updated:** 2026-04-22
+**Owners:** Harry · Claude
 
----
-
-## 1. Project Vision
-
-### The Core Idea
-A digital museum experience that honors Leah Schwartz's artistic legacy. Visitors can either explore freely (like wandering a gallery alone) or take a guided audio tour (like having a docent walk you through). The site should feel premium, tactile, and alive—like Apple designed a museum.
-
-### Design Philosophy
-- **Gallery white, infinite space** — Clean backgrounds let the art breathe
-- **The art brings the texture** — No competing paper textures; artwork is the visual richness
-- **Glassmorphism UI** — Soft frosted-glass elements, pill shapes, subtle shadows
-- **Organic movement** — Nothing feels static; gentle animations everywhere
-- **Tactile interactions** — Sounds, snaps, hover responses that feel physical
-
-### Key Metaphors
-- Kodak slide carousel (timeline scrubbing)
-- iPhone CoverFlow (artwork browsing)
-- Museum audio tour (guided experience)
-- Infinite gallery corridor (z-axis entrance)
+> This is a **living document**. It is rewritten when direction changes, not appended to indefinitely. When something shifts — scope, architecture, a feature idea — edit this file first, then change code.
+> A short **Changelog** lives at the bottom. Older versions: `docs/archive/`.
 
 ---
 
-## 2. Site Architecture
+## ⚡ Sprint 1 — Make the content sing (current)
 
-### Page/View Structure
+**Goal:** Every page draws from the real book content. Her voice is present, not just her pictures.
 
-```
-HOME (Infinite Gallery Entrance)
-│
-├── [Z-axis scroll entrance] ──→ LANDING (Artist Overview)
-│                                    │
-│                                    ├── Three Era Groupings (dynamic)
-│                                    │   └── Click artwork → ARTWORK DETAIL
-│                                    │       └── Shows position on timeline
-│                                    │
-│                                    └── Navigation to:
-│                                        ├── TIMELINE (Hero Feature)
-│                                        ├── LOCATIONS
-│                                        ├── THEMES
-│                                        └── GUIDED TOUR
-│
-├── TIMELINE ─────────────────────────────────────────────────────────
-│   │
-│   ├── Horizontal carousel (1945–2004)
-│   │   └── Each year = one representative artwork
-│   │   └── Snap-to-year scrolling with tick sounds
-│   │   └── Kodak carousel "peak" effect
-│   │
-│   └── YEAR VIEW (when year selected)
-│       ├── Timeline jumps to top of screen
-│       ├── Year crystallizes as header
-│       └── Grid of all artworks from that year
-│           └── Click → ARTWORK DETAIL
-│
-├── LOCATIONS ────────────────────────────────────────────────────────
-│   │
-│   └── 9 location cards (hero artwork as cover)
-│       ├── The House
-│       ├── Mount Tam
-│       ├── [7 more San Francisco locations TBD]
-│       └── Click → filtered gallery of works from that location
-│
-├── THEMES/MATERIALS ─────────────────────────────────────────────────
-│   │
-│   └── 9 theme cards (hero artwork as cover)
-│       ├── Watercolors
-│       ├── Notebooks
-│       ├── Landscapes
-│       ├── Portraits
-│       ├── Sketches
-│       ├── Collage
-│       ├── Still Life
-│       ├── People
-│       └── Politics
-│       └── Click → filtered gallery of works in that theme
-│
-├── GUIDED TOUR ──────────────────────────────────────────────────────
-│   │
-│   ├── Chapter selection (Early Life, SF Years, Late Work, etc.)
-│   └── Audio player + synchronized artwork display
-│       └── User controls navigation while listening
-│
-└── ARTWORK DETAIL (Modal/Overlay) ───────────────────────────────────
-    ├── Large artwork image
-    ├── Title, year, medium, dimensions
-    ├── Location created
-    ├── Collection info
-    ├── Related notebook pages (if any)
-    ├── Audio clip (if available)
-    └── Mini-timeline showing position in career
-```
+Priority order (top first is most impactful):
+
+1. [x] Data foundation: real artworks, prose, photos wired in
+2. [x] Home page (scroll-story) renders real artwork, not grey tiles
+3. [x] Gallery / Themes / Locations / Favorites / Compare: real images
+4. [x] Timeline: undated works get synthetic chapter-based years
+5. [x] **`/her-words` Leah's Story** — section selector (14 sections), beautiful single-column typography, companion artwork grid for chapter sections
+6. [x] **Artwork detail redux** — Leah's voice excerpt when she wrote about the piece, book-page provenance, "more in chapter" rail
+7. [x] **Theme gallery pages** — chapter hero image, intro essay, tagline, artwork grid, continue-reading link
+8. [x] **About page** — real biography: born Rock Island 1920, Herman, Mill Valley + Bolinas, her own quote
+9. [x] **Link prose → artwork** — UPPERCASE title mentions in Leah's writing auto-link to the artwork detail
+10. [x] **Location rollups** — INDEX parsed into `people.json`, `places.json`, `subjects.json`; 68 individual places across 11 regions
+
+**Sprint 4 additions (shipped 2026-04-23):**
+24. [x] **Em-dash sweep** — all `—` in source/UI/HTML replaced with `·` or hyphens; Leah's prose untouched
+25. [x] **Lightbox** — dark gallery-wall fullscreen art viewer with 6x pan/zoom, slide-in info panel, keyboard nav (I/F/+/−/0/arrows/Esc)
+26. [x] **Handwritten typography** — `font-leah` (Caveat) used for her tagline phrases sitewide: chapter taglines, section taglines, life-chapter subtitles, entity parentheticals
+27. [x] **Painting of the Day at `/`** — single-painting home with daily deterministic rotation, yesterday/tomorrow, prose mention if she wrote about it, season hint
+28. [x] **Curated Pairings** — `/pairings` hub + 8 hand-curated diptychs/triptychs: Mt. Tam returned to, Herman in her hands, The stained-glass window twice, One pear many times, Two views of Naxos, Petaluma River, Self-portraits, Bolinas house
+29. [x] **Global keyboard shortcuts** — `/` search, `?` cheatsheet, `G`-prefix chords for all nav, `←/→` artwork nav, `I F + - 0` in lightbox
+30. [x] **Index Constellation** — toggle on `/index` for a bubble-pack view of 88 people + 68 places + 99 subjects, sized by mentions, co-occurrence edges on hover
+31. [x] **Seasonal accent** — site picks up a subtle color for Spring/Summer/Fall/Winter (visible on `/`)
+32. [x] **Send as postcard** — compose dialog on any artwork, opens the visitor's mail client with a formatted email and deep link
+
+**Sprint 3 additions (shipped 2026-04-23):**
+17. [x] **People + Subject pages** — `/people/:id` and `/subjects/:id` show artworks + prose mentions + autobiography deep links
+18. [x] **`/studio`** signature page — her kit, her influences, her philosophy, her techniques
+19. [x] **`/life`** A Life in Chapters — 8 scroll-driven life eras with photos, prose, and paintings intercut
+20. [x] **Per-page `<title>` + description** via `usePageMeta` hook; og + Twitter meta in `index.html`; schema.org Person JSON-LD
+21. [x] **Preservation page + JSON API** — every catalog file published at `/api/*.json` for scholars
+22. [x] **19 missing crops fallback** — each now points to its full-page scan at `/page-scans/page-XXX.jpg`, flagged `needs_crop: true`
+23. [x] **Lazy-load audit** — every `<img>` in the codebase has `loading="lazy"`
+
+**Sprint 2 additions (shipped 2026-04-22):**
+11. [x] **INDEX Navigator** at `/index` — her whole back-of-book index, searchable, filterable by category, A–Z strip
+12. [x] **Places page** at `/places` with world map (Leaflet + CARTO tiles), region-grouped list, per-place detail
+13. [x] **Regions page** at `/locations` — 12 region hero cards with real images
+14. [x] **Chromatic accent per chapter** — subtle tinted header + linked underline color on each themed gallery
+15. [x] **Photo triage** — 74 candidates classified (68 photos / 6 paintings by chroma), displayed as a strip in Leah's Story per section
+16. [x] **Site-wide search** rebuilt — includes pages, artworks, prose sections, people, places, subjects
+
+**Ship criteria:** a new visitor who knows nothing about Leah can click through the site and come away with (a) a sense of who she was in her own voice, (b) the scope of her work, (c) a favorite painting with the story behind it.
 
 ---
 
-## 3. Detailed Feature Specifications
+## 0. One-line purpose
 
-### 3.1 Home: Infinite Gallery Entrance
+> Take the complete content of Leah's book — her ~270 paintings, 28,660 words of her own voice, the places she lived and traveled, and the people she knew — and turn it into a **digital experience that feels alive**, so her art and story are preserved for generations in a form that's more than a scanned PDF.
 
-**Visual:**
-- Pure white/off-white background (gallery white: `#FAFAFA` or similar)
-- "LEAH SCHWARTZ" in large, elegant serif typography (EB Garamond or similar)
-- Behind the text: 9–12 artwork thumbnails floating, drifting slowly in a collage
-- Artworks move with subtle parallax, different speeds, slight rotations
-- Different random arrangement each visit (seeded by timestamp)
-
-**Interaction:**
-- Scroll down (or swipe forward on mobile) triggers z-axis zoom
-- As you "enter," text recedes, artworks flip to the sides like gallery corridor walls
-- ~20 artworks appear on corridor walls (10 per side) as you zoom through
-- Smooth bezier easing, feels like physically moving through space
-- Duration: ~2–3 seconds of travel
-
-**Navigation:**
-- Small UI element below title: "Enter the Archive" or "View the Work"
-- Home button in nav always returns here (with reverse animation)
-
-### 3.2 Landing: Artist Overview
-
-**Visual:**
-- Clean white space
-- "Leah Schwartz" (smaller than home)
-- "Artist" subtitle
-- "1945–2004"
-- Brief 2–3 sentence biography
-- Three era groupings below
-
-**Three Era Groupings:**
-- Dynamically selected from the artwork database
-- Each grouping = a "pile" of ~9 artworks from a specific year/period
-- Default state: artworks stacked with slight offsets, gently breathing/moving
-- Hover state: pile expands into organic grid (not rigid, slight randomness)
-- Click artwork → opens Artwork Detail view
-- Artwork Detail shows mini-timeline so user knows where they are
-
-**Purpose:** Give visitors three different "entry points" into the timeline based on what catches their eye.
-
-### 3.3 Timeline (Hero Feature)
-
-**The Carousel (Bottom of Screen):**
-- Horizontal scrubber spanning 1945–2004
-- Only shows ~1 decade at a time in the scrubber
-- Each year has one representative artwork
-- Current year's artwork rises and enlarges (Kodak slide "peak")
-- Adjacent years visible but receded
-- Smooth snap-to-year scrolling
-
-**Interaction:**
-- Drag/swipe to scrub through years
-- Tick sound on each year transition (tactile audio feedback)
-- Faster drag = faster tick rate
-- Precise scrubbing when moving slowly
-
-**Year View (When Year Selected):**
-- Timeline miniaturizes and jumps to top of screen
-- Year displayed prominently as header
-- Below: scrollable grid of all artworks from that year
-- Grid has organic feel (not perfectly rigid)
-- Hover on artwork: scales up slightly
-- Click: opens Artwork Detail
-- Re-engage with carousel to change year
-
-**Visual Style:**
-- Glassmorphism on the carousel container
-- Subtle shadow beneath current artwork
-- White/cream background
-- Artworks have subtle frame effect (thin border or shadow)
-
-### 3.4 Locations Section
-
-**Layout:**
-- 9 location cards in a 3×3 grid (or flowing layout)
-- Each card shows one "hero" artwork from that location
-- Location name overlaid on card
-- Cards have glassmorphism treatment
-
-**Locations (to be finalized):**
-1. The House (home/studio)
-2. Mount Tam
-3. Golden Gate
-4. [6 more San Francisco-area locations TBD]
-
-**Interaction:**
-- Hover: card lifts, subtle glow
-- Click: transitions to filtered gallery showing all works from that location
-- Filtered gallery uses similar carousel/grid hybrid
-
-**Feel:** Should have its own identity while maintaining the overall aesthetic. Perhaps warmer tones or subtle location-specific accents.
-
-### 3.5 Themes/Materials Section
-
-**Layout:**
-- Similar to Locations: 9 theme cards
-- Hero artwork represents each theme
-- Theme name overlaid
-
-**Themes:**
-1. Watercolors
-2. Notebooks
-3. Landscapes
-4. Portraits
-5. Sketches
-6. Collage
-7. Still Life
-8. People
-9. Politics
-
-**Interaction:**
-- Same as Locations
-- Click → filtered gallery of works in that theme
-
-**Feel:** Can have distinct identity. Perhaps slightly different card shapes or arrangements to differentiate from Locations.
-
-### 3.6 Guided Tour
-
-**Purpose:** A curated 10-minute journey through Leah's life and work, told through her art.
-
-**Structure:**
-- Chapter-based (e.g., "Early Years," "The San Francisco Period," "Late Reflections")
-- Each chapter: audio narration + synchronized artwork display
-- User controls navigation (not auto-advancing)
-
-**Interface:**
-- Chapter selection screen (beautiful cards or list)
-- In-chapter view:
-  - Current artwork displayed prominently
-  - Audio player controls (play/pause, scrub, volume)
-  - Chapter progress indicator
-  - "Next" / "Previous" artwork within chapter
-  - Current audio plays for the artwork you're viewing
-
-**Audio:**
-- Pre-recorded MP3 files (generated via ElevenLabs + some real recordings)
-- Upload interface in admin/data layer (Harry uploads files)
-
-### 3.7 Artwork Detail View
-
-**Trigger:** Click any artwork anywhere on the site
-
-**Layout (Modal/Overlay):**
-- Large artwork image (zoomable?)
-- Metadata panel:
-  - Title
-  - Year (with "circa" notation if approximate)
-  - Medium
-  - Dimensions
-  - Location created
-  - Collection
-- Related content:
-  - Notebook pages that inspired this work (if any)
-  - Audio clip about this piece (if available)
-- Mini-timeline showing where this work falls in Leah's career
-- Close button returns to previous view
-
-**Interaction:**
-- Smooth fade/scale-in animation
-- Click outside or X to close
-- Keyboard: Escape to close, arrow keys for next/prev?
+**What this is not:** a digital replica of the book. Anyone can buy the book. The web gives us interactivity, connection, and longevity the printed page can't. If a feature is essentially "read the book on screen," we don't build it.
 
 ---
 
-## 4. Technical Architecture
+## 1. Who Leah was (source of truth)
 
-### 4.1 Tech Stack
+- **Leah Schwartz**, born Rock Island, Illinois, **28 July 1920** · died **2004**.
+- Immigrant family (Polish-Jewish, Pannemanski → Greenfield at Ellis Island).
+- Childhood in Chicago, Boston, Michigan; art school in New York.
+- Married Herman Schwartz ("the remarkable Herman") — had sons Dan, Peter, and Davy.
+- Rooted in **Mill Valley** (studio) and **Bolinas** (on the San Andreas Fault) from the 1960s on.
+- Primarily a **watercolorist**, also oil, gouache, tempera, collage, ink.
+- Travelled obsessively (with Herman) through France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, the American Desert, the High Sierra.
+- Self-described compulsion: *"a need to preserve ephemeral things that I love to look at… one way of keeping a scrapbook."*
+- Book self-published on **Strawberry Press, Mill Valley, California**.
 
-**Framework:** React 18+ with TypeScript  
-**Build Tool:** Vite  
-**Styling:** Tailwind CSS + custom CSS for complex animations  
-**Animation:** Framer Motion (primary) + CSS animations  
-**Audio:** Howler.js or native HTML5 Audio  
-**State Management:** Zustand (lightweight) or React Context  
-**Routing:** React Router v6  
-**Deployment:** Netlify (primary) or Vercel  
-**Version Control:** GitHub
+The autobiography is explicit, funny, unsparing. Her voice is the site's greatest asset.
 
-### 4.2 Project Structure
+---
+
+## 2. Content inventory (what we have to work with)
+
+Sourced from the 309-page book PDF — fully extracted and catalogued in `/Users/harrylee/Developer/leah-extraction/`.
+
+| | count | source |
+|---|---|---|
+| Authoritative artwork records | **267** | LIST OF PAINTINGS, pp 302–304 |
+| Cropped artwork images (300 DPI) | **364** | automated detection, all 309 pages |
+| Words of Leah's own prose | **28,660** | autobiography + chapter intros + travel notebooks |
+| Photo candidates (Leah, family, studio) | **74** | crops from autobiography + chapter-intro pages |
+| Full back-of-book INDEX | 5 pages | cross-reference: people · places · paintings · subjects |
+
+**12 chapters** in the book, in order:
+1. AUTOBIOGRAPHY
+2. OLD STUFF *(salvage of thirty years)*
+3. ABSTRACT *(trying to be trendy)*
+4. SOCIAL COMMENT *(rising from yeasty times)*
+5. ON THE ROAD *(facades of obscure lives)*
+6. LANDSCAPE *(vanishing verdant valleys)*
+7. STREET SCENES *(the random moment)*
+8. PORTRAITS *(beauty and self-possession)*
+9. STILL LIFE *(in love with simple objects)*
+10. INTERIORS *(gimme shelter)*
+11. FLOWERS *(in love with bloom)*
+12. TRAVEL — 11 regions: France · Italy · Greece · Turkey · Japan · India · Nepal · Botanizing in Kenya · Britain · Desert · High Sierra
+
+**Each chapter has its own opening essay** in Leah's voice. Each painting has a title, dimensions, often year, often medium, sometimes a collection note. The back of the book indexes subjects, people, and paintings to page numbers.
+
+---
+
+## 3. The big idea — five features that make it alive
+
+The site is organized around **five signature experiences**. Each stands on its own; together they cover every piece of content we have.
+
+### 3.1 The Index Navigator  *(signature)*
+Leah's own back-of-book INDEX becomes the site's primary discovery layer. Every person, place, subject, and painting is a clickable node. Click "Mt. Tam" → see all 5 paintings, all 12 essay mentions, a map pin. Click "Herman" → every painting featuring him, every autobiography page he appears on. This makes the whole site self-cross-referential in a way a printed index can only hint at.
+
+### 3.2 The World Map *(signature)*
+Every painting pinned to where it was made. A clustered zoom: dense around Naxos, Gello, Kyoto, Bay Area; sparse across Britain, Africa, the American desert. Click a pin → the painting + Leah's notebook excerpt from that place. California has its own zoom (Mt. Tam, Bolinas, Mill Valley, San Francisco, Petaluma, Nicasio, Bolinas Soccer Team on the San Andreas Fault).
+
+### 3.3 Leah, in Her Own Words *(signature)*
+Her autobiography is its own masterpiece — funny, direct, unsparing. She already organized her own life story into named sections (*IMMIGRANTS · CHICAGO · TO MICHIGAN · THE TODDLER YEARS · WORK · CHILDREN …*). We don't re-curate it — we **present it as she wrote it**, section by section, in a single scrollable column with:
+- Leah's voice in beautiful typography (EB Garamond + the handwritten display face for pull-quotes)
+- **Photographs of her, family, and studio inline** at the moments she describes them
+- **Every painting she mentions hoverable/tappable** to open its close-reading view
+- Her section headings preserved verbatim ("*genetic baggage*", "*salvage of thirty years*")
+- Chapter-intro essays from the 12 themes readable here too, not just in their galleries
+
+This is the site's deepest experience. Not "read the book." Just her voice, given the stage it deserves.
+
+### 3.4 Themed Galleries *(signature)*
+The 12 book chapters, each their own digital room. Each gallery has its own visual pacing — STILL LIFE feels still; ON THE ROAD feels kinetic; FLOWERS feels close-up. The paintings in large, her intro essay framing the room, her quotes pulled as wall-text.
+
+### 3.5 Artwork Close-Reading *(signature)*
+Every painting gets a detail view. **The voice is the differentiator**: if Leah wrote about the piece (and she often did), her exact words appear next to it. The detail view always shows: her words → the painting → provenance (year, medium, dims, collection) → where it sits on map + timeline + theme. One click to neighbors in any of those dimensions.
+
+### Where her prose lives
+Her voice appears in **three complementary ways** across the site:
+1. **As a destination** — the full autobiography is readable on `/her-words` (feature 3.3), as she structured it.
+2. **As context next to art** — wherever she wrote about a specific painting, her exact words sit beside it in the close-reading view.
+3. **As threads** — quotes surface on chapter-theme pages, on place pages (via map pins), and as a rotating Voice Card throughout the site.
+
+Every quote records its source (book page + PDF page) so scholars can trace back. The original PDF is hosted for archivists but not featured. We're not "putting the book online" — we're giving her voice a digital home that the printed page couldn't.
+
+---
+
+## 4. Site architecture
 
 ```
-leah-schwartz-archive/
-├── public/
-│   ├── artworks/           # Artwork images (added later)
-│   │   ├── full/           # High-res versions
-│   │   └── thumb/          # Thumbnails for performance
-│   ├── audio/              # Audio tour files
-│   ├── notebooks/          # Notebook page scans
-│   └── fonts/              # Custom fonts if needed
-│
-├── src/
-│   ├── components/
-│   │   ├── ui/             # Reusable UI components
-│   │   │   ├── GlassCard.tsx
-│   │   │   ├── PillButton.tsx
-│   │   │   ├── CarouselItem.tsx
-│   │   │   └── ...
-│   │   ├── layout/
-│   │   │   ├── Navigation.tsx
-│   │   │   └── PageTransition.tsx
-│   │   ├── home/
-│   │   │   ├── InfiniteGallery.tsx
-│   │   │   └── ZAxisEntrance.tsx
-│   │   ├── landing/
-│   │   │   ├── ArtistBio.tsx
-│   │   │   └── EraGroupings.tsx
-│   │   ├── timeline/
-│   │   │   ├── TimelineCarousel.tsx
-│   │   │   ├── YearView.tsx
-│   │   │   └── CarouselScrubber.tsx
-│   │   ├── locations/
-│   │   ├── themes/
-│   │   ├── guided-tour/
-│   │   └── artwork-detail/
-│   │
-│   ├── data/
-│   │   ├── artworks.json   # Artwork metadata
-│   │   ├── locations.json  # Location definitions
-│   │   ├── themes.json     # Theme definitions
-│   │   └── tour.json       # Guided tour structure
-│   │
-│   ├── hooks/
-│   │   ├── useCarousel.ts
-│   │   ├── useAudio.ts
-│   │   └── useAnimations.ts
-│   │
-│   ├── styles/
-│   │   ├── globals.css
-│   │   └── animations.css
-│   │
-│   ├── utils/
-│   │   ├── shuffle.ts      # Randomization helpers
-│   │   └── easing.ts       # Custom bezier curves
-│   │
-│   ├── App.tsx
-│   └── main.tsx
-│
-├── docs/
-│   ├── PLAN.md             # This document
-│   └── reference-images/   # UI inspiration
-│
-├── CLAUDE.md               # Claude Code rules
-├── package.json
-├── tsconfig.json
-├── tailwind.config.js
-├── vite.config.ts
-└── README.md
+HOME
+  - Cinematic landing: single rotating hero painting,
+    one Leah quote, entry points to each signature feature.
+
+EXPLORE  (the five signatures, each a route)
+  /themes               → 12 chapter galleries
+  /places               → world map + California map
+  /her-words            → full autobiography, section by section, in her voice
+  /index                → Index Navigator (her own index, digitized)
+  /gallery              → flat grid of all works (filterable)
+
+ARTWORK  /w/<slug>      → close-reading view (voice + art + provenance)
+
+ABOUT                   → biographical intro for newcomers,
+                          estate/copyright/contact, book credits.
+
+STUDIO                  → her tools, process, philosophy (quiet page).
+
+DOWNLOAD-THE-BOOK       → the PDF, for archivists. Not featured.
 ```
 
-### 4.3 Data Schema
+**Global components** live across every page:
+- **Voice Card** — Leah's photo + a pull-quote; rotates topically
+- **Related Rail** — "on the same map pin," "same theme," "same decade"
+- **Search** — Fuse.js across artworks + prose; keyboard-first
 
-**Artwork:**
+---
+
+## 5. Design direction
+
+### Keep from v1
+- Gallery white (`#FAFAFA`) backgrounds, glassmorphism cards, pill shapes
+- EB Garamond (headings) + Inter (UI)
+- Framer Motion for organic animation with cubic-bezier easings
+- "The art brings the texture" — no competing patterns
+
+### Add (book-derived)
+- **A handwritten display face** for Leah's voice quotes (Caveat / Homemade Apple / custom scan of her hand if samples exist). Used *sparingly* — this is the difference between "artist site" and "Leah's site."
+- **Chapter signatures** — each of the 12 themes has a subtle chromatic accent pulled from a signature painting in that chapter (e.g. ABSTRACT uses Space Matter's red). Not loud — a hint.
+- **Voice Card** pattern (above): a small floating component that layers her words next to her work wherever they touch.
+
+### Avoid
+- Loud animations, overlays on paintings, stock-photo vibes, scroll hijacking on deep-reading pages, anything that competes with the art.
+
+---
+
+## 6. Data schema (source of truth → JSON)
+
+Artwork, Place, Person, and Prose are the four entity types.
+
 ```typescript
 interface Artwork {
-  id: string;
-  title: string;
-  year: number | null;        // null if undated
-  circa: boolean;             // true if year is approximate
-  medium: string;
-  dimensions: string;
-  location: string;           // where it was created
-  collection: string;
-  themes: string[];           // e.g., ["landscapes", "watercolors"]
-  imagePath: string;          // relative path to image
-  thumbPath: string;          // relative path to thumbnail
-  notebookPages?: string[];   // related notebook scans
-  audioClip?: string;         // audio about this piece
-  featured?: boolean;         // for hero selections
-  heroForLocation?: string;   // if this is the hero for a location
-  heroForTheme?: string;      // if this is the hero for a theme
+  id: string;                // slug, e.g. "mt-tam-from-sonoma"
+  title: string;             // "MT. TAM FROM SONOMA"
+  display_title: string;     // "Mt. Tam from Sonoma" (title-cased for display)
+  book_page: number;         // page number in the printed book
+  pdf_page: number;          // page number in the PDF scan
+  chapter: string;           // one of the 12 chapter slugs
+  region?: string;           // travel region slug, e.g. "greece"
+  year?: string;             // "1975", "1975-77", "c.1950"
+  medium?: string;           // "Watercolor" | "Oil" | "Gouache" | ...
+  width_in?: number;         // inches
+  height_in?: number;
+  approx_dims?: boolean;     // true if "Approx. 14 x 20"
+  is_set?: boolean;          // "Each 5 x 7" for multi-part works
+  collection?: string;       // "Collection of Don Cohan"
+  image_full: string;        // /artworks/full/<id>.jpg (cropped, 300 DPI)
+  image_thumb: string;       // /artworks/thumb/<id>.jpg (≤600px long edge)
+  place_ids: string[];       // locations depicted (e.g. ["mt-tam"])
+  people_ids: string[];      // people depicted (e.g. ["herman-schwartz"])
+  prose_refs: string[];      // prose excerpt ids that mention this work
+  neighbors: {
+    same_chapter: string[];
+    same_year: string[];
+    same_place: string[];
+  };
 }
-```
 
-**Location:**
-```typescript
-interface Location {
-  id: string;
+interface Place {
+  id: string;                // "mt-tam", "naxos", "rumuruti"
   name: string;
-  description?: string;
-  heroArtworkId: string;
+  region: string;            // "bay-area", "greece", "kenya", ...
+  lat?: number;              // for world map
+  lng?: number;
+  description?: string;      // from Leah's own writing if available
+  artwork_ids: string[];
+  prose_refs: string[];
 }
-```
 
-**Theme:**
-```typescript
-interface Theme {
-  id: string;
+interface Person {
+  id: string;                // "herman-schwartz", "dan-schwartz"
   name: string;
-  description?: string;
-  heroArtworkId: string;
+  relationship?: string;     // "husband", "son", "sister", "friend"
+  biographical_note?: string;
+  artwork_ids: string[];     // portraits of them
+  prose_refs: string[];
+}
+
+interface ProseExcerpt {
+  id: string;                // "autobiography/01-immigrants"
+  chapter: string;           // "autobiography" | "travel" | etc.
+  section_heading?: string;  // "IMMIGRANTS"
+  section_tagline?: string;  // "genetic baggage"
+  body_md: string;           // the prose, markdown
+  source: {
+    book_page_start: number;
+    book_page_end: number;
+    pdf_page_start: number;
+    pdf_page_end: number;
+  };
+  mentioned_people: string[];
+  mentioned_places: string[];
+  mentioned_artworks: string[];
 }
 ```
 
-**Tour Chapter:**
-```typescript
-interface TourChapter {
-  id: string;
-  title: string;
-  description: string;
-  artworkIds: string[];       // artworks in this chapter
-  audioSegments: {            // audio for each artwork
-    artworkId: string;
-    audioPath: string;
-    duration: number;         // seconds
-  }[];
-}
-```
-
-### 4.4 Placeholder/Shell Strategy
-
-Since artwork assets aren't ready yet, build the entire UI with:
-
-**Placeholder Artworks:**
-- Gray rectangles with subtle color variations
-- Random aspect ratios (portrait, landscape, square)
-- Programmatically generated (no actual image files needed)
-- Placeholder data in `artworks.json` with real structure
-
-**Swap Strategy:**
-- All image paths in data file
-- When real art is ready: add images to folders, update paths in JSON
-- No code changes needed—pure data swap
+All IDs are slugs. All cross-references are by ID. The INDEX Navigator is literally a compiled view of these entities + their `*_refs` arrays.
 
 ---
 
-## 5. Implementation Phases
+## 7. Implementation phases
 
-### Phase 1: Foundation (Shell)
-**Goal:** Navigable site structure with placeholder content
+Phases are **deliberately incremental** — each phase leaves the site in a better state than before, and nothing has to be redone.
 
-- [ ] Project scaffolding (Vite + React + TypeScript + Tailwind)
-- [ ] Basic routing (Home, Landing, Timeline, Locations, Themes, Tour)
-- [ ] Navigation component with glassmorphism styling
-- [ ] Placeholder artwork component (colored rectangles)
-- [ ] Placeholder data file with 50+ fake artworks
-- [ ] Basic page layouts (no animations yet)
-- [ ] GitHub repo + Netlify deploy pipeline
+### Phase A — Data foundation *(next)*
+- Normalize artwork list + cropped images into `public/artworks/` + `src/data/artworks.json`
+- Normalize prose into `src/data/prose/*.md` per section
+- Extract + normalize the INDEX (people, places) → `src/data/people.json`, `places.json`
+- Geocode travel places for map use
+- Review Leah-photo candidates, move confirmed ones into `public/photos/`
 
-**Deliverable:** Clickable prototype you can navigate
+### Phase B — Flat gallery + close-reading
+- `/gallery` route: filterable grid of all 267 works (chapter, region, medium, year)
+- `/w/<slug>` artwork detail page with full voice + provenance + related rails
+- Search bar (Fuse.js)
 
-### Phase 2: Home Experience
-**Goal:** The "wow" entrance moment
+### Phase C — Themed galleries
+- 12 chapter routes under `/themes/*`, each with chapter intro essay + paintings
+- Subtle per-chapter chromatic accent
+- Gallery→detail seamless transitions
 
-- [ ] Floating artwork collage behind title
-- [ ] Slow drift animations (parallax, rotation)
-- [ ] Z-axis scroll/swipe entrance
-- [ ] Gallery corridor transition
-- [ ] Reverse animation on home return
-- [ ] Mobile swipe gesture support
+### Phase D — The Index Navigator
+- Digitized index, every subject a node
+- Node page: all artworks + prose mentions + map pin(s) + linked people
+- Index becomes the site's discovery spine
 
-**Deliverable:** Stunning first impression
+### Phase E — The World Map
+- World + California maps, clustered pins
+- Place page: artworks + Leah's travel-notebook excerpt + related themes
 
-### Phase 3: Timeline (Hero Feature)
-**Goal:** The Kodak carousel experience
+### Phase F — Leah, in Her Own Words
+- `/her-words` route: full autobiography scroll, section by section, as she wrote it
+- Photos of her/family inline at the moments she describes
+- Every painting she mentions hoverable/tappable to open close-reading
+- Chapter-intro essays reachable here too
 
-- [ ] Horizontal carousel component
-- [ ] Snap-to-year scrolling
-- [ ] "Peak" effect on current year
-- [ ] Tick sound on year transitions
-- [ ] Year view with grid layout
-- [ ] Artwork detail modal
-- [ ] Mini-timeline in detail view
-- [ ] Smooth transitions between states
+### Phase G — Polish & preservation
+- Performance tuning, accessibility audit, mobile optimization
+- High-res zoomable artwork viewer (IIIF-style pan/zoom?)
+- Book PDF hosted for archivists
+- SEO / social cards / RSS of new pieces
 
-**Deliverable:** Fully functional timeline exploration
-
-### Phase 4: Landing & Era Groupings
-**Goal:** The "choose your entry point" experience
-
-- [ ] Artist bio section
-- [ ] Three era groupings component
-- [ ] Pile → grid expansion animation
-- [ ] Dynamic era selection logic
-- [ ] Integration with artwork detail
-
-**Deliverable:** Beautiful landing page with discovery mechanic
-
-### Phase 5: Locations & Themes
-**Goal:** Alternative browsing paths
-
-- [ ] Location cards with hero artwork
-- [ ] Theme cards with hero artwork
-- [ ] Filtered gallery views
-- [ ] Distinct visual identity per section
-- [ ] Smooth page transitions
-
-**Deliverable:** Complete browsing experience
-
-### Phase 6: Guided Tour
-**Goal:** The museum docent experience
-
-- [ ] Chapter selection screen
-- [ ] Audio player integration
-- [ ] Artwork sync with audio
-- [ ] Progress tracking
-- [ ] Chapter navigation
-
-**Deliverable:** Full audio tour functionality
-
-### Phase 7: Polish & Performance
-**Goal:** Production-ready quality
-
-- [ ] Image optimization pipeline
-- [ ] Lazy loading for artworks
-- [ ] Animation performance tuning
-- [ ] Accessibility audit (ARIA, keyboard nav)
-- [ ] Mobile optimization
-- [ ] Loading states
-- [ ] Error handling
-- [ ] Analytics integration
-
-**Deliverable:** Production-ready site
-
-### Phase 8: Content Integration
-**Goal:** Real artwork integration
-
-- [ ] Receive scanned artwork files
-- [ ] Process images (resize, optimize, generate thumbnails)
-- [ ] Update data files with real metadata
-- [ ] QA all views with real content
-- [ ] Final adjustments
-
-**Deliverable:** Live site with Leah's actual work
+Each phase is **shippable on its own**. Between phases we cut a release, deploy, and gather feedback.
 
 ---
 
-## 6. Design Tokens & Style Guide
+## 8. Open questions / decisions to make
 
-### Colors
+| # | Question | Default if unresolved |
+|---|---|---|
+| Q1 | Leah's handwriting samples — do we have any to digitize? | Use Caveat or similar until samples arrive |
+| Q2 | Collection provenance ("Collection of Don Cohan") — public, private, or per-piece review? | Show publicly (they're printed in the book) until told otherwise |
+| Q3 | Estate / copyright statement — who owns the rights and what's the license for display? | "© Estate of Leah Schwartz" in footer until verified |
+| Q4 | Domain name — `leahschwartz.com`? `leahschwartz.art`? | TBD |
+| Q5 | Audio: does Leah's son want recorded readings of her prose? | Not in scope until asked |
+| Q6 | Contact for inquiries (sales? loans?) — email to use? | TBD |
 
-```css
-/* Backgrounds */
---bg-gallery: #FAFAFA;        /* Main background */
---bg-glass: rgba(255, 255, 255, 0.7);  /* Glassmorphism */
---bg-glass-border: rgba(255, 255, 255, 0.3);
-
-/* Text */
---text-primary: #1A1A1A;      /* Headings */
---text-secondary: #4A4A4A;    /* Body */
---text-muted: #8A8A8A;        /* Captions */
-
-/* Accents */
---accent-soft-blue: #E8F0F8;  /* Subtle highlights */
---accent-warm: #F5F0EB;       /* Warm backgrounds */
-
-/* Shadows */
---shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
---shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
-```
-
-### Typography
-
-```css
-/* Primary: Elegant serif for headings */
---font-heading: 'EB Garamond', 'Times New Roman', serif;
-
-/* Secondary: Clean sans for UI */
---font-body: 'Inter', -apple-system, sans-serif;
-
-/* Sizes */
---text-hero: clamp(48px, 8vw, 96px);
---text-h1: clamp(32px, 5vw, 56px);
---text-h2: clamp(24px, 3vw, 36px);
---text-body: 16px;
---text-caption: 13px;
-```
-
-### Animation Curves
-
-```css
-/* Primary easing - smooth and organic */
---ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-
-/* Entrance animations */
---ease-out: cubic-bezier(0, 0, 0.2, 1);
-
-/* Bounce for playful moments */
---ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-/* Slow drift for floating elements */
---ease-drift: cubic-bezier(0.37, 0, 0.63, 1);
-```
-
-### Glassmorphism Recipe
-
-```css
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 24px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
-.glass-pill {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 9999px;
-  box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-```
+**Put answers here, don't hunt for them in Slack/email later.**
 
 ---
 
-## 7. Reference Images
+## 9. Preservation principles
 
-Visual inspiration files are stored in `/docs/reference-images/`:
+Because "for generations" is a real requirement:
 
-- `G-V5svcW4AAibCK.jpeg` - Glassmorphism UI components
-- `G-V5svdWEAAZWvz.jpeg` - Pill button with toggle
-- `G-V5sviWEAEALai.jpeg` - Tab switcher
-- `G__Ety8bEAEvy56.jpeg` - Input field with icons
-- `HAAamn1WYAAbJEd.jpeg` - Traffic light buttons + progress
-- `HAAamn6W4AAfaQf.jpeg` - Notification cards
-- `HAAamnzXUAALMo7.jpeg` - Project card with controls
-- `HAAamoNXcAAnRlV.jpeg` - Send button (glass effect)
-
-**Key takeaways from references:**
-- Soft, rounded pill shapes (border-radius: 9999px)
-- Subtle inner shadows creating depth
-- Very light color palette (whites, pale blues)
-- Icons with soft glows/halos
-- Multi-layered shadow effects
-- Elements feel like they're floating
+- **Data is portable.** JSON, markdown, and image files. No proprietary CMS. Anyone with a folder of files can rebuild the site.
+- **Images at highest available fidelity.** Full-size crops (300 DPI) preserved; thumbnails generated. Never replace originals with lossy versions.
+- **Source citations in every prose excerpt** (book page + PDF page). Scholars can trace quotes back.
+- **The PDF of the book is hosted, not hidden.** Archival-grade reference copy always retrievable.
+- **Everything in a public git repo.** History is preserved. Forks are welcome.
+- **Static hosting.** Netlify/Vercel for now; if either disappears, the static files work anywhere (S3, GitHub Pages, etc.).
 
 ---
 
-## 8. Open Questions & Decisions Needed
+## 10. Current state (scratchpad — update as work progresses)
 
-### Before Starting
-1. **Confirm tech stack** - React/Vite/Tailwind or alternatives?
-2. **Domain name** - leahschwartz.com? leahschwartzarchive.com?
-3. **Exact birth/death years** - Placeholder is 1945–2004
+**Last touched:** 2026-04-22
+**Extraction complete** — all artwork, prose, and photo candidates are in `/Users/harrylee/Developer/leah-extraction/`. Ready for Phase A.
 
-### During Development
-1. **Notebook integration** - How prominent? Separate section or inline?
-2. **Search functionality** - Needed? By title/year/theme?
-3. **Sharing** - Social sharing for individual artworks?
-4. **Print** - Should users be able to generate print-quality views?
+**Shipped:**
+- v1 of site with placeholder data (leah-schwartz-archive repo on GitHub, public)
+- Full PDF extraction pipeline
 
-### Before Content Integration
-1. **Image specs** - What resolution are the scans?
-2. **Metadata source** - Spreadsheet? Will need title/year/medium/etc.
-3. **Audio script** - Who writes narration? Timeline for recording?
+**In progress:** nothing
+
+**Blocked by:** the Open Questions in §8 (answers not urgent for Phase A).
+
+**Next action:** start Phase A — wire real artwork data into the existing React app.
 
 ---
 
-## 9. Success Metrics
+## Changelog
 
-### Qualitative
-- Does it feel like walking through a museum?
-- Would Leah be proud of how her work is presented?
-- Do visitors want to explore, or do they bounce?
-
-### Technical
-- Time to first meaningful paint < 2s
-- Smooth 60fps animations
-- Works beautifully on mobile
-- Accessible (WCAG AA minimum)
-
----
-
-## 10. Getting Started
-
-### For Claude Code
-
-1. Read `CLAUDE.md` for project-specific rules
-2. Start with Phase 1 scaffolding
-3. Use worktrees for parallel work:
-   - `main` - stable
-   - `feature/home-entrance` - z-axis experience
-   - `feature/timeline` - carousel
-   - `feature/ui-components` - glassmorphism library
-
-### Commands
-
-```bash
-# Start development
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Type checking
-npm run typecheck
-
-# Lint
-npm run lint
-```
-
----
-
-*Document Version: 1.0*  
-*Last Updated: February 2026*  
-*Author: Harry + Claude*
+- **2026-04-23 (v2.5)** — Sprint 4 "Feel alive." Em-dash sweep. Lightbox rebuild of artwork detail (dark gallery wall + 6x pan/zoom + slide-in panel + keyboard). Handwritten typography layer (`font-leah` / Caveat) for Leah's tagline phrases. Painting of the Day at `/` with daily rotation and seasonal accent. Curated Pairings at `/pairings` with 8 editorial diptychs. Global keyboard shortcuts (`/`, `?`, `G`-prefix chords). Index Constellation toggle: bubble-pack view of 88 people + 68 places + 99 subjects with co-occurrence edges. Seasonal accent rotation. Send-as-postcard on every artwork.
+- **2026-04-23 (v2.4)** — Sprint 3: People (`/people/:id`) + Subject (`/subjects/:id`) detail pages with prose mentions. Studio (`/studio`) signature page — kit, influences, philosophy, technique reel. A Life in Chapters (`/life`) scroll experience across 8 biographical eras. Site-wide meta: per-page `<title>`/description via `usePageMeta`, og/twitter cards, JSON-LD person. Preservation page (`/preservation`) + public JSON API at `/api/*.json` + page-scan fallback for 19 un-cropped artworks. Lazy-load audit: every img uses native lazy loading.
+- **2026-04-22 (v2.3)** — Sprint 2: INDEX parsed into people (88) / places (68) / subjects (99). Added `/index` Navigator, `/places` + `/places/:id` with Leaflet world map, restructured `/locations` as region rollup. Prose mentions of artwork titles now auto-link. Per-chapter chromatic accents applied to themed galleries. Photo candidates classified by chroma (68 photos / 6 paintings); displayed per-section in Leah's Story. Site-wide search rebuilt with new entity types.
+- **2026-04-22 (v2.2)** — Sprint 1 content push. Built `/her-words` (14-section reader with chapter companions), rebuilt Themes with chapter-intro essays, added Leah's voice + book-page + chapter rail to artwork detail, rewrote About with real biographical facts. PlaceholderArtwork extended to render real images. Home page (scroll-story) restored at `/` with real images. Timeline falls back to chapter-based synthetic years for undated works.
+- **2026-04-22 (v2.1)** — Restored Leah's autobiography as a signature feature (`/her-words`), reframed from "read the book" to "her voice given the stage it deserves." Added three-part model for how her prose lives on the site (destination · context · threads). Updated architecture and Phase F.
+- **2026-04-22 (v2)** — Rewrote plan after full book extraction. Corrected birth year (1920, not 1945), expanded from Bay-Area-only to 12 chapters × 11 travel regions, added five-signature-experiences structure, added data schema, added preservation principles. Archived previous plan as `PLAN_v1_pre_book.md`.
+- **2026-02 (v1)** — Initial plan, written before the book PDF was available. Focused on Bay Area locations and an "infinite gallery" z-axis entrance. Much of the design language (glassmorphism, gallery white, EB Garamond) carries forward.

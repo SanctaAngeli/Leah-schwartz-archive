@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "abozo-u-r",
+    "name": "Abozo, U.R.",
+    "parenthetical": "New York landlord",
+    "book_pages": [
+      16
+    ],
+    "pdf_pages": [
+      29
+    ],
+    "special_refs": [],
+    "display_name": "U.R. Abozo",
+    "artwork_ids": []
+  },
+  {
+    "id": "adler-elizabeth-nathan",
+    "name": "Adler, Elizabeth & Nathan",
+    "parenthetical": null,
+    "book_pages": [
+      285
+    ],
+    "pdf_pages": [
+      298
+    ],
+    "special_refs": [],
+    "display_name": "Elizabeth & Nathan Adler",
+    "artwork_ids": []
+  },
+  {
+    "id": "american-family-an",
+    "name": "American Family, An",
+    "parenthetical": null,
+    "book_pages": [
+      47
+    ],
+    "pdf_pages": [
+      60
+    ],
+    "special_refs": [],
+    "display_name": "An American Family",
+    "artwork_ids": [
+      "the-senator-on-an-in-vestigating-committee"
+    ]
+  },
+  {
+    "id": "ammerman-william",
+    "name": "Ammerman, William",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "display_name": "William Ammerman",
+    "artwork_ids": []
+  },
+  {
+    "id": "aull-paula-keith",
+    "name": "Aull, Paula & Keith",
+    "parenthetical": null,
+    "book_pages": [
+      251
+    ],
+    "pdf_pages": [
+      264
+    ],
+    "special_refs": [],
+    "display_name": "Paula & Keith Aull",
+    "artwork_ids": []
+  },
+  {
+    "id": "bellfoi-hotel-salers",
+    "name": "Bellfoi, Hotel, Salers",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "display_name": "Hotel, Salers Bellfoi",
+    "artwork_ids": []
+  },
+  {
+    "id": "bolinas-bathroom-bedroom-and-view-to-the-sea",
+    "name": "Bolinas, Bathroom, Bedroom and View to the Sea",
+    "parenthetical": null,
+    "book_pages": [
+      189
+    ],
+    "pdf_pages": [
+      202
+    ],
+    "special_refs": [],
+    "display_name": "Bathroom, Bedroom and View to the Sea Bolinas",
+    "artwork_ids": [
+      "bolinas-dining-alcove"
+    ]
+  },
+  {
+    "id": "boltin-lee",
+    "name": "Boltin, Lee",
+    "parenthetical": null,
+    "book_pages": [
+      191
+    ],
+    "pdf_pages": [
+      204
+    ],
+    "special_refs": [],
+    "display_name": "Lee Boltin",
+    "artwork_ids": []
+  },
+  {
+    "id": "bonheur-rosa",
+    "name": "Bonheur, Rosa",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "display_name": "Rosa Bonheur",
+    "artwork_ids": []
+  },
+  {
+    "id": "boys-from-liverpool-the",
+    "name": "Boys from Liverpool, The",
+    "parenthetical": null,
+    "book_pages": [
+      55
+    ],
+    "pdf_pages": [
+      68
+    ],
+    "special_refs": [],
+    "display_name": "The Boys from Liverpool",
+    "artwork_ids": [
+      "the-boys-from-liverpool"
+    ]
+  },
+  {
+    "id": "brodovitch",
+    "name": "Brodovitch",
+    "parenthetical": "Art Director",
+    "book_pages": [
+      12
+    ],
+    "pdf_pages": [
+      25
+    ],
+    "special_refs": [],
+    "display_name": "Brodovitch",
+    "artwork_ids": []
+  },
+  {
+    "id": "brown-gene",
+    "name": "Brown, Gene",
+    "parenthetical": null,
+    "book_pages": [
+      11
+    ],
+    "pdf_pages": [
+      24
+    ],
+    "special_refs": [],
+    "display_name": "Gene Brown",
+    "artwork_ids": []
+  },
+  {
+    "id": "carrot-onion-parsnip-and-turnip",
+    "name": "Carrot, Onion, Parsnip and Turnip",
+    "parenthetical": null,
+    "book_pages": [
+      169
+    ],
+    "pdf_pages": [
+      182
+    ],
+    "special_refs": [],
+    "display_name": "Onion, Parsnip and Turnip Carrot",
+    "artwork_ids": [
+      "nectarine-potato-onion-and-turnip"
+    ]
+  },
+  {
+    "id": "colman-ronald",
+    "name": "Colman, Ronald",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "display_name": "Ronald Colman",
+    "artwork_ids": []
+  },
+  {
+    "id": "cunningham-imogen",
+    "name": "Cunningham, Imogen",
+    "parenthetical": null,
+    "book_pages": [
+      26
+    ],
+    "pdf_pages": [
+      39
+    ],
+    "special_refs": [],
+    "display_name": "Imogen Cunningham",
+    "artwork_ids": []
+  },
+  {
+    "id": "curve-of-black-angus-a",
+    "name": "Curve of Black Angus, A",
+    "parenthetical": null,
+    "book_pages": [
+      101
+    ],
+    "pdf_pages": [
+      114
+    ],
+    "special_refs": [],
+    "display_name": "A Curve of Black Angus",
+    "artwork_ids": [
+      "black-angus-on-a-hill"
+    ]
+  },
+  {
+    "id": "despina-hotel-ariadne-naxos",
+    "name": "Despina, Hotel Ariadne, Naxos",
+    "parenthetical": null,
+    "book_pages": [
+      237
+    ],
+    "pdf_pages": [
+      250
+    ],
+    "special_refs": [],
+    "display_name": "Hotel Ariadne, Naxos Despina",
+    "artwork_ids": []
+  },
+  {
+    "id": "dimond-don",
+    "name": "Dimond, Don",
+    "parenthetical": null,
+    "book_pages": [
+      18
+    ],
+    "pdf_pages": [
+      31
+    ],
+    "special_refs": [],
+    "display_name": "Don Dimond",
+    "artwork_ids": []
+  },
+  {
+    "id": "drasin-daniel",
+    "name": "Drasin, Daniel",
+    "parenthetical": null,
+    "book_pages": [
+      14,
+      15,
+      24
+    ],
+    "pdf_pages": [
+      27,
+      28,
+      37
+    ],
+    "special_refs": [],
+    "display_name": "Daniel Drasin",
+    "artwork_ids": []
+  },
+  {
+    "id": "drasin-eda-boris",
+    "name": "Drasin, Eda & Boris",
+    "parenthetical": null,
+    "book_pages": [
+      15
+    ],
+    "pdf_pages": [
+      28
+    ],
+    "special_refs": [],
+    "display_name": "Eda & Boris Drasin",
+    "artwork_ids": []
+  },
+  {
+    "id": "drasin-lee",
+    "name": "Drasin, Lee",
+    "parenthetical": null,
+    "book_pages": [
+      11,
+      15
+    ],
+    "pdf_pages": [
+      24,
+      28
+    ],
+    "special_refs": [],
+    "display_name": "Lee Drasin",
+    "artwork_ids": []
+  },
+  {
+    "id": "drasin-tamara",
+    "name": "Drasin, Tamara",
+    "parenthetical": null,
+    "book_pages": [
+      11,
+      12,
+      15
+    ],
+    "pdf_pages": [
+      24,
+      25,
+      28
+    ],
+    "special_refs": [],
+    "display_name": "Tamara Drasin",
+    "artwork_ids": []
+  },
+  {
+    "id": "dubin-rose-nathan",
+    "name": "Dubin, Rose & Nathan",
+    "parenthetical": null,
+    "book_pages": [
+      3,
+      4,
+      5,
+      6,
+      9,
+      16
+    ],
+    "pdf_pages": [
+      16,
+      17,
+      18,
+      19,
+      22,
+      29
+    ],
+    "special_refs": [],
+    "display_name": "Rose & Nathan Dubin",
+    "artwork_ids": []
+  },
+  {
+    "id": "elsinore-lake",
+    "name": "Elsinore, Lake",
+    "parenthetical": null,
+    "book_pages": [
+      23
+    ],
+    "pdf_pages": [
+      36
+    ],
+    "special_refs": [],
+    "display_name": "Lake Elsinore",
+    "artwork_ids": []
+  },
+  {
+    "id": "feld-eliza-bernie",
+    "name": "Feld, Eliza & Bernie",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "display_name": "Eliza & Bernie Feld",
+    "artwork_ids": []
+  },
+  {
+    "id": "fellenbaum-helen",
+    "name": "Fellenbaum, Helen",
+    "parenthetical": null,
+    "book_pages": [
+      130,
+      245
+    ],
+    "pdf_pages": [
+      143,
+      258
+    ],
+    "special_refs": [],
+    "display_name": "Helen Fellenbaum",
+    "artwork_ids": [
+      "helen-fellenbaum-herman-s-sister",
+      "our-room-at-mr-sakura-s-ryokan"
+    ]
+  },
+  {
+    "id": "film-festival-san-francisco",
+    "name": "Film Festival, San Francisco",
+    "parenthetical": null,
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "display_name": "San Francisco Film Festival",
+    "artwork_ids": []
+  },
+  {
+    "id": "frankenstein-alfred",
+    "name": "Frankenstein, Alfred",
+    "parenthetical": null,
+    "book_pages": [
+      235
+    ],
+    "pdf_pages": [
+      248
+    ],
+    "special_refs": [],
+    "display_name": "Alfred Frankenstein",
+    "artwork_ids": [
+      "verona"
+    ]
+  },
+  {
+    "id": "frank",
+    "name": "Frank",
+    "parenthetical": "cousin",
+    "book_pages": [
+      11
+    ],
+    "pdf_pages": [
+      24
+    ],
+    "special_refs": [],
+    "display_name": "Frank",
+    "artwork_ids": []
+  },
+  {
+    "id": "gable-clark",
+    "name": "Gable, Clark",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "display_name": "Clark Gable",
+    "artwork_ids": []
+  },
+  {
+    "id": "garbo-greta",
+    "name": "Garbo, Greta",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "display_name": "Greta Garbo",
+    "artwork_ids": []
+  },
+  {
+    "id": "general-the",
+    "name": "General, The",
+    "parenthetical": null,
+    "book_pages": [
+      149
+    ],
+    "pdf_pages": [
+      162
+    ],
+    "special_refs": [],
+    "display_name": "The General",
+    "artwork_ids": []
+  },
+  {
+    "id": "glassbottomed-boat-acapulco",
+    "name": "Glassbottomed Boat, Acapulco",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "display_name": "Acapulco Glassbottomed Boat",
+    "artwork_ids": []
+  },
+  {
+    "id": "gordon-ruth",
+    "name": "Gordon, Ruth",
+    "parenthetical": null,
+    "book_pages": [
+      12
+    ],
+    "pdf_pages": [
+      25
+    ],
+    "special_refs": [],
+    "display_name": "Ruth Gordon",
+    "artwork_ids": []
+  },
+  {
+    "id": "gop-man-and-image-the",
+    "name": "GOP. (Man and Image), The",
+    "parenthetical": null,
+    "book_pages": [
+      54
+    ],
+    "pdf_pages": [
+      67
+    ],
+    "special_refs": [],
+    "display_name": "The GOP. (Man and Image)",
+    "artwork_ids": [
+      "the-gov-man-and-image"
+    ]
+  },
+  {
+    "id": "harlow-jean",
+    "name": "Harlow, Jean",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "display_name": "Jean Harlow",
+    "artwork_ids": []
+  },
+  {
+    "id": "heath-brian",
+    "name": "Heath, Brian",
+    "parenthetical": null,
+    "book_pages": [
+      270
+    ],
+    "pdf_pages": [
+      283
+    ],
+    "special_refs": [],
+    "display_name": "Brian Heath",
+    "artwork_ids": []
+  },
+  {
+    "id": "hecht-pearl",
+    "name": "Hecht, Pearl",
+    "parenthetical": null,
+    "book_pages": [
+      17,
+      18
+    ],
+    "pdf_pages": [
+      30,
+      31
+    ],
+    "special_refs": [],
+    "display_name": "Pearl Hecht",
+    "artwork_ids": []
+  },
+  {
+    "id": "homesteads-new-jersey",
+    "name": "Homesteads, New Jersey",
+    "parenthetical": null,
+    "book_pages": [
+      17
+    ],
+    "pdf_pages": [
+      30
+    ],
+    "special_refs": [],
+    "display_name": "New Jersey Homesteads",
+    "artwork_ids": []
+  },
+  {
+    "id": "jersey-homesteads-roosevelt-n-j",
+    "name": "Jersey Homesteads, Roosevelt, N.J.",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "display_name": "Roosevelt, N.J. Jersey Homesteads",
+    "artwork_ids": []
+  },
+  {
+    "id": "kanin-garson",
+    "name": "Kanin, Garson",
+    "parenthetical": null,
+    "book_pages": [
+      12
+    ],
+    "pdf_pages": [
+      25
+    ],
+    "special_refs": [],
+    "display_name": "Garson Kanin",
+    "artwork_ids": []
+  },
+  {
+    "id": "kirchner-nana-marvin",
+    "name": "Kirchner, Nana & Marvin",
+    "parenthetical": null,
+    "book_pages": [
+      243
+    ],
+    "pdf_pages": [
+      256
+    ],
+    "special_refs": [],
+    "display_name": "Nana & Marvin Kirchner",
+    "artwork_ids": []
+  },
+  {
+    "id": "klausenstock-judy-oskar",
+    "name": "Klausenstock, Judy & Oskar",
+    "parenthetical": null,
+    "book_pages": [
+      243,
+      251,
+      252,
+      259
+    ],
+    "pdf_pages": [
+      256,
+      264,
+      265,
+      272
+    ],
+    "special_refs": [],
+    "display_name": "Judy & Oskar Klausenstock",
+    "artwork_ids": []
+  },
+  {
+    "id": "lafon-ron",
+    "name": "LaFon, Ron",
+    "parenthetical": null,
+    "book_pages": [
+      269,
+      270
+    ],
+    "pdf_pages": [
+      282,
+      283
+    ],
+    "special_refs": [],
+    "display_name": "Ron LaFon",
+    "artwork_ids": []
+  },
+  {
+    "id": "lenya-lotte",
+    "name": "Lenya, Lotte",
+    "parenthetical": null,
+    "book_pages": [
+      20
+    ],
+    "pdf_pages": [
+      33
+    ],
+    "special_refs": [],
+    "display_name": "Lotte Lenya",
+    "artwork_ids": []
+  },
+  {
+    "id": "le-puy-murat-salers",
+    "name": "Le Puy, Murat, Salers",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "display_name": "Murat, Salers Le Puy",
+    "artwork_ids": []
+  },
+  {
+    "id": "lewisohn-joyce",
+    "name": "Lewisohn, Joyce",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "display_name": "Joyce Lewisohn",
+    "artwork_ids": []
+  },
+  {
+    "id": "librun-vigee",
+    "name": "Librun, Vigee",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "display_name": "Vigee Librun",
+    "artwork_ids": []
+  },
+  {
+    "id": "mcpherson-aimee-semple",
+    "name": "McPherson, Aimee Semple",
+    "parenthetical": null,
+    "book_pages": [
+      6
+    ],
+    "pdf_pages": [
+      19
+    ],
+    "special_refs": [],
+    "display_name": "Aimee Semple McPherson",
+    "artwork_ids": []
+  },
+  {
+    "id": "meadows-the",
+    "name": "Meadows, The",
+    "parenthetical": null,
+    "book_pages": [
+      67
+    ],
+    "pdf_pages": [
+      80
+    ],
+    "special_refs": [],
+    "display_name": "The Meadows",
+    "artwork_ids": [
+      "the-meadows"
+    ]
+  },
+  {
+    "id": "miller-jan-dan",
+    "name": "Miller, Jan & Dan",
+    "parenthetical": null,
+    "book_pages": [
+      18
+    ],
+    "pdf_pages": [
+      31
+    ],
+    "special_refs": [],
+    "display_name": "Jan & Dan Miller",
+    "artwork_ids": []
+  },
+  {
+    "id": "mt-tam-golden-gate-and-sausalito",
+    "name": "Mt. Tam, Golden Gate and Sausalito",
+    "parenthetical": null,
+    "book_pages": [
+      86
+    ],
+    "pdf_pages": [
+      99
+    ],
+    "special_refs": [],
+    "display_name": "Golden Gate and Sausalito Mt. Tam",
+    "artwork_ids": [
+      "mt-tam-golden-gate-bridge-sausalito-from-san-francisco"
+    ]
+  },
+  {
+    "id": "north-haven-connecticut",
+    "name": "North Haven, Connecticut",
+    "parenthetical": null,
+    "book_pages": [
+      22
+    ],
+    "pdf_pages": [
+      35
+    ],
+    "special_refs": [],
+    "display_name": "Connecticut North Haven",
+    "artwork_ids": []
+  },
+  {
+    "id": "organization-man-the",
+    "name": "Organization Man, The",
+    "parenthetical": null,
+    "book_pages": [
+      62
+    ],
+    "pdf_pages": [
+      75
+    ],
+    "special_refs": [],
+    "display_name": "The Organization Man",
+    "artwork_ids": [
+      "the-organization-man"
+    ]
+  },
+  {
+    "id": "pearman-linda",
+    "name": "Pearman, Linda",
+    "parenthetical": null,
+    "book_pages": [
+      149,
+      237
+    ],
+    "pdf_pages": [
+      162,
+      250
+    ],
+    "special_refs": [],
+    "display_name": "Linda Pearman",
+    "artwork_ids": []
+  },
+  {
+    "id": "perloff-dorothee-phillip",
+    "name": "Perloff, Dorothee & Phillip",
+    "parenthetical": null,
+    "book_pages": [
+      243,
+      251,
+      259,
+      285
+    ],
+    "pdf_pages": [
+      256,
+      264,
+      272,
+      298
+    ],
+    "special_refs": [],
+    "display_name": "Dorothee & Phillip Perloff",
+    "artwork_ids": []
+  },
+  {
+    "id": "pistolesi",
+    "name": "Pistolesi",
+    "parenthetical": "Sausalito landlord",
+    "book_pages": [
+      17
+    ],
+    "pdf_pages": [
+      30
+    ],
+    "special_refs": [],
+    "display_name": "Pistolesi",
+    "artwork_ids": []
+  },
+  {
+    "id": "plasket-joe",
+    "name": "Plasket, Joe",
+    "parenthetical": null,
+    "book_pages": [
+      224
+    ],
+    "pdf_pages": [
+      237
+    ],
+    "special_refs": [],
+    "display_name": "Joe Plasket",
+    "artwork_ids": []
+  },
+  {
+    "id": "powys-gilfrid-patricia-marion-anne",
+    "name": "Powys, Gilfrid, Patricia, Marion & Anne",
+    "parenthetical": "Brown",
+    "book_pages": [
+      269,
+      270
+    ],
+    "pdf_pages": [
+      282,
+      283
+    ],
+    "special_refs": [],
+    "display_name": "Gilfrid, Patricia, Marion & Anne Powys",
+    "artwork_ids": []
+  },
+  {
+    "id": "raymond-gene",
+    "name": "Raymond, Gene",
+    "parenthetical": null,
+    "book_pages": [
+      7
+    ],
+    "pdf_pages": [
+      20
+    ],
+    "special_refs": [],
+    "display_name": "Gene Raymond",
+    "artwork_ids": []
+  },
+  {
+    "id": "remarkable-herman-arthur-schwartz-the",
+    "name": "Remarkable Herman Arthur Schwartz, The",
+    "parenthetical": null,
+    "book_pages": [
+      128
+    ],
+    "pdf_pages": [
+      141
+    ],
+    "special_refs": [],
+    "display_name": "The Remarkable Herman Arthur Schwartz",
+    "artwork_ids": [
+      "the-remarkable-herman-arthur-schwartz"
+    ]
+  },
+  {
+    "id": "reseda-san-fernando-valley",
+    "name": "Reseda, San Fernando Valley",
+    "parenthetical": null,
+    "book_pages": [
+      6,
+      7
+    ],
+    "pdf_pages": [
+      19,
+      20
+    ],
+    "special_refs": [],
+    "display_name": "San Fernando Valley Reseda",
+    "artwork_ids": []
+  },
+  {
+    "id": "roosevelt-franklin-d",
+    "name": "Roosevelt, Franklin D.",
+    "parenthetical": null,
+    "book_pages": [
+      10
+    ],
+    "pdf_pages": [
+      23
+    ],
+    "special_refs": [],
+    "display_name": "Franklin D. Roosevelt",
+    "artwork_ids": []
+  },
+  {
+    "id": "rosen-maggie-herb",
+    "name": "Rosen, Maggie & Herb",
+    "parenthetical": null,
+    "book_pages": [
+      21,
+      224,
+      229,
+      230
+    ],
+    "pdf_pages": [
+      34,
+      237,
+      242,
+      243
+    ],
+    "special_refs": [],
+    "display_name": "Maggie & Herb Rosen",
+    "artwork_ids": []
+  },
+  {
+    "id": "sala-andre",
+    "name": "Sala, Andre",
+    "parenthetical": null,
+    "book_pages": [
+      191
+    ],
+    "pdf_pages": [
+      204
+    ],
+    "special_refs": [],
+    "display_name": "Andre Sala",
+    "artwork_ids": []
+  },
+  {
+    "id": "schwartz-david",
+    "name": "Schwartz, David",
+    "parenthetical": null,
+    "book_pages": [
+      21,
+      23,
+      24,
+      26,
+      128,
+      129
+    ],
+    "pdf_pages": [
+      34,
+      36,
+      37,
+      39,
+      141,
+      142
+    ],
+    "special_refs": [],
+    "display_name": "David Schwartz",
+    "artwork_ids": [
+      "the-remarkable-herman-arthur-schwartz",
+      "david-schwartz-3-son"
+    ]
+  },
+  {
+    "id": "schwartz-herman",
+    "name": "Schwartz, Herman",
+    "parenthetical": null,
+    "book_pages": [
+      1,
+      19,
+      20,
+      21,
+      23,
+      26,
+      224,
+      229,
+      230,
+      237,
+      269,
+      270
+    ],
+    "pdf_pages": [
+      14,
+      32,
+      33,
+      34,
+      36,
+      39,
+      237,
+      242,
+      243,
+      250,
+      282,
+      283
+    ],
+    "special_refs": [],
+    "display_name": "Herman Schwartz",
+    "artwork_ids": []
+  },
+  {
+    "id": "schwartz-isis",
+    "name": "Schwartz, Isis",
+    "parenthetical": null,
+    "book_pages": [
+      25
+    ],
+    "pdf_pages": [
+      38
+    ],
+    "special_refs": [],
+    "display_name": "Isis Schwartz",
+    "artwork_ids": []
+  },
+  {
+    "id": "schwartz-peter",
+    "name": "Schwartz, Peter",
+    "parenthetical": null,
+    "book_pages": [
+      21,
+      24
+    ],
+    "pdf_pages": [
+      34,
+      37
+    ],
+    "special_refs": [],
+    "display_name": "Peter Schwartz",
+    "artwork_ids": []
+  },
+  {
+    "id": "senator-the",
+    "name": "Senator, The",
+    "parenthetical": null,
+    "book_pages": [
+      47
+    ],
+    "pdf_pages": [
+      60
+    ],
+    "special_refs": [],
+    "display_name": "The Senator",
+    "artwork_ids": [
+      "the-senator-on-an-in-vestigating-committee"
+    ]
+  },
+  {
+    "id": "shahn-ben",
+    "name": "Shahn, Ben",
+    "parenthetical": null,
+    "book_pages": [
+      13,
+      14,
+      27
+    ],
+    "pdf_pages": [
+      26,
+      27,
+      40
+    ],
+    "special_refs": [],
+    "display_name": "Ben Shahn",
+    "artwork_ids": []
+  },
+  {
+    "id": "shahn-bernarda",
+    "name": "Shahn, Bernarda",
+    "parenthetical": null,
+    "book_pages": [
+      14
+    ],
+    "pdf_pages": [
+      27
+    ],
+    "special_refs": [],
+    "display_name": "Bernarda Shahn",
+    "artwork_ids": []
+  },
+  {
+    "id": "shrift-betty-alex-paul-emily-michael",
+    "name": "Shrift, Betty, Alex, Paul, Emily & Michael",
+    "parenthetical": null,
+    "book_pages": [
+      5,
+      6,
+      17,
+      22,
+      29
+    ],
+    "pdf_pages": [
+      18,
+      19,
+      30,
+      35,
+      42
+    ],
+    "special_refs": [],
+    "display_name": "Betty, Alex, Paul, Emily & Michael Shrift",
+    "artwork_ids": [
+      "self-portrait"
+    ]
+  },
+  {
+    "id": "silverman-morris",
+    "name": "Silverman, Morris",
+    "parenthetical": null,
+    "book_pages": [
+      19
+    ],
+    "pdf_pages": [
+      32
+    ],
+    "special_refs": [],
+    "display_name": "Morris Silverman",
+    "artwork_ids": []
+  },
+  {
+    "id": "smalle-ed",
+    "name": "Smalle, Ed",
+    "parenthetical": null,
+    "book_pages": [
+      243
+    ],
+    "pdf_pages": [
+      256
+    ],
+    "special_refs": [],
+    "display_name": "Ed Smalle",
+    "artwork_ids": []
+  },
+  {
+    "id": "south-america-peter-schwartz",
+    "name": "South America, Peter Schwartz",
+    "parenthetical": null,
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "display_name": "Peter Schwartz South America",
+    "artwork_ids": []
+  },
+  {
+    "id": "steindel-bea",
+    "name": "Steindel, Bea",
+    "parenthetical": null,
+    "book_pages": [
+      23
+    ],
+    "pdf_pages": [
+      36
+    ],
+    "special_refs": [],
+    "display_name": "Bea Steindel",
+    "artwork_ids": []
+  },
+  {
+    "id": "steindel-sam",
+    "name": "Steindel, Sam",
+    "parenthetical": null,
+    "book_pages": [
+      24
+    ],
+    "pdf_pages": [
+      37
+    ],
+    "special_refs": [],
+    "display_name": "Sam Steindel",
+    "artwork_ids": []
+  },
+  {
+    "id": "steiner-fanny",
+    "name": "Steiner, Fanny",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "display_name": "Fanny Steiner",
+    "artwork_ids": []
+  },
+  {
+    "id": "steiner-sam",
+    "name": "Steiner, Sam",
+    "parenthetical": null,
+    "book_pages": [
+      4
+    ],
+    "pdf_pages": [
+      17
+    ],
+    "special_refs": [],
+    "display_name": "Sam Steiner",
+    "artwork_ids": []
+  },
+  {
+    "id": "steiner-simon",
+    "name": "Steiner, Simon",
+    "parenthetical": null,
+    "book_pages": [
+      5,
+      16
+    ],
+    "pdf_pages": [
+      18,
+      29
+    ],
+    "special_refs": [],
+    "display_name": "Simon Steiner",
+    "artwork_ids": []
+  },
+  {
+    "id": "taurus-mountains-antalya-turkey",
+    "name": "Taurus Mountains, Antalya, Turkey",
+    "parenthetical": null,
+    "book_pages": [
+      256
+    ],
+    "pdf_pages": [
+      269
+    ],
+    "special_refs": [],
+    "display_name": "Antalya, Turkey Taurus Mountains",
+    "artwork_ids": [
+      "view-from-club-med-uchisar"
+    ]
+  },
+  {
+    "id": "terhune-albert-payson",
+    "name": "Terhune, Albert Payson",
+    "parenthetical": null,
+    "book_pages": [
+      6,
+      7
+    ],
+    "pdf_pages": [
+      19,
+      20
+    ],
+    "special_refs": [],
+    "display_name": "Albert Payson Terhune",
+    "artwork_ids": []
+  },
+  {
+    "id": "venice-california",
+    "name": "Venice, California",
+    "parenthetical": null,
+    "book_pages": [
+      6
+    ],
+    "pdf_pages": [
+      19
+    ],
+    "special_refs": [],
+    "display_name": "California Venice",
+    "artwork_ids": []
+  },
+  {
+    "id": "villa-taraia-siena",
+    "name": "Villa Taraia, Siena",
+    "parenthetical": null,
+    "book_pages": [
+      230
+    ],
+    "pdf_pages": [
+      243
+    ],
+    "special_refs": [],
+    "display_name": "Siena Villa Taraia",
+    "artwork_ids": []
+  },
+  {
+    "id": "voter-the",
+    "name": "Voter, The",
+    "parenthetical": null,
+    "book_pages": [
+      51
+    ],
+    "pdf_pages": [
+      64
+    ],
+    "special_refs": [],
+    "display_name": "The Voter",
+    "artwork_ids": [
+      "the-voter"
+    ]
+  },
+  {
+    "id": "wilson-bill",
+    "name": "Wilson, Bill",
+    "parenthetical": null,
+    "book_pages": [
+      243
+    ],
+    "pdf_pages": [
+      256
+    ],
+    "special_refs": [],
+    "display_name": "Bill Wilson",
+    "artwork_ids": []
+  },
+  {
+    "id": "wilson-sol",
+    "name": "Wilson, Sol",
+    "parenthetical": null,
+    "book_pages": [
+      11
+    ],
+    "pdf_pages": [
+      24
+    ],
+    "special_refs": [],
+    "display_name": "Sol Wilson",
+    "artwork_ids": []
+  }
+]

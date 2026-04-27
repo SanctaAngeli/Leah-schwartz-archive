@@ -50,11 +50,12 @@ function Navigation({ visible = true, onSettingsClick }: NavigationProps): JSX.E
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/gallery', label: 'Gallery' },
-    { path: '/timeline', label: 'Timeline' },
-    { path: '/locations', label: 'Locations' },
+    { path: '/her-words', label: "Leah's Story" },
     { path: '/themes', label: 'Themes' },
-    { path: '/favorites', label: 'Favorites' },
-    { path: '/about', label: "Leah's Story" },
+    { path: '/pairings', label: 'Pairings' },
+    { path: '/places', label: 'Places' },
+    { path: '/studio', label: 'Studio' },
+    { path: '/about', label: 'About' },
   ];
 
   // Check if current path matches (handle nested routes like /timeline/1977)

@@ -67,7 +67,7 @@ function ScrollStoryPage(): JSX.Element {
     const yearsCreating = maxYear - minYear + 1;
 
     const uniqueLocations = new Set(artworks.map(a => a.location)).size;
-    const uniqueMediums = new Set(artworks.map(a => a.medium.split(' ')[0])).size;
+    const uniqueMediums = new Set(artworks.map(a => (a.medium || '').split(' ')[0])).size;
 
     return {
       artworkCount: artworks.length,
@@ -79,12 +79,30 @@ function ScrollStoryPage(): JSX.Element {
     };
   }, []);
 
-  // Organize artworks by era
+  // Organize artworks by era.
+  // Fallback strategy: the book's list of paintings only dates the OLD STUFF
+  // chapter, so most works arrive without a year. Group undated works by the
+  // book's chapter order as a reasonable proxy so each era has something.
   const { earlyWorks, middleWorks, lateWorks } = useMemo(() => {
+    const early = artworks.filter((a) =>
+      (a.year && a.year < 1975) ||
+      (!a.year && (a.chapter === 'old-stuff' || a.chapter === 'abstract' || a.chapter === 'social-comment'))
+    );
+    const middle = artworks.filter((a) =>
+      (a.year && a.year >= 1975 && a.year < 1990) ||
+      (!a.year && (a.chapter === 'on-the-road' || a.chapter === 'landscape' || a.chapter === 'street-scenes'))
+    );
+    const late = artworks.filter((a) =>
+      (a.year && a.year >= 1990) ||
+      (!a.year && (a.chapter === 'portraits' || a.chapter === 'still-life' || a.chapter === 'interiors' || a.chapter === 'flowers' || a.chapter === 'travel'))
+    );
+    // Final safety net: if any bucket is empty, fill from available artworks.
+    const fallback = (bucket: typeof early) =>
+      bucket.length ? bucket : artworks.filter((a) => a.image_full).slice(0, 6);
     return {
-      earlyWorks: artworks.filter((a) => a.year && a.year < 1975),
-      middleWorks: artworks.filter((a) => a.year && a.year >= 1975 && a.year < 1990),
-      lateWorks: artworks.filter((a) => a.year && a.year >= 1990),
+      earlyWorks: fallback(early),
+      middleWorks: fallback(middle),
+      lateWorks: fallback(late),
     };
   }, []);
 
@@ -189,7 +207,7 @@ function ScrollStoryPage(): JSX.Element {
 
           <TextFadeIn delay={0.4}>
             <p className="font-body text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
-              Her work moves between intimate observation and bold expression—
+              Her work moves between intimate observation and bold expression-
               from delicate notebook sketches to vibrant landscapes that pulse with
               the energy of California.
             </p>
@@ -209,7 +227,7 @@ function ScrollStoryPage(): JSX.Element {
       {heroArtwork1 && (
         <HeroArtwork
           artwork={heroArtwork1}
-          caption="In these early works, we see the seeds of everything that would follow—an eye for light, a love of natural forms, and a distinctive palette that would become her signature."
+          caption="In these early works, we see the seeds of everything that would follow-an eye for light, a love of natural forms, and a distinctive palette that would become her signature."
           alignment="center"
         />
       )}
@@ -302,7 +320,7 @@ function ScrollStoryPage(): JSX.Element {
       {finalHeroArtwork && (
         <HeroArtwork
           artwork={finalHeroArtwork}
-          caption="In her later works, there's a sense of summation—an artist who has mastered her craft and can now paint with both freedom and precision."
+          caption="In her later works, there's a sense of summation-an artist who has mastered her craft and can now paint with both freedom and precision."
           alignment="right"
         />
       )}
@@ -333,7 +351,7 @@ function ScrollStoryPage(): JSX.Element {
 
           <TextFadeIn delay={0.4}>
             <p className="font-body text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-              Leah Schwartz left behind more than paintings. She left a way of seeing—
+              Leah Schwartz left behind more than paintings. She left a way of seeing-
               a reminder to look closely, to find beauty in the everyday, and to never
               stop exploring.
             </p>

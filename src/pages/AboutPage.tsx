@@ -3,49 +3,39 @@ import { Link } from 'react-router-dom';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
 import artworksData from '../data/artworks.json';
 import type { Artwork } from '../types';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const artworks = artworksData as Artwork[];
 
-// Get featured artworks for the biography page
-const featuredArtworks = artworks.filter(a => a.featured).slice(0, 4);
+// Pick a handful of strong works to tile the hero · any chapter, any year
+const heroMontage = artworks.filter((a) => a.imagePath).slice(0, 8);
 
-// Life periods for the timeline
-const lifePeriods = [
-  {
-    years: '1945–1963',
-    title: 'Early Years',
-    description: 'Born in San Francisco during the final days of World War II. Grew up surrounded by the beauty of the Bay Area, developing an early appreciation for light, color, and the natural landscape that would define her artistic vision.',
-  },
-  {
-    years: '1963–1974',
-    title: 'Artistic Foundation',
-    description: 'Formal training in art followed by years of experimentation and self-discovery. This period saw the development of her distinctive watercolor technique and her deep connection to the landscapes of Mount Tamalpais and the Marin Headlands.',
-  },
-  {
-    years: '1975–1989',
-    title: 'Mature Period',
-    description: 'A prolific era marked by exploration across multiple mediums—oils, watercolors, and mixed media. Her work during this time reflects both personal growth as a mother and artist, and engagement with the social movements of the era.',
-  },
-  {
-    years: '1990–2004',
-    title: 'Late Works',
-    description: 'The final chapter of her artistic journey, characterized by a return to intimate subjects—family, garden, and the quiet moments of domestic life. These works reveal a contemplative depth and mastery of light.',
-  },
-];
+// Short featured strip · one painting from a range of chapters
+const featuredChapters = ['old-stuff', 'social-comment', 'landscape', 'portraits', 'still-life', 'flowers', 'travel'];
+const featuredArtworks = featuredChapters
+  .map((c) => artworks.find((a) => a.chapter === c && a.imagePath))
+  .filter(Boolean) as Artwork[];
 
 function AboutPage(): JSX.Element {
+  usePageMeta('About Leah', 'Leah Schwartz (1920–2004) · Bay Area watercolorist, accidental artist, life in her own words.');
   return (
     <div className="min-h-screen">
-      {/* Hero section */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        {/* Background artworks */}
-        <div className="absolute inset-0 grid grid-cols-4 opacity-20">
-          {featuredArtworks.map((artwork) => (
+      {/* Hero · montage of works as atmospheric backdrop */}
+      <section className="relative h-[60vh] min-h-[440px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 grid grid-cols-4 md:grid-cols-8 opacity-[0.18]">
+          {heroMontage.map((a) => (
             <div
-              key={artwork.id}
-              className="h-full"
-              style={{ backgroundColor: artwork.placeholderColor }}
-            />
+              key={a.id}
+              className="relative h-full"
+              style={{ backgroundColor: a.placeholderColor }}
+            >
+              <img
+                src={a.thumbPath || a.imagePath || ''}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
 
@@ -55,194 +45,158 @@ function AboutPage(): JSX.Element {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-heading text-[clamp(40px,8vw,80px)] text-text-primary mb-4">
+          <p className="font-body text-text-muted uppercase tracking-[0.3em] text-xs mb-4">
+            About
+          </p>
+          <h1 className="font-heading text-[clamp(40px,8vw,84px)] text-text-primary mb-4 leading-none">
             Leah Schwartz
           </h1>
           <p className="font-heading text-xl md:text-2xl text-text-secondary italic">
-            1945 – 2004
+            1920 – 2004
           </p>
         </motion.div>
       </section>
 
-      {/* Introduction */}
+      {/* Biographical intro · grounded in her autobiography */}
       <section className="py-20 px-6">
         <motion.div
-          className="max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
+          className="max-w-2xl mx-auto font-heading text-[18px] md:text-[19px] leading-[1.8] text-text-primary"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-body text-lg text-text-secondary leading-relaxed mb-6">
-            Leah Schwartz was a Bay Area artist whose work captured the landscapes, people,
-            and spirit of San Francisco through watercolors, oils, and mixed media across
-            four decades of creative exploration.
+          <p className="mb-6">
+            Leah Schwartz was born in <em>Rock Island, Illinois, on July 28, 1920</em>,
+            the daughter of Polish-Jewish immigrants who had passed through Ellis Island
+            as Pannemanskis and walked out Greenfields. She grew up in Chicago, Boston
+            and Michigan, and went to art school in New York.
           </p>
-          <p className="font-body text-lg text-text-secondary leading-relaxed mb-6">
-            Born during the final days of World War II, she came of age during San Francisco's
-            cultural renaissance of the 1960s. Her work reflects both the natural beauty of
-            Northern California—the fog-shrouded Golden Gate, the redwood forests of Muir Woods,
-            the wildflower meadows of Mount Tamalpais—and the human stories that unfolded against
-            this backdrop.
+          <p className="mb-6">
+            She married <em>Herman Schwartz</em>-"the remarkable Herman," as she called him-
+            and eventually settled in Mill Valley, California, with a weekend retreat in
+            Bolinas, on a piece of land that juts out into the Pacific, separated from the
+            mainland by the San Andreas Fault. She painted in her Mill Valley studio through
+            the week and did "slave labor" in Bolinas on weekends.
           </p>
-          <p className="font-body text-lg text-text-secondary leading-relaxed">
-            This digital archive presents her complete body of work: over 70 paintings,
-            sketches, and mixed media pieces spanning from her student days to her final
-            works. Each piece tells a story of a place, a moment, or a person who mattered.
+          <p className="mb-6">
+            She was, by her own reckoning, <em>the accidental watercolorist</em>: she taught
+            herself the medium by painting beetles from a library book. Across four decades
+            she worked in watercolor, oil, gouache, tempera, collage and ink · and over
+            <em> 267 finished pieces</em> that span abstract studies, social comment, landscape,
+            street scenes, portraits, still life, interiors, flowers, and travel notebooks
+            from France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, the
+            American desert and the High Sierra.
+          </p>
+          <p className="mb-6">
+            Leah gathered this body of work into a self-published book with Strawberry Press
+            in Mill Valley before her death in 2004. This site is built from that book -
+            her paintings, her words, her index, her life.
+          </p>
+
+          <blockquote className="border-l-4 border-[#8B7355] pl-6 my-10 italic text-text-secondary text-[19px] leading-relaxed">
+            "I love the process of what I do. I enjoy the feel of a brush on canvas,
+            the smell of turpentine, the flow of color on a fresh sheet of watercolor
+            paper, and the intense pleasure of making things."
+            <footer className="text-sm mt-3 not-italic text-text-muted">- Leah Schwartz</footer>
+          </blockquote>
+
+          <p className="mb-2">
+            Her voice is the center of this archive. Read her autobiography in her own
+            words, or wander the collection by theme, location, or time.
           </p>
         </motion.div>
       </section>
 
-      {/* Life timeline */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            className="font-heading text-3xl text-text-primary text-center mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            A Life in Art
-          </motion.h2>
-
-          <div className="space-y-12">
-            {lifePeriods.map((period, index) => (
-              <motion.div
-                key={period.years}
-                className="flex flex-col md:flex-row gap-6"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="md:w-32 flex-shrink-0">
-                  <p className="font-heading text-lg text-text-primary font-medium">
-                    {period.years}
-                  </p>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-heading text-xl text-text-primary mb-2">
-                    {period.title}
-                  </h3>
-                  <p className="font-body text-text-secondary leading-relaxed">
-                    {period.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured works */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="font-heading text-3xl text-text-primary text-center mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            Featured Works
-          </motion.h2>
-          <motion.p
-            className="font-body text-text-muted text-center mb-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            A selection of significant pieces from across her career
-          </motion.p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {featuredArtworks.map((artwork, index) => (
-              <motion.div
-                key={artwork.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link to={`/artwork/${artwork.id}`} className="group block">
-                  <PlaceholderArtwork
-                    color={artwork.placeholderColor}
-                    aspectRatio={artwork.aspectRatio}
-                    className="mb-2 group-hover:scale-[1.02] transition-transform shadow-soft"
-                  />
-                  <p className="font-body text-sm text-text-primary truncate">
-                    {artwork.title}
-                  </p>
-                  <p className="font-body text-xs text-text-muted">
-                    {artwork.year}
-                  </p>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Artistic philosophy */}
-      <section className="py-20 px-6 bg-gray-50">
+      {/* Quick CTAs */}
+      <section className="px-6 pb-16">
         <motion.div
-          className="max-w-3xl mx-auto text-center"
-          initial={{ opacity: 0, y: 40 }}
+          className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          <svg className="w-12 h-12 mx-auto mb-6 text-text-muted" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-          </svg>
-          <blockquote className="font-heading text-2xl md:text-3xl text-text-primary italic mb-6">
-            "I paint what I see, but more importantly, I paint what I feel when I see it.
-            The fog rolling over the hills, the way light falls on a child's face—these
-            moments are fleeting, but paint can make them eternal."
-          </blockquote>
-          <cite className="font-body text-text-muted not-italic">
-            — Leah Schwartz, 1987
-          </cite>
+          <Link
+            to="/her-words"
+            className="group glass-card p-6 text-center hover:shadow-glass transition-shadow"
+          >
+            <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">Leah's Story</p>
+            <p className="font-body text-xs text-text-muted mt-1">In her own words</p>
+          </Link>
+          <Link
+            to="/themes"
+            className="group glass-card p-6 text-center hover:shadow-glass transition-shadow"
+          >
+            <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">Themes</p>
+            <p className="font-body text-xs text-text-muted mt-1">12 chapters of work</p>
+          </Link>
+          <Link
+            to="/locations"
+            className="group glass-card p-6 text-center hover:shadow-glass transition-shadow"
+          >
+            <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">Places</p>
+            <p className="font-body text-xs text-text-muted mt-1">Bay Area + 11 travel regions</p>
+          </Link>
         </motion.div>
       </section>
 
-      {/* Call to action */}
-      <section className="py-20 px-6">
-        <motion.div
-          className="max-w-2xl mx-auto text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font-heading text-2xl text-text-primary mb-4">
-            Explore the Collection
-          </h2>
-          <p className="font-body text-text-secondary mb-8">
-            Discover the full archive of Leah's work through our interactive gallery,
-            timeline, and curated tours.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/gallery"
-              className="glass-pill px-8 py-3 text-text-primary font-medium
-                hover:bg-white/90 transition-colors"
-            >
-              View Gallery
-            </Link>
-            <Link
-              to="/timeline"
-              className="glass-pill px-8 py-3 text-text-primary font-medium
-                hover:bg-white/90 transition-colors"
-            >
-              Explore Timeline
-            </Link>
-            <Link
-              to="/tour"
-              className="glass-pill px-8 py-3 text-text-primary font-medium
-                hover:bg-white/90 transition-colors"
-            >
-              Take Guided Tour
-            </Link>
+      {/* Featured strip · one painting per chapter */}
+      {featuredArtworks.length > 0 && (
+        <section className="py-16 px-6 bg-[#FBF9F5]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="font-body text-text-muted uppercase tracking-widest text-xs mb-2">
+                A taste of the collection
+              </p>
+              <h2 className="font-heading text-3xl text-text-primary">
+                One from each corner of the book
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              {featuredArtworks.map((a, index) => (
+                <motion.div
+                  key={a.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06 }}
+                >
+                  <Link to={`/artwork/${a.id}`} className="group block">
+                    <PlaceholderArtwork
+                      src={a.thumbPath || a.imagePath}
+                      alt={a.title}
+                      color={a.placeholderColor}
+                      aspectRatio={a.aspectRatio}
+                      className="mb-2 group-hover:scale-[1.03] transition-transform shadow-soft"
+                    />
+                    <p className="font-body text-xs text-text-muted capitalize">
+                      {a.chapter?.replace(/-/g, ' ')}
+                    </p>
+                    <p className="font-body text-sm text-text-primary truncate">
+                      {a.display_title || a.title}
+                    </p>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </motion.div>
+        </section>
+      )}
+
+      {/* Preservation note */}
+      <section className="py-12 px-6 text-center">
+        <p className="max-w-2xl mx-auto font-body text-sm text-text-muted leading-relaxed">
+          This digital archive preserves Leah Schwartz's complete book · 267 artworks,
+          28,660 words of prose, and the photographs she chose to accompany them. The
+          original PDF is hosted for archivists. Built for generations, not seasons.
+        </p>
+        <Link
+          to="/preservation"
+          className="inline-block mt-6 text-xs uppercase tracking-widest font-body text-text-muted hover:text-text-primary transition-colors"
+        >
+          For scholars & archivists →
+        </Link>
       </section>
     </div>
   );

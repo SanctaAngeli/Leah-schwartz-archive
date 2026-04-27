@@ -92,6 +92,8 @@ function EraPile({ title, subtitle, artworks, index, eraId }: EraPileProps): JSX
             >
               <div className="w-full h-full rounded-xl overflow-hidden shadow-lg">
                 <PlaceholderArtwork
+                  src={artwork.thumbPath || artwork.imagePath}
+                  alt={artwork.title}
                   color={artwork.placeholderColor}
                   aspectRatio="portrait"
                   className="w-full h-full"

@@ -70,7 +70,7 @@ function ArtworkSpotlight({
             }}
           >
             <div
-              className={`w-full h-full rounded-2xl ${
+              className={`w-full h-full rounded-2xl overflow-hidden relative ${
                 artwork.aspectRatio === 'portrait'
                   ? 'aspect-[3/4]'
                   : artwork.aspectRatio === 'landscape'
@@ -81,7 +81,15 @@ function ArtworkSpotlight({
                 backgroundColor: artwork.placeholderColor,
                 margin: 'auto',
               }}
-            />
+            >
+              {artwork.imagePath && (
+                <img
+                  src={artwork.imagePath}
+                  alt={artwork.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+            </div>
           </motion.div>
         </motion.div>
 

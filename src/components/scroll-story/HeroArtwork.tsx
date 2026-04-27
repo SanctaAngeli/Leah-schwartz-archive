@@ -144,6 +144,14 @@ function HeroArtwork({
                   transform: 'translateZ(0)',
                 }}
               >
+                {artwork.imagePath && (
+                  <img
+                    src={artwork.imagePath}
+                    alt={artwork.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
                 {/* Glare/shine effect */}
                 {isHovering && (
                   <motion.div

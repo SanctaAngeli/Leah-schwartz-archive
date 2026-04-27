@@ -1,0 +1,11 @@
+[
+  {"id": "watercolors", "name": "Watercolors", "description": "Works in watercolor medium", "heroArtworkId": "garden-roses-1979"},
+  {"id": "notebooks", "name": "Notebooks", "description": "Pages from Leah's artistic notebooks", "heroArtworkId": "notebook-spring-1970"},
+  {"id": "landscapes", "name": "Landscapes", "description": "Views of the Bay Area and beyond", "heroArtworkId": "landscape-hero"},
+  {"id": "portraits", "name": "Portraits", "description": "Studies of family, friends, and self", "heroArtworkId": "daughter-reading-1974"},
+  {"id": "sketches", "name": "Sketches", "description": "Quick studies and drawings", "heroArtworkId": "sketch-hands-1977"},
+  {"id": "collage", "name": "Collage", "description": "Mixed media and collage works", "heroArtworkId": "newspaper-collage-1975"},
+  {"id": "still-life", "name": "Still Life", "description": "Arrangements of objects and flowers", "heroArtworkId": "kitchen-table-1972"},
+  {"id": "people", "name": "People", "description": "Figures and group scenes", "heroArtworkId": "friends-dinner-1986"},
+  {"id": "politics", "name": "Politics", "description": "Works reflecting social and political themes", "heroArtworkId": "protest-march-1969"}
+]

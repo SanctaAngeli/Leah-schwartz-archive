@@ -1,9 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { GlassCard } from '../components/ui/GlassCard';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
-import SFBayAreaMap from '../components/locations/SFBayAreaMap';
 import artworksData from '../data/artworks.json';
 import locationsData from '../data/locations.json';
 import type { Artwork, Location } from '../types';
@@ -19,26 +18,40 @@ function LocationsPage(): JSX.Element {
     ? locations.find((l) => l.id === locationId)
     : null;
 
+  // Bay Area rolls up the non-travel chapters from Leah's book
+  const BAY_AREA_CHAPTERS = new Set([
+    'landscape', 'on-the-road', 'street-scenes', 'interiors',
+    'flowers', 'portraits', 'still-life', 'old-stuff',
+    'abstract', 'social-comment',
+  ]);
+
   const locationArtworks = useMemo(() => {
     if (!locationId) return [];
-    return artworks.filter((a) => a.location === locationId);
+    if (locationId === 'bay-area') {
+      return artworks.filter((a) => a.chapter && BAY_AREA_CHAPTERS.has(a.chapter) && !a.region);
+    }
+    // Travel regions
+    return artworks.filter((a) => a.region === locationId);
   }, [locationId]);
 
   const getHeroArtwork = (location: Location): Artwork | undefined => {
     return artworks.find((a) => a.id === location.heroArtworkId);
   };
 
-  // Artwork counts per location for map
+  // Artwork counts per location (mirrors the locationArtworks filter)
   const artworkCounts = useMemo(() => {
     const counts: Record<string, number> = {};
     locations.forEach((loc) => {
-      counts[loc.id] = artworks.filter((a) => a.location === loc.id).length;
+      if (loc.id === 'bay-area') {
+        counts[loc.id] = artworks.filter(
+          (a) => a.chapter && BAY_AREA_CHAPTERS.has(a.chapter) && !a.region
+        ).length;
+      } else {
+        counts[loc.id] = artworks.filter((a) => a.region === loc.id).length;
+      }
     });
     return counts;
   }, []);
-
-  // View mode toggle
-  const [viewMode, setViewMode] = useState<'map' | 'grid'>('map');
 
   // Location grid view
   if (!selectedLocation) {
@@ -50,66 +63,31 @@ function LocationsPage(): JSX.Element {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-8">
-            <h1 className="font-heading text-4xl text-text-primary mb-2">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <p className="font-body text-text-muted text-sm tracking-[0.25em] uppercase mb-3">
+              Where she worked
+            </p>
+            <h1 className="font-heading text-5xl md:text-6xl text-text-primary leading-tight">
               Locations
             </h1>
-            <p className="font-body text-text-muted">
-              Explore works by the places that inspired them
+            <p className="font-body text-text-secondary mt-6 leading-relaxed">
+              Home in the Bay Area and eleven countries beyond. Open any region to see the works made there.
+              For individual places (Mt. Tam, Bolinas, Naxos, Kyoto…), visit{' '}
+              <a href="/places" className="underline decoration-[#D5C6A8] underline-offset-4 hover:decoration-[#8B7355]">Places</a>.
             </p>
           </div>
 
-          {/* View mode toggle */}
-          <div className="flex justify-center mb-8">
-            <div className="glass-pill p-1 flex gap-1">
-              <button
-                onClick={() => setViewMode('map')}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === 'map'
-                    ? 'bg-text-primary text-white'
-                    : 'text-text-secondary hover:text-text-primary'
-                }`}
-              >
-                Map View
-              </button>
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === 'grid'
-                    ? 'bg-text-primary text-white'
-                    : 'text-text-secondary hover:text-text-primary'
-                }`}
-              >
-                Grid View
-              </button>
-            </div>
-          </div>
-
-          {/* Map View */}
-          {viewMode === 'map' && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="mb-12"
-            >
-              <SFBayAreaMap locations={locations} artworkCounts={artworkCounts} />
-            </motion.div>
-          )}
-
-          {/* Grid View */}
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${viewMode === 'map' ? 'mt-8' : ''}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((location, index) => {
               const heroArtwork = getHeroArtwork(location);
-              const artworkCount = artworks.filter(
-                (a) => a.location === location.id
-              ).length;
+              const artworkCount = artworkCounts[location.id] ?? 0;
 
               return (
                 <motion.div
                   key={location.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.06 }}
                 >
                   <GlassCard
                     variant="image"
@@ -118,19 +96,25 @@ function LocationsPage(): JSX.Element {
                   >
                     <div className="relative">
                       <div
-                        className="w-full aspect-[4/3]"
-                        style={{
-                          backgroundColor:
-                            heroArtwork?.placeholderColor || '#9B8B7A',
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        className="w-full aspect-[4/3] relative"
+                        style={{ backgroundColor: heroArtwork?.placeholderColor || '#9B8B7A' }}
+                      >
+                        {heroArtwork?.imagePath && (
+                          <img
+                            src={heroArtwork.thumbPath || heroArtwork.imagePath}
+                            alt={location.name}
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                        )}
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h2 className="font-heading text-2xl text-white mb-1">
+                        <h2 className="font-heading text-2xl text-white mb-1 drop-shadow-md">
                           {location.name}
                         </h2>
-                        <p className="font-body text-white/80 text-sm">
-                          {artworkCount} works
+                        <p className="font-body text-white/85 text-sm drop-shadow">
+                          {artworkCount} {artworkCount === 1 ? 'work' : 'works'}
                         </p>
                       </div>
                     </div>
@@ -185,6 +169,8 @@ function LocationsPage(): JSX.Element {
               onClick={() => navigate(`/artwork/${artwork.id}`)}
             >
               <PlaceholderArtwork
+                src={artwork.thumbPath || artwork.imagePath}
+                alt={artwork.title}
                 color={artwork.placeholderColor}
                 aspectRatio={artwork.aspectRatio}
                 className="shadow-soft group-hover:shadow-glass mb-3"

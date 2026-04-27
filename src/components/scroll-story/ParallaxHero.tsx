@@ -167,12 +167,21 @@ function ParallaxHero({
               }}
             >
               <div
-                className="w-full h-full rounded-xl"
+                className="w-full h-full rounded-xl overflow-hidden relative"
                 style={{
                   backgroundColor: item.artwork.placeholderColor,
                   boxShadow: `0 ${20 + item.depth * 30}px ${60 + item.depth * 40}px rgba(0,0,0,${0.1 + item.depth * 0.1})`,
                 }}
-              />
+              >
+                {item.artwork.imagePath && (
+                  <img
+                    src={item.artwork.thumbPath || item.artwork.imagePath}
+                    alt={item.artwork.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+              </div>
             </motion.div>
           );
         })}

@@ -37,10 +37,13 @@ function FeaturedTrio({
   const titleY = useTransform(smoothProgress, [0, 0.3, 0.6], [80, 0, -20]);
   const titleOpacity = useTransform(smoothProgress, [0, 0.15, 0.7, 0.9], [0, 1, 1, 0]);
 
-  // Ensure we have exactly 3 artworks
+  // Ensure we have exactly 3 artworks · bail out cleanly if we have none
+  if (!artworks || artworks.length === 0) {
+    return <></>;
+  }
   const displayArtworks = artworks.slice(0, 3);
   while (displayArtworks.length < 3) {
-    displayArtworks.push(displayArtworks[0] || artworks[0]);
+    displayArtworks.push(displayArtworks[0]);
   }
 
   return (
@@ -148,7 +151,7 @@ function FeaturedTrio({
                   >
                     {/* Artwork */}
                     <div
-                      className={`w-full ${
+                      className={`w-full relative ${
                         artwork.aspectRatio === 'portrait'
                           ? 'aspect-[3/4]'
                           : artwork.aspectRatio === 'landscape'
@@ -156,7 +159,16 @@ function FeaturedTrio({
                             : 'aspect-square'
                       }`}
                       style={{ backgroundColor: artwork.placeholderColor }}
-                    />
+                    >
+                      {artwork.imagePath && (
+                        <img
+                          src={artwork.thumbPath || artwork.imagePath}
+                          alt={artwork.title}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
 
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

@@ -21,7 +21,7 @@ function ComparePage(): JSX.Element {
       .filter(a =>
         a.title.toLowerCase().includes(query) ||
         a.year?.toString().includes(query) ||
-        a.medium.toLowerCase().includes(query)
+        (a.medium || '').toLowerCase().includes(query)
       )
       .slice(0, 20);
   }, [searchQuery]);
@@ -198,6 +198,8 @@ function ComparePage(): JSX.Element {
                         className="group text-left"
                       >
                         <PlaceholderArtwork
+                          src={artwork.thumbPath || artwork.imagePath}
+                          alt={artwork.title}
                           color={artwork.placeholderColor}
                           aspectRatio={artwork.aspectRatio}
                           className="mb-1 group-hover:scale-105 transition-transform"
@@ -250,6 +252,8 @@ function CompareSlot({ artwork, position, onSelect, onClear }: CompareSlotProps)
   return (
     <div className="relative group">
       <PlaceholderArtwork
+        src={artwork.imagePath}
+        alt={artwork.title}
         color={artwork.placeholderColor}
         aspectRatio={artwork.aspectRatio}
         className="shadow-glass"

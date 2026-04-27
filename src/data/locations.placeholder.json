@@ -1,0 +1,11 @@
+[
+  {"id": "the-house", "name": "The House", "description": "Leah's home studio in the Bay Area", "heroArtworkId": "kitchen-table-1972"},
+  {"id": "mount-tam", "name": "Mount Tam", "description": "Mount Tamalpais, a constant source of inspiration", "heroArtworkId": "morning-light-tam-1967"},
+  {"id": "golden-gate", "name": "Golden Gate", "description": "The iconic bridge and its surrounding landscapes", "heroArtworkId": "golden-gate-fog-1968"},
+  {"id": "san-francisco", "name": "San Francisco", "description": "The city streets, neighborhoods, and urban scenes", "heroArtworkId": "market-street-1978"},
+  {"id": "sausalito", "name": "Sausalito", "description": "The waterfront town across the bay", "heroArtworkId": "bay-at-dusk-1973"},
+  {"id": "muir-woods", "name": "Muir Woods", "description": "The ancient redwood forest", "heroArtworkId": "muir-woods-1976"},
+  {"id": "point-reyes", "name": "Point Reyes", "description": "The dramatic coastal landscape north of the city", "heroArtworkId": "point-reyes-1984"},
+  {"id": "berkeley", "name": "Berkeley", "description": "The East Bay hills and university town", "heroArtworkId": "berkeley-hills-1989"},
+  {"id": "fishermans-wharf", "name": "Fisherman's Wharf", "description": "The historic waterfront district", "heroArtworkId": "fishermans-wharf-1980"}
+]

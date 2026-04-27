@@ -213,7 +213,7 @@ function HorizontalGallerySection({
                   {/* Artwork card */}
                   <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-shadow duration-500">
                     <div
-                      className={`w-full ${
+                      className={`w-full relative ${
                         artwork.aspectRatio === 'portrait'
                           ? 'aspect-[3/4]'
                           : artwork.aspectRatio === 'landscape'
@@ -221,7 +221,16 @@ function HorizontalGallerySection({
                             : 'aspect-square'
                       }`}
                       style={{ backgroundColor: artwork.placeholderColor }}
-                    />
+                    >
+                      {artwork.imagePath && (
+                        <img
+                          src={artwork.thumbPath || artwork.imagePath}
+                          alt={artwork.title}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
 
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
