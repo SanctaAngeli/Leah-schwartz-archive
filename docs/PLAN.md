@@ -1,7 +1,7 @@
 # Leah Schwartz Digital Archive — Living Plan
 
-**Status:** Active (v2.2, Sprint 1 in progress)
-**Last updated:** 2026-04-22
+**Status:** Active (v3 — Sprint 5 starting)
+**Last updated:** 2026-05-13
 **Owners:** Harry · Claude
 
 > This is a **living document**. It is rewritten when direction changes, not appended to indefinitely. When something shifts — scope, architecture, a feature idea — edit this file first, then change code.
@@ -9,7 +9,75 @@
 
 ---
 
-## ⚡ Sprint 1 — Make the content sing (current)
+## ⚡ Sprint 5 — Front door & escape (current)
+
+**Goal:** First-time visitors land on a real home, see who Leah is in five seconds, and can navigate any path without getting stuck.
+
+1. [ ] **New home page** — hero painting full-bleed + name + dates + one pull-quote in her voice (Caveat) + three pill paths: *See her work* (`/canvas`) · *Read her story* (`/her-words`) · *Browse themes* (`/themes`). Nav always visible.
+2. [ ] **Move DailyPage to `/daily`** — keep the daily-rotation ritual for returning visitors as a destination, but drop the yesterday/tomorrow chrome (it doesn't belong on the front door, and the time-traveling buttons confuse first-timers).
+3. [ ] **Fix `/places` crash** — `react-leaflet@5.0.0` is incompatible with React 18 (`TypeError: render2 is not a function` in `MapContainer`). Downgrade to `react-leaflet@4.x` and patch any v5-only API in `WorldMap.tsx`.
+4. [ ] **Escapable ErrorBoundary** — every error screen must show a visible "Back to home" link so crashed pages never trap visitors.
+5. [ ] **Merge `/gallery` → `/themes`** — the 12 book chapters are the gallery. Drop the "Old Stuff & Early Voice" / "Road & Landscape" / "Home, People & Travel" era buckets. Use the book's chapter names + taglines verbatim.
+
+**Ship criteria:** A new visitor lands on `/`, learns who Leah is, picks one of three paths, and on every page can keep going or get home.
+
+**Source documents:** See [SITE_REVIEW.md](SITE_REVIEW.md) for the full critique that produced this sprint.
+
+---
+
+## Sprint 6 — Visual richness in existing pages
+
+Make the pages we have feel like the book opened up, not transcripts.
+
+- [ ] **Inline photographs in `/her-words`** — wire the 74 photo candidates (already classified in `photos.json`) into the autobiography reader at the moments she describes them. Family in IMMIGRANTS, studio in WORK, Herman where he first appears.
+- [ ] **Inline painting thumbnails in `/her-words`** — UPPERCASE title mentions are already linkified; add small marginal thumbnails of the actual painting beside the text. So when she names a piece, you see it.
+- [ ] **Studio enrichment** (`/studio`) — at least one photo of her in the studio, work examples beside each philosophy paragraph (her brush technique → a watercolor where it shows), and a "tools" rail naming her actual materials.
+- [ ] **About split** — `/about` (bio narrative, expanded with book content) · `/family` (Herman + Dan + Peter + Davy + parents, already in `people.json`) · `/estate` (©, contact, book credits, preservation links). Surface `/life` prominently from `/about`.
+- [ ] **Living Watercolor Backdrop** — sitewide faint watercolor wash in the chapter accent color, generated on each page load, blooming and fading subtly. Makes the chrome itself feel painter-made.
+
+---
+
+## Sprint 7 — Data-art (signature beauty, no permissions)
+
+Three new features built purely from existing data; highest beauty-to-effort ratio in the backlog.
+
+- [ ] **Color Atlas** — extract dominant palettes from every painting (color-quantization library). Show her chromatic evolution as a horizontally-scrollable spectrum of her career: sober browns of the 1940s, Mediterranean blues of the 1970s travel years, blooming pinks of the late flower work. A temporal pigment analysis. Scholars love it; visitors find it stunning.
+- [ ] **Subject Obsessions** — auto-cluster her recurring subjects (Mt. Tam, Herman, the stained-glass window, one pear, Naxos rooftops) by traversing `place_ids` / `people_ids` and INDEX co-occurrence. Each cluster sequenced by year so her treatment evolves visibly. The Pairings page gestures at this; expand into a full discovery layer.
+- [ ] **At Her Age** — a slider across her 84 years divided into life-sections (Chicago childhood / New York art school / early Bay Area / Mill Valley + sons / travel decades / late work). For each section: a photograph of Leah at that age + the paintings she was making + a one-line caption of what was happening. (User will source additional photos as needed.)
+
+---
+
+## Sprint 8 — Navigation evolves
+
+New ways into the work that complement the canvas.
+
+- [ ] **`/constellation`** — promote Index Constellation from a hidden toggle to its own peer destination. Every person, place, subject is a node sized by mentions, edges glow on hover with the prose excerpts where the connection appears. Navigation by association — the **mind** of the archive made visual.
+- [ ] **Walk With Her** — canvas autopilot. Press a button, the drag controls release, the canvas glides through a curated path through her career. On-screen captions appear (her own words from the chapter intros), ambient background audio plays (user to provide). Apple Maps Flyover for an artist's life. Six or seven curated walks, ~90 seconds each.
+- [ ] **The Last Paintings** — a separate reverent room for the 2002–2004 work. Different design language: slower transitions, more white space, no glossy hover effects, paintings shown larger, her late words next to them. Treats the end with the gravity it deserves.
+
+---
+
+## Sprint 9 — Cinematic
+
+The signature moments people remember and share.
+
+- [ ] **Z-axis Entrance** — rebuilt from scratch with three.js for smoothness (the v1 attempt was janky). Once-only on first visit (cookie-gated). On landing: paintings hang in 3D space, the camera moves forward, paintings drift past on side walls, the deepest one resolves into the home's hero with her name centered. ~2 seconds total. Then the static home settles.
+- [ ] **Studio Visit scrollytelling** — long-scroll narrative arriving at her Mill Valley studio in 1985. Parallax photographs, ambient sound (brush in water? gulls? typewriter?), her own words pulled at the right moments, paintings revealed on walls as you scroll past. Treats her like she's still there.
+
+---
+
+## Sprint 10 — Tactile & community
+
+Things that grow over time, and things that feel like her medium.
+
+- [ ] **The Sketchbook** — digital flipbook of her travel notebooks. Paper texture, sketches on one side and travel prose on the other, real page-turn animation. The most book-like artifact we can make. *Dependency: notebook page extraction from the book PDF; check `leah-extraction/` for unprocessed scans.*
+- [ ] **Watercolor Sandbox** — a small browser-native watercolor simulator on `/studio`. Real bleeding pigments, paper grain, brush wetness. The visitor tries her medium. Save your sketch; a small gallery of visitor pieces accumulates.
+- [ ] **Letters to Leah** — visitors can leave a single sentence after experiencing the site, addressed to her. Curated for tone. Accumulate on the home as a slow carousel and on a dedicated `/letters` page. *Dependency: lightweight backend (Google Sheet via Apps Script, or a tiny Vercel serverless function).*
+- [ ] **David's selections** — a curated tour with David's chosen paintings and his own commentary/highlights. Replaces the "tours by family" idea — focused on one voice. *Dependency: David provides the selections and prose.*
+
+---
+
+## ✅ Sprint 1 — Make the content sing (shipped)
 
 **Goal:** Every page draws from the real book content. Her voice is present, not just her pictures.
 
@@ -25,6 +93,9 @@ Priority order (top first is most impactful):
 8. [x] **About page** — real biography: born Rock Island 1920, Herman, Mill Valley + Bolinas, her own quote
 9. [x] **Link prose → artwork** — UPPERCASE title mentions in Leah's writing auto-link to the artwork detail
 10. [x] **Location rollups** — INDEX parsed into `people.json`, `places.json`, `subjects.json`; 68 individual places across 11 regions
+
+**Canvas (shipped 2026-05-13):**
+33. [x] **Infinite draggable canvas** at `/canvas` — all 267 paintings laid out in a seamless column-masonry tile that pans, zooms, and repeats past its boundary; pixel-perfect tile-wrap verified; click any piece to open the existing lightbox without losing canvas position; pinch / ⌘+scroll to zoom, drag to pan with momentum, recenter button.
 
 **Sprint 4 additions (shipped 2026-04-23):**
 24. [x] **Em-dash sweep** — all `—` in source/UI/HTML replaced with `·` or hyphens; Leah's prose untouched
@@ -364,6 +435,8 @@ Because "for generations" is a real requirement:
 
 ## Changelog
 
+- **2026-05-13 (v3)** — Sprint 5+ roadmap committed. Critical review of v2.6 produced [SITE_REVIEW.md](SITE_REVIEW.md) (urgent fixes: home page, `/places` crash, escapable ErrorBoundary, gallery/themes merge) and [IDEAS.md](IDEAS.md) (21 candidate features). Approved selections folded into six sprints: front door (5), visual richness (6), data-art (7) — Color Atlas / Subject Obsessions / At Her Age — navigation evolution (8) — Constellation as destination / Walk With Her / Last Paintings — cinematic (9) — Z-axis entrance rebuilt with three.js / Studio Visit scrollytelling — and tactile/community (10) — Sketchbook / Watercolor Sandbox / Letters to Leah / David's selections.
+- **2026-05-13 (v2.6)** — Infinite draggable canvas shipped at `/canvas`. All 267 paintings in a column-masonry tile, pixel-perfect seamless wrap, click-to-lightbox, pan + pinch-zoom. Added as the canonical "see her work" path; will be the first click off the new home page once Sprint 5 lands.
 - **2026-04-23 (v2.5)** — Sprint 4 "Feel alive." Em-dash sweep. Lightbox rebuild of artwork detail (dark gallery wall + 6x pan/zoom + slide-in panel + keyboard). Handwritten typography layer (`font-leah` / Caveat) for Leah's tagline phrases. Painting of the Day at `/` with daily rotation and seasonal accent. Curated Pairings at `/pairings` with 8 editorial diptychs. Global keyboard shortcuts (`/`, `?`, `G`-prefix chords). Index Constellation toggle: bubble-pack view of 88 people + 68 places + 99 subjects with co-occurrence edges. Seasonal accent rotation. Send-as-postcard on every artwork.
 - **2026-04-23 (v2.4)** — Sprint 3: People (`/people/:id`) + Subject (`/subjects/:id`) detail pages with prose mentions. Studio (`/studio`) signature page — kit, influences, philosophy, technique reel. A Life in Chapters (`/life`) scroll experience across 8 biographical eras. Site-wide meta: per-page `<title>`/description via `usePageMeta`, og/twitter cards, JSON-LD person. Preservation page (`/preservation`) + public JSON API at `/api/*.json` + page-scan fallback for 19 un-cropped artworks. Lazy-load audit: every img uses native lazy loading.
 - **2026-04-22 (v2.3)** — Sprint 2: INDEX parsed into people (88) / places (68) / subjects (99). Added `/index` Navigator, `/places` + `/places/:id` with Leaflet world map, restructured `/locations` as region rollup. Prose mentions of artwork titles now auto-link. Per-chapter chromatic accents applied to themed galleries. Photo candidates classified by chroma (68 photos / 6 paintings); displayed per-section in Leah's Story. Site-wide search rebuilt with new entity types.
