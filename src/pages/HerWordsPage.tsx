@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
@@ -9,6 +9,36 @@ import type { Artwork } from '../types';
 import { PROSE_SECTIONS, cleanProse } from '../data/prose';
 import { linkArtworkMentions } from '../data/proseLinker';
 import { usePageMeta } from '../hooks/usePageMeta';
+
+const PARAGRAPHS_PER_CHUNK = 4;
+
+/** Add `#first` to the first occurrence of each `/artwork/SLUG` link, so the
+ *  renderer can show a thumbnail beside only the first mention of any piece. */
+function markFirstArtworkLinks(md: string): string {
+  const seen = new Set<string>();
+  return md.replace(/\[([^\]]+)\]\(\/artwork\/([^)#]+)\)/g, (_, text, slug) => {
+    if (seen.has(slug)) return `[${text}](/artwork/${slug})`;
+    seen.add(slug);
+    return `[${text}](/artwork/${slug}#first)`;
+  });
+}
+
+/** Split markdown into chunks of ~N paragraphs so we can drop photographs in
+ *  between them. We respect heading lines as their own chunk-break to avoid
+ *  splitting a heading from its first paragraph. */
+function chunkParagraphs(md: string, paragraphsPerChunk: number): string[] {
+  const paragraphs = md.split(/\n\n+/).filter((p) => p.trim().length > 0);
+  const out: string[] = [];
+  let buf: string[] = [];
+  const flush = (): void => { if (buf.length) { out.push(buf.join('\n\n')); buf = []; } };
+  for (const p of paragraphs) {
+    buf.push(p);
+    const isHeading = /^#{1,6}\s/.test(p.trimStart());
+    if (!isHeading && buf.length >= paragraphsPerChunk) flush();
+  }
+  flush();
+  return out;
+}
 
 interface BookPhoto {
   file: string;
@@ -61,9 +91,17 @@ function HerWordsPage(): JSX.Element {
 
   const active = SECTIONS.find((s) => s.id === activeId) || SECTIONS[1];
   const cleanedMd = useMemo(
-    () => linkArtworkMentions(cleanProse(active.markdown)),
+    () => markFirstArtworkLinks(linkArtworkMentions(cleanProse(active.markdown))),
     [active]
   );
+
+  const proseChunks = useMemo(() => chunkParagraphs(cleanedMd, PARAGRAPHS_PER_CHUNK), [cleanedMd]);
+
+  const artworkBySlug = useMemo(() => {
+    const m = new Map<string, Artwork>();
+    for (const a of artworks) m.set(a.id, a);
+    return m;
+  }, []);
 
   usePageMeta(
     `${active.label} · Leah's Story`,
@@ -144,32 +182,7 @@ function HerWordsPage(): JSX.Element {
         </p>
       </div>
 
-      {/* Photographs strip from the book, if any */}
-      {sectionPhotos.length > 0 && (
-        <section className="max-w-5xl mx-auto mb-12">
-          <p className="text-center font-body text-text-muted uppercase tracking-widest text-xs mb-4">
-            Photographs from the book
-          </p>
-          <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
-            {sectionPhotos.slice(0, 12).map((p) => (
-              <img
-                key={p.file}
-                src={`/photos/${p.file}`}
-                alt={`Photograph from book page ${p.book_page}`}
-                loading="lazy"
-                className="h-40 md:h-48 w-auto rounded-md shadow-soft snap-start flex-shrink-0"
-              />
-            ))}
-          </div>
-          {sectionPhotos.length > 12 && (
-            <p className="text-center font-body text-xs text-text-muted mt-2">
-              +{sectionPhotos.length - 12} more in the book
-            </p>
-          )}
-        </section>
-      )}
-
-      {/* Prose */}
+      {/* Prose — chunked, with photographs interleaved between chunks */}
       <motion.article
         key={activeId}
         className="
@@ -181,62 +194,119 @@ function HerWordsPage(): JSX.Element {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            h1: ({ children }) => (
-              <h1 className="font-heading text-5xl md:text-6xl text-text-primary mb-8 mt-0 leading-tight">
-                {children}
-              </h1>
-            ),
-            h2: ({ children }) => (
-              <h2 className="font-heading text-3xl md:text-4xl text-text-primary mt-16 mb-2 leading-tight">
-                {children}
-              </h2>
-            ),
-            h3: ({ children }) => (
-              <h3 className="font-heading text-2xl text-text-primary mt-8 mb-2">
-                {children}
-              </h3>
-            ),
-            p: ({ children }) => (
-              <p className="font-heading text-[18px] md:text-[19px] leading-[1.75] text-text-primary mb-6">
-                {children}
-              </p>
-            ),
-            em: ({ children }) => (
-              <em className="italic text-text-muted">{children}</em>
-            ),
-            strong: ({ children }) => (
-              <strong className="font-semibold text-text-primary">{children}</strong>
-            ),
-            blockquote: ({ children }) => (
-              <blockquote className="border-l-4 border-[#8B7355] pl-6 my-8 italic text-text-secondary">
-                {children}
-              </blockquote>
-            ),
-            hr: () => <hr className="my-12 border-[#E8E2D5]" />,
-            a: ({ href, children }) => {
-              if (href && href.startsWith('/')) {
-                return (
-                  <Link
-                    to={href}
-                    className="text-text-primary underline decoration-[#D5C6A8] decoration-1 underline-offset-4 hover:decoration-[#8B7355] hover:decoration-2 transition-colors"
-                  >
-                    {children}
-                  </Link>
-                );
-              }
-              return (
-                <a href={href} className="text-text-primary underline decoration-[#D5C6A8] decoration-1 underline-offset-4">
-                  {children}
-                </a>
-              );
-            },
-          }}
-        >
-          {cleanedMd}
-        </ReactMarkdown>
+        {proseChunks.map((chunk, chunkIdx) => {
+          const photo = sectionPhotos[chunkIdx % Math.max(sectionPhotos.length, 1)];
+          const showPhotoBefore = chunkIdx > 0 && chunkIdx % 1 === 0 && photo;
+          return (
+            <Fragment key={chunkIdx}>
+              {showPhotoBefore && (
+                <figure className="my-10 -mx-2 md:-mx-12 clear-both">
+                  <img
+                    src={`/photos/${photo.file}`}
+                    alt={`Photograph from book page ${photo.book_page > 0 ? photo.book_page : '—'}`}
+                    loading="lazy"
+                    className="w-full h-auto rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
+                  />
+                  {photo.book_page > 0 && (
+                    <figcaption className="font-body text-xs text-text-muted text-center mt-2 tracking-wider uppercase">
+                      from the book · page {photo.book_page}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ children }) => (
+                    <h1 className="font-heading text-5xl md:text-6xl text-text-primary mb-8 mt-0 leading-tight clear-both">
+                      {children}
+                    </h1>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="font-heading text-3xl md:text-4xl text-text-primary mt-16 mb-2 leading-tight clear-both">
+                      {children}
+                    </h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="font-heading text-2xl text-text-primary mt-8 mb-2 clear-both">
+                      {children}
+                    </h3>
+                  ),
+                  p: ({ children }) => (
+                    <p className="font-heading text-[18px] md:text-[19px] leading-[1.75] text-text-primary mb-6">
+                      {children}
+                    </p>
+                  ),
+                  em: ({ children }) => (
+                    <em className="italic text-text-muted">{children}</em>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-semibold text-text-primary">{children}</strong>
+                  ),
+                  blockquote: ({ children }) => (
+                    <blockquote className="border-l-4 border-[#8B7355] pl-6 my-8 italic text-text-secondary clear-both">
+                      {children}
+                    </blockquote>
+                  ),
+                  hr: () => <hr className="my-12 border-[#E8E2D5] clear-both" />,
+                  a: ({ href, children }) => {
+                    if (href && href.startsWith('/artwork/')) {
+                      const hasFirstMarker = href.endsWith('#first');
+                      const cleanHref = hasFirstMarker ? href.replace(/#first$/, '') : href;
+                      const slug = cleanHref.replace('/artwork/', '');
+                      const art = artworkBySlug.get(slug);
+                      const thumb = art?.thumbPath || art?.imagePath;
+                      return (
+                        <>
+                          {hasFirstMarker && thumb && (
+                            <Link
+                              to={cleanHref}
+                              aria-label={`Open ${art?.display_title || art?.title || 'artwork'}`}
+                              className="float-right ml-6 mb-3 w-[140px] md:w-[160px] max-w-[40%] block group"
+                            >
+                              <img
+                                src={thumb}
+                                alt={art?.display_title || art?.title || ''}
+                                loading="lazy"
+                                className="w-full h-auto rounded-sm shadow-[0_4px_18px_rgba(0,0,0,0.10)] group-hover:shadow-[0_8px_28px_rgba(0,0,0,0.18)] transition-shadow duration-300"
+                              />
+                              <span className="block font-body text-[11px] text-text-muted tracking-wider uppercase text-center mt-2 not-italic">
+                                {art?.display_title || art?.title}
+                              </span>
+                            </Link>
+                          )}
+                          <Link
+                            to={cleanHref}
+                            className="text-text-primary underline decoration-[#D5C6A8] decoration-1 underline-offset-4 hover:decoration-[#8B7355] hover:decoration-2 transition-colors"
+                          >
+                            {children}
+                          </Link>
+                        </>
+                      );
+                    }
+                    if (href && href.startsWith('/')) {
+                      return (
+                        <Link
+                          to={href}
+                          className="text-text-primary underline decoration-[#D5C6A8] decoration-1 underline-offset-4 hover:decoration-[#8B7355] hover:decoration-2 transition-colors"
+                        >
+                          {children}
+                        </Link>
+                      );
+                    }
+                    return (
+                      <a href={href} className="text-text-primary underline decoration-[#D5C6A8] decoration-1 underline-offset-4">
+                        {children}
+                      </a>
+                    );
+                  },
+                }}
+              >
+                {chunk}
+              </ReactMarkdown>
+            </Fragment>
+          );
+        })}
       </motion.article>
 
       {/* Chapter companion · paintings from this theme */}
