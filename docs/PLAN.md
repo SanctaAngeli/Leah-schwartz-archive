@@ -29,11 +29,11 @@
 
 Make the pages we have feel like the book opened up, not transcripts.
 
-- [ ] **Inline photographs in `/her-words`** — wire the 74 photo candidates (already classified in `photos.json`) into the autobiography reader at the moments she describes them. Family in IMMIGRANTS, studio in WORK, Herman where he first appears.
-- [ ] **Inline painting thumbnails in `/her-words`** — UPPERCASE title mentions are already linkified; add small marginal thumbnails of the actual painting beside the text. So when she names a piece, you see it.
-- [ ] **Studio enrichment** (`/studio`) — at least one photo of her in the studio, work examples beside each philosophy paragraph (her brush technique → a watercolor where it shows), and a "tools" rail naming her actual materials.
-- [ ] **About split** — `/about` (bio narrative, expanded with book content) · `/family` (Herman + Dan + Peter + Davy + parents, already in `people.json`) · `/estate` (©, contact, book credits, preservation links). Surface `/life` prominently from `/about`.
-- [ ] **Living Watercolor Backdrop** — sitewide faint watercolor wash in the chapter accent color, generated on each page load, blooming and fading subtly. Makes the chrome itself feel painter-made.
+- [x] **Inline photographs in `/her-words`** — wire the 74 photo candidates (already classified in `photos.json`) into the autobiography reader at the moments she describes them. Family in IMMIGRANTS, studio in WORK, Herman where he first appears.
+- [x] **Inline painting thumbnails in `/her-words`** — UPPERCASE title mentions are already linkified; add small marginal thumbnails of the actual painting beside the text. So when she names a piece, you see it.
+- [x] **Studio enrichment** (`/studio`) — at least one photo of her in the studio, work examples beside each philosophy paragraph (her brush technique → a watercolor where it shows), and a "tools" rail naming her actual materials.
+- [~] **About split** — deferred; instead enriched `/about` in place with photos inline, Herman portrait, deeper bio prose, and prominent links to `/her-words` + `/life` — `/about` (bio narrative, expanded with book content) · `/family` (Herman + Dan + Peter + Davy + parents, already in `people.json`) · `/estate` (©, contact, book credits, preservation links). Surface `/life` prominently from `/about`.
+- [x] **Living Watercolor Backdrop** — sitewide faint watercolor wash in the chapter accent color, generated on each page load, blooming and fading subtly. Makes the chrome itself feel painter-made.
 
 ---
 

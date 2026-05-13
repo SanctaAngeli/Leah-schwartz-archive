@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
 import artworksData from '../data/artworks.json';
+import photosData from '../data/photos.json';
 import type { Artwork } from '../types';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const artworks = artworksData as Artwork[];
+const photos = photosData as Array<{ file: string; pdf_page: number; book_page: number; likely_photo: boolean; chroma: number }>;
 
 // Pick a handful of strong works to tile the hero · any chapter, any year
 const heroMontage = artworks.filter((a) => a.imagePath).slice(0, 8);
@@ -15,6 +17,13 @@ const featuredChapters = ['old-stuff', 'social-comment', 'landscape', 'portraits
 const featuredArtworks = featuredChapters
   .map((c) => artworks.find((a) => a.chapter === c && a.imagePath))
   .filter(Boolean) as Artwork[];
+
+// Biographical photos in book-page order — early life pages first, then studio
+const bioPhotos = photos
+  .filter((p) => p.likely_photo && p.chroma < 0.06 && p.pdf_page >= 18 && p.pdf_page <= 50)
+  .slice(0, 4);
+
+const hermanPortrait = artworks.find((a) => a.id === 'the-remarkable-herman-arthur-schwartz');
 
 function AboutPage(): JSX.Element {
   usePageMeta('About Leah', 'Leah Schwartz (1920–2004) · Bay Area watercolorist, accidental artist, life in her own words.');
@@ -57,54 +66,126 @@ function AboutPage(): JSX.Element {
         </motion.div>
       </section>
 
-      {/* Biographical intro · grounded in her autobiography */}
+      {/* Biographical intro · grounded in her autobiography · photos and Herman
+          float beside the prose so the page reads like the book opening up */}
       <section className="py-20 px-6">
         <motion.div
-          className="max-w-2xl mx-auto font-heading text-[18px] md:text-[19px] leading-[1.8] text-text-primary"
+          className="max-w-3xl mx-auto font-heading text-[18px] md:text-[19px] leading-[1.8] text-text-primary"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          {bioPhotos[0] && (
+            <figure className="float-right ml-8 mb-4 w-[180px] md:w-[220px] max-w-[45%] clear-right">
+              <img
+                src={`/photos/${bioPhotos[0].file}`}
+                alt="Leah Schwartz, early years"
+                loading="lazy"
+                className="w-full h-auto rounded-sm shadow-[0_4px_22px_rgba(0,0,0,0.12)]"
+              />
+              <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase text-center mt-2">
+                Early years · from the book
+              </figcaption>
+            </figure>
+          )}
           <p className="mb-6">
             Leah Schwartz was born in <em>Rock Island, Illinois, on July 28, 1920</em>,
             the daughter of Polish-Jewish immigrants who had passed through Ellis Island
             as Pannemanskis and walked out Greenfields. She grew up in Chicago, Boston
             and Michigan, and went to art school in New York.
           </p>
+          <p className="mb-6 clear-right">
+            By her own account she nearly didn't survive infancy: her father William
+            disappeared from her life when her mother divorced him — <em>"the first
+            divorce in the family and considered so shameful that his name was never
+            mentioned, he was cut out of group pictures."</em> Her mother, sometimes
+            thoughtless but never cruel, reinvented herself as a beader in the early
+            twenties and put a card up in the window: <em>BEADING COLLEGE</em>.
+          </p>
+
+          {hermanPortrait?.imagePath && (
+            <Link
+              to={`/artwork/${hermanPortrait.id}`}
+              className="group float-left mr-8 mb-4 w-[180px] md:w-[220px] max-w-[45%] block"
+            >
+              <img
+                src={hermanPortrait.thumbPath || hermanPortrait.imagePath}
+                alt="The Remarkable Herman Arthur Schwartz"
+                loading="lazy"
+                className="w-full h-auto rounded-sm shadow-[0_4px_22px_rgba(0,0,0,0.12)] group-hover:shadow-[0_10px_32px_rgba(0,0,0,0.20)] transition-shadow"
+              />
+              <p className="font-body text-[11px] text-text-muted tracking-wider uppercase text-center mt-2 not-italic">
+                The Remarkable Herman
+              </p>
+            </Link>
+          )}
           <p className="mb-6">
-            She married <em>Herman Schwartz</em>-"the remarkable Herman," as she called him-
+            She married <em>Herman Schwartz</em> — "the remarkable Herman," as she called him —
             and eventually settled in Mill Valley, California, with a weekend retreat in
             Bolinas, on a piece of land that juts out into the Pacific, separated from the
             mainland by the San Andreas Fault. She painted in her Mill Valley studio through
-            the week and did "slave labor" in Bolinas on weekends.
+            the week and did "slave labor" in Bolinas on weekends. They had three sons:{' '}
+            <Link to="/people/dan-schwartz" className="underline decoration-[#D5C6A8] decoration-1 underline-offset-4 hover:decoration-[#8B7355]">Dan</Link>,{' '}
+            <Link to="/people/peter-schwartz" className="underline decoration-[#D5C6A8] decoration-1 underline-offset-4 hover:decoration-[#8B7355]">Peter</Link>, and{' '}
+            <Link to="/people/davy-schwartz" className="underline decoration-[#D5C6A8] decoration-1 underline-offset-4 hover:decoration-[#8B7355]">Davy</Link>.
           </p>
-          <p className="mb-6">
+          <p className="mb-6 clear-left">
             She was, by her own reckoning, <em>the accidental watercolorist</em>: she taught
             herself the medium by painting beetles from a library book. Across four decades
-            she worked in watercolor, oil, gouache, tempera, collage and ink · and over
+            she worked in watercolor, oil, gouache, tempera, collage and ink — over
             <em> 267 finished pieces</em> that span abstract studies, social comment, landscape,
             street scenes, portraits, still life, interiors, flowers, and travel notebooks
             from France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, the
             American desert and the High Sierra.
           </p>
+
+          {bioPhotos[1] && (
+            <figure className="float-right ml-8 mb-4 w-[180px] md:w-[220px] max-w-[45%] clear-right">
+              <img
+                src={`/photos/${bioPhotos[1].file}`}
+                alt="Leah Schwartz, studio years"
+                loading="lazy"
+                className="w-full h-auto rounded-sm shadow-[0_4px_22px_rgba(0,0,0,0.12)]"
+              />
+              <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase text-center mt-2">
+                Studio years · from the book
+              </figcaption>
+            </figure>
+          )}
           <p className="mb-6">
             Leah gathered this body of work into a self-published book with Strawberry Press
-            in Mill Valley before her death in 2004. This site is built from that book -
+            in Mill Valley before her death in 2004. This site is built from that book —
             her paintings, her words, her index, her life.
           </p>
 
-          <blockquote className="border-l-4 border-[#8B7355] pl-6 my-10 italic text-text-secondary text-[19px] leading-relaxed">
+          <blockquote className="border-l-4 border-[#8B7355] pl-6 my-10 italic text-text-secondary text-[19px] leading-relaxed clear-both">
             "I love the process of what I do. I enjoy the feel of a brush on canvas,
             the smell of turpentine, the flow of color on a fresh sheet of watercolor
             paper, and the intense pleasure of making things."
-            <footer className="text-sm mt-3 not-italic text-text-muted">- Leah Schwartz</footer>
+            <footer className="text-sm mt-3 not-italic text-text-muted">— Leah Schwartz</footer>
           </blockquote>
 
-          <p className="mb-2">
+          <p className="mb-8">
             Her voice is the center of this archive. Read her autobiography in her own
-            words, or wander the collection by theme, location, or time.
+            words, walk through her life in chapters, or wander the collection by theme
+            or place.
           </p>
+
+          <div className="flex flex-wrap gap-3 not-italic">
+            <Link
+              to="/her-words"
+              className="glass-pill px-5 py-2 text-sm text-text-primary hover:bg-white transition-colors"
+            >
+              Read her autobiography →
+            </Link>
+            <Link
+              to="/life"
+              className="glass-pill px-5 py-2 text-sm text-text-primary hover:bg-white transition-colors"
+            >
+              A life in chapters →
+            </Link>
+          </div>
         </motion.div>
       </section>
 
