@@ -9,7 +9,7 @@ import type { Artwork } from '../types';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const artworks = artworksData as Artwork[];
-const photos = photosData as Array<{ file: string; pdf_page: number; likely_photo: boolean }>;
+const photos = photosData as Array<{ file: string; pdf_page: number; likely_photo: boolean; chroma: number }>;
 
 // Pick a few representative works across different media for the reel at the bottom
 const techniqueReel = [
@@ -21,10 +21,16 @@ const techniqueReel = [
   artworks.find((a) => a.title === 'KEN AND ZILPHIA'),    // ink
 ].filter(Boolean) as Artwork[];
 
-// A handful of photos from the studio years (autobiography pages 32-39 are studio era)
+// Photos from her working years and family-with-art life · pulled from the
+// autobiography section pages, lower-chroma (true photographs, not paintings).
 const studioPhotos = photos
-  .filter((p) => p.likely_photo && p.pdf_page >= 32 && p.pdf_page <= 39)
-  .slice(0, 4);
+  .filter((p) => p.likely_photo && p.pdf_page >= 30 && p.pdf_page <= 50 && p.chroma < 0.06)
+  .slice(0, 6);
+
+// Paintings to pair with prose sections — chosen to illustrate what she's
+// writing about right there in the page.
+const watercolorExemplar = artworks.find((a) => a.id === 'pale-pink-rose-with-cosmos');
+const stalledEraExemplar = artworks.find((a) => a.id === 'migraine');
 
 const influences = [
   { name: 'The cave painters of Lascaux', note: '' },
@@ -84,8 +90,44 @@ export default function StudioPage(): JSX.Element {
         </motion.blockquote>
       </section>
 
-      {/* The accidental watercolorist · how she began */}
-      <section className="max-w-2xl mx-auto mb-24">
+      {/* Leah, working · photographs from the studio years · moved up because
+          they answer "who" before the words do */}
+      {studioPhotos.length > 0 && (
+        <section className="max-w-5xl mx-auto mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="font-body text-center text-text-muted uppercase tracking-[0.3em] text-xs mb-3">
+              Leah, working
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl text-text-primary text-center mb-10">
+              Photographs from the studio years
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {studioPhotos.map((p, idx) => (
+                <figure
+                  key={p.file}
+                  className={`${idx === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}
+                >
+                  <img
+                    src={`/photos/${p.file}`}
+                    alt="Leah Schwartz photograph"
+                    loading="lazy"
+                    className="w-full h-auto rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
+                  />
+                </figure>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+      )}
+
+      {/* The accidental watercolorist · how she began · with a watercolor exemplar
+          floating beside the prose */}
+      <section className="max-w-4xl mx-auto mb-24">
         <motion.div
           className="font-heading text-[18px] leading-[1.85] text-text-primary"
           initial={{ opacity: 0, y: 20 }}
@@ -93,9 +135,25 @@ export default function StudioPage(): JSX.Element {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading text-3xl text-text-primary mb-6">
+          <h2 className="font-heading text-3xl text-text-primary mb-6 clear-both">
             How she found watercolor
           </h2>
+          {watercolorExemplar?.imagePath && (
+            <Link
+              to={`/artwork/${watercolorExemplar.id}`}
+              className="group float-right ml-8 mb-4 w-[180px] md:w-[220px] max-w-[45%] block"
+            >
+              <img
+                src={watercolorExemplar.thumbPath || watercolorExemplar.imagePath}
+                alt={watercolorExemplar.display_title || watercolorExemplar.title}
+                loading="lazy"
+                className="w-full h-auto rounded-sm shadow-[0_4px_22px_rgba(0,0,0,0.12)] group-hover:shadow-[0_10px_32px_rgba(0,0,0,0.20)] transition-shadow duration-300"
+              />
+              <p className="font-body text-[11px] text-text-muted tracking-wider uppercase text-center mt-2 not-italic">
+                {watercolorExemplar.display_title || watercolorExemplar.title}
+              </p>
+            </Link>
+          )}
           <p className="mb-5">
             One fine day, while browsing the shelves of the Marin County Library,
             she found a large volume of color photographs of beetles from all over
@@ -188,8 +246,8 @@ export default function StudioPage(): JSX.Element {
         </motion.div>
       </section>
 
-      {/* When the work stalled */}
-      <section className="max-w-2xl mx-auto mb-24">
+      {/* When the work stalled · with a dark-period oil floating in the margin */}
+      <section className="max-w-4xl mx-auto mb-24">
         <motion.div
           className="font-heading text-[18px] leading-[1.85] text-text-primary"
           initial={{ opacity: 0, y: 20 }}
@@ -197,9 +255,25 @@ export default function StudioPage(): JSX.Element {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading text-3xl text-text-primary mb-6">
+          <h2 className="font-heading text-3xl text-text-primary mb-6 clear-both">
             When the work stalled
           </h2>
+          {stalledEraExemplar?.imagePath && (
+            <Link
+              to={`/artwork/${stalledEraExemplar.id}`}
+              className="group float-left mr-8 mb-4 w-[180px] md:w-[220px] max-w-[45%] block"
+            >
+              <img
+                src={stalledEraExemplar.thumbPath || stalledEraExemplar.imagePath}
+                alt={stalledEraExemplar.display_title || stalledEraExemplar.title}
+                loading="lazy"
+                className="w-full h-auto rounded-sm shadow-[0_4px_22px_rgba(0,0,0,0.12)] group-hover:shadow-[0_10px_32px_rgba(0,0,0,0.20)] transition-shadow duration-300"
+              />
+              <p className="font-body text-[11px] text-text-muted tracking-wider uppercase text-center mt-2 not-italic">
+                {stalledEraExemplar.display_title || stalledEraExemplar.title}
+              </p>
+            </Link>
+          )}
           <p className="mb-5">
             When Peter and Davy were in high school, she painted intensely for months
             at a time and would then hit a "slump," which would usually pass in a
@@ -273,29 +347,6 @@ export default function StudioPage(): JSX.Element {
                   {a.display_title || a.title}
                 </p>
               </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Studio photographs if any */}
-      {studioPhotos.length > 0 && (
-        <section className="max-w-5xl mx-auto mb-24">
-          <h2 className="font-heading text-3xl text-text-primary text-center mb-3">
-            Leah, working
-          </h2>
-          <p className="font-body text-center text-text-muted italic mb-10">
-            Photographs from the book's studio years.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {studioPhotos.map((p) => (
-              <img
-                key={p.file}
-                src={`/photos/${p.file}`}
-                alt="Leah Schwartz in the studio era"
-                loading="lazy"
-                className="w-full h-auto rounded-md shadow-soft"
-              />
             ))}
           </div>
         </section>
