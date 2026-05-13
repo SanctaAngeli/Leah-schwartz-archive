@@ -50,6 +50,7 @@ function Navigation({ visible = true, onSettingsClick }: NavigationProps): JSX.E
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/gallery', label: 'Gallery' },
+    { path: '/canvas', label: 'Canvas' },
     { path: '/her-words', label: "Leah's Story" },
     { path: '/themes', label: 'Themes' },
     { path: '/pairings', label: 'Pairings' },

@@ -10,6 +10,7 @@ import PagePreloader from './components/ui/PagePreloader';
 import { IntroProvider, useIntroComplete } from './hooks/useIntroComplete';
 import { ShortcutsProvider } from './hooks/useGlobalShortcuts';
 import ScrollStoryPage from './pages/ScrollStoryPage';
+import CanvasPage from './pages/CanvasPage';
 import CuratedGalleryPage from './pages/CuratedGalleryPage';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
@@ -59,6 +60,7 @@ function AppContent(): JSX.Element {
             {/* / is the Painting of the Day. /story parks the scroll-story. /gallery is the era-pile browse. */}
             <Route path="/" element={<PageTransition><DailyPage /></PageTransition>} />
             <Route path="/gallery" element={<PageTransition><LandingPage /></PageTransition>} />
+            <Route path="/canvas" element={<PageTransition><CanvasPage /></PageTransition>} />
             <Route path="/story" element={<PageTransition><ScrollStoryPage /></PageTransition>} />
             <Route path="/curated" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
             <Route path="/curated/:eraId" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
