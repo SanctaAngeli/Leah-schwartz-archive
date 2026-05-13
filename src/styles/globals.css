@@ -28,6 +28,21 @@
   --ease-drift: cubic-bezier(0.37, 0, 0.63, 1);
 }
 
+@keyframes watercolor-drift {
+  0% {
+    transform: translate(-50%, -50%) translate(var(--drift-x-from, 0px), var(--drift-y-from, 0px));
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--drift-x-to, 0px), var(--drift-y-to, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .watercolor-blob {
+    animation: none !important;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

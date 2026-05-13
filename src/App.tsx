@@ -7,6 +7,7 @@ import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
 import PagePreloader from './components/ui/PagePreloader';
+import WatercolorBackdrop from './components/ui/WatercolorBackdrop';
 import { IntroProvider } from './hooks/useIntroComplete';
 import { ShortcutsProvider } from './hooks/useGlobalShortcuts';
 import ScrollStoryPage from './pages/ScrollStoryPage';
@@ -53,7 +54,8 @@ function AppContent(): JSX.Element {
         />
       )}
       <SkipLink />
-      <div className="min-h-screen bg-bg-gallery transition-colors duration-500">
+      <div className="min-h-screen bg-bg-gallery transition-colors duration-500 relative">
+        <WatercolorBackdrop />
         <Navigation visible={showNavigation} />
         <main id="main-content" className="focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
