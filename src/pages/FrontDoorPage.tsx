@@ -86,13 +86,19 @@ function FrontDoorPage(): JSX.Element {
         transition={{ delay: 1.4, duration: 1 }}
         className="mt-16"
       >
-        <Link
-          to="/daily"
-          className="font-body text-text-muted text-xs tracking-[0.25em] uppercase
-            hover:text-text-primary transition-colors duration-300"
-        >
-          · Today’s painting ·
-        </Link>
+        <div className="flex items-center gap-6 text-text-muted text-xs tracking-[0.25em] uppercase font-body">
+          <Link to="/daily" className="hover:text-text-primary transition-colors duration-300">
+            Today’s painting
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/atlas" className="hover:text-text-primary transition-colors duration-300">
+            Color Atlas
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/pairings" className="hover:text-text-primary transition-colors duration-300">
+            Curated pairings
+          </Link>
+        </div>
       </motion.div>
     </main>
   );

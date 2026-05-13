@@ -1,0 +1,4001 @@
+{
+  "girl-with-arm": {
+    "dominant": "#F8F6C2",
+    "palette": [
+      "#F8F6C2",
+      "#F3F0B7",
+      "#B3A989",
+      "#794B34",
+      "#F8F7CD"
+    ],
+    "hsl": [
+      58,
+      79,
+      87
+    ]
+  },
+  "jeanette": {
+    "dominant": "#E1D7A6",
+    "palette": [
+      "#E1D7A6",
+      "#76190D",
+      "#7E2512",
+      "#5D3D32",
+      "#F0DF8A"
+    ],
+    "hsl": [
+      50,
+      50,
+      77
+    ]
+  },
+  "self-portrait": {
+    "dominant": "#4F5C52",
+    "palette": [
+      "#4F5C52",
+      "#0F0706",
+      "#4E564D",
+      "#414A3E",
+      "#455348"
+    ],
+    "hsl": [
+      134,
+      8,
+      34
+    ]
+  },
+  "old-ferry-slip": {
+    "dominant": "#3E443D",
+    "palette": [
+      "#3E443D",
+      "#563216",
+      "#45260F",
+      "#46574C",
+      "#323433"
+    ],
+    "hsl": [
+      111,
+      5,
+      25
+    ]
+  },
+  "wool-hap-town": {
+    "dominant": "#2B3238",
+    "palette": [
+      "#2B3238",
+      "#131213",
+      "#DCDAB3",
+      "#BD0E0C",
+      "#181E23"
+    ],
+    "hsl": [
+      208,
+      13,
+      19
+    ]
+  },
+  "liberty-ship": {
+    "dominant": "#2D241C",
+    "palette": [
+      "#2D241C",
+      "#1F140F",
+      "#81241B",
+      "#F1F0DC",
+      "#150D0A"
+    ],
+    "hsl": [
+      28,
+      23,
+      14
+    ]
+  },
+  "autumn-leaves": {
+    "dominant": "#241812",
+    "palette": [
+      "#241812",
+      "#F1F0E2",
+      "#A04020",
+      "#19100C",
+      "#EBE7CE"
+    ],
+    "hsl": [
+      20,
+      33,
+      11
+    ]
+  },
+  "beacon-street-boston": {
+    "dominant": "#1E2F1F",
+    "palette": [
+      "#1E2F1F",
+      "#2D2E24",
+      "#B4C4BB",
+      "#24432A",
+      "#1B2318"
+    ],
+    "hsl": [
+      124,
+      22,
+      15
+    ]
+  },
+  "view-from-new-york-apartment": {
+    "dominant": "#7881A6",
+    "palette": [
+      "#7881A6",
+      "#6A6A7E",
+      "#757997",
+      "#79706A",
+      "#909CB2"
+    ],
+    "hsl": [
+      228,
+      21,
+      56
+    ]
+  },
+  "hilaritas-house": {
+    "dominant": "#666B76",
+    "palette": [
+      "#666B76",
+      "#AC7443",
+      "#42445A",
+      "#6A382B",
+      "#5A5A63"
+    ],
+    "hsl": [
+      221,
+      7,
+      43
+    ]
+  },
+  "crystal-inclusion": {
+    "dominant": "#9E210D",
+    "palette": [
+      "#9E210D",
+      "#8C1108",
+      "#B32215",
+      "#B42C19",
+      "#D94121"
+    ],
+    "hsl": [
+      8,
+      85,
+      34
+    ]
+  },
+  "space-matter": {
+    "dominant": "#9D110A",
+    "palette": [
+      "#9D110A",
+      "#6D1810",
+      "#844433",
+      "#89180E",
+      "#8E2C17"
+    ],
+    "hsl": [
+      3,
+      88,
+      33
+    ]
+  },
+  "migraine": {
+    "dominant": "#A86E28",
+    "palette": [
+      "#A86E28",
+      "#D0C7A8",
+      "#060202",
+      "#B4AF94",
+      "#A99D7A"
+    ],
+    "hsl": [
+      33,
+      62,
+      41
+    ]
+  },
+  "galaxy": {
+    "dominant": "#B53C19",
+    "palette": [
+      "#B53C19",
+      "#A43A1B",
+      "#C74E24",
+      "#482B11",
+      "#92391B"
+    ],
+    "hsl": [
+      13,
+      76,
+      40
+    ]
+  },
+  "assassination": {
+    "dominant": "#24150B",
+    "palette": [
+      "#24150B",
+      "#803822",
+      "#0F0904",
+      "#0F0403",
+      "#110604"
+    ],
+    "hsl": [
+      24,
+      53,
+      9
+    ]
+  },
+  "kent-state": {
+    "dominant": "#C8892D",
+    "palette": [
+      "#C8892D",
+      "#060202",
+      "#836447",
+      "#201713",
+      "#CC6F21"
+    ],
+    "hsl": [
+      36,
+      63,
+      48
+    ]
+  },
+  "sit-in-demonstration": {
+    "dominant": "#7A3B1D",
+    "palette": [
+      "#7A3B1D",
+      "#3B3D3D",
+      "#363632",
+      "#543B29",
+      "#96401C"
+    ],
+    "hsl": [
+      19,
+      62,
+      30
+    ]
+  },
+  "target": {
+    "dominant": "#423F3B",
+    "palette": [
+      "#423F3B",
+      "#86401F",
+      "#24201D",
+      "#5A3420",
+      "#755940"
+    ],
+    "hsl": [
+      34,
+      6,
+      25
+    ]
+  },
+  "an-american-family": {
+    "dominant": "#D7D9CE",
+    "palette": [
+      "#D7D9CE",
+      "#A0998B",
+      "#2A2B34",
+      "#0B0907",
+      "#7F7564"
+    ],
+    "hsl": [
+      71,
+      13,
+      83
+    ]
+  },
+  "the-senator-on-an-in-vestigating-committee": {
+    "dominant": "#D6D8CC",
+    "palette": [
+      "#D6D8CC",
+      "#9F9687",
+      "#ADAA9E",
+      "#232225",
+      "#363338"
+    ],
+    "hsl": [
+      70,
+      13,
+      82
+    ]
+  },
+  "american-legion": {
+    "dominant": "#503828",
+    "palette": [
+      "#503828",
+      "#A2A2A6",
+      "#581F1A",
+      "#5E5C6F",
+      "#332117"
+    ],
+    "hsl": [
+      24,
+      33,
+      24
+    ]
+  },
+  "the-sec-y-of-state-with-puppet": {
+    "dominant": "#841616",
+    "palette": [
+      "#841616",
+      "#172141",
+      "#827E86",
+      "#0F0F1F",
+      "#0E060C"
+    ],
+    "hsl": [
+      0,
+      71,
+      30
+    ]
+  },
+  "kkk-imperial-wizard": {
+    "dominant": "#170C0A",
+    "palette": [
+      "#170C0A",
+      "#0F0906",
+      "#7C6E6F",
+      "#8A2515",
+      "#9C9292"
+    ],
+    "hsl": [
+      9,
+      39,
+      6
+    ]
+  },
+  "the-general-old-soldiers-do": {
+    "dominant": "#921C10",
+    "palette": [
+      "#921C10",
+      "#2C1A13",
+      "#562C22",
+      "#722C2C",
+      "#B2A29D"
+    ],
+    "hsl": [
+      6,
+      80,
+      32
+    ]
+  },
+  "campaigning-senator": {
+    "dominant": "#DAA27B",
+    "palette": [
+      "#DAA27B",
+      "#2A1D25",
+      "#7C6766",
+      "#8C6A63",
+      "#BE9575"
+    ],
+    "hsl": [
+      25,
+      56,
+      67
+    ]
+  },
+  "the-governor-on-the-campaign-trail": {
+    "dominant": "#C76B4C",
+    "palette": [
+      "#C76B4C",
+      "#4C332F",
+      "#6C5857",
+      "#5E4443",
+      "#D1D2CD"
+    ],
+    "hsl": [
+      15,
+      52,
+      54
+    ]
+  },
+  "the-voter": {
+    "dominant": "#331B25",
+    "palette": [
+      "#331B25",
+      "#221B23",
+      "#281F26",
+      "#21141B",
+      "#160E15"
+    ],
+    "hsl": [
+      335,
+      31,
+      15
+    ]
+  },
+  "hawaiian-vacationers": {
+    "dominant": "#A04A17",
+    "palette": [
+      "#A04A17",
+      "#B55C1B",
+      "#C2621F",
+      "#887B7F",
+      "#725C5A"
+    ],
+    "hsl": [
+      22,
+      75,
+      36
+    ]
+  },
+  "the-mayor-s-hawaiian-junket": {
+    "dominant": "#66626C",
+    "palette": [
+      "#66626C",
+      "#483D35",
+      "#514848",
+      "#9F401E",
+      "#34251B"
+    ],
+    "hsl": [
+      264,
+      5,
+      40
+    ]
+  },
+  "one-mickey-two-anns": {
+    "dominant": "#BC1B19",
+    "palette": [
+      "#BC1B19",
+      "#EAE6D3",
+      "#40261E",
+      "#897689",
+      "#9D9396"
+    ],
+    "hsl": [
+      1,
+      77,
+      42
+    ]
+  },
+  "the-gov-man-and-image": {
+    "dominant": "#E8DF98",
+    "palette": [
+      "#E8DF98",
+      "#CF8A45",
+      "#0F0505",
+      "#AFA19B",
+      "#E2DEC2"
+    ],
+    "hsl": [
+      53,
+      63,
+      75
+    ]
+  },
+  "the-boys-from-liverpool": {
+    "dominant": "#CBAB76",
+    "palette": [
+      "#CBAB76",
+      "#190808",
+      "#5D452C",
+      "#060202",
+      "#AB9474"
+    ],
+    "hsl": [
+      37,
+      45,
+      63
+    ]
+  },
+  "silent-spring": {
+    "dominant": "#B8C2BA",
+    "palette": [
+      "#B8C2BA",
+      "#C3C8B6",
+      "#B8B9A4",
+      "#C6CEBC",
+      "#ADAEA2"
+    ],
+    "hsl": [
+      132,
+      8,
+      74
+    ]
+  },
+  "springtime-in-the-rockies": {
+    "dominant": "#7C7B76",
+    "palette": [
+      "#7C7B76",
+      "#6D82C0",
+      "#676762",
+      "#726E68",
+      "#675D53"
+    ],
+    "hsl": [
+      50,
+      2,
+      47
+    ]
+  },
+  "kitchen-bouquet": {
+    "dominant": "#843A1B",
+    "palette": [
+      "#843A1B",
+      "#C75726",
+      "#5C3827",
+      "#AA4A20",
+      "#BE4C1E"
+    ],
+    "hsl": [
+      18,
+      66,
+      31
+    ]
+  },
+  "ken-barbie-after-the-fall": {
+    "dominant": "#EA8D44",
+    "palette": [
+      "#EA8D44",
+      "#EDA955",
+      "#635931",
+      "#4E3F28",
+      "#9C613C"
+    ],
+    "hsl": [
+      26,
+      80,
+      59
+    ]
+  },
+  "buddies": {
+    "dominant": "#2A170F",
+    "palette": [
+      "#2A170F",
+      "#0D0505",
+      "#A48E6B",
+      "#C0A97E",
+      "#F4F7E7"
+    ],
+    "hsl": [
+      18,
+      47,
+      11
+    ]
+  },
+  "ken-and-zilphia": {
+    "dominant": "#D2DAC9",
+    "palette": [
+      "#D2DAC9",
+      "#CDD7C3",
+      "#88775E",
+      "#96886D",
+      "#A39A7F"
+    ],
+    "hsl": [
+      88,
+      19,
+      82
+    ]
+  },
+  "charmer": {
+    "dominant": "#BC7758",
+    "palette": [
+      "#BC7758",
+      "#060202",
+      "#AB6A53",
+      "#0C0606",
+      "#C48A6B"
+    ],
+    "hsl": [
+      19,
+      43,
+      54
+    ]
+  },
+  "the-organization-man": {
+    "dominant": "#BA785A",
+    "palette": [
+      "#BA785A",
+      "#B16B51",
+      "#090404",
+      "#040001",
+      "#73554B"
+    ],
+    "hsl": [
+      19,
+      41,
+      54
+    ]
+  },
+  "demartile-bros": {
+    "dominant": "#515E5F",
+    "palette": [
+      "#515E5F",
+      "#4C6671",
+      "#506C81",
+      "#35221D",
+      "#8C988A"
+    ],
+    "hsl": [
+      184,
+      8,
+      35
+    ]
+  },
+  "meekers-welding": {
+    "dominant": "#5D68AA",
+    "palette": [
+      "#5D68AA",
+      "#554031",
+      "#C82F19",
+      "#22130F",
+      "#D13B22"
+    ],
+    "hsl": [
+      231,
+      31,
+      52
+    ]
+  },
+  "black-point-general-store": {
+    "dominant": "#857C77",
+    "palette": [
+      "#857C77",
+      "#695345",
+      "#A6A5A0",
+      "#7B7A97",
+      "#92806B"
+    ],
+    "hsl": [
+      21,
+      6,
+      49
+    ]
+  },
+  "the-meadows": {
+    "dominant": "#4A503D",
+    "palette": [
+      "#4A503D",
+      "#3D3E30",
+      "#3B3120",
+      "#87968A",
+      "#2D261A"
+    ],
+    "hsl": [
+      79,
+      13,
+      28
+    ]
+  },
+  "chris-s-2-cafe": {
+    "dominant": "#D8A039",
+    "palette": [
+      "#D8A039",
+      "#575538",
+      "#3D3A28",
+      "#2E281B",
+      "#1F0D08"
+    ],
+    "hsl": [
+      39,
+      67,
+      54
+    ]
+  },
+  "san-pedro-cafe": {
+    "dominant": "#7F817E",
+    "palette": [
+      "#7F817E",
+      "#613F1D",
+      "#75502C",
+      "#6A665E",
+      "#655B48"
+    ],
+    "hsl": [
+      100,
+      1,
+      50
+    ]
+  },
+  "nob-hill-market-billboard": {
+    "dominant": "#727EC3",
+    "palette": [
+      "#727EC3",
+      "#76624E",
+      "#D28268",
+      "#76462E",
+      "#DAD9CD"
+    ],
+    "hsl": [
+      231,
+      40,
+      61
+    ]
+  },
+  "buzz-s": {
+    "dominant": "#88969C",
+    "palette": [
+      "#88969C",
+      "#323E14",
+      "#B7BED1",
+      "#626A51",
+      "#5F5936"
+    ],
+    "hsl": [
+      198,
+      9,
+      57
+    ]
+  },
+  "sav-a-lot": {
+    "dominant": "#1C1E31",
+    "palette": [
+      "#1C1E31",
+      "#48240B",
+      "#863412",
+      "#701C0A",
+      "#B01209"
+    ],
+    "hsl": [
+      234,
+      27,
+      15
+    ]
+  },
+  "fish-bait-shack": {
+    "dominant": "#413121",
+    "palette": [
+      "#413121",
+      "#784930",
+      "#22251F",
+      "#4A4639",
+      "#92919B"
+    ],
+    "hsl": [
+      30,
+      33,
+      19
+    ]
+  },
+  "p-r-surplus": {
+    "dominant": "#B7B0A3",
+    "palette": [
+      "#B7B0A3",
+      "#713D14",
+      "#9A8D79",
+      "#959CAD",
+      "#7788A6"
+    ],
+    "hsl": [
+      39,
+      12,
+      68
+    ]
+  },
+  "sausalito-bait-shop": {
+    "dominant": "#80641C",
+    "palette": [
+      "#80641C",
+      "#D3DCE0",
+      "#A5832F",
+      "#AA9F74",
+      "#AEBCCE"
+    ],
+    "hsl": [
+      43,
+      64,
+      31
+    ]
+  },
+  "george-and-marsha-s": {
+    "dominant": "#8B8166",
+    "palette": [
+      "#8B8166",
+      "#7480AA",
+      "#8897CA",
+      "#99988A",
+      "#C6D2D9"
+    ],
+    "hsl": [
+      44,
+      15,
+      47
+    ]
+  },
+  "bonnie-and-bill-s-rainbow-inn": {
+    "dominant": "#9D9596",
+    "palette": [
+      "#9D9596",
+      "#978883",
+      "#8E7364",
+      "#66402F",
+      "#47241A"
+    ],
+    "hsl": [
+      352,
+      4,
+      60
+    ]
+  },
+  "berkeley-city-limits": {
+    "dominant": "#F4EDDD",
+    "palette": [
+      "#F4EDDD",
+      "#3F0D07",
+      "#9D7E62",
+      "#2D0A05",
+      "#8D775F"
+    ],
+    "hsl": [
+      42,
+      51,
+      91
+    ]
+  },
+  "footlong-hotdog": {
+    "dominant": "#9B542A",
+    "palette": [
+      "#9B542A",
+      "#BABDB7",
+      "#090202",
+      "#797271",
+      "#774427"
+    ],
+    "hsl": [
+      22,
+      57,
+      39
+    ]
+  },
+  "united-cafe": {
+    "dominant": "#AA8B8C",
+    "palette": [
+      "#AA8B8C",
+      "#2B0A0A",
+      "#4D4D4F",
+      "#645F60",
+      "#030001"
+    ],
+    "hsl": [
+      358,
+      15,
+      61
+    ]
+  },
+  "courtland-market": {
+    "dominant": "#D67F08",
+    "palette": [
+      "#D67F08",
+      "#8B795A",
+      "#D3D4DE",
+      "#938D83",
+      "#A47E4A"
+    ],
+    "hsl": [
+      35,
+      93,
+      44
+    ]
+  },
+  "valley-ford-market": {
+    "dominant": "#8397C7",
+    "palette": [
+      "#8397C7",
+      "#F0F4E6",
+      "#798DC6",
+      "#6D6C72",
+      "#918A84"
+    ],
+    "hsl": [
+      222,
+      38,
+      65
+    ]
+  },
+  "four-views-of-mt-tam": {
+    "dominant": "#E1E5E7",
+    "palette": [
+      "#E1E5E7",
+      "#D0CBCC",
+      "#B5C2DA",
+      "#8C95AD",
+      "#D7DBDC"
+    ],
+    "hsl": [
+      200,
+      11,
+      89
+    ]
+  },
+  "four-views-of-sonoma": {
+    "dominant": "#BECDD2",
+    "palette": [
+      "#BECDD2",
+      "#B8B039",
+      "#CCD8D1",
+      "#B0C2D1",
+      "#94AEBD"
+    ],
+    "hsl": [
+      195,
+      18,
+      78
+    ]
+  },
+  "mt-tam-golden-gate-bridge-sausalito-from-san-francisco": {
+    "dominant": "#89A694",
+    "palette": [
+      "#89A694",
+      "#736F22",
+      "#E8ECED",
+      "#8C913F",
+      "#58461A"
+    ],
+    "hsl": [
+      143,
+      14,
+      59
+    ]
+  },
+  "mt-tam-from-sonoma": {
+    "dominant": "#A9C917",
+    "palette": [
+      "#A9C917",
+      "#6D7F04",
+      "#799507",
+      "#6F8808",
+      "#D1DEDE"
+    ],
+    "hsl": [
+      71,
+      79,
+      44
+    ]
+  },
+  "golden-gate-bridge-and-marin-headlands": {
+    "dominant": "#CBC5C1",
+    "palette": [
+      "#CBC5C1",
+      "#B6B2BC",
+      "#CFCBC2",
+      "#9F5B1C",
+      "#C0BFC0"
+    ],
+    "hsl": [
+      24,
+      9,
+      78
+    ]
+  },
+  "marin-headlands": {
+    "dominant": "#D2D8D5",
+    "palette": [
+      "#D2D8D5",
+      "#DBE1DA",
+      "#D5DBD7",
+      "#E8EEDE",
+      "#B4B5AB"
+    ],
+    "hsl": [
+      150,
+      7,
+      84
+    ]
+  },
+  "winter-sunrise": {
+    "dominant": "#786F77",
+    "palette": [
+      "#786F77",
+      "#AA704F",
+      "#E2A448",
+      "#724658",
+      "#B08B65"
+    ],
+    "hsl": [
+      307,
+      4,
+      45
+    ]
+  },
+  "christo-s-running-fence-1": {
+    "dominant": "#BFCFCD",
+    "palette": [
+      "#BFCFCD",
+      "#95A099",
+      "#634C14",
+      "#9CB0B6",
+      "#879994"
+    ],
+    "hsl": [
+      173,
+      14,
+      78
+    ]
+  },
+  "christo-s-running-fence-2": {
+    "dominant": "#95A195",
+    "palette": [
+      "#95A195",
+      "#9CAEA7",
+      "#53380E",
+      "#AEC3C4",
+      "#78723A"
+    ],
+    "hsl": [
+      120,
+      6,
+      61
+    ]
+  },
+  "petaluma-river": {
+    "dominant": "#CFD9D9",
+    "palette": [
+      "#CFD9D9",
+      "#B9C9D7",
+      "#E8F1E5",
+      "#E4ECE2",
+      "#D1D7CF"
+    ],
+    "hsl": [
+      180,
+      12,
+      83
+    ]
+  },
+  "banks-of-the-petaluma-river-red-barn": {
+    "dominant": "#8CA2C0",
+    "palette": [
+      "#8CA2C0",
+      "#ABC1D1",
+      "#CABF4F",
+      "#CECE89",
+      "#EDFCFB"
+    ],
+    "hsl": [
+      215,
+      29,
+      65
+    ]
+  },
+  "knuckle-hill": {
+    "dominant": "#5D6D3A",
+    "palette": [
+      "#5D6D3A",
+      "#B4C0B0",
+      "#7B7F5A",
+      "#DBE0D9",
+      "#CACFC5"
+    ],
+    "hsl": [
+      79,
+      31,
+      33
+    ]
+  },
+  "white-fence-sonoma": {
+    "dominant": "#AB920C",
+    "palette": [
+      "#AB920C",
+      "#A7ACA7",
+      "#8A8FB2",
+      "#7981A7",
+      "#9D8221"
+    ],
+    "hsl": [
+      51,
+      87,
+      36
+    ]
+  },
+  "sunrise-from-my-bedroom": {
+    "dominant": "#B5ADAC",
+    "palette": [
+      "#B5ADAC",
+      "#B98C5E",
+      "#52423B",
+      "#84736D",
+      "#D2BEA4"
+    ],
+    "hsl": [
+      7,
+      6,
+      69
+    ]
+  },
+  "petaluma-river-with-farm": {
+    "dominant": "#B7BFC9",
+    "palette": [
+      "#B7BFC9",
+      "#DFE3E0",
+      "#EDF5E6",
+      "#E9EFDF",
+      "#D3D8DC"
+    ],
+    "hsl": [
+      213,
+      14,
+      75
+    ]
+  },
+  "highway-101-marin": {
+    "dominant": "#738659",
+    "palette": [
+      "#738659",
+      "#454829",
+      "#DEF2E7",
+      "#4B5238",
+      "#59644F"
+    ],
+    "hsl": [
+      85,
+      20,
+      44
+    ]
+  },
+  "six-days-on-the-petaluma-river": {
+    "dominant": "#BFD8E0",
+    "palette": [
+      "#BFD8E0",
+      "#7E6767",
+      "#D8E2E3",
+      "#ABC3D7",
+      "#809CC0"
+    ],
+    "hsl": [
+      195,
+      35,
+      81
+    ]
+  },
+  "bill-s-pond-bolinas": {
+    "dominant": "#B6D5E0",
+    "palette": [
+      "#B6D5E0",
+      "#A3995F",
+      "#779EC3",
+      "#A5783C",
+      "#BAB28E"
+    ],
+    "hsl": [
+      196,
+      40,
+      80
+    ]
+  },
+  "edge-of-richardson-bay": {
+    "dominant": "#CDB48E",
+    "palette": [
+      "#CDB48E",
+      "#9DA5AC",
+      "#B38D63",
+      "#BDA47E",
+      "#DAC8A0"
+    ],
+    "hsl": [
+      36,
+      39,
+      68
+    ]
+  },
+  "a-curve-of-black-angus": {
+    "dominant": "#D5D0B3",
+    "palette": [
+      "#D5D0B3",
+      "#D8D6C7",
+      "#DBDBD1",
+      "#D6D4BC",
+      "#D6CD88"
+    ],
+    "hsl": [
+      51,
+      29,
+      77
+    ]
+  },
+  "black-angus-on-a-hill": {
+    "dominant": "#DDCE72",
+    "palette": [
+      "#DDCE72",
+      "#D7D3CD",
+      "#DCD39B",
+      "#DBD8D5",
+      "#DFD487"
+    ],
+    "hsl": [
+      52,
+      61,
+      66
+    ]
+  },
+  "blithedale-canyon-mill-valley": {
+    "dominant": "#756A4E",
+    "palette": [
+      "#756A4E",
+      "#C3B48F",
+      "#4F3622",
+      "#554633",
+      "#3C2F1F"
+    ],
+    "hsl": [
+      43,
+      20,
+      38
+    ]
+  },
+  "cattle-on-a-distant-hill-sun-and-shadow": {
+    "dominant": "#878D89",
+    "palette": [
+      "#878D89",
+      "#38311D",
+      "#645E48",
+      "#9F744E",
+      "#5D513E"
+    ],
+    "hsl": [
+      140,
+      3,
+      54
+    ]
+  },
+  "old-eucalyptus": {
+    "dominant": "#62513B",
+    "palette": [
+      "#62513B",
+      "#DDDBCC",
+      "#3F301E",
+      "#BBA781",
+      "#877154"
+    ],
+    "hsl": [
+      34,
+      25,
+      31
+    ]
+  },
+  "white-country-road": {
+    "dominant": "#62513B",
+    "palette": [
+      "#62513B",
+      "#DDDBCC",
+      "#3F301E",
+      "#BBA781",
+      "#877154"
+    ],
+    "hsl": [
+      34,
+      25,
+      31
+    ]
+  },
+  "bear-valley-road": {
+    "dominant": "#745429",
+    "palette": [
+      "#745429",
+      "#D8DEDD",
+      "#292112",
+      "#41331C",
+      "#4E432A"
+    ],
+    "hsl": [
+      34,
+      48,
+      31
+    ]
+  },
+  "eucalyptus-lane": {
+    "dominant": "#5A3E1A",
+    "palette": [
+      "#5A3E1A",
+      "#4B4A4D",
+      "#C4C6AF",
+      "#6A4E26",
+      "#99743C"
+    ],
+    "hsl": [
+      34,
+      55,
+      23
+    ]
+  },
+  "dogtown": {
+    "dominant": "#805928",
+    "palette": [
+      "#805928",
+      "#CFD0C4",
+      "#5C5443",
+      "#1F170C",
+      "#322A1B"
+    ],
+    "hsl": [
+      33,
+      52,
+      33
+    ]
+  },
+  "mesa-road-bolinas": {
+    "dominant": "#805928",
+    "palette": [
+      "#805928",
+      "#CFD0C4",
+      "#5C5443",
+      "#1F170C",
+      "#322A1B"
+    ],
+    "hsl": [
+      33,
+      52,
+      33
+    ]
+  },
+  "road-to-rodeo-lagoon": {
+    "dominant": "#806A24",
+    "palette": [
+      "#806A24",
+      "#93ADD0",
+      "#B9945D",
+      "#AC6B1D",
+      "#81827E"
+    ],
+    "hsl": [
+      46,
+      56,
+      32
+    ]
+  },
+  "summer-near-nicasio": {
+    "dominant": "#6078AD",
+    "palette": [
+      "#6078AD",
+      "#C59A24",
+      "#CEBF6D",
+      "#9CA7BB",
+      "#848FA9"
+    ],
+    "hsl": [
+      221,
+      32,
+      53
+    ]
+  },
+  "marin-county-spring-with-trucks": {
+    "dominant": "#F5EFE2",
+    "palette": [
+      "#F5EFE2",
+      "#90900B",
+      "#C0AB14",
+      "#BF900B",
+      "#9E7F09"
+    ],
+    "hsl": [
+      41,
+      49,
+      92
+    ]
+  },
+  "black-angus-and-burnt-field": {
+    "dominant": "#F5DC72",
+    "palette": [
+      "#F5DC72",
+      "#F4D563",
+      "#EFCF49",
+      "#F6D13E",
+      "#F0D059"
+    ],
+    "hsl": [
+      49,
+      87,
+      70
+    ]
+  },
+  "holsteins-in-shade": {
+    "dominant": "#DAD47E",
+    "palette": [
+      "#DAD47E",
+      "#858C70",
+      "#57522B",
+      "#1A140E",
+      "#1D1E12"
+    ],
+    "hsl": [
+      56,
+      55,
+      67
+    ]
+  },
+  "jeff-s-jeans": {
+    "dominant": "#353449",
+    "palette": [
+      "#353449",
+      "#3E406B",
+      "#404371",
+      "#977867",
+      "#3B3D66"
+    ],
+    "hsl": [
+      243,
+      17,
+      25
+    ]
+  },
+  "mrs-wong-on": {
+    "dominant": "#3A483C",
+    "palette": [
+      "#3A483C",
+      "#4F3A1D",
+      "#794E1C",
+      "#8A6D24",
+      "#524828"
+    ],
+    "hsl": [
+      129,
+      11,
+      25
+    ]
+  },
+  "bicycle-women": {
+    "dominant": "#AA866F",
+    "palette": [
+      "#AA866F",
+      "#3F393B",
+      "#675652",
+      "#020001",
+      "#060101"
+    ],
+    "hsl": [
+      23,
+      26,
+      55
+    ]
+  },
+  "dijon-market": {
+    "dominant": "#BF9169",
+    "palette": [
+      "#BF9169",
+      "#5E3B2F",
+      "#BF774C",
+      "#150A0D",
+      "#351613"
+    ],
+    "hsl": [
+      28,
+      40,
+      58
+    ]
+  },
+  "the-end-of-the-picnic": {
+    "dominant": "#C9BEAC",
+    "palette": [
+      "#C9BEAC",
+      "#DECBB0",
+      "#A1A5BB",
+      "#857889",
+      "#BA7E37"
+    ],
+    "hsl": [
+      37,
+      21,
+      73
+    ]
+  },
+  "dreaming-of-marie-antoinette": {
+    "dominant": "#916848",
+    "palette": [
+      "#916848",
+      "#8E816C",
+      "#97917B",
+      "#76543D",
+      "#5F3D2D"
+    ],
+    "hsl": [
+      26,
+      34,
+      43
+    ]
+  },
+  "walking-the-dog": {
+    "dominant": "#C9B7AC",
+    "palette": [
+      "#C9B7AC",
+      "#A69A94",
+      "#23120F",
+      "#442A23",
+      "#8D6B62"
+    ],
+    "hsl": [
+      23,
+      21,
+      73
+    ]
+  },
+  "nike-of-the-avenues": {
+    "dominant": "#763C20",
+    "palette": [
+      "#763C20",
+      "#785F4F",
+      "#080202",
+      "#903F22",
+      "#A58365"
+    ],
+    "hsl": [
+      20,
+      57,
+      29
+    ]
+  },
+  "tenderloin": {
+    "dominant": "#433326",
+    "palette": [
+      "#433326",
+      "#342315",
+      "#8B6C51",
+      "#4B4136",
+      "#1F1811"
+    ],
+    "hsl": [
+      27,
+      28,
+      21
+    ]
+  },
+  "bus-stop-two-men": {
+    "dominant": "#ABA5A3",
+    "palette": [
+      "#ABA5A3",
+      "#999494",
+      "#3E2E26",
+      "#8E8B8F",
+      "#A69E9C"
+    ],
+    "hsl": [
+      15,
+      5,
+      65
+    ]
+  },
+  "bus-stop-two-women": {
+    "dominant": "#B1AFAC",
+    "palette": [
+      "#B1AFAC",
+      "#9F9791",
+      "#948A82",
+      "#180E09",
+      "#A49F9B"
+    ],
+    "hsl": [
+      36,
+      3,
+      68
+    ]
+  },
+  "bus-stop-woman-and-man": {
+    "dominant": "#CECBC5",
+    "palette": [
+      "#CECBC5",
+      "#D1CECA",
+      "#D6D4CF",
+      "#B72D18",
+      "#080403"
+    ],
+    "hsl": [
+      40,
+      8,
+      79
+    ]
+  },
+  "joanne-in-nogales": {
+    "dominant": "#0E0404",
+    "palette": [
+      "#0E0404",
+      "#C2B7B2",
+      "#EF4015",
+      "#755D4F",
+      "#451C13"
+    ],
+    "hsl": [
+      0,
+      56,
+      4
+    ]
+  },
+  "cannery-women-noyo-harbor": {
+    "dominant": "#8C351D",
+    "palette": [
+      "#8C351D",
+      "#615446",
+      "#601E0F",
+      "#040101",
+      "#110708"
+    ],
+    "hsl": [
+      13,
+      66,
+      33
+    ]
+  },
+  "baptists-carmel-river": {
+    "dominant": "#46473F",
+    "palette": [
+      "#46473F",
+      "#756B5A",
+      "#595E56",
+      "#4E4D42",
+      "#5C6563"
+    ],
+    "hsl": [
+      67,
+      6,
+      26
+    ]
+  },
+  "bolinas-soccer-team-on-san-andreas-fault": {
+    "dominant": "#594C3B",
+    "palette": [
+      "#594C3B",
+      "#A08F54",
+      "#7C6D48",
+      "#606056",
+      "#140B07"
+    ],
+    "hsl": [
+      34,
+      20,
+      29
+    ]
+  },
+  "the-remarkable-herman-arthur-schwartz": {
+    "dominant": "#DEE2DF",
+    "palette": [
+      "#DEE2DF",
+      "#9F9D8F",
+      "#A8805B",
+      "#A5674B",
+      "#B49C70"
+    ],
+    "hsl": [
+      135,
+      6,
+      88
+    ]
+  },
+  "david-schwartz-3-son": {
+    "dominant": "#D1DBE0",
+    "palette": [
+      "#D1DBE0",
+      "#E1E6E3",
+      "#BF383A",
+      "#AA2A34",
+      "#B8CCCF"
+    ],
+    "hsl": [
+      200,
+      19,
+      85
+    ]
+  },
+  "helen-fellenbaum-herman-s-sister": {
+    "dominant": "#C19336",
+    "palette": [
+      "#C19336",
+      "#885565",
+      "#C7A341",
+      "#C9C4AB",
+      "#9C9E9A"
+    ],
+    "hsl": [
+      40,
+      56,
+      48
+    ]
+  },
+  "fahkri": {
+    "dominant": "#080807",
+    "palette": [
+      "#080807",
+      "#6C5335",
+      "#221915",
+      "#C61A14",
+      "#3E3027"
+    ],
+    "hsl": [
+      60,
+      7,
+      3
+    ]
+  },
+  "curtis": {
+    "dominant": "#B68975",
+    "palette": [
+      "#B68975",
+      "#0E0A07",
+      "#685F46",
+      "#CBD4D7",
+      "#C29F8A"
+    ],
+    "hsl": [
+      18,
+      31,
+      59
+    ]
+  },
+  "amazing-grace": {
+    "dominant": "#5F5760",
+    "palette": [
+      "#5F5760",
+      "#B06F5D",
+      "#8F593A",
+      "#9F5F43",
+      "#D3A370"
+    ],
+    "hsl": [
+      293,
+      5,
+      36
+    ]
+  },
+  "joey": {
+    "dominant": "#E6ECE5",
+    "palette": [
+      "#E6ECE5",
+      "#968A7A",
+      "#070202",
+      "#AA8A6C",
+      "#D7E4DE"
+    ],
+    "hsl": [
+      111,
+      16,
+      91
+    ]
+  },
+  "richard": {
+    "dominant": "#C4C7C0",
+    "palette": [
+      "#C4C7C0",
+      "#C77B50",
+      "#160C0A",
+      "#C8C6A2",
+      "#D8D2BD"
+    ],
+    "hsl": [
+      86,
+      6,
+      77
+    ]
+  },
+  "brian": {
+    "dominant": "#D86D32",
+    "palette": [
+      "#D86D32",
+      "#DE7633",
+      "#7C1827",
+      "#080102",
+      "#D0AD86"
+    ],
+    "hsl": [
+      21,
+      68,
+      52
+    ]
+  },
+  "kitty": {
+    "dominant": "#B77F79",
+    "palette": [
+      "#B77F79",
+      "#B87A58",
+      "#B1433B",
+      "#0F0907",
+      "#B25F50"
+    ],
+    "hsl": [
+      6,
+      30,
+      60
+    ]
+  },
+  "coffee-break": {
+    "dominant": "#E09C9F",
+    "palette": [
+      "#E09C9F",
+      "#CB9769",
+      "#948155",
+      "#664731",
+      "#E5C587"
+    ],
+    "hsl": [
+      357,
+      52,
+      75
+    ]
+  },
+  "judy-and-volker": {
+    "dominant": "#CE5536",
+    "palette": [
+      "#CE5536",
+      "#596A7E",
+      "#475B6B",
+      "#4C6374",
+      "#AD9F85"
+    ],
+    "hsl": [
+      12,
+      61,
+      51
+    ]
+  },
+  "chris": {
+    "dominant": "#6C97C6",
+    "palette": [
+      "#6C97C6",
+      "#73705C",
+      "#B89266",
+      "#574933",
+      "#E0EBE9"
+    ],
+    "hsl": [
+      211,
+      44,
+      60
+    ]
+  },
+  "self-portrait-with-floating-flowers": {
+    "dominant": "#BF5B0E",
+    "palette": [
+      "#BF5B0E",
+      "#C58A53",
+      "#BC4011",
+      "#AEB9B2",
+      "#BECBBC"
+    ],
+    "hsl": [
+      26,
+      86,
+      40
+    ]
+  },
+  "self-portrait-with-chrysanths": {
+    "dominant": "#D77847",
+    "palette": [
+      "#D77847",
+      "#D6C1AA",
+      "#93644A",
+      "#DDD3C3",
+      "#A03B1B"
+    ],
+    "hsl": [
+      20,
+      64,
+      56
+    ]
+  },
+  "self-portrait-with-vladimir": {
+    "dominant": "#D4D4BC",
+    "palette": [
+      "#D4D4BC",
+      "#DEE1D3",
+      "#D9D9CD",
+      "#DFE2D9",
+      "#C78352"
+    ],
+    "hsl": [
+      60,
+      22,
+      78
+    ]
+  },
+  "bevelled-mirror": {
+    "dominant": "#552D10",
+    "palette": [
+      "#552D10",
+      "#5F3918",
+      "#DB632D",
+      "#462911",
+      "#604F43"
+    ],
+    "hsl": [
+      25,
+      68,
+      20
+    ]
+  },
+  "self-portrait-with-scarf": {
+    "dominant": "#ABAFAD",
+    "palette": [
+      "#ABAFAD",
+      "#DDE0DE",
+      "#CBCECC",
+      "#D5D7D6",
+      "#E5E7E5"
+    ],
+    "hsl": [
+      150,
+      2,
+      68
+    ]
+  },
+  "lisa": {
+    "dominant": "#E8EBE5",
+    "palette": [
+      "#E8EBE5",
+      "#642D11",
+      "#E6E097",
+      "#CCCFCB",
+      "#7B6B6A"
+    ],
+    "hsl": [
+      90,
+      13,
+      91
+    ]
+  },
+  "marianna": {
+    "dominant": "#ECEFDD",
+    "palette": [
+      "#ECEFDD",
+      "#E8E8CE",
+      "#E8EBDA",
+      "#E7E8D5",
+      "#C3C3AD"
+    ],
+    "hsl": [
+      70,
+      36,
+      90
+    ]
+  },
+  "judy": {
+    "dominant": "#DFE4E7",
+    "palette": [
+      "#DFE4E7",
+      "#E6ECEB",
+      "#C8C7D1"
+    ],
+    "hsl": [
+      202,
+      14,
+      89
+    ]
+  },
+  "gina-sleeping": {
+    "dominant": "#DDE0E6",
+    "palette": [
+      "#DDE0E6"
+    ],
+    "hsl": [
+      220,
+      15,
+      88
+    ]
+  },
+  "ellen-with-red-pillow": {
+    "dominant": "#A1A498",
+    "palette": [
+      "#A1A498",
+      "#9E9C90",
+      "#A0A194",
+      "#9DA094",
+      "#9A9B90"
+    ],
+    "hsl": [
+      75,
+      6,
+      62
+    ]
+  },
+  "togetherness": {
+    "dominant": "#73615B",
+    "palette": [
+      "#73615B",
+      "#E9BC63",
+      "#74311B",
+      "#D35935",
+      "#7E6B64"
+    ],
+    "hsl": [
+      15,
+      12,
+      40
+    ]
+  },
+  "yellow-apple-with-red-boxes": {
+    "dominant": "#795F42",
+    "palette": [
+      "#795F42",
+      "#E9EBDD",
+      "#E5793E",
+      "#6A552E",
+      "#6E5932"
+    ],
+    "hsl": [
+      32,
+      29,
+      37
+    ]
+  },
+  "plugs": {
+    "dominant": "#8A8183",
+    "palette": [
+      "#8A8183",
+      "#7E3830",
+      "#73615A",
+      "#A99E9D",
+      "#D1624F"
+    ],
+    "hsl": [
+      347,
+      4,
+      52
+    ]
+  },
+  "tomato-half": {
+    "dominant": "#E57E5C",
+    "palette": [
+      "#E57E5C",
+      "#684B43",
+      "#D12F21",
+      "#70615B",
+      "#E16F50"
+    ],
+    "hsl": [
+      15,
+      72,
+      63
+    ]
+  },
+  "red-persimmon-and-yellow": {
+    "dominant": "#E7E6DC",
+    "palette": [
+      "#E7E6DC",
+      "#E3E0D2",
+      "#DE7116",
+      "#E2DFCA",
+      "#DD480F"
+    ],
+    "hsl": [
+      55,
+      19,
+      88
+    ]
+  },
+  "watermelon-on-white": {
+    "dominant": "#61483F",
+    "palette": [
+      "#61483F",
+      "#DD6848",
+      "#907E6B",
+      "#7E6F59",
+      "#A14C25"
+    ],
+    "hsl": [
+      16,
+      21,
+      31
+    ]
+  },
+  "lemon-with-brushes": {
+    "dominant": "#655041",
+    "palette": [
+      "#655041",
+      "#CE6C45",
+      "#8D7C6A",
+      "#7F6A51",
+      "#A65629"
+    ],
+    "hsl": [
+      25,
+      22,
+      33
+    ]
+  },
+  "watermelon-on-green": {
+    "dominant": "#BA7643",
+    "palette": [
+      "#BA7643",
+      "#D0453E",
+      "#6A863E",
+      "#433126",
+      "#D34F48"
+    ],
+    "hsl": [
+      26,
+      47,
+      50
+    ]
+  },
+  "three-assyrians": {
+    "dominant": "#786956",
+    "palette": [
+      "#786956",
+      "#63667F",
+      "#8A785A",
+      "#6F5F4C",
+      "#6E7AA3"
+    ],
+    "hsl": [
+      34,
+      17,
+      40
+    ]
+  },
+  "three-on-a-raft": {
+    "dominant": "#ACA794",
+    "palette": [
+      "#ACA794",
+      "#452713",
+      "#3C1D10",
+      "#B99063",
+      "#280F08"
+    ],
+    "hsl": [
+      47,
+      13,
+      63
+    ]
+  },
+  "cream-tartar": {
+    "dominant": "#A28C72",
+    "palette": [
+      "#A28C72",
+      "#CAA989",
+      "#D7AB83",
+      "#A75E2F",
+      "#CC9C78"
+    ],
+    "hsl": [
+      33,
+      21,
+      54
+    ]
+  },
+  "mrs-stewart-and-the-great-africa-remedy": {
+    "dominant": "#7F7B8C",
+    "palette": [
+      "#7F7B8C",
+      "#9A2C0D",
+      "#851408",
+      "#790B06",
+      "#A4553C"
+    ],
+    "hsl": [
+      254,
+      7,
+      52
+    ]
+  },
+  "peeled-apple": {
+    "dominant": "#E1E3D4",
+    "palette": [
+      "#E1E3D4",
+      "#D3D9D7",
+      "#DBDAD0",
+      "#E4E8D7",
+      "#DADFDC"
+    ],
+    "hsl": [
+      68,
+      21,
+      86
+    ]
+  },
+  "peeled-apple-one-week-later": {
+    "dominant": "#D9DEDA",
+    "palette": [
+      "#D9DEDA",
+      "#E3DFB9",
+      "#9C0605",
+      "#D2D6D2",
+      "#EEE5C3"
+    ],
+    "hsl": [
+      132,
+      7,
+      86
+    ]
+  },
+  "two-and-three-quarters-jonathan-apples": {
+    "dominant": "#ABB0B0",
+    "palette": [
+      "#ABB0B0",
+      "#53382E",
+      "#644C47",
+      "#E1E5DC",
+      "#A9A796"
+    ],
+    "hsl": [
+      180,
+      3,
+      68
+    ]
+  },
+  "onion-on-a-table": {
+    "dominant": "#E7DFD3",
+    "palette": [
+      "#E7DFD3",
+      "#EFECDD",
+      "#DFD2C9",
+      "#E9E7DE",
+      "#C05220"
+    ],
+    "hsl": [
+      36,
+      29,
+      87
+    ]
+  },
+  "halved-quince": {
+    "dominant": "#482620",
+    "palette": [
+      "#482620",
+      "#B0A093",
+      "#C6A998",
+      "#A89A91",
+      "#B06E2D"
+    ],
+    "hsl": [
+      9,
+      38,
+      20
+    ]
+  },
+  "golden-onion-2": {
+    "dominant": "#9593B2",
+    "palette": [
+      "#9593B2",
+      "#6F5D6B",
+      "#7B6977",
+      "#83747E",
+      "#746372"
+    ],
+    "hsl": [
+      244,
+      17,
+      64
+    ]
+  },
+  "purple-cabbage": {
+    "dominant": "#50270E",
+    "palette": [
+      "#50270E",
+      "#909A84",
+      "#655B5A",
+      "#787A70",
+      "#8A8384"
+    ],
+    "hsl": [
+      23,
+      70,
+      18
+    ]
+  },
+  "golden-onion-1": {
+    "dominant": "#B8C1D3",
+    "palette": [
+      "#B8C1D3",
+      "#694360",
+      "#663A57",
+      "#744B65",
+      "#C27933"
+    ],
+    "hsl": [
+      220,
+      23,
+      77
+    ]
+  },
+  "turnip-rutabaga-and-persimmon": {
+    "dominant": "#EAE9DD",
+    "palette": [
+      "#EAE9DD",
+      "#E7E5D7",
+      "#704746",
+      "#826D69",
+      "#A58A80"
+    ],
+    "hsl": [
+      55,
+      24,
+      89
+    ]
+  },
+  "turnip-rutabaga-persimmon-and-apple-core": {
+    "dominant": "#EBEADF",
+    "palette": [
+      "#EBEADF",
+      "#92736C",
+      "#E9E7D8",
+      "#7E524E",
+      "#D2C3B0"
+    ],
+    "hsl": [
+      55,
+      23,
+      90
+    ]
+  },
+  "carrot-onion-parsnip-and-turnip": {
+    "dominant": "#897E75",
+    "palette": [
+      "#897E75",
+      "#817C71",
+      "#694938",
+      "#687080",
+      "#6E809C"
+    ],
+    "hsl": [
+      27,
+      8,
+      50
+    ]
+  },
+  "nectarine-potato-onion-and-turnip": {
+    "dominant": "#753E10",
+    "palette": [
+      "#753E10",
+      "#6C513A",
+      "#7C6A5A",
+      "#BB8E57",
+      "#A66F3A"
+    ],
+    "hsl": [
+      27,
+      76,
+      26
+    ]
+  },
+  "persimmon-on-wood": {
+    "dominant": "#CBC9BB",
+    "palette": [
+      "#CBC9BB",
+      "#CEBE8F",
+      "#B56A30",
+      "#D8DBB9",
+      "#CBC7A5"
+    ],
+    "hsl": [
+      53,
+      13,
+      76
+    ]
+  },
+  "christmas-persimmons": {
+    "dominant": "#6A543C",
+    "palette": [
+      "#6A543C",
+      "#BF542F",
+      "#DE5630",
+      "#302220",
+      "#DC6339"
+    ],
+    "hsl": [
+      31,
+      28,
+      33
+    ]
+  },
+  "one-pear-nine-times": {
+    "dominant": "#80886D",
+    "palette": [
+      "#80886D",
+      "#C6750B",
+      "#96926E",
+      "#4B5C69",
+      "#576874"
+    ],
+    "hsl": [
+      78,
+      11,
+      48
+    ]
+  },
+  "one-pear": {
+    "dominant": "#D16E0F",
+    "palette": [
+      "#D16E0F",
+      "#A38D72",
+      "#863B16",
+      "#DFDDBE",
+      "#D9D1AC"
+    ],
+    "hsl": [
+      29,
+      87,
+      44
+    ]
+  },
+  "three-turnips": {
+    "dominant": "#92838F",
+    "palette": [
+      "#92838F",
+      "#A9917E",
+      "#9D9098",
+      "#CEAA89",
+      "#926C5C"
+    ],
+    "hsl": [
+      312,
+      6,
+      54
+    ]
+  },
+  "two-persimmons-on-a-stem": {
+    "dominant": "#4B2920",
+    "palette": [
+      "#4B2920",
+      "#E6E0D8",
+      "#876259",
+      "#D6B5AF",
+      "#1C0909"
+    ],
+    "hsl": [
+      13,
+      40,
+      21
+    ]
+  },
+  "four-bartletts": {
+    "dominant": "#6D4008",
+    "palette": [
+      "#6D4008",
+      "#747659",
+      "#52433B",
+      "#7A5E13",
+      "#30242D"
+    ],
+    "hsl": [
+      33,
+      86,
+      23
+    ]
+  },
+  "three-basking-boscs": {
+    "dominant": "#CC7730",
+    "palette": [
+      "#CC7730",
+      "#724521",
+      "#BB6827",
+      "#7E5026",
+      "#98602B"
+    ],
+    "hsl": [
+      27,
+      62,
+      49
+    ]
+  },
+  "three-red-pears": {
+    "dominant": "#635037",
+    "palette": [
+      "#635037",
+      "#CE4126",
+      "#4A0B0A",
+      "#4F3A26",
+      "#630F10"
+    ],
+    "hsl": [
+      34,
+      29,
+      30
+    ]
+  },
+  "leaning-bosc-with-fat-and-lean-pears": {
+    "dominant": "#6D6965",
+    "palette": [
+      "#6D6965",
+      "#9A5F40",
+      "#5F3919",
+      "#AF603D",
+      "#B75528"
+    ],
+    "hsl": [
+      30,
+      4,
+      41
+    ]
+  },
+  "three-boscs-with-a-comice": {
+    "dominant": "#6C4121",
+    "palette": [
+      "#6C4121",
+      "#E39220",
+      "#C54A1E",
+      "#601A0D",
+      "#4B5672"
+    ],
+    "hsl": [
+      26,
+      53,
+      28
+    ]
+  },
+  "three-red-and-yellow-pears": {
+    "dominant": "#D04728",
+    "palette": [
+      "#D04728",
+      "#443229",
+      "#BD3725",
+      "#2F1B14",
+      "#993525"
+    ],
+    "hsl": [
+      11,
+      68,
+      49
+    ]
+  },
+  "still-life-with-white-glue-bottle": {
+    "dominant": "#A37D6A",
+    "palette": [
+      "#A37D6A",
+      "#9E6F5C",
+      "#C0A78A",
+      "#A48D7F",
+      "#C7B499"
+    ],
+    "hsl": [
+      20,
+      24,
+      53
+    ]
+  },
+  "four-pots-one-persimmon": {
+    "dominant": "#663B16",
+    "palette": [
+      "#663B16",
+      "#C1591D",
+      "#281708",
+      "#A57850",
+      "#B69E72"
+    ],
+    "hsl": [
+      28,
+      65,
+      24
+    ]
+  },
+  "mill-valley-bathroom": {
+    "dominant": "#9B9388",
+    "palette": [
+      "#9B9388",
+      "#987661",
+      "#DCDCD2",
+      "#BDBCAD",
+      "#BC9D8C"
+    ],
+    "hsl": [
+      35,
+      9,
+      57
+    ]
+  },
+  "mill-valley-kitchen": {
+    "dominant": "#8D673A",
+    "palette": [
+      "#8D673A",
+      "#B7B8A5",
+      "#6B311C",
+      "#8C8B7B",
+      "#733D24"
+    ],
+    "hsl": [
+      33,
+      42,
+      39
+    ]
+  },
+  "bolinas-before-remodeling": {
+    "dominant": "#6E3C13",
+    "palette": [
+      "#6E3C13",
+      "#914E12",
+      "#6E300F",
+      "#C0B692",
+      "#876022"
+    ],
+    "hsl": [
+      27,
+      71,
+      25
+    ]
+  },
+  "bolinas-kitchen": {
+    "dominant": "#E9B52A",
+    "palette": [
+      "#E9B52A",
+      "#E0D9B0",
+      "#D4D9D5",
+      "#B0AC97",
+      "#B56212"
+    ],
+    "hsl": [
+      44,
+      81,
+      54
+    ]
+  },
+  "bolinas-bathroom-bedroom-and-view-to-the-sea": {
+    "dominant": "#D3D8B8",
+    "palette": [
+      "#D3D8B8",
+      "#EBF1DD",
+      "#AAA56F",
+      "#97742D",
+      "#69724E"
+    ],
+    "hsl": [
+      69,
+      29,
+      78
+    ]
+  },
+  "bolinas-dining-alcove": {
+    "dominant": "#D2D7BC",
+    "palette": [
+      "#D2D7BC",
+      "#E7EEDA",
+      "#B8BE96",
+      "#DFE6D0",
+      "#977D4D"
+    ],
+    "hsl": [
+      71,
+      25,
+      79
+    ]
+  },
+  "white-floating-roses": {
+    "dominant": "#B1BCD2",
+    "palette": [
+      "#B1BCD2",
+      "#B8A659",
+      "#5275AF",
+      "#96AACB",
+      "#CABD82"
+    ],
+    "hsl": [
+      220,
+      27,
+      76
+    ]
+  },
+  "four-pots-of-flowers": {
+    "dominant": "#834F17",
+    "palette": [
+      "#834F17",
+      "#EFFBF8",
+      "#B2B08E",
+      "#B79953",
+      "#B8A86D"
+    ],
+    "hsl": [
+      31,
+      70,
+      30
+    ]
+  },
+  "lavender-irises": {
+    "dominant": "#DDD9DA",
+    "palette": [
+      "#DDD9DA",
+      "#EDEBE3",
+      "#D9CFD3",
+      "#E7E6E2",
+      "#E2DEDD"
+    ],
+    "hsl": [
+      345,
+      6,
+      86
+    ]
+  },
+  "white-iris-with-san-francisco-skyline": {
+    "dominant": "#A2AABC",
+    "palette": [
+      "#A2AABC",
+      "#C1C5C1",
+      "#6E6726",
+      "#EFFBFA",
+      "#608788"
+    ],
+    "hsl": [
+      222,
+      16,
+      69
+    ]
+  },
+  "white-and-blue-iris": {
+    "dominant": "#B6C4D2",
+    "palette": [
+      "#B6C4D2",
+      "#A4957D",
+      "#A1B1C5",
+      "#A2A29B",
+      "#F0F6E2"
+    ],
+    "hsl": [
+      210,
+      24,
+      77
+    ]
+  },
+  "pale-pink-rose-with-cosmos": {
+    "dominant": "#C6AE9F",
+    "palette": [
+      "#C6AE9F",
+      "#B9AB5A",
+      "#D4D7D3",
+      "#CFC5B1",
+      "#DAD6BE"
+    ],
+    "hsl": [
+      23,
+      25,
+      70
+    ]
+  },
+  "happy-birthday-dearest-herman": {
+    "dominant": "#615C59",
+    "palette": [
+      "#615C59",
+      "#44290E",
+      "#9F460E",
+      "#585451",
+      "#A1A79C"
+    ],
+    "hsl": [
+      23,
+      4,
+      36
+    ]
+  },
+  "roses-and-pinks": {
+    "dominant": "#B63416",
+    "palette": [
+      "#B63416",
+      "#ADA5B3",
+      "#444F68",
+      "#61636A",
+      "#697289"
+    ],
+    "hsl": [
+      11,
+      78,
+      40
+    ]
+  },
+  "calendulas-in-bolinas": {
+    "dominant": "#ECEADA",
+    "palette": [
+      "#ECEADA",
+      "#D0CCBE",
+      "#E3E0DA",
+      "#341F21",
+      "#C18B6D"
+    ],
+    "hsl": [
+      53,
+      32,
+      89
+    ]
+  },
+  "white-rose-in-white-jar": {
+    "dominant": "#D1CFC3",
+    "palette": [
+      "#D1CFC3",
+      "#E6E3DA",
+      "#362022",
+      "#C28D71",
+      "#B7B19D"
+    ],
+    "hsl": [
+      51,
+      13,
+      79
+    ]
+  },
+  "laurel-with-tulips": {
+    "dominant": "#665845",
+    "palette": [
+      "#665845",
+      "#DDDCD9",
+      "#DFDEDF",
+      "#432C25",
+      "#644037"
+    ],
+    "hsl": [
+      35,
+      19,
+      34
+    ]
+  },
+  "charlie-s-roses": {
+    "dominant": "#C9BABC",
+    "palette": [
+      "#C9BABC",
+      "#C2654E",
+      "#130C07",
+      "#C4846B",
+      "#685F4E"
+    ],
+    "hsl": [
+      352,
+      12,
+      76
+    ]
+  },
+  "narcissus-close-up": {
+    "dominant": "#BBA470",
+    "palette": [
+      "#BBA470",
+      "#D5DAD4",
+      "#B8C4C2",
+      "#7B7F53",
+      "#5E5C38"
+    ],
+    "hsl": [
+      42,
+      36,
+      59
+    ]
+  },
+  "pale-blue-iris": {
+    "dominant": "#C7B8A2",
+    "palette": [
+      "#C7B8A2",
+      "#E4E2D2",
+      "#D7CFBE",
+      "#502A19",
+      "#895F3D"
+    ],
+    "hsl": [
+      36,
+      25,
+      71
+    ]
+  },
+  "paper-narcissus": {
+    "dominant": "#696357",
+    "palette": [
+      "#696357",
+      "#483F39",
+      "#E2DCCF",
+      "#DBD2C4",
+      "#372D28"
+    ],
+    "hsl": [
+      40,
+      9,
+      38
+    ]
+  },
+  "wild-bronze-iris": {
+    "dominant": "#4E4D2F",
+    "palette": [
+      "#4E4D2F",
+      "#3C3A21",
+      "#AA9C83",
+      "#26110C",
+      "#70684A"
+    ],
+    "hsl": [
+      58,
+      25,
+      25
+    ]
+  },
+  "bronze-iris-with-pinks": {
+    "dominant": "#35371B",
+    "palette": [
+      "#35371B",
+      "#5D5D36",
+      "#A0A48D",
+      "#464927",
+      "#ACB9A5"
+    ],
+    "hsl": [
+      64,
+      34,
+      16
+    ]
+  },
+  "zinnias-with-skyline": {
+    "dominant": "#EF5810",
+    "palette": [
+      "#EF5810",
+      "#73565E",
+      "#737177",
+      "#555448",
+      "#5F73B2"
+    ],
+    "hsl": [
+      19,
+      87,
+      50
+    ]
+  },
+  "california-poppies": {
+    "dominant": "#616F61",
+    "palette": [
+      "#616F61",
+      "#586D5D",
+      "#4F513D",
+      "#C43E1D",
+      "#292612"
+    ],
+    "hsl": [
+      120,
+      7,
+      41
+    ]
+  },
+  "pink-cosmos-and-botticelli": {
+    "dominant": "#754B27",
+    "palette": [
+      "#754B27",
+      "#782D0E",
+      "#866848",
+      "#A9896D",
+      "#591608"
+    ],
+    "hsl": [
+      28,
+      50,
+      31
+    ]
+  },
+  "white-rose-with-botticelli": {
+    "dominant": "#B46A2B",
+    "palette": [
+      "#B46A2B",
+      "#C38D71",
+      "#9D776E",
+      "#C37E53",
+      "#D59C7B"
+    ],
+    "hsl": [
+      28,
+      61,
+      44
+    ]
+  },
+  "tulips-and-iris": {
+    "dominant": "#6B6F4F",
+    "palette": [
+      "#6B6F4F",
+      "#D07253",
+      "#7A8A6E",
+      "#768161",
+      "#B4C5A8"
+    ],
+    "hsl": [
+      68,
+      17,
+      37
+    ]
+  },
+  "dark-pink-rose-with-renaissance-prince": {
+    "dominant": "#732813",
+    "palette": [
+      "#732813",
+      "#3B2312",
+      "#D07F4C",
+      "#582B13",
+      "#29100A"
+    ],
+    "hsl": [
+      13,
+      72,
+      26
+    ]
+  },
+  "hachiguchi-goyo-with-white-rose": {
+    "dominant": "#B7B5A2",
+    "palette": [
+      "#B7B5A2",
+      "#A7A694",
+      "#B2B1A0",
+      "#A0A296",
+      "#ACAC9A"
+    ],
+    "hsl": [
+      54,
+      13,
+      68
+    ]
+  },
+  "peach-iris-with-ukiyo-e": {
+    "dominant": "#DE9068",
+    "palette": [
+      "#DE9068",
+      "#876C58",
+      "#695A49",
+      "#DB7D60",
+      "#907963"
+    ],
+    "hsl": [
+      20,
+      64,
+      64
+    ]
+  },
+  "tall-bronze-iris-in-a-thicket": {
+    "dominant": "#A5AFA0",
+    "palette": [
+      "#A5AFA0",
+      "#302B14",
+      "#494821",
+      "#7C8358",
+      "#6A683F"
+    ],
+    "hsl": [
+      100,
+      9,
+      66
+    ]
+  },
+  "white-dutch-iris": {
+    "dominant": "#B0B9DF",
+    "palette": [
+      "#B0B9DF",
+      "#EDF0E4",
+      "#A7AED3",
+      "#9197B3",
+      "#723E28"
+    ],
+    "hsl": [
+      229,
+      42,
+      78
+    ]
+  },
+  "purple-iris": {
+    "dominant": "#D8D0E1",
+    "palette": [
+      "#D8D0E1",
+      "#613B8D",
+      "#945CAF",
+      "#E6E2EB",
+      "#7A4A99"
+    ],
+    "hsl": [
+      268,
+      22,
+      85
+    ]
+  },
+  "ornate-purple-iris": {
+    "dominant": "#62649B",
+    "palette": [
+      "#62649B",
+      "#383759",
+      "#39231A",
+      "#4F4C74",
+      "#5C5464"
+    ],
+    "hsl": [
+      238,
+      23,
+      50
+    ]
+  },
+  "fragrant-lillies": {
+    "dominant": "#CEC7CE",
+    "palette": [
+      "#CEC7CE",
+      "#E7DEC5",
+      "#826129",
+      "#AA8237",
+      "#AD9C70"
+    ],
+    "hsl": [
+      300,
+      7,
+      79
+    ]
+  },
+  "scabiosa-with-nathan-s-book": {
+    "dominant": "#8B6C30",
+    "palette": [
+      "#8B6C30",
+      "#BA923F",
+      "#EFEAD9",
+      "#E2D7BE",
+      "#C8AE76"
+    ],
+    "hsl": [
+      40,
+      49,
+      37
+    ]
+  },
+  "spring-thicket": {
+    "dominant": "#C1BEAB",
+    "palette": [
+      "#C1BEAB",
+      "#6B5930",
+      "#594224",
+      "#91948C",
+      "#967C47"
+    ],
+    "hsl": [
+      52,
+      15,
+      71
+    ]
+  },
+  "brittany": {
+    "dominant": "#A28958",
+    "palette": [
+      "#A28958",
+      "#7E6840",
+      "#E3E8E4",
+      "#BDC9BB",
+      "#B7AA81"
+    ],
+    "hsl": [
+      40,
+      30,
+      49
+    ]
+  },
+  "hotel-bonbonniere": {
+    "dominant": "#D5E4E8",
+    "palette": [
+      "#D5E4E8",
+      "#D09837",
+      "#B6C7CB",
+      "#995924",
+      "#8E9387"
+    ],
+    "hsl": [
+      193,
+      29,
+      87
+    ]
+  },
+  "honfleur": {
+    "dominant": "#DAE4EB",
+    "palette": [
+      "#DAE4EB",
+      "#B4AA97",
+      "#9C7F62",
+      "#D3DBDE",
+      "#9F9382"
+    ],
+    "hsl": [
+      205,
+      30,
+      89
+    ]
+  },
+  "st-emilion": {
+    "dominant": "#E2E5F1",
+    "palette": [
+      "#E2E5F1",
+      "#DDE3F1",
+      "#E4E1E0",
+      "#AF8F4F",
+      "#BFBFC6"
+    ],
+    "hsl": [
+      228,
+      35,
+      92
+    ]
+  },
+  "ile-st-louis": {
+    "dominant": "#765B35",
+    "palette": [
+      "#765B35",
+      "#9BA7A9",
+      "#4F422D",
+      "#848378",
+      "#DCE2E2"
+    ],
+    "hsl": [
+      35,
+      38,
+      34
+    ]
+  },
+  "pont-louis-phillipe": {
+    "dominant": "#AAC0E0",
+    "palette": [
+      "#AAC0E0",
+      "#C4D3E6",
+      "#6E6A5D",
+      "#DAD7CB",
+      "#D9DFE2"
+    ],
+    "hsl": [
+      216,
+      47,
+      77
+    ]
+  },
+  "kitchen-gello": {
+    "dominant": "#DAE3D2",
+    "palette": [
+      "#DAE3D2",
+      "#A3753E",
+      "#B7BEAD",
+      "#989185",
+      "#A2A89B"
+    ],
+    "hsl": [
+      92,
+      23,
+      86
+    ]
+  },
+  "window-gello": {
+    "dominant": "#757354",
+    "palette": [
+      "#757354",
+      "#C7D0C3",
+      "#939674",
+      "#6C2B0E",
+      "#BDC4B6"
+    ],
+    "hsl": [
+      56,
+      16,
+      39
+    ]
+  },
+  "doorway-down-the-stairs-gello": {
+    "dominant": "#C4CFBA",
+    "palette": [
+      "#C4CFBA",
+      "#D2DBC9",
+      "#A7290D",
+      "#C6C382",
+      "#6D602E"
+    ],
+    "hsl": [
+      91,
+      18,
+      77
+    ]
+  },
+  "church-and-wall-gello": {
+    "dominant": "#CEBB90",
+    "palette": [
+      "#CEBB90",
+      "#D3DEEA",
+      "#C3CFDE",
+      "#B48B52",
+      "#130E11"
+    ],
+    "hsl": [
+      42,
+      39,
+      69
+    ]
+  },
+  "lerici-italian-riviera": {
+    "dominant": "#A3B5C4",
+    "palette": [
+      "#A3B5C4",
+      "#B7CED1",
+      "#725D2E",
+      "#CFE5E0",
+      "#473419"
+    ],
+    "hsl": [
+      207,
+      22,
+      70
+    ]
+  },
+  "san-terenzo-italian-riviera": {
+    "dominant": "#B9CAE3",
+    "palette": [
+      "#B9CAE3",
+      "#97AAD3",
+      "#D0DBE5",
+      "#AEBFDC",
+      "#655853"
+    ],
+    "hsl": [
+      216,
+      43,
+      81
+    ]
+  },
+  "verona": {
+    "dominant": "#C5D0EA",
+    "palette": [
+      "#C5D0EA",
+      "#D39D3C",
+      "#BC651A",
+      "#CF731B",
+      "#D08326"
+    ],
+    "hsl": [
+      222,
+      47,
+      85
+    ]
+  },
+  "naxos-from-the-breakwater": {
+    "dominant": "#6D5E3D",
+    "palette": [
+      "#6D5E3D",
+      "#593D19",
+      "#C4C3AF",
+      "#9A957C",
+      "#B9B29A"
+    ],
+    "hsl": [
+      41,
+      28,
+      33
+    ]
+  },
+  "smoke-trees-naxos": {
+    "dominant": "#5A6AA8",
+    "palette": [
+      "#5A6AA8",
+      "#465786",
+      "#505E96",
+      "#343C52",
+      "#304962"
+    ],
+    "hsl": [
+      228,
+      31,
+      51
+    ]
+  },
+  "archway-at-the-top-of-town-naxos": {
+    "dominant": "#97ACAE",
+    "palette": [
+      "#97ACAE",
+      "#BCC0B8",
+      "#ABB0A8",
+      "#C9CEC5",
+      "#79ACBB"
+    ],
+    "hsl": [
+      185,
+      12,
+      64
+    ]
+  },
+  "side-street-naxos": {
+    "dominant": "#BEBFB2",
+    "palette": [
+      "#BEBFB2",
+      "#95A18D",
+      "#535B26",
+      "#8D8B60",
+      "#A9AD9E"
+    ],
+    "hsl": [
+      65,
+      9,
+      72
+    ]
+  },
+  "courtyard-naxos": {
+    "dominant": "#B0A288",
+    "palette": [
+      "#B0A288",
+      "#DBDACF",
+      "#382113",
+      "#21130B",
+      "#070201"
+    ],
+    "hsl": [
+      39,
+      20,
+      61
+    ]
+  },
+  "passageway-naxos": {
+    "dominant": "#2C190E",
+    "palette": [
+      "#2C190E",
+      "#1E110B",
+      "#4C3929",
+      "#070201",
+      "#546365"
+    ],
+    "hsl": [
+      22,
+      52,
+      11
+    ]
+  },
+  "passage-to-the-kouros-naxos": {
+    "dominant": "#A2937C",
+    "palette": [
+      "#A2937C",
+      "#CDC5AC",
+      "#7B6853",
+      "#090202",
+      "#040101"
+    ],
+    "hsl": [
+      36,
+      17,
+      56
+    ]
+  },
+  "women-in-black-peloponnesus": {
+    "dominant": "#050101",
+    "palette": [
+      "#050101",
+      "#5B4C3F",
+      "#B2AB9B",
+      "#968670",
+      "#72746D"
+    ],
+    "hsl": [
+      0,
+      67,
+      1
+    ]
+  },
+  "xanthos-ionian-island": {
+    "dominant": "#6E6A50",
+    "palette": [
+      "#6E6A50",
+      "#71979B",
+      "#578AAC",
+      "#97BECF",
+      "#4282A7"
+    ],
+    "hsl": [
+      52,
+      16,
+      37
+    ]
+  },
+  "tokyo-side-street": {
+    "dominant": "#461E1A",
+    "palette": [
+      "#461E1A",
+      "#144D8A",
+      "#A49A75",
+      "#8D8060",
+      "#885C44"
+    ],
+    "hsl": [
+      5,
+      46,
+      19
+    ]
+  },
+  "our-room-at-mr-sakura-s-ryokan": {
+    "dominant": "#BDC2C1",
+    "palette": [
+      "#BDC2C1",
+      "#8A614F",
+      "#655A4E",
+      "#C9D0CF",
+      "#D7DEDC"
+    ],
+    "hsl": [
+      168,
+      4,
+      75
+    ]
+  },
+  "takayama-bridge-looking-upstream": {
+    "dominant": "#B5BCB8",
+    "palette": [
+      "#B5BCB8",
+      "#42452C",
+      "#363020",
+      "#5E5A3B",
+      "#76764F"
+    ],
+    "hsl": [
+      146,
+      5,
+      72
+    ]
+  },
+  "takayama-bridge": {
+    "dominant": "#898A70",
+    "palette": [
+      "#898A70",
+      "#DA490E",
+      "#E1E4DD",
+      "#85765A",
+      "#695F41"
+    ],
+    "hsl": [
+      62,
+      10,
+      49
+    ]
+  },
+  "kyoto-canal-with-yellow-irises": {
+    "dominant": "#494626",
+    "palette": [
+      "#494626",
+      "#616340",
+      "#868357",
+      "#7D6E3E",
+      "#BFC7BA"
+    ],
+    "hsl": [
+      55,
+      32,
+      22
+    ]
+  },
+  "kyoto-canal-with-blue-truck": {
+    "dominant": "#46341F",
+    "palette": [
+      "#46341F",
+      "#50482A",
+      "#996F40",
+      "#322917",
+      "#2A1E0F"
+    ],
+    "hsl": [
+      32,
+      39,
+      20
+    ]
+  },
+  "istanbul-from-hotel-dilson-taksim-square": {
+    "dominant": "#B9B587",
+    "palette": [
+      "#B9B587",
+      "#E2E4C9",
+      "#97946C",
+      "#D9D9BC",
+      "#B47B38"
+    ],
+    "hsl": [
+      55,
+      26,
+      63
+    ]
+  },
+  "motel-room-on-the-aegean-coast-at-anamur": {
+    "dominant": "#E7DCD8",
+    "palette": [
+      "#E7DCD8",
+      "#EEEADE",
+      "#E7E6E0",
+      "#BD8C67",
+      "#D9B496"
+    ],
+    "hsl": [
+      16,
+      24,
+      88
+    ]
+  },
+  "the-park-hoteli": {
+    "dominant": "#EAE5DF",
+    "palette": [
+      "#EAE5DF",
+      "#BF9878",
+      "#DADFDB",
+      "#91623F",
+      "#DEC4A8"
+    ],
+    "hsl": [
+      33,
+      21,
+      90
+    ]
+  },
+  "bathroom-bodrum": {
+    "dominant": "#DFCA92",
+    "palette": [
+      "#DFCA92",
+      "#556D8C",
+      "#1A1A1A",
+      "#0B0605",
+      "#9F8E75"
+    ],
+    "hsl": [
+      44,
+      55,
+      72
+    ]
+  },
+  "taurus-mountains-antalya": {
+    "dominant": "#E2E8E9",
+    "palette": [
+      "#E2E8E9",
+      "#D4D8DA",
+      "#E3DEDB",
+      "#B78D5F",
+      "#B3D5E1"
+    ],
+    "hsl": [
+      189,
+      14,
+      90
+    ]
+  },
+  "view-from-club-med-uchisar": {
+    "dominant": "#E8E7E5",
+    "palette": [
+      "#E8E7E5",
+      "#DEE0DC",
+      "#C19F6E",
+      "#ACCCD9",
+      "#975C48"
+    ],
+    "hsl": [
+      40,
+      6,
+      90
+    ]
+  },
+  "uchisar-cappodocia": {
+    "dominant": "#D5AD6E",
+    "palette": [
+      "#D5AD6E",
+      "#E0E5E4",
+      "#DFCEAB",
+      "#E2DECF",
+      "#D2D1CC"
+    ],
+    "hsl": [
+      37,
+      55,
+      63
+    ]
+  },
+  "houses-of-parliament-new-delhi": {
+    "dominant": "#725716",
+    "palette": [
+      "#725716",
+      "#D4E9ED",
+      "#BDB37A",
+      "#A68B43",
+      "#4B2D0E"
+    ],
+    "hsl": [
+      42,
+      68,
+      27
+    ]
+  },
+  "temple-steps-udaipur": {
+    "dominant": "#A18B77",
+    "palette": [
+      "#A18B77",
+      "#829EC4",
+      "#CFCCBB",
+      "#B7A180",
+      "#768AB1"
+    ],
+    "hsl": [
+      29,
+      18,
+      55
+    ]
+  },
+  "side-street-woman-and-pig": {
+    "dominant": "#674C39",
+    "palette": [
+      "#674C39",
+      "#5B3B27",
+      "#BC2911",
+      "#B09278",
+      "#442B1D"
+    ],
+    "hsl": [
+      25,
+      29,
+      31
+    ]
+  },
+  "side-street-wall-painting": {
+    "dominant": "#CDCABF",
+    "palette": [
+      "#CDCABF",
+      "#B29F85",
+      "#AD3A26",
+      "#685B40",
+      "#BAAE9A"
+    ],
+    "hsl": [
+      47,
+      12,
+      78
+    ]
+  },
+  "machu-puchare-and-annapurna": {
+    "dominant": "#BDD5F1",
+    "palette": [
+      "#BDD5F1",
+      "#AFD1ED",
+      "#482C24",
+      "#F0E5E2",
+      "#E3DFE3"
+    ],
+    "hsl": [
+      212,
+      65,
+      84
+    ]
+  },
+  "machu-puchare": {
+    "dominant": "#899CCB",
+    "palette": [
+      "#899CCB",
+      "#CBCED4",
+      "#544743",
+      "#93A3C7",
+      "#807873"
+    ],
+    "hsl": [
+      223,
+      39,
+      67
+    ]
+  },
+  "giant-euphorbias-at-lake-chala": {
+    "dominant": "#DEE6DA",
+    "palette": [
+      "#DEE6DA",
+      "#C0A85C",
+      "#515120",
+      "#513919",
+      "#819876"
+    ],
+    "hsl": [
+      100,
+      19,
+      88
+    ]
+  },
+  "powys-house-rumuruti": {
+    "dominant": "#573F19",
+    "palette": [
+      "#573F19",
+      "#505322",
+      "#A1AD7B",
+      "#A4854E",
+      "#82592D"
+    ],
+    "hsl": [
+      37,
+      55,
+      22
+    ]
+  },
+  "mt-kenya-at-dawn-rumuruti": {
+    "dominant": "#EBF6F7",
+    "palette": [
+      "#EBF6F7",
+      "#796F3E",
+      "#C1DCE2",
+      "#B9C399",
+      "#A39C61"
+    ],
+    "hsl": [
+      185,
+      43,
+      95
+    ]
+  },
+  "stonehenge-drab-and-dreary": {
+    "dominant": "#CAAD11",
+    "palette": [
+      "#CAAD11",
+      "#EBECDF",
+      "#C0B385",
+      "#E2E4D1",
+      "#D3CFAC"
+    ],
+    "hsl": [
+      51,
+      84,
+      43
+    ]
+  },
+  "edinburgh": {
+    "dominant": "#5C5647",
+    "palette": [
+      "#5C5647",
+      "#886F53",
+      "#949C99",
+      "#E3E7E0",
+      "#332920"
+    ],
+    "hsl": [
+      43,
+      13,
+      32
+    ]
+  },
+  "oxford": {
+    "dominant": "#676D50",
+    "palette": [
+      "#676D50",
+      "#95A7A8",
+      "#4C6145",
+      "#323C27",
+      "#D8E5E1"
+    ],
+    "hsl": [
+      72,
+      15,
+      37
+    ]
+  },
+  "waterbeach-near-cambridge": {
+    "dominant": "#B2C0C5",
+    "palette": [
+      "#B2C0C5",
+      "#827450",
+      "#92A991",
+      "#D3DCD9",
+      "#7D907F"
+    ],
+    "hsl": [
+      196,
+      14,
+      74
+    ]
+  },
+  "the-duke-of-bedford-s-rhino": {
+    "dominant": "#A4A177",
+    "palette": [
+      "#A4A177",
+      "#CED3D7",
+      "#ACBCD2",
+      "#9DAFC5",
+      "#B3B592"
+    ],
+    "hsl": [
+      56,
+      20,
+      55
+    ]
+  },
+  "anza-borego-desert": {
+    "dominant": "#A7A9B2",
+    "palette": [
+      "#A7A9B2",
+      "#BFB11F",
+      "#979C8C",
+      "#DCD8B0",
+      "#605F2D"
+    ],
+    "hsl": [
+      229,
+      7,
+      68
+    ]
+  },
+  "oasis": {
+    "dominant": "#A9AB9B",
+    "palette": [
+      "#A9AB9B",
+      "#9EA199",
+      "#B9AF57",
+      "#6A6A35",
+      "#D6D2A2"
+    ],
+    "hsl": [
+      67,
+      9,
+      64
+    ]
+  },
+  "near-nogales-arizona": {
+    "dominant": "#8F6B32",
+    "palette": [
+      "#8F6B32",
+      "#D3DFEB",
+      "#C3D4E6",
+      "#B39B6F",
+      "#9DB8DA"
+    ],
+    "hsl": [
+      37,
+      48,
+      38
+    ]
+  },
+  "panamint-mountains": {
+    "dominant": "#351E17",
+    "palette": [
+      "#351E17",
+      "#270F08",
+      "#D0E0F0",
+      "#33160A",
+      "#8C8CA1"
+    ],
+    "hsl": [
+      14,
+      39,
+      15
+    ]
+  },
+  "zabriski-point-death-valley": {
+    "dominant": "#B6AAA3",
+    "palette": [
+      "#B6AAA3",
+      "#B6A87F",
+      "#793210",
+      "#84ABBE",
+      "#94B0C1"
+    ],
+    "hsl": [
+      22,
+      12,
+      68
+    ]
+  },
+  "hidden-lake": {
+    "dominant": "#BBBAB6",
+    "palette": [
+      "#BBBAB6",
+      "#EAE6D9",
+      "#948164",
+      "#D0CEC1",
+      "#DBD5C8"
+    ],
+    "hsl": [
+      48,
+      4,
+      72
+    ]
+  },
+  "rocks-at-the-snow-line": {
+    "dominant": "#A2925D",
+    "palette": [
+      "#A2925D",
+      "#B0A473",
+      "#DCDBC5",
+      "#8D8366",
+      "#BDB9A4"
+    ],
+    "hsl": [
+      46,
+      27,
+      50
+    ]
+  },
+  "rocks-above-the-cabin": {
+    "dominant": "#C5B2D0",
+    "palette": [
+      "#C5B2D0",
+      "#E1D196",
+      "#EBE5D6",
+      "#C2964A",
+      "#A3692F"
+    ],
+    "hsl": [
+      278,
+      24,
+      76
+    ]
+  },
+  "white-granite-with-yellow-flowers": {
+    "dominant": "#E4DECF",
+    "palette": [
+      "#E4DECF",
+      "#ECE7E0",
+      "#977F63",
+      "#DBD1B3",
+      "#CDBB8D"
+    ],
+    "hsl": [
+      43,
+      28,
+      85
+    ]
+  },
+  "echo-lake-cabin": {
+    "dominant": "#6F5E1F",
+    "palette": [
+      "#6F5E1F",
+      "#906B22",
+      "#9E9867",
+      "#907D41",
+      "#C79C4F"
+    ],
+    "hsl": [
+      47,
+      56,
+      28
+    ]
+  }
+}
