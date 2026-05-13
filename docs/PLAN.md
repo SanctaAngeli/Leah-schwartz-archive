@@ -41,9 +41,9 @@ Make the pages we have feel like the book opened up, not transcripts.
 
 Three new features built purely from existing data; highest beauty-to-effort ratio in the backlog.
 
-- [ ] **Color Atlas** — extract dominant palettes from every painting (color-quantization library). Show her chromatic evolution as a horizontally-scrollable spectrum of her career: sober browns of the 1940s, Mediterranean blues of the 1970s travel years, blooming pinks of the late flower work. A temporal pigment analysis. Scholars love it; visitors find it stunning.
-- [ ] **Subject Obsessions** — auto-cluster her recurring subjects (Mt. Tam, Herman, the stained-glass window, one pear, Naxos rooftops) by traversing `place_ids` / `people_ids` and INDEX co-occurrence. Each cluster sequenced by year so her treatment evolves visibly. The Pairings page gestures at this; expand into a full discovery layer.
-- [ ] **At Her Age** — a slider across her 84 years divided into life-sections (Chicago childhood / New York art school / early Bay Area / Mill Valley + sons / travel decades / late work). For each section: a photograph of Leah at that age + the paintings she was making + a one-line caption of what was happening. (User will source additional photos as needed.)
+- [x] **Color Atlas** — extract dominant palettes from every painting (color-quantization library). Show her chromatic evolution as a horizontally-scrollable spectrum of her career: sober browns of the 1940s, Mediterranean blues of the 1970s travel years, blooming pinks of the late flower work. A temporal pigment analysis. Scholars love it; visitors find it stunning.
+- [x] **Subject Obsessions** — auto-cluster her recurring subjects (Mt. Tam, Herman, the stained-glass window, one pear, Naxos rooftops) by traversing `place_ids` / `people_ids` and INDEX co-occurrence. Each cluster sequenced by year so her treatment evolves visibly. The Pairings page gestures at this; expand into a full discovery layer.
+- [x] **At Her Age** — a slider across her 84 years divided into life-sections (Chicago childhood / New York art school / early Bay Area / Mill Valley + sons / travel decades / late work). For each section: a photograph of Leah at that age + the paintings she was making + a one-line caption of what was happening. (User will source additional photos as needed.)
 
 ---
 

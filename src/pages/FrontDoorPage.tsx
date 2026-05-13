@@ -86,7 +86,7 @@ function FrontDoorPage(): JSX.Element {
         transition={{ delay: 1.4, duration: 1 }}
         className="mt-16"
       >
-        <div className="flex items-center gap-6 text-text-muted text-xs tracking-[0.25em] uppercase font-body">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-text-muted text-xs tracking-[0.25em] uppercase font-body">
           <Link to="/daily" className="hover:text-text-primary transition-colors duration-300">
             Today’s painting
           </Link>
@@ -95,8 +95,16 @@ function FrontDoorPage(): JSX.Element {
             Color Atlas
           </Link>
           <span aria-hidden="true">·</span>
+          <Link to="/obsessions" className="hover:text-text-primary transition-colors duration-300">
+            Obsessions
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/at-her-age" className="hover:text-text-primary transition-colors duration-300">
+            At her age
+          </Link>
+          <span aria-hidden="true">·</span>
           <Link to="/pairings" className="hover:text-text-primary transition-colors duration-300">
-            Curated pairings
+            Pairings
           </Link>
         </div>
       </motion.div>
