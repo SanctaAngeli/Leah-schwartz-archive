@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
 import SkipLink from './components/layout/SkipLink';
@@ -7,11 +7,12 @@ import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
 import PagePreloader from './components/ui/PagePreloader';
-import { IntroProvider, useIntroComplete } from './hooks/useIntroComplete';
+import { IntroProvider } from './hooks/useIntroComplete';
 import { ShortcutsProvider } from './hooks/useGlobalShortcuts';
 import ScrollStoryPage from './pages/ScrollStoryPage';
 import CanvasPage from './pages/CanvasPage';
 import CuratedGalleryPage from './pages/CuratedGalleryPage';
+import FrontDoorPage from './pages/FrontDoorPage';
 import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import TimelinePage from './pages/TimelinePage';
@@ -36,11 +37,11 @@ import NotFoundPage from './pages/NotFoundPage';
 function AppContent(): JSX.Element {
   const location = useLocation();
   const [isInitialLoad, setIsInitialLoad] = useState(true);
-  const { hasCompletedIntro } = useIntroComplete();
 
-  // Show nav if: user has completed intro OR they're not on the landing page
-  const isLandingPage = location.pathname === '/';
-  const showNavigation = hasCompletedIntro || !isLandingPage;
+  // Nav is always visible. The intro gate was tied to a v1 cinematic that no
+  // longer exists on `/`; the Z-axis entrance (Sprint 9) will reintroduce its
+  // own gate when it ships.
+  const showNavigation = true;
 
   return (
     <>
@@ -57,9 +58,11 @@ function AppContent(): JSX.Element {
         <main id="main-content" className="focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-            {/* / is the Painting of the Day. /story parks the scroll-story. /gallery is the era-pile browse. */}
-            <Route path="/" element={<PageTransition><DailyPage /></PageTransition>} />
-            <Route path="/gallery" element={<PageTransition><LandingPage /></PageTransition>} />
+            {/* / is the front door · /daily is the returning-visitor ritual · /story parks the scroll-story · /gallery is the era-pile browse. */}
+            <Route path="/" element={<PageTransition><FrontDoorPage /></PageTransition>} />
+            <Route path="/daily" element={<PageTransition><DailyPage /></PageTransition>} />
+            <Route path="/gallery" element={<Navigate to="/themes" replace />} />
+            <Route path="/eras" element={<PageTransition><LandingPage /></PageTransition>} />
             <Route path="/canvas" element={<PageTransition><CanvasPage /></PageTransition>} />
             <Route path="/story" element={<PageTransition><ScrollStoryPage /></PageTransition>} />
             <Route path="/curated" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />

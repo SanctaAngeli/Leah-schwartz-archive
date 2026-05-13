@@ -3,7 +3,7 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import artworksData from '../data/artworks.json';
 import { getProseByChapter, cleanProse } from '../data/prose';
 import { getAccent, getSeasonalAccent, seasonName } from '../data/chapterAccents';
@@ -25,12 +25,6 @@ function daysSinceEpoch(date: Date): number {
   const epoch = Date.UTC(2024, 0, 1);
   const now = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
   return Math.floor((now - epoch) / 86_400_000);
-}
-
-function todayOffsetFromParam(offset: number): Date {
-  const d = new Date();
-  d.setUTCDate(d.getUTCDate() + offset);
-  return d;
 }
 
 function pickArtworkForDay(d: Date): Artwork {
@@ -56,25 +50,18 @@ function findProseMention(artwork: Artwork): string | null {
 }
 
 export default function DailyPage(): JSX.Element {
-  const [params, setParams] = useSearchParams();
-  const dayOffset = parseInt(params.get('d') || '0', 10) || 0;
-  const date = todayOffsetFromParam(dayOffset);
-  const artwork = useMemo(() => pickArtworkForDay(date), [dayOffset]);
+  const date = new Date();
+  const artwork = useMemo(() => pickArtworkForDay(date), []);
   const accent = getAccent(artwork.chapter);
   const seasonal = getSeasonalAccent(date);
   const season = seasonName(date);
 
   usePageMeta(
-    dayOffset === 0 ? 'Today' : formatDate(date),
+    'Today',
     `${artwork.display_title || artwork.title} · today's painting by Leah Schwartz.`
   );
 
   const mention = useMemo(() => findProseMention(artwork), [artwork]);
-
-  const setDay = (offset: number) => {
-    if (offset === 0) setParams({}, { replace: false });
-    else setParams({ d: String(offset) }, { replace: false });
-  };
 
   return (
     <main className="min-h-screen">
@@ -96,7 +83,7 @@ export default function DailyPage(): JSX.Element {
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          {dayOffset === 0 ? 'Today' : formatDate(date)}
+          {formatDate(date)}
         </motion.p>
         <motion.h1
           className="font-heading text-2xl md:text-3xl text-text-primary leading-tight"
@@ -182,35 +169,9 @@ export default function DailyPage(): JSX.Element {
           </motion.section>
         )}
 
-        {/* Yesterday / Tomorrow */}
-        <nav className="mt-16 flex items-center justify-center gap-6 text-sm font-body">
-          <button
-            onClick={() => setDay(dayOffset - 1)}
-            className="group flex items-center gap-2 text-text-muted hover:text-text-primary transition-colors"
-          >
-            <span className="transition-transform group-hover:-translate-x-0.5">←</span>
-            Yesterday's painting
-          </button>
-          {dayOffset !== 0 && (
-            <button
-              onClick={() => setDay(0)}
-              className="text-text-muted hover:text-text-primary transition-colors"
-            >
-              Today
-            </button>
-          )}
-          <button
-            onClick={() => setDay(dayOffset + 1)}
-            className="group flex items-center gap-2 text-text-muted hover:text-text-primary transition-colors"
-          >
-            Tomorrow's painting
-            <span className="transition-transform group-hover:translate-x-0.5">→</span>
-          </button>
-        </nav>
-
         {/* Quiet entry points */}
         <div className="mt-20 max-w-md mx-auto grid grid-cols-3 gap-2 text-center">
-          <Link to="/gallery" className="font-body text-xs text-text-muted uppercase tracking-widest py-3 hover:text-text-primary transition-colors">
+          <Link to="/themes" className="font-body text-xs text-text-muted uppercase tracking-widest py-3 hover:text-text-primary transition-colors">
             Browse all
           </Link>
           <Link to="/her-words" className="font-body text-xs text-text-muted uppercase tracking-widest py-3 hover:text-text-primary transition-colors">

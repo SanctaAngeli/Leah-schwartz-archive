@@ -66,14 +66,24 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             <p className="text-text-secondary mb-6">
               We encountered an error while loading this content. Please try again.
             </p>
-            <button
-              onClick={this.handleRetry}
-              className="glass-pill px-6 py-3 text-text-primary font-medium
-                hover:bg-white/90 transition-all duration-200
-                focus:outline-none focus:ring-2 focus:ring-text-primary/20"
-            >
-              Try Again
-            </button>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <button
+                onClick={this.handleRetry}
+                className="glass-pill px-6 py-3 text-text-primary font-medium
+                  hover:bg-white/90 transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-text-primary/20"
+              >
+                Try Again
+              </button>
+              <a
+                href="/"
+                className="glass-pill px-6 py-3 text-text-primary font-medium
+                  hover:bg-white/90 transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-text-primary/20"
+              >
+                Back to home
+              </a>
+            </div>
             {import.meta.env.DEV && this.state.error && (
               <details className="mt-6 text-left">
                 <summary className="text-sm text-text-muted cursor-pointer hover:text-text-secondary">

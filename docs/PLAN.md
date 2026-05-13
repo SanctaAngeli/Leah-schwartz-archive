@@ -13,11 +13,11 @@
 
 **Goal:** First-time visitors land on a real home, see who Leah is in five seconds, and can navigate any path without getting stuck.
 
-1. [ ] **New home page** — hero painting full-bleed + name + dates + one pull-quote in her voice (Caveat) + three pill paths: *See her work* (`/canvas`) · *Read her story* (`/her-words`) · *Browse themes* (`/themes`). Nav always visible.
-2. [ ] **Move DailyPage to `/daily`** — keep the daily-rotation ritual for returning visitors as a destination, but drop the yesterday/tomorrow chrome (it doesn't belong on the front door, and the time-traveling buttons confuse first-timers).
-3. [ ] **Fix `/places` crash** — `react-leaflet@5.0.0` is incompatible with React 18 (`TypeError: render2 is not a function` in `MapContainer`). Downgrade to `react-leaflet@4.x` and patch any v5-only API in `WorldMap.tsx`.
-4. [ ] **Escapable ErrorBoundary** — every error screen must show a visible "Back to home" link so crashed pages never trap visitors.
-5. [ ] **Merge `/gallery` → `/themes`** — the 12 book chapters are the gallery. Drop the "Old Stuff & Early Voice" / "Road & Landscape" / "Home, People & Travel" era buckets. Use the book's chapter names + taglines verbatim.
+1. [x] **New home page** — hero painting full-bleed + name + dates + one pull-quote in her voice (Caveat) + three pill paths: *See her work* (`/canvas`) · *Read her story* (`/her-words`) · *Browse themes* (`/themes`). Nav always visible.
+2. [x] **Move DailyPage to `/daily`** — keep the daily-rotation ritual for returning visitors as a destination, but drop the yesterday/tomorrow chrome (it doesn't belong on the front door, and the time-traveling buttons confuse first-timers).
+3. [x] **Fix `/places` crash** — `react-leaflet@5.0.0` is incompatible with React 18 (`TypeError: render2 is not a function` in `MapContainer`). Downgrade to `react-leaflet@4.x` and patch any v5-only API in `WorldMap.tsx`.
+4. [x] **Escapable ErrorBoundary** — every error screen must show a visible "Back to home" link so crashed pages never trap visitors.
+5. [x] **Merge `/gallery` → `/themes`** — the 12 book chapters are the gallery. Drop the "Old Stuff & Early Voice" / "Road & Landscape" / "Home, People & Travel" era buckets. Use the book's chapter names + taglines verbatim.
 
 **Ship criteria:** A new visitor lands on `/`, learns who Leah is, picks one of three paths, and on every page can keep going or get home.
 

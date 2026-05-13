@@ -55,7 +55,7 @@ function NotFoundPage(): JSX.Element {
             Return Home
           </Link>
           <Link
-            to="/gallery"
+            to="/themes"
             className="glass-pill px-6 py-3 text-text-primary font-medium
               hover:bg-white/90 transition-all duration-200
               focus:outline-none focus:ring-2 focus:ring-text-primary/20"

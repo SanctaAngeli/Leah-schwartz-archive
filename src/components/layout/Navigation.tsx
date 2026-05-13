@@ -49,10 +49,9 @@ function Navigation({ visible = true, onSettingsClick }: NavigationProps): JSX.E
   // Updated nav items - removed Curated (accessed via era), renamed About
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/gallery', label: 'Gallery' },
+    { path: '/themes', label: 'Gallery' },
     { path: '/canvas', label: 'Canvas' },
     { path: '/her-words', label: "Leah's Story" },
-    { path: '/themes', label: 'Themes' },
     { path: '/pairings', label: 'Pairings' },
     { path: '/places', label: 'Places' },
     { path: '/studio', label: 'Studio' },
