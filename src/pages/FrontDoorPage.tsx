@@ -11,6 +11,15 @@ const PATHS = [
   { to: '/themes', label: 'Browse themes', sub: 'twelve rooms of the book' },
 ];
 
+const MORE_PATHS = [
+  { to: '/atlas',      label: 'Color Atlas',  sub: 'her chromatic life' },
+  { to: '/obsessions', label: 'Obsessions',   sub: 'subjects she returned to' },
+  { to: '/at-her-age', label: 'At her age',   sub: 'a slider through 84 years' },
+  { to: '/pairings',   label: 'Pairings',     sub: 'curated diptychs' },
+  { to: '/places',     label: 'Places',       sub: 'every spot she painted' },
+  { to: '/daily',      label: "Today's painting", sub: 'a single piece, rotating' },
+];
+
 function FrontDoorPage(): JSX.Element {
   usePageMeta('', "A digital archive of the artist Leah Schwartz (1920–2004).");
 
@@ -80,34 +89,41 @@ function FrontDoorPage(): JSX.Element {
         ))}
       </motion.nav>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1 }}
-        className="mt-16"
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        className="mt-20 max-w-4xl w-full"
+        aria-labelledby="more-ways-heading"
       >
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-text-muted text-xs tracking-[0.25em] uppercase font-body">
-          <Link to="/daily" className="hover:text-text-primary transition-colors duration-300">
-            Today’s painting
-          </Link>
-          <span aria-hidden="true">·</span>
-          <Link to="/atlas" className="hover:text-text-primary transition-colors duration-300">
-            Color Atlas
-          </Link>
-          <span aria-hidden="true">·</span>
-          <Link to="/obsessions" className="hover:text-text-primary transition-colors duration-300">
-            Obsessions
-          </Link>
-          <span aria-hidden="true">·</span>
-          <Link to="/at-her-age" className="hover:text-text-primary transition-colors duration-300">
-            At her age
-          </Link>
-          <span aria-hidden="true">·</span>
-          <Link to="/pairings" className="hover:text-text-primary transition-colors duration-300">
-            Pairings
-          </Link>
+        <div className="flex items-center gap-4 mb-6">
+          <div className="flex-1 h-px bg-text-muted/20" aria-hidden="true" />
+          <p
+            id="more-ways-heading"
+            className="font-body text-text-muted uppercase tracking-[0.35em] text-[11px]"
+          >
+            More ways in
+          </p>
+          <div className="flex-1 h-px bg-text-muted/20" aria-hidden="true" />
         </div>
-      </motion.div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {MORE_PATHS.map((p) => (
+            <Link
+              key={p.to}
+              to={p.to}
+              className="group flex flex-col items-center text-center
+                bg-white/70 backdrop-blur-md border border-white/40
+                rounded-2xl px-4 py-3
+                shadow-[0_2px_14px_rgba(0,0,0,0.04)]
+                hover:bg-white hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-0.5
+                transition-all duration-300"
+            >
+              <span className="font-heading text-text-primary text-[15px] leading-tight">{p.label}</span>
+              <span className="font-body text-text-muted text-[11px] tracking-wider mt-1">{p.sub}</span>
+            </Link>
+          ))}
+        </div>
+      </motion.section>
     </main>
   );
 }
