@@ -83,12 +83,16 @@ function ObsessionsPage(): JSX.Element {
               {o.note}
             </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               {o.artworks.map((art) => (
                 <Link
                   key={art.id}
                   to={`/artwork/${art.id}`}
-                  className="group block text-center"
+                  className="group block text-center shrink-0
+                    w-[calc(50%_-_0.5rem)]
+                    sm:w-[calc(33.333%_-_0.667rem)]
+                    md:w-[calc(25%_-_0.75rem)]
+                    lg:w-[calc(16.667%_-_0.834rem)]"
                 >
                   <div
                     className="aspect-square relative rounded-sm overflow-hidden shadow-[0_3px_14px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.16)] transition-shadow"
