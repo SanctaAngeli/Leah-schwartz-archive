@@ -61,8 +61,8 @@ New ways into the work that complement the canvas.
 
 The signature moments people remember and share.
 
-- [ ] **Z-axis Entrance** — rebuilt from scratch with three.js for smoothness (the v1 attempt was janky). Once-only on first visit (cookie-gated). On landing: paintings hang in 3D space, the camera moves forward, paintings drift past on side walls, the deepest one resolves into the home's hero with her name centered. ~2 seconds total. Then the static home settles.
-- [ ] **Studio Visit scrollytelling** — long-scroll narrative arriving at her Mill Valley studio in 1985. Parallax photographs, ambient sound (brush in water? gulls? typewriter?), her own words pulled at the right moments, paintings revealed on walls as you scroll past. Treats her like she's still there.
+- [x] **Z-axis Entrance** — user-triggered via "Watch intro" pill on the hero (auto-play deferred; sessionStorage gating remains available) — rebuilt from scratch with three.js for smoothness (the v1 attempt was janky). Once-only on first visit (cookie-gated). On landing: paintings hang in 3D space, the camera moves forward, paintings drift past on side walls, the deepest one resolves into the home's hero with her name centered. ~2 seconds total. Then the static home settles.
+- [x] **Studio Visit scrollytelling** — long-scroll narrative arriving at her Mill Valley studio in 1985. Parallax photographs, ambient sound (brush in water? gulls? typewriter?), her own words pulled at the right moments, paintings revealed on walls as you scroll past. Treats her like she's still there.
 
 ---
 

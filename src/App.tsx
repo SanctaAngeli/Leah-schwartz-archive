@@ -18,6 +18,7 @@ import AtHerAgePage from './pages/AtHerAgePage';
 import LastPaintingsPage from './pages/LastPaintingsPage';
 import ConstellationPage from './pages/ConstellationPage';
 import WalkWithHerPage from './pages/WalkWithHerPage';
+import StudioVisitPage from './pages/StudioVisitPage';
 import CuratedGalleryPage from './pages/CuratedGalleryPage';
 import FrontDoorPage from './pages/FrontDoorPage';
 import HomePage from './pages/HomePage';
@@ -78,6 +79,7 @@ function AppContent(): JSX.Element {
             <Route path="/last-paintings" element={<PageTransition><LastPaintingsPage /></PageTransition>} />
             <Route path="/constellation" element={<PageTransition><ConstellationPage /></PageTransition>} />
             <Route path="/walk" element={<PageTransition><WalkWithHerPage /></PageTransition>} />
+            <Route path="/studio-visit" element={<PageTransition><StudioVisitPage /></PageTransition>} />
             <Route path="/story" element={<PageTransition><ScrollStoryPage /></PageTransition>} />
             <Route path="/curated" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
             <Route path="/curated/:eraId" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
