@@ -44,14 +44,14 @@ function EntranceOverlay({ onComplete }: EntranceOverlayProps): JSX.Element {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
       className="fixed inset-0 z-[100] overflow-hidden"
-      style={{ backgroundColor: '#0E0A06' }}
+      style={{ backgroundColor: '#EDE6D7' }}
       aria-label="Entrance"
     >
       <CorridorPreloader onReady={() => setPreloaded(true)} />
 
       {/* The 3D scene · mounted from the start, but the flight only starts when stage flips */}
       <div className="absolute inset-0">
-        <Suspense fallback={<div className="absolute inset-0 bg-[#0E0A06]" />}>
+        <Suspense fallback={<div className="absolute inset-0 bg-[#EDE6D7]" />}>
           <GalleryCorridor3D
             startFlight={stage !== 'splash'}
             onComplete={handleFlightComplete}
@@ -60,7 +60,7 @@ function EntranceOverlay({ onComplete }: EntranceOverlayProps): JSX.Element {
         </Suspense>
       </div>
 
-      {/* Splash · just her name. Sits in front of the corridor view, dimmed scene visible behind */}
+      {/* Splash · her name framed as a museum title plate over the bright corridor */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: stage === 'splash' ? 1 : 0 }}
@@ -68,73 +68,76 @@ function EntranceOverlay({ onComplete }: EntranceOverlayProps): JSX.Element {
         className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center z-10"
         style={{ pointerEvents: stage === 'splash' ? 'auto' : 'none' }}
       >
-        {/* Soft vignette over the corridor — barely dims center, fades to dark edges */}
+        {/* Soft cream wash · brightens the scene further and gives a centered focal point */}
         <div
           aria-hidden="true"
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse at center, rgba(14,10,6,0.20) 0%, rgba(14,10,6,0.60) 60%, rgba(14,10,6,0.92) 100%)',
+              'radial-gradient(ellipse at center, rgba(255,250,240,0.55) 0%, rgba(237,230,215,0.35) 55%, rgba(220,210,190,0.55) 100%)',
           }}
         />
-        <div className="relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            className="font-heading text-white text-[clamp(48px,10vw,120px)] tracking-[0.04em] leading-[0.95]"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 16, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+          className="relative z-10 bg-white/55 backdrop-blur-2xl
+            border border-white/50 rounded-[36px]
+            px-10 sm:px-16 py-10 sm:py-12
+            shadow-[0_28px_80px_rgba(60,45,25,0.12)]"
+        >
+          <h1 className="font-heading text-[#2A2418] text-[clamp(44px,9vw,108px)] tracking-[0.04em] leading-[0.95]">
             Leah Schwartz
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="font-body text-white/55 mt-6 tracking-[0.5em] text-xs uppercase pl-[0.5em]"
-          >
-            1920 — 2004
-          </motion.p>
-          <motion.button
-            type="button"
-            onClick={handleEnter}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: preloaded ? 1 : 0.3 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            disabled={!preloaded}
-            className="mt-20 mx-auto group flex flex-col items-center text-white/70 hover:text-white
-              transition-colors duration-300 cursor-pointer disabled:cursor-wait"
-            aria-label="Enter the archive"
-          >
-            {/* pl compensates the trailing letter-spacing so the text is visually centered */}
-            <span className="font-body text-[11px] tracking-[0.4em] uppercase pl-[0.4em]">
-              {preloaded ? 'Enter' : 'Loading…'}
-            </span>
-            <span aria-hidden="true" className="mt-3 text-xl group-hover:translate-y-0.5 transition-transform duration-300">
-              ↓
-            </span>
-          </motion.button>
-        </div>
+          </h1>
+          <div className="mt-6 flex items-center justify-center gap-4" aria-hidden="true">
+            <span className="block h-px w-10 bg-[#2A2418]/35" />
+            <p className="font-body text-[#2A2418]/65 tracking-[0.5em] text-xs uppercase pl-[0.5em]">
+              1920 — 2004
+            </p>
+            <span className="block h-px w-10 bg-[#2A2418]/35" />
+          </div>
+        </motion.div>
+        <motion.button
+          type="button"
+          onClick={handleEnter}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: preloaded ? 1 : 0.3 }}
+          transition={{ duration: 0.8, delay: 1.6 }}
+          disabled={!preloaded}
+          className="relative z-10 mt-14 mx-auto group flex flex-col items-center
+            text-[#2A2418]/70 hover:text-[#2A2418]
+            transition-colors duration-300 cursor-pointer disabled:cursor-wait"
+          aria-label="Enter the archive"
+        >
+          {/* pl compensates the trailing letter-spacing so the text is visually centered */}
+          <span className="font-body text-[11px] tracking-[0.4em] uppercase pl-[0.4em]">
+            {preloaded ? 'Enter' : 'Loading…'}
+          </span>
+          <span aria-hidden="true" className="mt-3 text-xl group-hover:translate-y-0.5 transition-transform duration-300">
+            ↓
+          </span>
+        </motion.button>
       </motion.div>
 
       {/* Skip · always available */}
       <button
         type="button"
         onClick={onComplete}
-        className="absolute bottom-6 right-6 font-body text-white/40 hover:text-white/80
+        className="absolute bottom-6 right-6 font-body text-[#2A2418]/45 hover:text-[#2A2418]/80
           text-[10px] tracking-[0.3em] uppercase transition-colors duration-200 z-20"
         aria-label="Skip intro"
       >
         Skip ›
       </button>
 
-      {/* End-of-flight glow that intensifies as hero fills the frame */}
+      {/* End-of-flight glow that intensifies as hero fills the frame · soft warm halo */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none z-[5]"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(255,236,200,0) 35%, rgba(255,236,200,0.25) 80%, rgba(255,236,200,0.45) 100%)',
-          opacity: heroFill * 0.7,
+            'radial-gradient(ellipse at center, rgba(255,245,220,0) 40%, rgba(255,245,220,0.20) 85%, rgba(255,245,220,0.40) 100%)',
+          opacity: heroFill * 0.6,
           transition: 'opacity 0.3s linear',
         }}
       />

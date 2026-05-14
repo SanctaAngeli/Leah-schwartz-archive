@@ -160,7 +160,15 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
     const startZ = 4;
     const cameraZ = startZ + (heroZ - startZ) * t;
     state.camera.position.set(0, 0.4, cameraZ);
-    state.camera.lookAt(0, 0.4, cameraZ - 1);
+
+    // In the last third of the flight, tilt the lookAt down so the painting rises
+    // into the upper-middle of the frame — matching where Mt. Tam sits on the home page,
+    // so the crossfade lands without a jump. The end value (0.10) crops the painting top
+    // at the viewport top, the same way the home page hero crops above the fold.
+    const tiltT = Math.max(0, (t - 0.6) / 0.4);  // 0 → 1 over last 40%
+    const eased = tiltT * tiltT * (3 - 2 * tiltT);  // smoothstep
+    const lookAtY = 0.4 + (0.10 - 0.4) * eased;
+    state.camera.lookAt(0, lookAtY, cameraZ - 1);
 
     // Notify the parent how full the hero painting is on screen
     // When camera is close to hero, painting fills more of viewport
@@ -238,17 +246,20 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
         <meshStandardMaterial color="#EBE2D0" roughness={0.9} />
       </mesh>
 
-      {/* Hero painting on back wall · the one camera flies into */}
+      {/* Hero painting on back wall · the one camera flies into
+          Aspect 2.26:1 matches the actual Mt. Tam from Sonoma image (2934×1296)
+          so the texture sits cleanly and the painting fills ~60% of viewport width
+          at flight-end, matching the home page hero composition. */}
       {heroArtwork && (
         <group position={[0, 0.5, -CORRIDOR_LENGTH + 0.05]}>
           {/* warm frame */}
           <mesh position={[0, 0, -0.01]}>
-            <planeGeometry args={[6.4, 3.6]} />
+            <planeGeometry args={[7.86, 3.56]} />
             <meshStandardMaterial color="#3A2E22" roughness={0.9} />
           </mesh>
           {/* the hero painting */}
           <mesh>
-            <planeGeometry args={[6.2, 3.4]} />
+            <planeGeometry args={[7.7, 3.4]} />
             <meshStandardMaterial map={heroTexture} roughness={0.55} />
           </mesh>
         </group>
