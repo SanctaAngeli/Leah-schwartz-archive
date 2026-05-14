@@ -12,12 +12,12 @@ const PATHS = [
 ];
 
 const MORE_PATHS = [
-  { to: '/atlas',      label: 'Color Atlas',  sub: 'her chromatic life' },
-  { to: '/obsessions', label: 'Obsessions',   sub: 'subjects she returned to' },
-  { to: '/at-her-age', label: 'At her age',   sub: 'a slider through 84 years' },
-  { to: '/pairings',   label: 'Pairings',     sub: 'curated diptychs' },
-  { to: '/places',     label: 'Places',       sub: 'every spot she painted' },
-  { to: '/daily',      label: "Today's painting", sub: 'a single piece, rotating' },
+  { to: '/atlas',          label: 'Color Atlas',     sub: 'her chromatic life' },
+  { to: '/obsessions',     label: 'Obsessions',      sub: 'subjects she returned to' },
+  { to: '/at-her-age',     label: 'At her age',      sub: 'a slider through 84 years' },
+  { to: '/pairings',       label: 'Pairings',        sub: 'curated diptychs' },
+  { to: '/last-paintings', label: 'Last Paintings',  sub: 'a quiet room for late work' },
+  { to: '/places',         label: 'Places',          sub: 'every spot she painted' },
 ];
 
 function FrontDoorPage(): JSX.Element {

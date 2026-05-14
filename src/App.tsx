@@ -15,6 +15,7 @@ import CanvasPage from './pages/CanvasPage';
 import ColorAtlasPage from './pages/ColorAtlasPage';
 import ObsessionsPage from './pages/ObsessionsPage';
 import AtHerAgePage from './pages/AtHerAgePage';
+import LastPaintingsPage from './pages/LastPaintingsPage';
 import CuratedGalleryPage from './pages/CuratedGalleryPage';
 import FrontDoorPage from './pages/FrontDoorPage';
 import HomePage from './pages/HomePage';
@@ -72,6 +73,7 @@ function AppContent(): JSX.Element {
             <Route path="/atlas" element={<PageTransition><ColorAtlasPage /></PageTransition>} />
             <Route path="/obsessions" element={<PageTransition><ObsessionsPage /></PageTransition>} />
             <Route path="/at-her-age" element={<PageTransition><AtHerAgePage /></PageTransition>} />
+            <Route path="/last-paintings" element={<PageTransition><LastPaintingsPage /></PageTransition>} />
             <Route path="/story" element={<PageTransition><ScrollStoryPage /></PageTransition>} />
             <Route path="/curated" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
             <Route path="/curated/:eraId" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
