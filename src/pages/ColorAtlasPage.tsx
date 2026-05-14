@@ -131,42 +131,49 @@ function ColorAtlasPage(): JSX.Element {
           })}
         </div>
 
-        {/* Hover preview · floats above the strip */}
+        {/* Hover preview · floats above the strip, generously sized */}
         {hoveredArt && hoveredPalette && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute -bottom-4 left-1/2 -translate-x-1/2 translate-y-full
+            className="absolute -bottom-6 left-1/2 -translate-x-1/2 translate-y-full
               bg-white/95 backdrop-blur-md border border-white/50
-              rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.12)]
-              p-4 flex gap-4 items-start pointer-events-none
-              max-w-md z-20"
+              rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.16)]
+              p-5 pointer-events-none z-20
+              w-[min(560px,90vw)]"
           >
-            {(hoveredArt.thumbPath || hoveredArt.imagePath) && (
-              <img
-                src={hoveredArt.thumbPath || hoveredArt.imagePath || ''}
-                alt=""
-                className="w-24 h-24 object-cover rounded-sm shadow-sm flex-shrink-0"
-              />
-            )}
-            <div className="min-w-0">
-              <p className="font-heading text-text-primary text-lg leading-tight truncate">
-                {hoveredArt.display_title || hoveredArt.title}
-              </p>
-              <p className="font-body text-text-muted text-xs mt-1 tracking-wider uppercase">
-                {hoveredArt.year || hoveredArt.chapter?.replace(/-/g, ' ')}
-                {hoveredArt.medium ? ` · ${hoveredArt.medium}` : ''}
-              </p>
-              <div className="flex gap-1 mt-3">
-                {hoveredPalette.palette.map((c, i) => (
-                  <span
-                    key={i}
-                    className="w-5 h-5 rounded-sm border border-black/5"
-                    style={{ backgroundColor: c }}
-                    title={c}
-                  />
-                ))}
+            <div className="flex gap-5 items-start">
+              {(hoveredArt.thumbPath || hoveredArt.imagePath) && (
+                <img
+                  src={hoveredArt.thumbPath || hoveredArt.imagePath || ''}
+                  alt=""
+                  className="w-56 h-56 object-cover rounded-md shadow-[0_6px_20px_rgba(0,0,0,0.12)] flex-shrink-0"
+                />
+              )}
+              <div className="min-w-0 flex-1 pt-1">
+                <p className="font-heading text-text-primary text-2xl leading-tight">
+                  {hoveredArt.display_title || hoveredArt.title}
+                </p>
+                <p className="font-body text-text-muted text-xs mt-2 tracking-[0.2em] uppercase">
+                  {hoveredArt.year || hoveredArt.chapter?.replace(/-/g, ' ')}
+                  {hoveredArt.medium ? ` · ${hoveredArt.medium}` : ''}
+                </p>
+                {hoveredArt.dimensions && (
+                  <p className="font-body text-text-muted text-xs mt-1">
+                    {hoveredArt.dimensions}
+                  </p>
+                )}
+                <div className="flex gap-1.5 mt-5">
+                  {hoveredPalette.palette.map((c, i) => (
+                    <span
+                      key={i}
+                      className="w-8 h-8 rounded-sm border border-black/5"
+                      style={{ backgroundColor: c }}
+                      title={c}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

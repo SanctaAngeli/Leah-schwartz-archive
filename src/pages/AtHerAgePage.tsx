@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import artworksData from '../data/artworks.json';
@@ -86,7 +86,7 @@ const LIFE_ERAS: LifeEra[] = [
     id: 'prolific',
     title: 'Prolific Years',
     yearStart: 1975,
-    yearEnd: 1989,
+    yearEnd: 1984,
     caption: 'One-man shows. Painting roadside America from a Ford Econoline van that doubled as a studio. Bay Area landscapes, street scenes, portraits of the people she actually knew.',
     bookChapters: ['on-the-road', 'landscape', 'street-scenes', 'portraits'],
     photoPageRange: [40, 139],
@@ -95,7 +95,7 @@ const LIFE_ERAS: LifeEra[] = [
   {
     id: 'travel-decades',
     title: 'The Travel Decades',
-    yearStart: 1980,
+    yearStart: 1985,
     yearEnd: 1999,
     caption: 'France. Italy. Greece. Turkey. Japan. India. Nepal. Kenya. Britain. Two carry-ons, two brushes, a chocolate bar, and a notebook — her travel kit. She painted on location for forty days at a stretch.',
     bookChapters: ['travel'],
@@ -105,7 +105,7 @@ const LIFE_ERAS: LifeEra[] = [
   {
     id: 'late-work',
     title: 'Late Work',
-    yearStart: 1995,
+    yearStart: 2000,
     yearEnd: 2004,
     caption: 'Home from the road. Still lifes, interiors, flowers — the small subjects given the gravity she once gave Mt. Tam. The High Sierra one last time. The book finished. Strawberry Press, Mill Valley.',
     bookChapters: ['still-life', 'interiors', 'flowers', 'high-sierra'],
@@ -163,7 +163,17 @@ function AtHerAgePage(): JSX.Element {
   const photo = useMemo(() => photoForEra(era), [era]);
   const allEraPaintings = useMemo(() => paintingsForEra(era), [era]);
   const fallbackArt = useMemo(() => representativeArtForEra(era), [era]);
-  const paintings = allEraPaintings.slice(0, 8);
+
+  // Keyboard nav
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.target instanceof HTMLElement && /input|textarea/i.test(e.target.tagName)) return;
+      if (e.key === 'ArrowLeft') setIdx((i) => Math.max(0, i - 1));
+      else if (e.key === 'ArrowRight') setIdx((i) => Math.min(LIFE_ERAS.length - 1, i + 1));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   return (
     <main className="min-h-screen pt-28 pb-24 px-6">
@@ -275,83 +285,76 @@ function AtHerAgePage(): JSX.Element {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-          className="max-w-6xl mx-auto"
+          className="max-w-6xl mx-auto text-center"
         >
-          <div className="grid md:grid-cols-[280px_1fr] gap-10 mb-10">
-            {/* Photo */}
-            <div className="flex flex-col">
-              {photo ? (
-                <figure>
-                  <img
-                    src={`/photos/${photo.file}`}
-                    alt={`Leah at ${ageRange(era).toLowerCase()}`}
-                    className="w-full h-auto rounded-sm shadow-[0_8px_28px_rgba(0,0,0,0.12)]"
-                    loading="lazy"
-                  />
-                  <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase mt-3 text-center">
-                    Photograph · from the book
-                  </figcaption>
-                </figure>
-              ) : fallbackArt?.imagePath ? (
-                <figure>
-                  <Link to={`/artwork/${fallbackArt.id}`} className="block group">
-                    <img
-                      src={fallbackArt.thumbPath || fallbackArt.imagePath || ''}
-                      alt={fallbackArt.display_title || fallbackArt.title}
-                      className="w-full h-auto rounded-sm shadow-[0_8px_28px_rgba(0,0,0,0.12)] group-hover:shadow-[0_12px_36px_rgba(0,0,0,0.18)] transition-shadow"
-                      loading="lazy"
-                    />
-                    <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase mt-3 text-center">
-                      {fallbackArt.display_title || fallbackArt.title}
-                    </figcaption>
-                  </Link>
-                </figure>
-              ) : (
-                <div
-                  className="aspect-[3/4] rounded-sm flex items-center justify-center text-text-muted text-xs italic px-4 text-center"
-                  style={{ backgroundColor: era.accent + '22' }}
-                >
-                  A photograph for this era is on the way.
-                </div>
-              )}
-              <div className="mt-6">
-                <p
-                  className="font-body text-xs uppercase tracking-[0.25em]"
-                  style={{ color: era.accent }}
-                >
-                  {era.yearStart}–{era.yearEnd}
-                </p>
-                <p className="font-heading text-text-primary text-2xl mt-1 leading-tight">
-                  {ageRange(era)}
-                </p>
-              </div>
-            </div>
-
-            {/* Caption + title */}
-            <div>
-              <h2 className="font-heading text-4xl md:text-5xl text-text-primary leading-tight mb-3">
-                {era.title}
-              </h2>
-              <div
-                className="w-12 h-1 rounded-full mb-6"
-                style={{ backgroundColor: era.accent }}
-                aria-hidden="true"
-              />
-              <p className="font-heading text-[18px] md:text-[19px] leading-[1.7] text-text-primary">
-                {era.caption}
-              </p>
-            </div>
+          {/* Era title + caption, centered */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <p
+              className="font-body uppercase tracking-[0.3em] text-[11px] mb-4"
+              style={{ color: era.accent }}
+            >
+              {era.yearStart}–{era.yearEnd} · {ageRange(era)}
+            </p>
+            <h2 className="font-heading text-4xl md:text-6xl text-text-primary leading-tight mb-4">
+              {era.title}
+            </h2>
+            <div
+              className="w-12 h-1 rounded-full mx-auto mb-8"
+              style={{ backgroundColor: era.accent }}
+              aria-hidden="true"
+            />
+            <p className="font-heading text-[18px] md:text-[20px] leading-[1.7] text-text-primary">
+              {era.caption}
+            </p>
           </div>
 
-          {/* Paintings from this era */}
-          {paintings.length > 0 ? (
+          {/* Photo · centered */}
+          <div className="max-w-md mx-auto mb-16">
+            {photo ? (
+              <figure>
+                <img
+                  src={`/photos/${photo.file}`}
+                  alt={`Leah at ${ageRange(era).toLowerCase()}`}
+                  className="w-full h-auto rounded-sm shadow-[0_8px_28px_rgba(0,0,0,0.12)] mx-auto"
+                  loading="lazy"
+                />
+                <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase mt-3">
+                  Photograph · from the book
+                </figcaption>
+              </figure>
+            ) : fallbackArt?.imagePath ? (
+              <figure>
+                <Link to={`/artwork/${fallbackArt.id}`} className="block group">
+                  <img
+                    src={fallbackArt.thumbPath || fallbackArt.imagePath || ''}
+                    alt={fallbackArt.display_title || fallbackArt.title}
+                    className="w-full h-auto rounded-sm shadow-[0_8px_28px_rgba(0,0,0,0.12)] mx-auto group-hover:shadow-[0_12px_36px_rgba(0,0,0,0.18)] transition-shadow"
+                    loading="lazy"
+                  />
+                  <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase mt-3">
+                    A painting from this era · {fallbackArt.display_title || fallbackArt.title}
+                  </figcaption>
+                </Link>
+              </figure>
+            ) : (
+              <div
+                className="aspect-[3/4] rounded-sm flex items-center justify-center text-text-muted text-xs italic px-4 text-center max-w-xs mx-auto"
+                style={{ backgroundColor: era.accent + '22' }}
+              >
+                A photograph for this era is on the way.
+              </div>
+            )}
+          </div>
+
+          {/* All paintings from this era */}
+          {allEraPaintings.length > 0 ? (
             <div>
-              <p className="font-body text-text-muted uppercase tracking-widest text-xs mb-4">
-                Paintings from this era · {paintings.length} of {paintingsForEra(era).length}
+              <p className="font-body text-text-muted uppercase tracking-[0.25em] text-xs mb-6">
+                {allEraPaintings.length} {allEraPaintings.length === 1 ? 'painting' : 'paintings'} from this era
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {paintings.map((a) => (
-                  <Link key={a.id} to={`/artwork/${a.id}`} className="group block">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {allEraPaintings.map((a) => (
+                  <Link key={a.id} to={`/artwork/${a.id}`} className="group block text-center">
                     <div
                       className="aspect-square rounded-sm relative overflow-hidden shadow-[0_3px_14px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.16)] transition-shadow"
                       style={{ backgroundColor: a.placeholderColor }}
@@ -371,7 +374,7 @@ function AtHerAgePage(): JSX.Element {
               </div>
             </div>
           ) : (
-            <p className="font-body text-text-muted text-sm italic max-w-xl">
+            <p className="font-body text-text-muted text-sm italic max-w-xl mx-auto">
               No paintings in the catalog from this era — she was either too young or had not yet kept what she made.
             </p>
           )}

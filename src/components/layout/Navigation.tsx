@@ -52,8 +52,9 @@ function Navigation({ visible = true, onSettingsClick }: NavigationProps): JSX.E
     { path: '/themes', label: 'Gallery' },
     { path: '/canvas', label: 'Canvas' },
     { path: '/her-words', label: "Leah's Story" },
-    { path: '/pairings', label: 'Pairings' },
-    { path: '/places', label: 'Places' },
+    { path: '/atlas', label: 'Atlas' },
+    { path: '/obsessions', label: 'Obsessions' },
+    { path: '/at-her-age', label: 'Eras' },
     { path: '/studio', label: 'Studio' },
     { path: '/about', label: 'About' },
   ];
