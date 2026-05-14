@@ -7,7 +7,9 @@ import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
 import PagePreloader from './components/ui/PagePreloader';
-import WatercolorBackdrop from './components/ui/WatercolorBackdrop';
+import WatercolorShader from './components/home/WatercolorShader';
+import AccentWashShader from './components/ui/AccentWashShader';
+import { getAccent } from './data/chapterAccents';
 import { IntroProvider } from './hooks/useIntroComplete';
 import { ShortcutsProvider } from './hooks/useGlobalShortcuts';
 import ScrollStoryPage from './pages/ScrollStoryPage';
@@ -62,9 +64,18 @@ function AppContent(): JSX.Element {
       )}
       <SkipLink />
       <div className="min-h-screen bg-bg-gallery transition-colors duration-500 relative">
-        <WatercolorBackdrop />
+        {(() => {
+          // Individual chapter rooms (/themes/:id) get that chapter's accent wash.
+          // Everywhere else gets the home page's cream + three-pigment watercolor,
+          // so the whole site shares one paper-and-pigment texture.
+          const chapterMatch = location.pathname.match(/^\/themes\/([^/]+)\/?$/);
+          if (chapterMatch) {
+            return <AccentWashShader accent={getAccent(chapterMatch[1]).accent} />;
+          }
+          return <WatercolorShader />;
+        })()}
         <Navigation visible={showNavigation} />
-        <main id="main-content" className="focus:outline-none" tabIndex={-1}>
+        <main id="main-content" className="relative z-10 focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
             {/* / is the front door · /daily is the returning-visitor ritual · /story parks the scroll-story · /gallery is the era-pile browse. */}

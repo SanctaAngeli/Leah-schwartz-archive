@@ -40,7 +40,7 @@ function FrontDoorPage(): JSX.Element {
     <AnimatePresence>
       {showEntrance && <EntranceOverlay key="entrance" onComplete={dismissEntrance} />}
     </AnimatePresence>
-    <main className="min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20">
+    <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
