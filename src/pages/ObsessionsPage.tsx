@@ -60,29 +60,26 @@ function ObsessionsPage(): JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: idx * 0.05 }}
+            className="text-center"
           >
-            <header className="flex items-baseline gap-6 mb-6 pb-4 border-b"
-              style={{ borderColor: o.accent + '44' }}
-            >
+            <header className="mb-8">
+              <p className="font-body text-text-muted uppercase tracking-[0.25em] text-xs mb-3">
+                {o.artworks.length} paintings
+              </p>
+              <h2 className="font-heading text-3xl md:text-5xl text-text-primary leading-tight">
+                {o.title}
+              </h2>
+              <p className="font-leah text-text-muted text-2xl md:text-3xl leading-none mt-2">
+                {o.subtitle}
+              </p>
               <div
-                className="w-2 h-12 rounded-full"
+                className="w-12 h-1 rounded-full mx-auto mt-6"
                 style={{ backgroundColor: o.accent }}
                 aria-hidden="true"
               />
-              <div className="flex-1">
-                <p className="font-body text-text-muted uppercase tracking-widest text-xs">
-                  {o.artworks.length} paintings
-                </p>
-                <h2 className="font-heading text-3xl md:text-4xl text-text-primary leading-tight">
-                  {o.title}
-                </h2>
-                <p className="font-leah text-text-muted text-2xl md:text-3xl leading-none mt-1">
-                  {o.subtitle}
-                </p>
-              </div>
             </header>
 
-            <p className="font-body text-text-secondary mb-8 max-w-2xl leading-relaxed">
+            <p className="font-body text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
               {o.note}
             </p>
 
@@ -91,7 +88,7 @@ function ObsessionsPage(): JSX.Element {
                 <Link
                   key={art.id}
                   to={`/artwork/${art.id}`}
-                  className="group block"
+                  className="group block text-center"
                 >
                   <div
                     className="aspect-square relative rounded-sm overflow-hidden shadow-[0_3px_14px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.16)] transition-shadow"
