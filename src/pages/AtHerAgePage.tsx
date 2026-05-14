@@ -208,82 +208,88 @@ function AtHerAgePage(): JSX.Element {
         </p>
       </motion.header>
 
-      {/* Timeline · the slider itself */}
-      <section className="max-w-5xl mx-auto mb-16">
-        <div className="relative pt-10 pb-12">
-          {/* Decade markers */}
-          <div className="relative h-px bg-[#E8E2D5]">
-            {Array.from({ length: 10 }).map((_, i) => {
-              const year = 1920 + i * 10;
-              const pct = ((year - TIMELINE_START) / (TIMELINE_END - TIMELINE_START)) * 100;
-              return (
-                <div
-                  key={year}
-                  className="absolute -top-1 w-px h-3 bg-[#D5C6A8]"
-                  style={{ left: `${pct}%` }}
-                  aria-hidden="true"
-                >
-                  <span className="absolute top-4 left-1/2 -translate-x-1/2 font-body text-[10px] text-text-muted tracking-wider whitespace-nowrap">
-                    {year}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+      {/* Timeline · slim continuous strip, active era named above */}
+      <section className="max-w-4xl mx-auto mb-20 px-4">
+        {/* Active era title hovers above the bar · animates in on era change */}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={era.id + '-label'}
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.25 }}
+            className="font-body text-text-secondary text-[11px] tracking-[0.32em] uppercase text-center mb-3"
+          >
+            {era.title}
+          </motion.p>
+        </AnimatePresence>
 
-          {/* Era bands · clickable */}
-          <div className="absolute inset-0 pt-6 pb-6">
-            {LIFE_ERAS.map((e, i) => {
-              const start = ((e.yearStart - TIMELINE_START) / (TIMELINE_END - TIMELINE_START)) * 100;
-              const width = ((e.yearEnd - e.yearStart + 1) / (TIMELINE_END - TIMELINE_START)) * 100;
-              const isActive = i === idx;
-              return (
-                <button
-                  key={e.id}
-                  type="button"
-                  onClick={() => setIdx(i)}
-                  className={`absolute h-8 rounded-md transition-all duration-300 group
-                    focus:outline-none focus:ring-2 focus:ring-text-primary/30
-                    ${isActive ? 'shadow-[0_4px_14px_rgba(0,0,0,0.12)] scale-y-110' : 'opacity-60 hover:opacity-100'}`}
-                  style={{
-                    left: `${start}%`,
-                    width: `${width}%`,
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    backgroundColor: e.accent,
-                  }}
-                  aria-label={`${e.title}, ${e.yearStart}–${e.yearEnd}`}
-                  aria-pressed={isActive}
-                >
-                  <span className={`absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap font-heading text-[12px] transition-opacity duration-200
-                    ${isActive ? 'opacity-100 text-text-primary' : 'opacity-0 group-hover:opacity-100 text-text-secondary'}`}>
-                    {e.title}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        {/* Single continuous era strip · slim segments butt edge-to-edge,
+            the active one gains height and full saturation. */}
+        <div
+          className="relative w-full h-[6px] flex"
+          role="tablist"
+          aria-label="Life eras"
+        >
+          {LIFE_ERAS.map((e, i) => {
+            const width = ((e.yearEnd - e.yearStart + 1) / (TIMELINE_END - TIMELINE_START)) * 100;
+            const isActive = i === idx;
+            return (
+              <button
+                key={e.id}
+                type="button"
+                role="tab"
+                onClick={() => setIdx(i)}
+                className={`relative h-full transition-all duration-300
+                  focus:outline-none focus:ring-2 focus:ring-text-primary/30 focus:ring-offset-2
+                  ${isActive
+                    ? 'opacity-100'
+                    : 'opacity-45 hover:opacity-80'}`}
+                style={{
+                  flexBasis: `${width}%`,
+                  backgroundColor: e.accent,
+                  transform: isActive ? 'scaleY(2.4)' : undefined,
+                  transformOrigin: 'center',
+                }}
+                aria-label={`${e.title}, ${e.yearStart}–${e.yearEnd}`}
+                aria-selected={isActive}
+              />
+            );
+          })}
         </div>
 
-        {/* Prev / next + era pills below */}
-        <div className="flex items-center justify-between mt-2 gap-4">
+        {/* Decade markers below the strip · hairline ticks, small numerals */}
+        <div className="relative mt-3 h-5">
+          {[1920, 1940, 1960, 1980, 2000].map((year) => {
+            const pct = ((year - TIMELINE_START) / (TIMELINE_END - TIMELINE_START)) * 100;
+            return (
+              <span
+                key={year}
+                className="absolute -translate-x-1/2 font-body text-[10px] text-text-muted tracking-[0.18em]"
+                style={{ left: `${pct}%` }}
+              >
+                {year}
+              </span>
+            );
+          })}
+        </div>
+
+        {/* Earlier / Later · minimal text buttons, no instruction line */}
+        <div className="flex items-center justify-between mt-8">
           <button
             type="button"
             onClick={() => setIdx((i) => Math.max(0, i - 1))}
             disabled={idx === 0}
-            className="font-body text-xs uppercase tracking-widest text-text-muted hover:text-text-primary disabled:opacity-30 transition-colors"
+            className="font-body text-[11px] uppercase tracking-[0.32em] text-text-muted hover:text-text-primary disabled:opacity-25 transition-colors"
             aria-label="Previous era"
           >
             ← Earlier
           </button>
-          <p className="font-body text-text-muted text-xs uppercase tracking-widest text-center hidden md:block">
-            Click any era · or use ← →
-          </p>
           <button
             type="button"
             onClick={() => setIdx((i) => Math.min(LIFE_ERAS.length - 1, i + 1))}
             disabled={idx === LIFE_ERAS.length - 1}
-            className="font-body text-xs uppercase tracking-widest text-text-muted hover:text-text-primary disabled:opacity-30 transition-colors"
+            className="font-body text-[11px] uppercase tracking-[0.32em] text-text-muted hover:text-text-primary disabled:opacity-25 transition-colors"
             aria-label="Next era"
           >
             Later →
