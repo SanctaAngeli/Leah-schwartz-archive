@@ -90,7 +90,7 @@ function EntranceOverlay({ onComplete }: EntranceOverlayProps): JSX.Element {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="font-body text-white/55 mt-6 tracking-[0.5em] text-xs uppercase"
+            className="font-body text-white/55 mt-6 tracking-[0.5em] text-xs uppercase pl-[0.5em]"
           >
             1920 — 2004
           </motion.p>
@@ -101,11 +101,12 @@ function EntranceOverlay({ onComplete }: EntranceOverlayProps): JSX.Element {
             animate={{ opacity: preloaded ? 1 : 0.3 }}
             transition={{ duration: 0.8, delay: 1.6 }}
             disabled={!preloaded}
-            className="mt-20 group flex flex-col items-center text-white/70 hover:text-white
+            className="mt-20 mx-auto group flex flex-col items-center text-white/70 hover:text-white
               transition-colors duration-300 cursor-pointer disabled:cursor-wait"
             aria-label="Enter the archive"
           >
-            <span className="font-body text-[11px] tracking-[0.4em] uppercase">
+            {/* pl compensates the trailing letter-spacing so the text is visually centered */}
+            <span className="font-body text-[11px] tracking-[0.4em] uppercase pl-[0.4em]">
               {preloaded ? 'Enter' : 'Loading…'}
             </span>
             <span aria-hidden="true" className="mt-3 text-xl group-hover:translate-y-0.5 transition-transform duration-300">
