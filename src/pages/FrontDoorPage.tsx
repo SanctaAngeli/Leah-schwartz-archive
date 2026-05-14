@@ -45,7 +45,7 @@ function FrontDoorPage(): JSX.Element {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
-        className="w-full max-w-4xl relative group"
+        className="w-full max-w-4xl relative"
       >
         <img
           src={HERO_SRC}
@@ -55,15 +55,15 @@ function FrontDoorPage(): JSX.Element {
         <button
           type="button"
           onClick={startEntrance}
-          className="absolute bottom-3 right-3 flex items-center gap-1.5
-            bg-black/40 backdrop-blur-md text-white
-            rounded-full px-3 py-1.5
-            font-body text-[11px] tracking-[0.25em] uppercase
-            opacity-0 group-hover:opacity-100 focus:opacity-100
-            transition-opacity duration-300"
+          className="absolute bottom-4 right-4 flex items-center gap-2
+            bg-black/60 hover:bg-black/80 backdrop-blur-md text-white
+            rounded-full px-4 py-2
+            font-body text-[12px] tracking-[0.2em] uppercase
+            shadow-[0_4px_18px_rgba(0,0,0,0.25)]
+            transition-colors duration-200"
           aria-label="Play the cinematic intro"
         >
-          <span>▶</span>
+          <span aria-hidden="true">▶</span>
           <span>Watch intro</span>
         </button>
       </motion.div>
