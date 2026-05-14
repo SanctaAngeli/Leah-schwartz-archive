@@ -155,17 +155,10 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
     const elapsed = state.clock.elapsedTime - startTimeRef.current;
     const t = Math.min(1, elapsed / FLIGHT_DURATION);
 
-    // Speed curve: gentle ease-in, constant through middle, accelerate into hero at end
-    const eased = t < 0.15
-      ? (t / 0.15) * (t / 0.15) * 0.15        // slow ease-in for first 15%
-      : t < 0.85
-        ? 0.15 + ((t - 0.15) / 0.7) * 0.7     // linear through middle
-        : 0.85 + Math.pow((t - 0.85) / 0.15, 0.7) * 0.15;  // gentle accel into hero
-
-    // Z range: from 4 (outside entrance) to a position just in front of hero painting
+    // Pure constant speed — linear interpolation start to finish
     const heroZ = -CORRIDOR_LENGTH + 6;
     const startZ = 4;
-    const cameraZ = startZ + (heroZ - startZ) * eased;
+    const cameraZ = startZ + (heroZ - startZ) * t;
     state.camera.position.set(0, 0.4, cameraZ);
     state.camera.lookAt(0, 0.4, cameraZ - 1);
 
