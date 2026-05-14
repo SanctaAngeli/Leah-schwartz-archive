@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
+import { useCallback, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageMeta } from '../hooks/usePageMeta';
+import EntranceOverlay from '../components/home/EntranceOverlay';
 
 const HERO_SRC = '/artworks/full/mt-tam-from-sonoma.jpg';
 const HERO_ALT = 'Mt. Tam from Sonoma — watercolor by Leah Schwartz';
@@ -22,20 +24,46 @@ const MORE_PATHS = [
 
 function FrontDoorPage(): JSX.Element {
   usePageMeta('', "A digital archive of the artist Leah Schwartz (1920–2004).");
+  const [showEntrance, setShowEntrance] = useState(false);
+
+  const startEntrance = useCallback((): void => {
+    setShowEntrance(true);
+  }, []);
+  const dismissEntrance = useCallback((): void => {
+    setShowEntrance(false);
+  }, []);
 
   return (
+    <>
+    <AnimatePresence>
+      {showEntrance && <EntranceOverlay key="entrance" onComplete={dismissEntrance} />}
+    </AnimatePresence>
     <main className="min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
-        className="w-full max-w-4xl"
+        className="w-full max-w-4xl relative group"
       >
         <img
           src={HERO_SRC}
           alt={HERO_ALT}
           className="w-full h-auto rounded-md shadow-[0_28px_80px_rgba(0,0,0,0.14)]"
         />
+        <button
+          type="button"
+          onClick={startEntrance}
+          className="absolute bottom-3 right-3 flex items-center gap-1.5
+            bg-black/40 backdrop-blur-md text-white
+            rounded-full px-3 py-1.5
+            font-body text-[11px] tracking-[0.25em] uppercase
+            opacity-0 group-hover:opacity-100 focus:opacity-100
+            transition-opacity duration-300"
+          aria-label="Play the cinematic intro"
+        >
+          <span>▶</span>
+          <span>Watch intro</span>
+        </button>
       </motion.div>
 
       <motion.div
@@ -125,6 +153,7 @@ function FrontDoorPage(): JSX.Element {
         </div>
       </motion.section>
     </main>
+    </>
   );
 }
 

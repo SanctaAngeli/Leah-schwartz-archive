@@ -43,6 +43,21 @@
   }
 }
 
+@keyframes entrance-card-fade {
+  0%   { opacity: 0; }
+  40%  { opacity: 0.95; }
+  100% { opacity: 0; }
+}
+
+.entrance-scene {
+  animation: entrance-scene-fly 2.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes entrance-scene-fly {
+  0%   { transform: translateZ(-1400px); }
+  100% { transform: translateZ(500px); }
+}
+
 * {
   box-sizing: border-box;
 }
