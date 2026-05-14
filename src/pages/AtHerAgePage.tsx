@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import artworksData from '../data/artworks.json';
 import photosData from '../data/photos.json';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -158,8 +158,22 @@ function AtHerAgePage(): JSX.Element {
     'At Her Age',
     "Slide through Leah Schwartz's 84 years. Her photograph at every era beside the paintings she was making.",
   );
-  const [idx, setIdx] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const eraParam = searchParams.get('era');
+  const idx = (() => {
+    const found = LIFE_ERAS.findIndex((e) => e.id === eraParam);
+    return found >= 0 ? found : 0;
+  })();
   const era = LIFE_ERAS[idx];
+
+  const setIdx = useCallback((updater: number | ((prev: number) => number)) => {
+    const next = typeof updater === 'function' ? updater(idx) : updater;
+    const safe = Math.min(LIFE_ERAS.length - 1, Math.max(0, next));
+    setSearchParams(
+      safe === 0 ? {} : { era: LIFE_ERAS[safe].id },
+      { replace: true },
+    );
+  }, [idx, setSearchParams]);
   const photo = useMemo(() => photoForEra(era), [era]);
   const allEraPaintings = useMemo(() => paintingsForEra(era), [era]);
   const fallbackArt = useMemo(() => representativeArtForEra(era), [era]);
