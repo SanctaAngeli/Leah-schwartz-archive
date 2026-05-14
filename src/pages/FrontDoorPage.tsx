@@ -12,12 +12,12 @@ const PATHS = [
 ];
 
 const MORE_PATHS = [
+  { to: '/walk',           label: 'Walk with her',   sub: 'a guided eight-painting tour' },
   { to: '/atlas',          label: 'Color Atlas',     sub: 'her chromatic life' },
   { to: '/obsessions',     label: 'Obsessions',      sub: 'subjects she returned to' },
   { to: '/at-her-age',     label: 'At her age',      sub: 'a slider through 84 years' },
   { to: '/constellation',  label: 'Constellation',   sub: 'navigate by association' },
   { to: '/last-paintings', label: 'Last Paintings',  sub: 'a quiet room for late work' },
-  { to: '/pairings',       label: 'Pairings',        sub: 'curated diptychs' },
 ];
 
 function FrontDoorPage(): JSX.Element {

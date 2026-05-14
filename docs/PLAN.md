@@ -51,9 +51,9 @@ Three new features built purely from existing data; highest beauty-to-effort rat
 
 New ways into the work that complement the canvas.
 
-- [ ] **`/constellation`** — promote Index Constellation from a hidden toggle to its own peer destination. Every person, place, subject is a node sized by mentions, edges glow on hover with the prose excerpts where the connection appears. Navigation by association — the **mind** of the archive made visual.
-- [ ] **Walk With Her** — canvas autopilot. Press a button, the drag controls release, the canvas glides through a curated path through her career. On-screen captions appear (her own words from the chapter intros), ambient background audio plays (user to provide). Apple Maps Flyover for an artist's life. Six or seven curated walks, ~90 seconds each.
-- [ ] **The Last Paintings** — a separate reverent room for the 2002–2004 work. Different design language: slower transitions, more white space, no glossy hover effects, paintings shown larger, her late words next to them. Treats the end with the gravity it deserves.
+- [x] **`/constellation`** — promote Index Constellation from a hidden toggle to its own peer destination. Every person, place, subject is a node sized by mentions, edges glow on hover with the prose excerpts where the connection appears. Navigation by association — the **mind** of the archive made visual.
+- [x] **Walk With Her** — visual shipped; ambient audio still pending from user — canvas autopilot. Press a button, the drag controls release, the canvas glides through a curated path through her career. On-screen captions appear (her own words from the chapter intros), ambient background audio plays (user to provide). Apple Maps Flyover for an artist's life. Six or seven curated walks, ~90 seconds each.
+- [x] **The Last Paintings** — a separate reverent room for the 2002–2004 work. Different design language: slower transitions, more white space, no glossy hover effects, paintings shown larger, her late words next to them. Treats the end with the gravity it deserves.
 
 ---
 
