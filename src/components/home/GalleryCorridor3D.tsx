@@ -39,13 +39,14 @@ function buildCorridorPaintings(): string[] {
 const CORRIDOR_PAINTINGS = buildCorridorPaintings();
 
 // World units. A long, bright museum hallway. Camera dollies down its length.
-const CORRIDOR_LENGTH = 270;       // 3× longer than before
-const WALL_DISTANCE = 4.6;          // slightly wider corridor
+// Length kept manageable for smooth framerate · the density does the heavy lifting.
+const CORRIDOR_LENGTH = 135;        // halved for perf · still feels long because of density
+const WALL_DISTANCE = 4.6;
 const FLOOR_Y = -2.4;
 const CEILING_Y = 3.6;
 const PAINTING_BASE_Y = 0.4;
-const PAINTING_SPACING = 4.4;       // tighter spacing
-const FLIGHT_DURATION = 6.5;        // same time over 3× the distance = ~3× perceived speed
+const PAINTING_SPACING = 4.0;       // tighter still · packs paintings in
+const FLIGHT_DURATION = 5.5;        // slightly faster · still flies fast over half-length
 
 interface PaintingMeshProps {
   artwork: Artwork;
@@ -56,10 +57,11 @@ interface PaintingMeshProps {
 }
 
 function PaintingMesh({ artwork, position, rotationY, width, height }: PaintingMeshProps): JSX.Element {
-  const texture = useLoader(THREE.TextureLoader, artwork.imagePath || artwork.thumbPath || '');
+  // Thumbs are ~600px long edge · way cheaper to upload as GPU textures than 300dpi scans.
+  const texture = useLoader(THREE.TextureLoader, artwork.thumbPath || artwork.imagePath || '');
   useMemo(() => {
     texture.colorSpace = THREE.SRGBColorSpace;
-    texture.anisotropy = 8;
+    texture.anisotropy = 4;
   }, [texture]);
 
   return (
@@ -133,11 +135,11 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
   }, []);
   const heroTexture = useLoader(
     THREE.TextureLoader,
-    heroArtwork?.imagePath || heroArtwork?.thumbPath || '',
+    heroArtwork?.thumbPath || heroArtwork?.imagePath || '',
   );
   useMemo(() => {
     heroTexture.colorSpace = THREE.SRGBColorSpace;
-    heroTexture.anisotropy = 16;
+    heroTexture.anisotropy = 8;
   }, [heroTexture]);
 
   // Camera flies from z=2 (just outside corridor) to z=-CORRIDOR_LENGTH+8 (right at hero)
@@ -182,37 +184,20 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
     }
   });
 
-  // Count of ceiling lights needed to cover the long corridor at ~8 unit spacing
-  const ceilingLightCount = Math.ceil(CORRIDOR_LENGTH / 8) + 2;
-
   return (
     <>
       {/* Soft cream fog · gallery-bright, dissolves distance into haze */}
-      <fog attach="fog" args={['#EDE6D7', 14, 130]} />
+      <fog attach="fog" args={['#EDE6D7', 14, 120]} />
       <color attach="background" args={['#EDE6D7']} />
 
-      {/* Bright ambient + ceiling spots running the length */}
-      <ambientLight intensity={1.5} color="#FFF6E8" />
-      <hemisphereLight args={['#FFF2DF', '#D8CDB6', 0.7]} />
-      {Array.from({ length: ceilingLightCount }).map((_, i) => (
-        <pointLight
-          key={i}
-          position={[0, CEILING_Y - 0.2, -i * 8]}
-          intensity={1.4}
-          color="#FFE8C5"
-          distance={16}
-          decay={1.3}
-        />
-      ))}
-      <spotLight
-        position={[0, 1.8, -CORRIDOR_LENGTH + 8]}
-        target-position={[0, 0.4, -CORRIDOR_LENGTH]}
-        angle={0.55}
-        penumbra={0.7}
-        intensity={3.5}
-        color="#FFF7E4"
-        distance={20}
-      />
+      {/* Lighting is mostly hemisphere + ambient so we don't pay per-pixel costs
+          for many point lights. Hemisphere gives nice gallery-bright look cheaply. */}
+      <ambientLight intensity={1.9} color="#FFF6E8" />
+      <hemisphereLight args={['#FFF6E8', '#C8BEA7', 1.0]} />
+      {/* Just two warm "highlight" lights along the corridor for character */}
+      <pointLight position={[0, CEILING_Y - 0.3, -CORRIDOR_LENGTH * 0.25]} intensity={1.2} color="#FFE8C5" distance={32} decay={1.2} />
+      <pointLight position={[0, CEILING_Y - 0.3, -CORRIDOR_LENGTH * 0.65]} intensity={1.2} color="#FFE8C5" distance={32} decay={1.2} />
+      <pointLight position={[0, CEILING_Y - 0.3, -CORRIDOR_LENGTH]} intensity={1.4} color="#FFF7E4" distance={26} decay={1.2} />
 
       {/* Floor · warm soft beige */}
       <mesh position={[0, FLOOR_Y, -CORRIDOR_LENGTH / 2]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
