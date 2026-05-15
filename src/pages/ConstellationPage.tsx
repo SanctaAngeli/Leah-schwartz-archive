@@ -21,7 +21,7 @@ const subjects = subjectsData as Entity[];
 function ConstellationPage(): JSX.Element {
   usePageMeta(
     'Constellation',
-    'Navigate Leah Schwartz\'s world by association — every person, place, and subject in her index, sized by how often she returned to them.',
+    'Navigate Leah Schwartz\'s world by association - every person, place, and subject in her index, sized by how often she returned to them.',
   );
 
   return (

@@ -92,7 +92,7 @@ function EntranceOverlay({ onComplete }: EntranceOverlayProps): JSX.Element {
           <div className="mt-6 flex items-center justify-center gap-4" aria-hidden="true">
             <span className="block h-px w-10 bg-[#2A2418]/35" />
             <p className="font-body text-[#2A2418]/65 tracking-[0.5em] text-xs uppercase pl-[0.5em]">
-              1920 — 2004
+              1920 - 2004
             </p>
             <span className="block h-px w-10 bg-[#2A2418]/35" />
           </div>

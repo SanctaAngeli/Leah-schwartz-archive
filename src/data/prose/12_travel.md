@@ -38,7 +38,7 @@ mouth, who told us that the path we were on led to a village where we
 could get lunch. Two hours later we came upon a group of farm buildings,
 and through an open door we could see farmers eating a bountiful,
 aromatic noonday meal. Herb, missing his lunch, asked if they'd sell us
-some bread — they refused. No village in sight, so we trudged down the
+some bread - they refused. No village in sight, so we trudged down the
 trail, mocked by two persistent cuckoos, through a forest of chestnut trees
 which was carpeted with spring flowers, and came upon the ancient crone
 again at the bottom of the hill. She showed us her home, which consisted
@@ -77,7 +77,7 @@ gentle-faced artist (Maggie's friend), lives in an ancient, slightly crooked
 and bulging corner house on the Rue Pacquay. A moldering limestone
 doorway leads to a brick and wood spiral staircase which, on the first
 complete turn, opens into the atelier-sitting room with a tall, narrow
-window that diffuses the sunlight through a thick layer of dust — a
+window that diffuses the sunlight through a thick layer of dust - a
 pleasant glowing effect. Every surface is covered with cloths, shawls,
 books, magazines, old New Yorkers, The Joy Of Cooking, bibelots,
 tchatchkes. The walls are hung with ornate crackled mirrors and Joe's
@@ -88,8 +88,8 @@ After sherry, we go up another turn of the stairway passing a little
 bathroom seen through low cupboard doors, many paintings, a kitty litter
 box and marble busts on pedestals, and enter Joe's bedroom. The bed,
 huge pillows, walls and ceiling are covered with a king's ransom of
-cashmere shawls — dark, dusty, and richly decadent. Again, every surface
-is covered with little treasures — netsuke, vases, statues and magnificent
+cashmere shawls - dark, dusty, and richly decadent. Again, every surface
+is covered with little treasures - netsuke, vases, statues and magnificent
 wooden angels form the foot of the bed. The next turn of the stairs brings
 us to David's ante-room containing the Chinese Museum, which is a
 small room jam-packed with cabinets filled with exquisite little Chinese
@@ -301,7 +301,7 @@ r- 0- 0- re■
 an- --":#,-- ' l' ir
 , 4-
 --,:i
-.A. • .. es,- ,- -.. — A ,...
+.A. • .. es,- ,- -.. - A ,...
 . - : t... .
 CHURCH AND WALL, GELLO, 5x8. The wall was an archeological midden.
 It was made of dressed limestone, rough limestone, alabaster
@@ -327,7 +327,7 @@ workshop in Spain or Portugal. "How about the Greek Islands?" I asked.
 Linda said "OK, which one?" Crete... too big. Mykanos... too small.
 Naxos... just right. We flew to Athens and took the ferry from Piraeus at
 7:30a.m. and arrived at Naxos 4:30p.m. after a rainy but calm passage.
-On board the ferry, the loud speakers ROARED — Beseme Mucho, Scott
+On board the ferry, the loud speakers ROARED - Beseme Mucho, Scott
 Joplin rags, Bousouki renditions, Bob Dylan favorites, Arab laments,
 Rolling Stones and Beatles medleys. BLASTING, BLARING,
 BOOMING! People sleeping through it all on red and blue naugahyde
@@ -365,9 +365,9 @@ NAXOS FROM THE BREAKWATER, 9x15. A tiered white town clustered on the
 shore and coiling around a steep cone-shaped hill, backed by
 craggy mountains with a monastery on one slope. SMOKE TREES, NAXOS, 9x12
 The sign on the building reads:
-"To be is to do." — Socrates
-`To do is to be." — Sartre
-"Do be do be do." — Sinatra
+"To be is to do." - Socrates
+`To do is to be." - Sartre
+"Do be do be do." - Sinatra
 
 <!-- page 256 -->
 
@@ -490,7 +490,7 @@ then lent his "competitor" a polishing rag so he could do a good job.
 People-watching is a sartorial time-trip. You see women wearing modern
 dress, maxi-coats, voluminous flowered skirts, billowing flowered
 bloomers, or black or brown tents (chador). The men wear dark suits
-(sometimes with wide bloomers) and big black mustaches — occasionally
+(sometimes with wide bloomers) and big black mustaches - occasionally
 you see caftans and turbans.
 After we left Istanbul we drove down the Aegean coast past ancient
 Troy to the miracle of Ephesis, the charm of Kas, and turned inland at
@@ -553,7 +553,7 @@ with it's unique limestone formations, to the village of Uchisar
 where many of the houses are also carved out of the marl.
 rf
 I missed my chance to paint the mountains in the
-exquisite evening light — so 6.a.m. had to do.
+exquisite evening light - so 6.a.m. had to do.
 
 <!-- page 270 -->
 

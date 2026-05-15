@@ -9,7 +9,7 @@ const artworks = artworksData as Artwork[];
 
 interface Scene {
   id: string;
-  // visual source — either a photo file or an artwork id
+  // visual source - either a photo file or an artwork id
   photoFile?: string;
   artworkId?: string;
   // text
@@ -40,7 +40,7 @@ const SCENES: Scene[] = [
     id: 'the-process',
     artworkId: 'pale-pink-rose-with-cosmos',
     text: 'I love the process of what I do. I enjoy the feel of a brush on canvas, the smell of turpentine, the flow of color on a fresh sheet of watercolor paper, and the intense pleasure of making things.',
-    source: '— Leah, page 1 of her book',
+    source: '- Leah, page 1 of her book',
     align: 'left',
     background: 'parchment',
   },
@@ -48,7 +48,7 @@ const SCENES: Scene[] = [
     id: 'the-kit',
     artworkId: 'pale-pink-rose-with-cosmos',
     text: 'On the table beside the easel: a small plastic paintbox, two good watercolor brushes, a sketch book, a small water bottle, a chocolate bar, a quilted tea-cozy that doubles as a cushion, a dime-store notebook, a camera.',
-    source: '— from the autobiography, "the kit she carried everywhere"',
+    source: '- from the autobiography, "the kit she carried everywhere"',
     align: 'right',
     background: 'parchment',
   },
@@ -56,7 +56,7 @@ const SCENES: Scene[] = [
     id: 'the-wall',
     artworkId: 'white-rose-with-botticelli',
     text: 'Pinned to the studio wall: a Bellini reproduction. I once ruined the simple background I was aiming for in a flower painting, and decided to paint the Bellini behind the flowers. It was fun getting into Bellini\'s mind.',
-    source: '— Autobiography, on the late flowers',
+    source: '- Autobiography, on the late flowers',
     align: 'left',
     background: 'parchment',
   },
@@ -220,7 +220,7 @@ function StudioVisitPage(): JSX.Element {
             She painted in that studio until 2003.
           </p>
           <p className="font-body text-text-muted text-xs tracking-[0.3em] uppercase mt-3">
-            1920 — 2004
+            1920 - 2004
           </p>
           <div className="mt-12 flex gap-4 justify-center text-xs font-body uppercase tracking-widest">
             <Link to="/her-words/autobiography" className="text-text-muted hover:text-text-primary transition-colors">

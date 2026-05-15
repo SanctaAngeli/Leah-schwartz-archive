@@ -40,18 +40,18 @@ Interruptions and distractions are deadly.
 Imogen Cunningham, the photographer, once said she had never
 done landscapes because in the early morning or evening, when the
 light was best, she was feeding .her family.
-—from the text
+-from the text
 Front Jacket: SPRING THICKET, 11"x15", 1981
 From the collection of Russel Crider
 Back Jacket: DIJON MARKET, 15"x20", 1980
 H
 ERE IS A FASCINATING PORTRAIT of a woman who, with
 unfailing purpose, has lived several lives: wife, mother,
-house manager, domestic drudge — and passionate artist.
+house manager, domestic drudge - and passionate artist.
 Leah Schwartz is an artist totally uncompromising, dedicated
 to the perfection of her craft, and happiest when developing
 new insights and painting. Her work reflects the wonder of
-ordinary things — people, plants, places, everyday objects — and
+ordinary things - people, plants, places, everyday objects - and
 not only reveals the reality of her subjects but captures and
 illuminates the very essence, the anima, the distillate.
 Through her eyes and insight, she allows us to see a marvel-
@@ -133,7 +133,7 @@ Introduction
 The first idea for this book was for a small "tasteful" volume of travel
 sketches with excerpts from my travel notebooks. Little by little, through
 the process of "Oh, you can't leave that out," and "I really would like to
-include — ," this book has developed into the story of the life of a woman
+include - ," this book has developed into the story of the life of a woman
 who managed to keep painting. So, now you're getting a picture book,
 an autobiography, some travel notes, a touch of homely philosophy and if
 it all works out maybe a recipe or two (but no ARTSPEAK).
@@ -144,7 +144,7 @@ LET YOURSELF GO (get dowdy)." A woman with talent might take up
 a hobby, but could not allow anyone in the family to be inconvenienced
 by it. So I have managed to fit my work into the spaces between husband,
 children and housekeeping, and I still feel "avant garde" when I leave the
-bed unmade — it takes a long time to get rid of childhood programming.
+bed unmade - it takes a long time to get rid of childhood programming.
 My early life was completely unconventional. My aspirations were
 totally conventional, with the exception of my knowing, from my earliest
 days, that I was an "artist" and that drawing and painting were an integral
@@ -155,7 +155,7 @@ Even in this emancipated era with many wives working outside the
 home, it is generally the woman who takes responsibility for the children,
 sick care, laundry, marketing, home decorating, making sure there's toilet
 paper and all the miniscule details of creating and maintaining a home.
-Not just a house or apartment, but a home — a haven of comfort, a place
+Not just a house or apartment, but a home - a haven of comfort, a place
 that helps to hold a family together.
 I have been married for more than thirty years to a wonderful man,
 Herman Schwartz M.D. In addition to being an excellent physician
@@ -165,7 +165,7 @@ and other bizarre and beautiful succulent desert plants, in a twenty-
 
 <!-- page 15 -->
 
-thousand-square-foot greenhouse in Bolinas. Bolinas is an odd place — it's
+thousand-square-foot greenhouse in Bolinas. Bolinas is an odd place - it's
 on a piece of land that juts out into the Pacific Ocean, separated from the
 "mainland" by the San Andreas Fault. We joke about it becoming an
 island after the next big earthquake. Also, there are no road signs leading
@@ -175,7 +175,7 @@ I paint in my studio in Mill Valley during the week and do slave labor
 in Bolinas on weekends. One Sunday, working in the hot greenhouse
 repairing stone retaining walls, I said to Herman, "Honey, y'know we
 could take a luxury cruise, dine in style, wear fancy clothes, be waited on,
-lie around in deck chairs — are we nuts?" "Yeah, sure," he muttered as he
+lie around in deck chairs - are we nuts?" "Yeah, sure," he muttered as he
 ran over my foot with his loaded wheel barrow. He was a vision of loveli-
 ness in a filthy, torn t-shirt, a once-yellow, sagging pair of swim trunks,
 and pendants of sweat dangling from nose and chin. We may be nuts, but

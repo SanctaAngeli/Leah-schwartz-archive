@@ -14,7 +14,7 @@ Patient, colorful and varied in shape, they make ideal models, they last
 longer than flowers, and they never get restless. Home-grown veggies are
 the best, as supermarket produce has been neatened up with all signs of
 natural growth removed. My friend Linda Pearman once brought me a
-bouquet of home-grown golden onions with long, dried tops — gorgeous.
+bouquet of home-grown golden onions with long, dried tops - gorgeous.
 I painted 5 or 6 watercolors of them; two are shown here. I enjoy
 cooking, as much for the beautiful ingredients, as for liking to eat.
 Most of these still ides are watercolors. I recently returned to painting

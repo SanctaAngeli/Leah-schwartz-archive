@@ -20,7 +20,7 @@ people have when they feel anonymous. I love these glimpses of people on
 the street, walking their dogs, waiting for buses, standing on street corners
 waiting for the light to change. I'm also interested in "street furniture":
 bus shelters, mailboxes, poles, posts, mysterious black boxes, hydrants,
-curbs, manhole covers — things we all see but rarely notice.
+curbs, manhole covers - things we all see but rarely notice.
 Getting the film back from the processor is a treat, as there is so much
 previously unnoticed stuff. I'll take a figure from one, a bit of debris or a
 car from another, and sometimes I go out with a Polaroid to get

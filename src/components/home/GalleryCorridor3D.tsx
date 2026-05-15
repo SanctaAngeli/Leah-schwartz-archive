@@ -110,9 +110,9 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
       if (!art) return;
       const side: 'left' | 'right' = i % 2 === 0 ? 'left' : 'right';
       const z = -3 - i * PAINTING_SPACING;
-      // Hang at a consistent gallery height — small variation only
+      // Hang at a consistent gallery height - small variation only
       const yOffset = (i % 5 - 2) * 0.12;
-      // Much bigger paintings — gallery-sized
+      // Much bigger paintings - gallery-sized
       const baseSize = 3.4 + ((i * 11) % 7) * 0.18;  // ~3.4–4.5 units wide
       const aspect = art.aspectRatio === 'portrait' ? 1.3 : art.aspectRatio === 'landscape' ? 0.7 : 1;
       out.push({
@@ -155,14 +155,14 @@ function CorridorContent({ startFlight, onComplete, onHeroFillProgress }: Corrid
     const elapsed = state.clock.elapsedTime - startTimeRef.current;
     const t = Math.min(1, elapsed / FLIGHT_DURATION);
 
-    // Pure constant speed — linear interpolation start to finish
+    // Pure constant speed - linear interpolation start to finish
     const heroZ = -CORRIDOR_LENGTH + 6;
     const startZ = 4;
     const cameraZ = startZ + (heroZ - startZ) * t;
     state.camera.position.set(0, 0.4, cameraZ);
 
     // In the last third of the flight, tilt the lookAt down so the painting rises
-    // into the upper-middle of the frame — matching where Mt. Tam sits on the home page,
+    // into the upper-middle of the frame - matching where Mt. Tam sits on the home page,
     // so the crossfade lands without a jump. The end value (0.10) crops the painting top
     // at the viewport top, the same way the home page hero crops above the fold.
     const tiltT = Math.max(0, (t - 0.6) / 0.4);  // 0 → 1 over last 40%

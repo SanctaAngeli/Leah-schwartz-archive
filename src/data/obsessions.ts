@@ -1,4 +1,4 @@
-// Subjects she returned to — auto-clustered from title patterns,
+// Subjects she returned to - auto-clustered from title patterns,
 // hand-curated for tone and order. The point is to surface her serial
 // attention: the subjects she painted again and again across decades.
 
@@ -25,7 +25,7 @@ export const OBSESSIONS: Obsession[] = [
     id: 'irises',
     title: 'Irises',
     subtitle: 'The bloom she catalogued',
-    note: 'She painted irises like a botanist — pale blue, lavender, white, wild bronze. Each one studied long enough to know how the light came through its petals.',
+    note: 'She painted irises like a botanist - pale blue, lavender, white, wild bronze. Each one studied long enough to know how the light came through its petals.',
     match: ['iris', 'irises'],
     accent: '#9078A8',
   },
@@ -81,7 +81,7 @@ export const OBSESSIONS: Obsession[] = [
     id: 'persimmons',
     title: 'Persimmons',
     subtitle: 'The autumn obsession',
-    note: 'Always alongside something else — a turnip, a rutabaga, an apple core. Five paintings stage the persimmon among its kitchen companions.',
+    note: 'Always alongside something else - a turnip, a rutabaga, an apple core. Five paintings stage the persimmon among its kitchen companions.',
     match: ['persimmon'],
     accent: '#C47A3A',
   },
@@ -97,7 +97,7 @@ export const OBSESSIONS: Obsession[] = [
     id: 'roses',
     title: 'Roses',
     subtitle: 'White and pale pink',
-    note: 'Mostly white roses, mostly with companions — cosmos, a Botticelli reproduction, a Renaissance prince. The rose used as the still center of a small composed world.',
+    note: 'Mostly white roses, mostly with companions - cosmos, a Botticelli reproduction, a Renaissance prince. The rose used as the still center of a small composed world.',
     match: ['rose', 'roses'],
     exclude: ['rosie'],
     accent: '#E0B8C8',
@@ -106,7 +106,7 @@ export const OBSESSIONS: Obsession[] = [
     id: 'kitchens',
     title: 'Kitchens',
     subtitle: 'Where she actually lived',
-    note: 'Mill Valley, Bolinas, Gello — each kitchen painted, each one a portrait of a place she knew well enough to leave alone.',
+    note: 'Mill Valley, Bolinas, Gello - each kitchen painted, each one a portrait of a place she knew well enough to leave alone.',
     match: ['kitchen'],
     accent: '#8B7355',
   },

@@ -5,7 +5,7 @@ import { usePageMeta } from '../hooks/usePageMeta';
 import EntranceOverlay from '../components/home/EntranceOverlay';
 
 const HERO_SRC = '/artworks/full/mt-tam-from-sonoma.jpg';
-const HERO_ALT = 'Mt. Tam from Sonoma — watercolor by Leah Schwartz';
+const HERO_ALT = 'Mt. Tam from Sonoma - watercolor by Leah Schwartz';
 
 const PATHS = [
   { to: '/canvas', label: 'See her work', sub: 'drift through every painting' },
@@ -78,7 +78,7 @@ function FrontDoorPage(): JSX.Element {
           Leah Schwartz
         </h1>
         <p className="font-body text-text-muted mt-3 tracking-[0.4em] text-xs uppercase">
-          1920 — 2004
+          1920 - 2004
         </p>
       </motion.div>
 

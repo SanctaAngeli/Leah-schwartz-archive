@@ -157,7 +157,7 @@ function InfiniteCanvas({ artworks, layout, onArtworkClick }: InfiniteCanvasProp
     try {
       e.currentTarget.releasePointerCapture(e.pointerId);
     } catch {
-      // already released — fine
+      // already released - fine
     }
     if (d.moved && (Math.abs(d.vx) > MOMENTUM_STOP || Math.abs(d.vy) > MOMENTUM_STOP)) {
       runMomentum();

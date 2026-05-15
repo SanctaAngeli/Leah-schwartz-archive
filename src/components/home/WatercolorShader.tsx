@@ -80,7 +80,7 @@ const fragmentShader = /* glsl */ `
     float t  = u_time * 0.08;
     float tb = u_time * 0.55;
 
-    // Coherent warp field — same field deforms every blob, so the sheet
+    // Coherent warp field - same field deforms every blob, so the sheet
     // reads as one wet surface instead of three separate circles.
     vec2 warp = vec2(
       fbm(uvA * 1.4 + vec2(t,         0.0)),

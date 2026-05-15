@@ -18,7 +18,7 @@ const featuredArtworks = featuredChapters
   .map((c) => artworks.find((a) => a.chapter === c && a.imagePath))
   .filter(Boolean) as Artwork[];
 
-// Biographical photos in book-page order — early life pages first, then studio
+// Biographical photos in book-page order - early life pages first, then studio
 const bioPhotos = photos
   .filter((p) => p.likely_photo && p.chroma < 0.06 && p.pdf_page >= 18 && p.pdf_page <= 50)
   .slice(0, 4);
@@ -97,7 +97,7 @@ function AboutPage(): JSX.Element {
           </p>
           <p className="mb-6 clear-right">
             By her own account she nearly didn't survive infancy: her father William
-            disappeared from her life when her mother divorced him — <em>"the first
+            disappeared from her life when her mother divorced him - <em>"the first
             divorce in the family and considered so shameful that his name was never
             mentioned, he was cut out of group pictures."</em> Her mother, sometimes
             thoughtless but never cruel, reinvented herself as a beader in the early
@@ -121,7 +121,7 @@ function AboutPage(): JSX.Element {
             </Link>
           )}
           <p className="mb-6">
-            She married <em>Herman Schwartz</em> — "the remarkable Herman," as she called him —
+            She married <em>Herman Schwartz</em> - "the remarkable Herman," as she called him -
             and eventually settled in Mill Valley, California, with a weekend retreat in
             Bolinas, on a piece of land that juts out into the Pacific, separated from the
             mainland by the San Andreas Fault. She painted in her Mill Valley studio through
@@ -133,7 +133,7 @@ function AboutPage(): JSX.Element {
           <p className="mb-6 clear-left">
             She was, by her own reckoning, <em>the accidental watercolorist</em>: she taught
             herself the medium by painting beetles from a library book. Across four decades
-            she worked in watercolor, oil, gouache, tempera, collage and ink — over
+            she worked in watercolor, oil, gouache, tempera, collage and ink - over
             <em> 267 finished pieces</em> that span abstract studies, social comment, landscape,
             street scenes, portraits, still life, interiors, flowers, and travel notebooks
             from France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, the
@@ -155,7 +155,7 @@ function AboutPage(): JSX.Element {
           )}
           <p className="mb-6">
             Leah gathered this body of work into a self-published book with Strawberry Press
-            in Mill Valley before her death in 2004. This site is built from that book —
+            in Mill Valley before her death in 2004. This site is built from that book -
             her paintings, her words, her index, her life.
           </p>
 
@@ -163,7 +163,7 @@ function AboutPage(): JSX.Element {
             "I love the process of what I do. I enjoy the feel of a brush on canvas,
             the smell of turpentine, the flow of color on a fresh sheet of watercolor
             paper, and the intense pleasure of making things."
-            <footer className="text-sm mt-3 not-italic text-text-muted">— Leah Schwartz</footer>
+            <footer className="text-sm mt-3 not-italic text-text-muted">- Leah Schwartz</footer>
           </blockquote>
 
           <p className="mb-8">

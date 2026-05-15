@@ -27,7 +27,7 @@ const studioPhotos = photos
   .filter((p) => p.likely_photo && p.pdf_page >= 30 && p.pdf_page <= 50 && p.chroma < 0.06)
   .slice(0, 6);
 
-// Paintings to pair with prose sections — chosen to illustrate what she's
+// Paintings to pair with prose sections - chosen to illustrate what she's
 // writing about right there in the page.
 const watercolorExemplar = artworks.find((a) => a.id === 'pale-pink-rose-with-cosmos');
 const stalledEraExemplar = artworks.find((a) => a.id === 'migraine');

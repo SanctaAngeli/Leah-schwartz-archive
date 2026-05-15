@@ -239,7 +239,7 @@ function WalkWithHerPage(): JSX.Element {
             </p>
             {current.source && (
               <p className="font-body text-white/40 text-xs uppercase tracking-wider mt-4">
-                — {current.source}
+                - {current.source}
               </p>
             )}
 

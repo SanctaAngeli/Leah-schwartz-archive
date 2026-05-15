@@ -158,7 +158,7 @@ running out in the cold with wet hair - according to folk wisdom, a sure-
 fire way out of this vale of tears. No luck. However, at the age of ten I
 discovered Public Libraries and found an endless supply of vicarious living.
 (Bless you, Andrew Carnegie. I'm sure you are at the right hand of God,
-in charge of the celestial archives.) I read all the "Twin" books — German
+in charge of the celestial archives.) I read all the "Twin" books - German
 Twins, French, Dutch, Scotch, Japanese and Swiss. Books on barnstorm-
 ing, horses, Albert Payson Terhune's dog books, even a book on Tinto-
 retto's childhood that described his use of crushed flowers when he
@@ -251,14 +251,14 @@ a lot.
 On March 10, 1933 I went to fetch my sister from a neighbor's house
 a few blocks away. We were in their backyard when THE BIG QUAKE
 struck. The ground heaved and shook, a powerful rumbling roar came out
-of the ground, but I wasn't frightened — just excited. Later, during the
+of the ground, but I wasn't frightened - just excited. Later, during the
 many aftershocks, I saw fear on Daddy's face and from then on I was
 terrified of earthquakes; even the vibrations of a passing truck could, make
 me shudder with fear.
 When I was twelve, I was allowed to go to the Saturday matinee at the
 neighborhood movie house. After I got dressed up in my red voile wrap-
 around blouse, white skirt and white "Olympic Sandals," I was given fif-
-teen cents — ten for the movie and five for a double decker ice cream
+teen cents - ten for the movie and five for a double decker ice cream
 cone. Oh, what enchantment! I would come out of the theater in a trance.
 Iwas Greta Garbo (or Dietrich, Lombard, or Harlow). I was loved by
 Clark Gable (or Ronald Colman, Fredric March or Gene Raymond).
@@ -444,14 +444,14 @@ John the Divine. My family could spare only five dollars a week for my
 expenses, so I had to stay with my mother's cousins in the Bronx. They
 lived in a large, elegant apartment building in a "good" neighborhood, and
 led an extremely well-ordered, conventional life. I must have seemed like a
-primitive throwback — used to farm life, rough language and unsuper-
+primitive throwback - used to farm life, rough language and unsuper-
 vised freedom. These relatives were kind, loving people who felt that a
 young girl should have close supervision; they even insisted on a carefully
 kept telephone log, number called, time, and duration of call. In summer,
 white slipcovers were put on sofa and chairs, and rugs were put in storage
-— all very strange and intimidating to me.
+- all very strange and intimidating to me.
 I felt so restricted that one day I rented a tacky furnished room in a
-despicable neighborhood for two dollars a week — leaving three dollars
+despicable neighborhood for two dollars a week - leaving three dollars
 for food, transportation, and art supplies.
 
 <!-- page 24 -->
@@ -632,7 +632,7 @@ cayenne.
 While rice is cooking, saute onions in olive oil until transparent and just begin-
 ning to brown, add liver and jiggle skillet until liver is just barely cooked through
 (cut a piece open to test) and remove from burner. Season to taste and serve over
-rice. The trick is not to overcook the liver — or the rice.
+rice. The trick is not to overcook the liver - or the rice.
 Living the bohemian (living-in-sin) life had to be revised when, after
 the bombing of Pearl Harbor, the U.S. entered World War H. It suddenly
 became important to be married legally, as this would affect Lee's military
@@ -697,7 +697,7 @@ ment with three other girls, went out with young men I despised, quit my
 job (boss had creeping hands), got another at Montgomery Ward (draw-
 ing fine details on underwear for the catalogue), and was miserable and
 confused.
-My life was a shambles — so I went home to Mother (who had moved
+My life was a shambles - so I went home to Mother (who had moved
 back to Los Angeles) to lick my wounds and regroup.
 LOS ANGELES
 HOME is where, when you go there, they gotta take you in
@@ -1180,7 +1180,7 @@ teaching my self-taught methods to others. I've tried to make my students
 (many of them exhibiting artists in other media) aware of the ordinary
 things around them. I encourage students to "listen" to themselves and to
 try to paint from direct, original and focused observation, and to resist the
-tendency to paint a painting that looks like a million others — i.e., the
+tendency to paint a painting that looks like a million others - i.e., the
 picturesque boat, barn or winebottle and drape... the curse of watercolor
 ONE OF THE MANY BEETLE PAINTINGS I DID IN THE PROCESS OF
 

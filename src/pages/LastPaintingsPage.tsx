@@ -10,18 +10,18 @@ const artworks = artworksData as Artwork[];
 // A small, hand-curated set of late-period work · Interiors, late still-lifes,
 // the Japanese-influenced flowers. These are the quiet rooms of her late life.
 const LAST_PAINTINGS: string[] = [
-  // Interiors — her actual homes painted from the inside
+  // Interiors - her actual homes painted from the inside
   'mill-valley-bathroom',
   'mill-valley-kitchen',
   'bolinas-kitchen',
   'bolinas-bathroom-bedroom-and-view-to-the-sea',
   'bolinas-dining-alcove',
-  // Late still-lifes — pears as geometry, the persimmon meditations
+  // Late still-lifes - pears as geometry, the persimmon meditations
   'one-pear-nine-times',
   'two-persimmons-on-a-stem',
   'three-basking-boscs',
   'leaning-bosc-with-fat-and-lean-pears',
-  // Late flowers — her turn toward Japanese masters in the background
+  // Late flowers - her turn toward Japanese masters in the background
   'white-rose-with-botticelli',
   'hachiguchi-goyo-with-white-rose',
   'peach-iris-with-ukiyo-e',
@@ -96,7 +96,7 @@ function LastPaintingsPage(): JSX.Element {
           seated nude, who will never again look the way she did to me at that moment.
         </p>
         <p className="font-body text-text-muted text-xs mt-4 tracking-wider uppercase">
-          — From her autobiography
+          - From her autobiography
         </p>
       </motion.header>
 
@@ -154,7 +154,7 @@ function LastPaintingsPage(): JSX.Element {
           The book finished. Strawberry Press, Mill Valley.
         </p>
         <p className="font-body text-text-muted text-xs mt-3 tracking-[0.3em] uppercase">
-          1920 — 2004
+          1920 - 2004
         </p>
         <div className="mt-12 flex gap-4 justify-center text-xs font-body uppercase tracking-widest">
           <Link to="/her-words/autobiography" className="text-text-muted hover:text-text-primary transition-colors">

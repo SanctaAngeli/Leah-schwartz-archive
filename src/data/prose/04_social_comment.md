@@ -52,7 +52,7 @@ Ic.,d
 ‘11.11.7i)011.011iCkf
 KOSTeiat
 Reictiala to Carilbora
-—1——5--
+-1--5--
 U.S_ Halts Big
 -Scole
 Bombing of North
@@ -128,6 +128,6 @@ A sign in their store window shows 114:ow foiks feel
 <!-- page 75 -->
 
 "Thurs.Nov 20 1975 Aararotkitatehronietc 25
-Page Lee Nutty —newest charm oet the t e party circuit
+Page Lee Nutty -newest charm oet the t e party circuit
 se,
 CHARMER scratch-board, 7x 1 0

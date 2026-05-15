@@ -182,7 +182,7 @@ function HerWordsPage(): JSX.Element {
         </p>
       </div>
 
-      {/* Prose — chunked, with photographs interleaved between chunks */}
+      {/* Prose - chunked, with photographs interleaved between chunks */}
       <motion.article
         key={activeId}
         className="
@@ -203,7 +203,7 @@ function HerWordsPage(): JSX.Element {
                 <figure className="my-10 -mx-2 md:-mx-12 clear-both">
                   <img
                     src={`/photos/${photo.file}`}
-                    alt={`Photograph from book page ${photo.book_page > 0 ? photo.book_page : '—'}`}
+                    alt={`Photograph from book page ${photo.book_page > 0 ? photo.book_page : '-'}`}
                     loading="lazy"
                     className="w-full h-auto rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
                   />

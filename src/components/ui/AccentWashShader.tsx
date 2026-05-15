@@ -4,7 +4,7 @@ import * as THREE from 'three';
 
 // A single-color watercolor wash. One chapter accent (e.g. ABSTRACT's deep
 // burgundy, FLOWERS' dusty pink) blooms in slow pools across a faintly
-// tinted paper. Used on /themes — entering a chapter is meant to feel like
+// tinted paper. Used on /themes - entering a chapter is meant to feel like
 // stepping into a room with its own light, not just a different page.
 
 interface AccentWashShaderProps {
@@ -86,7 +86,7 @@ const fragmentShader = /* glsl */ `
       fbm(uvA * 1.4 + vec2(0.0, t * 1.1))
     );
 
-    // Three slowly-drifting pools, all the same accent — the page reads as
+    // Three slowly-drifting pools, all the same accent - the page reads as
     // *one* lit room rather than three different pigments.
     vec2 c1 = vec2(0.25 + sin(t * 0.6) * 0.14, 0.30 + cos(t * 0.5) * 0.12);
     vec2 c2 = vec2(0.75 + cos(t * 0.4) * 0.13, 0.70 + sin(t * 0.7) * 0.14);
@@ -123,7 +123,7 @@ const fragmentShader = /* glsl */ `
 `;
 
 // Given the accent hex, derive a near-white paper that carries a hint of
-// the accent's hue — so the *paper itself* feels like it belongs to the room.
+// the accent's hue - so the *paper itself* feels like it belongs to the room.
 function lightenedPaper(hex: string): string {
   const h = hex.replace('#', '');
   const n = parseInt(h.length === 3 ? h.split('').map((c) => c + c).join('') : h, 16);

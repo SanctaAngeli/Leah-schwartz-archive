@@ -32,7 +32,7 @@ interface LifeEra {
 
 const BIRTH_YEAR = 1920;
 
-// Note: the standalone "Accidental Watercolorist" era (1969–74) was removed —
+// Note: the standalone "Accidental Watercolorist" era (1969–74) was removed -
 // we have no photograph of her from it. Its pivotal story (finding watercolor
 // by accident at 48) now opens the Prolific Years, which absorb 1969–74.
 const LIFE_ERAS: LifeEra[] = [
@@ -41,9 +41,9 @@ const LIFE_ERAS: LifeEra[] = [
     title: 'Childhood',
     yearStart: 1920,
     yearEnd: 1936,
-    caption: 'Born Rock Island, Illinois — daughter of Polish-Jewish immigrants.',
+    caption: 'Born Rock Island, Illinois - daughter of Polish-Jewish immigrants.',
     prose:
-      'She was born in Rock Island, Illinois, in the summer of 1920, the daughter of Polish-Jewish immigrants who had been made Greenfields at Ellis Island. The family moved the way immigrant families moved — Chicago, then Boston, then on — and in the window of every place they lived her mother hung the sign for her beading college. Leah grew up watching hands make small, exact, beautiful things out of almost nothing. It was a lesson she never stopped practicing.',
+      'She was born in Rock Island, Illinois, in the summer of 1920, the daughter of Polish-Jewish immigrants who had been made Greenfields at Ellis Island. The family moved the way immigrant families moved - Chicago, then Boston, then on - and in the window of every place they lived her mother hung the sign for her beading college. Leah grew up watching hands make small, exact, beautiful things out of almost nothing. It was a lesson she never stopped practicing.',
     bookChapters: [],
     photoPageRange: [16, 22],
     accent: '#8B7D6B',
@@ -55,7 +55,7 @@ const LIFE_ERAS: LifeEra[] = [
     yearEnd: 1949,
     caption: 'New York to study · a first marriage · her son Daniel.',
     prose:
-      'At seventeen she went to New York to study, and the city kept her through a first marriage and the birth of her son Daniel. The paintings she chose to keep begin here — the earliest survivors, the ones the book later gathered under the wry heading OLD STUFF. They are a young painter\'s paintings: serious, searching, already unwilling to lie about what she saw.',
+      'At seventeen she went to New York to study, and the city kept her through a first marriage and the birth of her son Daniel. The paintings she chose to keep begin here - the earliest survivors, the ones the book later gathered under the wry heading OLD STUFF. They are a young painter\'s paintings: serious, searching, already unwilling to lie about what she saw.',
     bookChapters: ['old-stuff'],
     photoPageRange: [23, 27],
     accent: '#6B5545',
@@ -67,7 +67,7 @@ const LIFE_ERAS: LifeEra[] = [
     yearEnd: 1959,
     caption: 'Moving West · meeting Herman · the studio that looked at Mt. Tam.',
     prose:
-      'She moved West, and the West held her for the rest of her life. In Mill Valley she met Herman Schwartz — "the remarkable Herman" — and built the house with the studio whose windows framed Mt. Tamalpais. The mountain became the constant in her eye, a shape she returned to for fifty years the way other people return to a face.',
+      'She moved West, and the West held her for the rest of her life. In Mill Valley she met Herman Schwartz - "the remarkable Herman" - and built the house with the studio whose windows framed Mt. Tamalpais. The mountain became the constant in her eye, a shape she returned to for fifty years the way other people return to a face.',
     bookChapters: ['old-stuff'],
     photoPageRange: [28, 33],
     accent: '#9B8B7A',
@@ -79,7 +79,7 @@ const LIFE_ERAS: LifeEra[] = [
     yearEnd: 1968,
     caption: 'Two more sons · the abstract and social-comment years.',
     prose:
-      'Two more sons arrived and the household filled. These were the yeasty years — she tried to be trendy, smearing and pouring paint on canvases spread on the floor, making collage out of Vietnam and the civil-rights marches. It was honest work and it was not quite hers; she would say later that she didn\'t think abstractly and didn\'t worship paint for its own sake.',
+      'Two more sons arrived and the household filled. These were the yeasty years - she tried to be trendy, smearing and pouring paint on canvases spread on the floor, making collage out of Vietnam and the civil-rights marches. It was honest work and it was not quite hers; she would say later that she didn\'t think abstractly and didn\'t worship paint for its own sake.',
     bookChapters: ['abstract', 'social-comment'],
     photoPageRange: [33, 36],
     accent: '#8B3A3A',
@@ -91,7 +91,7 @@ const LIFE_ERAS: LifeEra[] = [
     yearEnd: 1984,
     caption: 'Watercolor found her by accident · then her most productive years.',
     prose:
-      'It started with a library book of beetles. She bought watercolors that same afternoon, and the medium she would carry the rest of her life had simply found her — by accident, at forty-eight. What followed were her most productive years: one-man shows, roadside America painted out the back of a Ford Econoline that doubled as a studio, the Bay Area landscapes and street scenes and portraits of the people she actually knew.',
+      'It started with a library book of beetles. She bought watercolors that same afternoon, and the medium she would carry the rest of her life had simply found her - by accident, at forty-eight. What followed were her most productive years: one-man shows, roadside America painted out the back of a Ford Econoline that doubled as a studio, the Bay Area landscapes and street scenes and portraits of the people she actually knew.',
     bookChapters: ['on-the-road', 'landscape', 'street-scenes', 'portraits'],
     photoPageRange: [40, 139],
     accent: '#6B8E5A',
@@ -103,7 +103,7 @@ const LIFE_ERAS: LifeEra[] = [
     yearEnd: 1999,
     caption: 'Two carry-ons, two brushes, a chocolate bar, a notebook.',
     prose:
-      'Two carry-ons, two brushes, a chocolate bar, and a notebook — that was the kit. With Herman she went to France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, and painted on location for forty days at a stretch. She was not a tourist who painted; she was a painter who happened to be moving, recording rooftops and markets and light with the same attention she had always given Mt. Tam.',
+      'Two carry-ons, two brushes, a chocolate bar, and a notebook - that was the kit. With Herman she went to France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, and painted on location for forty days at a stretch. She was not a tourist who painted; she was a painter who happened to be moving, recording rooftops and markets and light with the same attention she had always given Mt. Tam.',
     bookChapters: ['travel'],
     photoPageRange: [236, 297],
     accent: '#3E8FC4',
@@ -115,7 +115,7 @@ const LIFE_ERAS: LifeEra[] = [
     yearEnd: 2004,
     caption: 'Home from the road · the small subjects given great gravity.',
     prose:
-      'Home from the road, she turned to the small subjects — still lifes, interiors, a single pear, flowers — and gave them the gravity she had once given mountains. There was the High Sierra one last time. She finished the book herself, on Strawberry Press in Mill Valley, and then she was gone, in 2004, having kept exactly what she meant to keep.',
+      'Home from the road, she turned to the small subjects - still lifes, interiors, a single pear, flowers - and gave them the gravity she had once given mountains. There was the High Sierra one last time. She finished the book herself, on Strawberry Press in Mill Valley, and then she was gone, in 2004, having kept exactly what she meant to keep.',
     bookChapters: ['still-life', 'interiors', 'flowers', 'high-sierra'],
     photoPageRange: [198, 297],
     accent: '#E0B8C8',
@@ -163,13 +163,28 @@ function representativeArtForEra(era: LifeEra): Artwork | undefined {
 function AtHerAgePage(): JSX.Element {
   usePageMeta(
     'At Her Age',
-    "Scroll through Leah Schwartz's eighty-four years — her own life in eras, the paintings she was making, the photographs from the book.",
+    "Scroll through Leah Schwartz's eighty-four years - her own life in eras, the paintings she was making, the photographs from the book.",
   );
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeIdx, setActiveIdx] = useState(0);
+  const [stuck, setStuck] = useState(false);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  const sentinelRef = useRef<HTMLDivElement>(null);
   const didInitialScroll = useRef(false);
+
+  // When the sentinel (just above the timeline) scrolls past the sticky
+  // offset, the timeline is "stuck" - compact it so it eats less of the screen.
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setStuck(!entry.isIntersecting),
+      { rootMargin: '-84px 0px 0px 0px', threshold: 0 },
+    );
+    obs.observe(sentinel);
+    return () => obs.disconnect();
+  }, []);
 
   // Jump instantly · the page is ~20,000px tall, so a smooth scroll across it
   // (the global `scroll-behavior: smooth` would otherwise apply) is slow and
@@ -256,19 +271,26 @@ function AtHerAgePage(): JSX.Element {
           At Her Age
         </h1>
         <p className="font-leah text-text-muted mt-3 text-3xl md:text-4xl leading-none">
-          1920 — 2004
+          1920 - 2004
         </p>
       </motion.header>
 
-      {/* Sticky timeline · stays at the top of the page the whole way down */}
+      {/* Sentinel · its visibility tells us when the timeline goes sticky */}
+      <div ref={sentinelRef} aria-hidden="true" className="h-px w-full" />
+
+      {/* Sticky timeline · stays at the top of the page the whole way down.
+          Compacts vertically once it's stuck so it doesn't dominate. */}
       <div
-        className="sticky top-[84px] z-30 py-4
+        className={`sticky top-[84px] z-30
           bg-bg-gallery/80 backdrop-blur-md
-          border-y border-text-muted/10"
+          border-y border-text-muted/10
+          transition-[padding] duration-300
+          ${stuck ? 'py-2' : 'py-4'}`}
       >
         <div className="max-w-4xl mx-auto px-6">
           <p
-            className="font-body text-[11px] tracking-[0.32em] uppercase text-center mb-3 transition-colors duration-300"
+            className={`font-body text-[11px] tracking-[0.32em] uppercase text-center transition-all duration-300
+              ${stuck ? 'mb-1.5' : 'mb-3'}`}
             style={{ color: activeEra.accent }}
           >
             {activeEra.title} · {activeEra.yearStart}–{activeEra.yearEnd}
@@ -312,7 +334,12 @@ function AtHerAgePage(): JSX.Element {
               );
             })}
           </div>
-          <div className="relative mt-3 h-4">
+          {/* Decade markers collapse away once stuck - orientation is only
+              needed at the top; while scrolling, the era label is enough. */}
+          <div
+            className={`relative overflow-hidden transition-all duration-300
+              ${stuck ? 'mt-0 h-0 opacity-0' : 'mt-3 h-4 opacity-100'}`}
+          >
             {[1920, 1940, 1960, 1980, 2000].map((year) => {
               const pct =
                 ((year - TIMELINE_START) / (TIMELINE_END - TIMELINE_START)) * 100;
@@ -343,7 +370,7 @@ function AtHerAgePage(): JSX.Element {
             id={era.id}
             className="max-w-6xl mx-auto px-6 pt-20 pb-24 scroll-mt-[200px] text-center"
           >
-            {/* Era heading + prose · always visible (no scroll-gated fade —
+            {/* Era heading + prose · always visible (no scroll-gated fade -
                 it would stay invisible when you jump here via the timeline). */}
             <div className="max-w-3xl mx-auto mb-14">
               <p
@@ -443,7 +470,7 @@ function AtHerAgePage(): JSX.Element {
               </div>
             ) : (
               <p className="font-body text-text-muted text-sm italic max-w-xl mx-auto">
-                No paintings in the catalog from this era — she was either too young, or had not yet kept what she made.
+                No paintings in the catalog from this era - she was either too young, or had not yet kept what she made.
               </p>
             )}
           </section>
