@@ -48,10 +48,9 @@ function AppContent(): JSX.Element {
   const location = useLocation();
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
-  // Nav is always visible. The intro gate was tied to a v1 cinematic that no
-  // longer exists on `/`; the Z-axis entrance (Sprint 9) will reintroduce its
-  // own gate when it ships.
-  const showNavigation = true;
+  // The front door is a single reverent painting with its own foot directory,
+  // so the global pill nav is hidden there; it returns on every other page.
+  const showNavigation = location.pathname !== '/';
 
   return (
     <>

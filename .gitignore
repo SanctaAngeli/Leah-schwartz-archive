@@ -25,3 +25,6 @@ npm-debug.log*
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Local scratch: Nano Banana reference images (duplicates of public/ assets)
+nano-banana-studio/

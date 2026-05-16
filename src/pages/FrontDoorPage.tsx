@@ -7,154 +7,115 @@ import EntranceOverlay from '../components/home/EntranceOverlay';
 const HERO_SRC = '/artworks/full/mt-tam-from-sonoma.jpg';
 const HERO_ALT = 'Mt. Tam from Sonoma - watercolor by Leah Schwartz';
 
-const PATHS = [
-  { to: '/canvas', label: 'See her work', sub: 'drift through every painting' },
-  { to: '/her-words', label: 'Read her story', sub: 'her own voice, in full' },
-  { to: '/themes', label: 'Browse themes', sub: 'twelve rooms of the book' },
-];
-
-const MORE_PATHS = [
-  { to: '/walk',           label: 'Walk with her',   sub: 'a guided eight-painting tour' },
-  { to: '/studio-visit',   label: 'Studio visit',    sub: 'Mill Valley, 1985' },
-  { to: '/atlas',          label: 'Color Atlas',     sub: 'her chromatic life' },
-  { to: '/obsessions',     label: 'Obsessions',      sub: 'subjects she returned to' },
-  { to: '/at-her-age',     label: 'At her age',      sub: 'a slider through 84 years' },
-  { to: '/constellation',  label: 'Constellation',   sub: 'navigate by association' },
-  { to: '/last-paintings', label: 'Last Paintings',  sub: 'a quiet room for late work' },
-  { to: '/pairings',       label: 'Pairings',        sub: 'curated diptychs' },
+// One quiet line of destinations, spread across the foot of the page like a
+// museum wall directory. Real routes behind understated labels.
+const NAV = [
+  { to: '/canvas',     label: 'Paintings' },
+  { to: '/themes',     label: 'Themes' },
+  { to: '/her-words',  label: 'Her Story' },
+  { to: '/at-her-age', label: 'Eras' },
+  { to: '/studio',     label: 'Studio' },
+  { to: '/atlas',      label: 'Atlas' },
+  { to: '/about',      label: 'About' },
 ];
 
 function FrontDoorPage(): JSX.Element {
-  usePageMeta('', "A digital archive of the artist Leah Schwartz (1920–2004).");
+  usePageMeta('', 'A digital archive of the artist Leah Schwartz (1920-2004).');
   const [showEntrance, setShowEntrance] = useState(false);
 
-  const startEntrance = useCallback((): void => {
-    setShowEntrance(true);
-  }, []);
-  const dismissEntrance = useCallback((): void => {
-    setShowEntrance(false);
-  }, []);
+  const startEntrance = useCallback((): void => setShowEntrance(true), []);
+  const dismissEntrance = useCallback((): void => setShowEntrance(false), []);
 
   return (
     <>
-    <AnimatePresence>
-      {showEntrance && <EntranceOverlay key="entrance" onComplete={dismissEntrance} />}
-    </AnimatePresence>
-    <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
-        className="w-full max-w-4xl relative"
-      >
-        <img
-          src={HERO_SRC}
-          alt={HERO_ALT}
-          className="w-full h-auto rounded-md shadow-[0_28px_80px_rgba(0,0,0,0.14)]"
-        />
-        <button
+      <AnimatePresence>
+        {showEntrance && <EntranceOverlay key="entrance" onComplete={dismissEntrance} />}
+      </AnimatePresence>
+
+      {/* Off-screen SVG filter · roughens the paper backing into a deckled edge */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true">
+        <filter id="deckle">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="7" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+
+      <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 py-24">
+        {/* The single held painting · deckled paper backing + soft shadow */}
+        <motion.button
           type="button"
           onClick={startEntrance}
-          className="absolute bottom-4 right-4 flex items-center gap-2
-            bg-black/60 hover:bg-black/80 backdrop-blur-md text-white
-            rounded-full px-4 py-2
-            font-body text-[12px] tracking-[0.2em] uppercase
-            shadow-[0_4px_18px_rgba(0,0,0,0.25)]
-            transition-colors duration-200"
-          aria-label="Play the cinematic intro"
+          aria-label="Mt. Tam from Sonoma — play the cinematic intro"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
+          className="group relative block cursor-pointer focus:outline-none"
         >
-          <span aria-hidden="true">▶</span>
-          <span>Watch intro</span>
-        </button>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.35, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-        className="mt-14 text-center"
-      >
-        <h1 className="font-heading text-[clamp(40px,7vw,80px)] tracking-[0.04em] text-text-primary leading-none">
-          Leah Schwartz
-        </h1>
-        <p className="font-body text-text-muted mt-3 tracking-[0.4em] text-xs uppercase">
-          1920 - 2004
-        </p>
-      </motion.div>
-
-      <motion.blockquote
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="mt-10 max-w-2xl text-center"
-      >
-        <p className="font-leah text-[clamp(22px,3vw,32px)] text-text-secondary leading-snug">
-          “Not a need to create ART, but a need to preserve ephemeral things that I love to look at.”
-        </p>
-        <cite className="block mt-4 text-text-muted text-[11px] not-italic tracking-[0.25em] uppercase">
-          From her own foreword
-        </cite>
-      </motion.blockquote>
-
-      <motion.nav
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.85, duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-        className="mt-14 flex flex-col sm:flex-row gap-3 items-center"
-        aria-label="Primary entry points"
-      >
-        {PATHS.map((p) => (
-          <Link
-            key={p.to}
-            to={p.to}
-            className="group flex flex-col items-center bg-white/80 backdrop-blur-md
-              border border-white/40 rounded-full px-7 py-3
-              shadow-[0_4px_24px_rgba(0,0,0,0.06)]
-              hover:bg-white hover:shadow-[0_10px_36px_rgba(0,0,0,0.10)] hover:-translate-y-0.5
-              transition-all duration-300"
+          {/* Paper backing · slightly larger, deckle-filtered, warm white */}
+          <div
+            aria-hidden="true"
+            className="absolute -inset-[14px] bg-[#FBF7EC]
+              shadow-[0_30px_70px_-24px_rgba(74,62,40,0.30)]"
+            style={{ filter: 'url(#deckle)' }}
+          />
+          <img
+            src={HERO_SRC}
+            alt={HERO_ALT}
+            className="relative w-[clamp(320px,46vw,620px)] h-auto
+              transition-transform duration-700 ease-out group-hover:scale-[1.012]"
+          />
+          {/* Hairline play affordance · only on hover, never shouting */}
+          <span
+            className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100
+              transition-opacity duration-300
+              font-body text-[10px] tracking-[0.3em] uppercase text-[#5a5240]
+              bg-[#FBF7EC]/70 backdrop-blur-sm rounded-full px-3 py-1"
+            aria-hidden="true"
           >
-            <span className="font-heading text-text-primary text-lg leading-tight">{p.label}</span>
-            <span className="font-body text-text-muted text-[11px] tracking-wider mt-0.5">{p.sub}</span>
-          </Link>
-        ))}
-      </motion.nav>
+            ▶ Watch intro
+          </span>
+        </motion.button>
 
-      <motion.section
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-        className="mt-20 max-w-4xl w-full"
-        aria-labelledby="more-ways-heading"
-      >
-        <div className="flex items-center gap-4 mb-6">
-          <div className="flex-1 h-px bg-text-muted/20" aria-hidden="true" />
-          <p
-            id="more-ways-heading"
-            className="font-body text-text-muted uppercase tracking-[0.35em] text-[11px]"
-          >
-            More ways in
+        {/* Wordmark + tombstone credit */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-16 text-center"
+        >
+          <h1 className="font-heading text-[#8f8a6d] text-[clamp(20px,2vw,28px)]
+            tracking-[0.42em] pl-[0.42em] leading-none">
+            LEAH SCHWARTZ
+          </h1>
+          <p className="font-heading italic text-text-muted/80 mt-4 text-[13px] tracking-[0.06em]">
+            Mt. Tam from Sonoma&nbsp;&nbsp;·&nbsp;&nbsp;watercolor
           </p>
-          <div className="flex-1 h-px bg-text-muted/20" aria-hidden="true" />
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {MORE_PATHS.map((p) => (
-            <Link
-              key={p.to}
-              to={p.to}
-              className="group flex flex-col items-center text-center
-                bg-white/70 backdrop-blur-md border border-white/40
-                rounded-2xl px-4 py-3
-                shadow-[0_2px_14px_rgba(0,0,0,0.04)]
-                hover:bg-white hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-0.5
-                transition-all duration-300"
-            >
-              <span className="font-heading text-text-primary text-[15px] leading-tight">{p.label}</span>
-              <span className="font-body text-text-muted text-[11px] tracking-wider mt-1">{p.sub}</span>
-            </Link>
-          ))}
-        </div>
-      </motion.section>
-    </main>
+        </motion.div>
+
+        {/* Foot directory · one understated row, spread full-width */}
+        <motion.nav
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 1 }}
+          className="absolute inset-x-0 bottom-10 px-[clamp(24px,6vw,96px)]"
+          aria-label="Primary entry points"
+        >
+          <div className="mx-auto mb-7 h-[3px] w-[3px] rounded-full bg-text-muted/40" aria-hidden="true" />
+          <ul className="flex flex-wrap items-center justify-center gap-x-[clamp(24px,5vw,80px)] gap-y-4">
+            {NAV.map((n) => (
+              <li key={n.to}>
+                <Link
+                  to={n.to}
+                  className="font-body text-[11px] tracking-[0.3em] uppercase
+                    text-text-muted hover:text-text-primary transition-colors duration-300"
+                >
+                  {n.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
+      </main>
     </>
   );
 }
