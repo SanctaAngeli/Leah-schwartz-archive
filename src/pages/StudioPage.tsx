@@ -7,6 +7,7 @@ import artworksData from '../data/artworks.json';
 import photosData from '../data/photos.json';
 import type { Artwork } from '../types';
 import { usePageMeta } from '../hooks/usePageMeta';
+import StudioTableMenu from '../components/studio/StudioTableMenu';
 
 const artworks = artworksData as Artwork[];
 const photos = photosData as Array<{ file: string; pdf_page: number; likely_photo: boolean; chroma: number }>;
@@ -45,6 +46,9 @@ export default function StudioPage(): JSX.Element {
   usePageMeta('The Studio', "How Leah Schwartz worked · her kit, her influences, her philosophy.");
   return (
     <main className="min-h-screen pt-24 pb-24 px-6 bg-[#FAF8F2]">
+      {/* The table · the studio render, used as the section's menu */}
+      <StudioTableMenu />
+
       {/* Hero */}
       <header className="max-w-3xl mx-auto text-center mb-20">
         <motion.p
