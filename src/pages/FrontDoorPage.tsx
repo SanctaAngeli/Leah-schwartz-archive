@@ -32,14 +32,6 @@ function FrontDoorPage(): JSX.Element {
         {showEntrance && <EntranceOverlay key="entrance" onComplete={dismissEntrance} />}
       </AnimatePresence>
 
-      {/* Off-screen SVG filter · roughens the paper backing into a deckled edge */}
-      <svg width="0" height="0" className="absolute" aria-hidden="true">
-        <filter id="deckle">
-          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="7" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </svg>
-
       <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 py-24">
         {/* The single held painting · deckled paper backing + soft shadow */}
         <motion.button
@@ -51,13 +43,22 @@ function FrontDoorPage(): JSX.Element {
           transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
           className="group relative block cursor-pointer focus:outline-none"
         >
-          {/* Paper backing · slightly larger, deckle-filtered, warm white */}
+          {/* Real deckled watercolor-paper ground the painting rests on.
+              Wrapper div gives a reliable symmetric box (img absolute-inset
+              sizing is unreliable for replaced elements); the img fills it and
+              its drop-shadow follows the torn alpha edge. */}
           <div
             aria-hidden="true"
-            className="absolute -inset-[14px] bg-[#FBF7EC]
-              shadow-[0_30px_70px_-24px_rgba(74,62,40,0.30)]"
-            style={{ filter: 'url(#deckle)' }}
-          />
+            className="absolute pointer-events-none"
+            style={{ top: -34, bottom: -34, left: -52, right: -52 }}
+          >
+            <img
+              src="/textures/ripped-paper/paper-wide.png"
+              alt=""
+              className="w-full h-full object-fill select-none"
+              style={{ filter: 'drop-shadow(0 26px 55px rgba(74,62,40,0.26))' }}
+            />
+          </div>
           <img
             src={HERO_SRC}
             alt={HERO_ALT}
