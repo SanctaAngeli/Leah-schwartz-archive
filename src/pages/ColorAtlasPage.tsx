@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { memo, useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import artworksData from '../data/artworks.json';
@@ -40,7 +40,9 @@ interface SpectrumBandProps {
 
 // One feathered watercolour spectrum. Each band is a painting's dominant
 // pigment, with her real Mt. Tam meadow granulation washed over the whole.
-function SpectrumBand({ arts, showAxis, onHover, onPick }: SpectrumBandProps): JSX.Element {
+// Memoised: hover only updates the small fixed reading panel, so the 801
+// band elements (3 spectrums × 267) never re-render on mouse-over.
+const SpectrumBand = memo(function SpectrumBand({ arts, showAxis, onHover, onPick }: SpectrumBandProps): JSX.Element {
   const n = arts.length;
 
   const chapterRuns = useMemo(() => {
@@ -133,7 +135,7 @@ function SpectrumBand({ arts, showAxis, onHover, onPick }: SpectrumBandProps): J
       })()}
     </div>
   );
-}
+});
 
 interface Section {
   numeral: string;
@@ -181,6 +183,13 @@ function ColorAtlasPage(): JSX.Element {
     const byLight = [...base].sort((a, b) => palettes[a.id].hsl[2] - palettes[b.id].hsl[2]);
     return { sequence: bySeq, hue: byHue, lightness: byLight };
   }, [base]);
+
+  // Stable callbacks so the memoised SpectrumBand props never change on hover.
+  const handleHover = useCallback((id: string | null) => setHovered(id), []);
+  const handlePick = useCallback(
+    (id: string) => navigate(`/artwork/${id}`),
+    [navigate],
+  );
 
   const hoveredArt = hovered ? artworks.find((a) => a.id === hovered) : null;
   const hoveredPalette = hovered ? palettes[hovered] : null;
@@ -230,8 +239,8 @@ function ColorAtlasPage(): JSX.Element {
           <SpectrumBand
             arts={ordered[s.mode]}
             showAxis={s.mode === 'sequence'}
-            onHover={setHovered}
-            onPick={(id) => navigate(`/artwork/${id}`)}
+            onHover={handleHover}
+            onPick={handlePick}
           />
         </motion.section>
       ))}
@@ -246,19 +255,21 @@ function ColorAtlasPage(): JSX.Element {
       <AnimatePresence>
         {hoveredArt && hoveredPalette && (
           <motion.div
-            key={hoveredArt.id}
-            initial={{ opacity: 0, y: 18 }}
+            key="reading"
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
             className="fixed left-1/2 -translate-x-1/2 bottom-[3.5vh]
               pointer-events-none z-[60] w-[min(860px,94vw)]"
           >
-            {/* soft cream shelf · feathered, reads as paper not a modal */}
+            {/* soft cream shelf · feathered, reads as paper not a modal.
+                Solid-ish cream (no backdrop-blur) so compositing this fixed
+                layer over the bands stays cheap. */}
             <div
               aria-hidden="true"
               className="absolute -inset-x-4 -inset-y-3 rounded-[40px]
-                bg-[#F6F1E3]/95 backdrop-blur-md
+                bg-[#F6F1E3]/97
                 shadow-[0_36px_90px_-36px_rgba(74,62,40,0.40)]"
             />
             <div className="relative flex items-center gap-12 px-12 py-9">
