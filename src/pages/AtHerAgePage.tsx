@@ -3,8 +3,59 @@ import { motion } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
 import artworksData from '../data/artworks.json';
 import photosData from '../data/photos.json';
+import palettesData from '../data/palettes.json';
 import { usePageMeta } from '../hooks/usePageMeta';
+import PaperMount from '../components/ui/PaperMount';
 import type { Artwork } from '../types';
+
+const palettes = palettesData as Record<string, { dominant: string; palette: string[] }>;
+
+// A slim watercolour line flowing across the page · the pigment of the
+// paintings she actually made in this era, feathered at both ends so it
+// reads as a wash, not a bar. Falls back to a soft single-accent wash for
+// the early years where the catalog holds nothing yet.
+function EraColorFlow({ ids, accent }: { ids: string[]; accent: string }): JSX.Element {
+  const colors = ids.map((id) => palettes[id]?.dominant).filter(Boolean) as string[];
+  return (
+    <div
+      aria-hidden="true"
+      className="relative mx-auto h-[12px] w-full max-w-3xl"
+      style={{
+        WebkitMaskImage:
+          'linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%)',
+        maskImage:
+          'linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%)',
+      }}
+    >
+      {colors.length >= 3 ? (
+        <>
+          <div className="flex w-full h-full">
+            {colors.map((c, i) => (
+              <div key={i} className="flex-1" style={{ backgroundColor: c }} />
+            ))}
+          </div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'url(/textures/wash-grain.png)',
+              backgroundSize: 'auto 100%',
+              backgroundRepeat: 'repeat-x',
+              mixBlendMode: 'soft-light',
+              opacity: 0.7,
+            }}
+          />
+        </>
+      ) : (
+        <div
+          className="w-full h-full"
+          style={{
+            background: `linear-gradient(to right, ${accent}00, ${accent}66 50%, ${accent}00)`,
+          }}
+        />
+      )}
+    </div>
+  );
+}
 
 interface BookPhoto {
   file: string;
@@ -154,6 +205,15 @@ function photoForEra(era: LifeEra): BookPhoto | undefined {
     return photos.find((p) => p.file === PHOTO_OVERRIDE[era.id]);
   }
   return undefined;
+}
+
+// Pick the ripped-paper variant that best frames a photo's orientation.
+function photoPaper(photo: BookPhoto): 'tall' | 'square' | 'mid' {
+  const [w, h] = photo.size;
+  const aspect = w / h;
+  if (aspect < 0.85) return 'tall';
+  if (aspect > 1.25) return 'mid';
+  return 'square';
 }
 
 function representativeArtForEra(era: LifeEra): Artwork | undefined {
@@ -368,76 +428,79 @@ function AtHerAgePage(): JSX.Element {
             ref={(el) => { sectionRefs.current[i] = el; }}
             data-era-idx={i}
             id={era.id}
-            className="max-w-6xl mx-auto px-6 pt-20 pb-24 scroll-mt-[200px] text-center"
+            className="max-w-6xl mx-auto px-6 pt-28 pb-36 scroll-mt-[200px] text-center"
           >
-            {/* Era heading + prose · always visible (no scroll-gated fade -
-                it would stay invisible when you jump here via the timeline). */}
-            <div className="max-w-3xl mx-auto mb-14">
+            {/* Era heading · always visible (timeline jumps straight here) */}
+            <div className="max-w-2xl mx-auto mb-9">
               <p
-                className="font-body uppercase tracking-[0.3em] text-[11px] mb-4"
+                className="font-body uppercase tracking-[0.34em] text-[11px] mb-5"
                 style={{ color: era.accent }}
               >
                 {era.yearStart}–{era.yearEnd} · {ageRange(era)}
               </p>
-              <h2 className="font-heading text-4xl md:text-6xl text-text-primary leading-tight mb-5">
+              <h2 className="font-heading text-[clamp(34px,5vw,60px)] text-text-primary leading-[1.05]">
                 {era.title}
               </h2>
-              <div
-                className="w-12 h-1 rounded-full mx-auto mb-8"
-                style={{ backgroundColor: era.accent }}
-                aria-hidden="true"
-              />
-              <p className="font-leah text-text-secondary text-2xl md:text-3xl leading-snug mb-6">
+              <p className="font-leah text-text-secondary text-[clamp(22px,3vw,32px)] leading-snug mt-5">
                 {era.caption}
-              </p>
-              <p className="font-heading text-[17px] md:text-[19px] leading-[1.8] text-text-primary">
-                {era.prose}
               </p>
             </div>
 
-            {/* Photograph (or a representative painting) */}
-            <div className="max-w-md mx-auto mb-16">
+            {/* Her pigment in these years · a wash flowing across the page */}
+            <div className="mb-20">
+              <EraColorFlow ids={eraPaintings.map((a) => a.id)} accent={era.accent} />
+            </div>
+
+            {/* Leah, at this age · on her own torn paper */}
+            <div className="flex justify-center mb-7">
               {photo ? (
-                <figure>
-                  <img
+                <figure className="text-center">
+                  <PaperMount
                     src={`/photos/${photo.file}`}
                     alt={`Leah, ${ageRange(era).toLowerCase()}`}
-                    className="w-full h-auto rounded-sm shadow-[0_8px_28px_rgba(0,0,0,0.12)] mx-auto"
-                    loading="lazy"
+                    paper={photoPaper(photo)}
+                    inset={{ x: 30, y: 26 }}
+                    shadow="soft"
+                    imgClassName="w-auto h-[clamp(260px,40vh,440px)] block"
                   />
-                  <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase mt-3">
+                  <figcaption className="font-body text-[11px] text-text-muted tracking-[0.24em] uppercase mt-12">
                     Photograph · from the book
                   </figcaption>
                 </figure>
               ) : fallbackArt?.imagePath ? (
-                <figure>
+                <figure className="text-center">
                   <Link to={`/artwork/${fallbackArt.id}`} className="block group">
-                    <img
+                    <PaperMount
                       src={fallbackArt.thumbPath || fallbackArt.imagePath || ''}
                       alt={fallbackArt.display_title || fallbackArt.title}
-                      className="w-full h-auto rounded-sm shadow-[0_8px_28px_rgba(0,0,0,0.12)] mx-auto group-hover:shadow-[0_12px_36px_rgba(0,0,0,0.18)] transition-shadow"
-                      loading="lazy"
+                      paper="mid"
+                      inset={{ x: 30, y: 24 }}
+                      shadow="soft"
+                      imgClassName="w-auto h-[clamp(240px,36vh,400px)] block transition-opacity duration-300 group-hover:opacity-90"
                     />
-                    <figcaption className="font-body text-[11px] text-text-muted tracking-wider uppercase mt-3">
+                    <figcaption className="font-body text-[11px] text-text-muted tracking-[0.24em] uppercase mt-12">
                       A painting from this era · {fallbackArt.display_title || fallbackArt.title}
                     </figcaption>
                   </Link>
                 </figure>
               ) : (
-                <div
-                  className="aspect-[3/4] rounded-sm flex items-center justify-center text-text-muted text-xs italic px-4 text-center max-w-xs mx-auto"
-                  style={{ backgroundColor: era.accent + '22' }}
-                >
+                <p className="font-heading italic text-text-muted/70 text-[15px] py-12">
                   A photograph for this era is on the way.
-                </div>
+                </p>
               )}
             </div>
+
+            {/* Her words for these years */}
+            <p className="font-heading text-[clamp(16px,1.3vw,19px)] leading-[1.85]
+              text-text-primary max-w-2xl mx-auto mb-24">
+              {era.prose}
+            </p>
 
             {/* Paintings from this era */}
             {eraPaintings.length > 0 ? (
               <div>
-                <p className="font-body text-text-muted uppercase tracking-[0.25em] text-xs mb-6">
-                  {eraPaintings.length} {eraPaintings.length === 1 ? 'painting' : 'paintings'} from this era
+                <p className="font-body text-text-muted uppercase tracking-[0.3em] text-[11px] mb-8">
+                  The work from these years · {eraPaintings.length} {eraPaintings.length === 1 ? 'painting' : 'paintings'}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   {eraPaintings.map((a) => (
