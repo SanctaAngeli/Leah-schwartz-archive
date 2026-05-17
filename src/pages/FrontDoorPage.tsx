@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageMeta } from '../hooks/usePageMeta';
 import EntranceOverlay from '../components/home/EntranceOverlay';
+import PaperMount from '../components/ui/PaperMount';
 
 const HERO_SRC = '/artworks/full/mt-tam-from-sonoma.jpg';
 const HERO_ALT = 'Mt. Tam from Sonoma - watercolor by Leah Schwartz';
@@ -43,38 +44,27 @@ function FrontDoorPage(): JSX.Element {
           transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
           className="group relative block cursor-pointer focus:outline-none"
         >
-          {/* Real deckled watercolor-paper ground the painting rests on.
-              Wrapper div gives a reliable symmetric box (img absolute-inset
-              sizing is unreliable for replaced elements); the img fills it and
-              its drop-shadow follows the torn alpha edge. */}
-          <div
-            aria-hidden="true"
-            className="absolute pointer-events-none"
-            style={{ top: -34, bottom: -34, left: -52, right: -52 }}
-          >
-            <img
-              src="/textures/ripped-paper/paper-wide.png"
-              alt=""
-              className="w-full h-full object-fill select-none"
-              style={{ filter: 'drop-shadow(0 26px 55px rgba(74,62,40,0.26))' }}
-            />
-          </div>
-          <img
+          {/* The painting on its deckled watercolor-paper ground */}
+          <PaperMount
             src={HERO_SRC}
             alt={HERO_ALT}
-            className="relative w-[clamp(320px,46vw,620px)] h-auto
+            paper="wide"
+            inset={{ x: 52, y: 34 }}
+            shadow="soft"
+            imgClassName="w-[clamp(320px,46vw,620px)] h-auto
               transition-transform duration-700 ease-out group-hover:scale-[1.012]"
-          />
-          {/* Hairline play affordance · only on hover, never shouting */}
-          <span
-            className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100
-              transition-opacity duration-300
-              font-body text-[10px] tracking-[0.3em] uppercase text-[#5a5240]
-              bg-[#FBF7EC]/70 backdrop-blur-sm rounded-full px-3 py-1"
-            aria-hidden="true"
           >
-            ▶ Watch intro
-          </span>
+            {/* Hairline play affordance · only on hover, never shouting */}
+            <span
+              className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100
+                transition-opacity duration-300
+                font-body text-[10px] tracking-[0.3em] uppercase text-[#5a5240]
+                bg-[#FBF7EC]/70 backdrop-blur-sm rounded-full px-3 py-1"
+              aria-hidden="true"
+            >
+              ▶ Watch intro
+            </span>
+          </PaperMount>
         </motion.button>
 
         {/* Wordmark + tombstone credit */}
