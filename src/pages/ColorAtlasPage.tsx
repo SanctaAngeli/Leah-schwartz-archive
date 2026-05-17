@@ -261,29 +261,41 @@ function ColorAtlasPage(): JSX.Element {
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
             className="fixed left-1/2 -translate-x-1/2 bottom-[3.5vh]
-              pointer-events-none z-[60] w-[min(860px,94vw)]"
+              pointer-events-none z-[60] w-[min(820px,92vw)]"
           >
-            {/* soft cream shelf · feathered, reads as paper not a modal.
-                Solid-ish cream (no backdrop-blur) so compositing this fixed
-                layer over the bands stays cheap. */}
+            {/* The reading sits on its own sheet of watercolour paper:
+                a fully-opaque cream base so the text never bleeds into the
+                bands, a faint real paper grain over it, a hairline edge. */}
             <div
               aria-hidden="true"
-              className="absolute -inset-x-4 -inset-y-3 rounded-[40px]
-                bg-[#F6F1E3]/97
-                shadow-[0_36px_90px_-36px_rgba(74,62,40,0.40)]"
-            />
-            <div className="relative flex items-center gap-12 px-12 py-9">
+              className="absolute -inset-x-7 -inset-y-6 rounded-[36px]
+                overflow-hidden shadow-[0_38px_94px_-36px_rgba(74,62,40,0.42)]"
+            >
+              <div className="absolute inset-0 bg-[#F5F0E1]" />
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: 'url(/textures/wash-grain.png)',
+                  backgroundSize: '170% 150%',
+                  backgroundPosition: 'center',
+                  mixBlendMode: 'multiply',
+                  opacity: 0.1,
+                }}
+              />
+              <div className="absolute inset-0 rounded-[36px] ring-1 ring-[#dccfae]/45" />
+            </div>
+            <div className="relative flex items-center gap-10 px-10 py-8">
               <PaperMount
                 src={hoveredArt.thumbPath || hoveredArt.imagePath || ''}
                 alt=""
                 paper="mid"
-                inset={{ x: 24, y: 18 }}
+                inset={{ x: 22, y: 16 }}
                 shadow="lift"
                 className="shrink-0"
-                imgClassName="w-auto h-[clamp(180px,28vh,320px)]"
+                imgClassName="w-auto h-auto max-w-[330px] max-h-[252px] block"
               />
               <div className="min-w-0 flex-1">
-                <p className="font-heading text-text-primary text-[clamp(24px,2.4vw,36px)] leading-[1.1]">
+                <p className="font-heading text-text-primary text-[clamp(21px,1.9vw,30px)] leading-[1.15] break-words">
                   {hoveredArt.display_title || hoveredArt.title}
                 </p>
                 <p className="font-body text-text-muted text-[12px] mt-4 tracking-[0.24em] uppercase">
