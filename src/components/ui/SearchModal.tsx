@@ -7,7 +7,7 @@ import themesData from '../../data/themes.json';
 import peopleData from '../../data/people.json';
 import placesData from '../../data/places.json';
 import subjectsData from '../../data/subjects.json';
-import { PROSE_SECTIONS } from '../../data/prose';
+import { READER_SECTIONS, displayLabel } from '../../data/readerSections';
 import type { Artwork, Location, Theme } from '../../types';
 
 const artworks = artworksData as Artwork[];
@@ -71,17 +71,16 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
       { type: 'page', id: 'studio-visit', title: 'Studio Visit, 1985', subtitle: 'An afternoon at her easel', path: '/studio-visit' },
       { type: 'page', id: 'places', title: 'Places', subtitle: 'Where she painted', path: '/places' },
       { type: 'page', id: 'index', title: 'Index', subtitle: 'Her own back-of-book index', path: '/index' },
-      { type: 'page', id: 'life', title: 'A Life in Chapters', subtitle: 'Eight eras, photos and paintings', path: '/life' },
       { type: 'page', id: 'favorites', title: 'Favorites', subtitle: 'Your saved artworks', path: '/favorites' },
       { type: 'page', id: 'about', title: 'About Leah', subtitle: 'Who she was', path: '/about' }
     );
 
-    // Add prose sections (from Leah's Story)
-    PROSE_SECTIONS.forEach((s) => {
+    // Add reader sections (her autobiography sections + chapter essays)
+    READER_SECTIONS.forEach((s) => {
       results.push({
         type: 'prose',
         id: s.id,
-        title: s.label,
+        title: displayLabel(s),
         subtitle: s.tagline,
         path: `/her-words/${s.id}`,
       });

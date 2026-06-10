@@ -229,6 +229,8 @@ function AtHerAgePage(): JSX.Element {
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeIdx, setActiveIdx] = useState(0);
   const [stuck, setStuck] = useState(false);
+  // Each era shows a curated handful; "all from these years" expands on demand.
+  const [expandedEras, setExpandedEras] = useState<Record<string, boolean>>({});
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const didInitialScroll = useRef(false);
@@ -420,7 +422,12 @@ function AtHerAgePage(): JSX.Element {
       {/* One scroll section per era */}
       {LIFE_ERAS.map((era, i) => {
         const photo = photoForEra(era);
-        const eraPaintings = paintingsForEra(era);
+        const allEraPaintings = paintingsForEra(era);
+        const isExpanded = !!expandedEras[era.id];
+        // The pairing of HER at that age with A FEW works is the emotional
+        // engine - a 60-painting dump drowns it. Ten, then the rest on request.
+        const eraPaintings = isExpanded ? allEraPaintings : allEraPaintings.slice(0, 10);
+        const hiddenCount = allEraPaintings.length - eraPaintings.length;
         const fallbackArt = representativeArtForEra(era);
         return (
           <section
@@ -500,7 +507,7 @@ function AtHerAgePage(): JSX.Element {
             {eraPaintings.length > 0 ? (
               <div>
                 <p className="font-body text-text-muted uppercase tracking-[0.3em] text-[11px] mb-8">
-                  The work from these years · {eraPaintings.length} {eraPaintings.length === 1 ? 'painting' : 'paintings'}
+                  The work from these years · {allEraPaintings.length} {allEraPaintings.length === 1 ? 'painting' : 'paintings'}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   {eraPaintings.map((a) => (
@@ -530,6 +537,15 @@ function AtHerAgePage(): JSX.Element {
                     </Link>
                   ))}
                 </div>
+                {hiddenCount > 0 && (
+                  <button
+                    onClick={() => setExpandedEras((prev) => ({ ...prev, [era.id]: true }))}
+                    className="mt-8 glass-pill px-6 py-3 font-body text-sm text-text-secondary
+                      hover:text-text-primary hover:shadow-glass transition-all"
+                  >
+                    All {allEraPaintings.length} from these years ↓
+                  </button>
+                )}
               </div>
             ) : (
               <p className="font-body text-text-muted text-sm italic max-w-xl mx-auto">

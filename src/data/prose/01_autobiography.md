@@ -424,9 +424,8 @@ Sunrise Farmnicks), and loved, with a passion, recreational disputation.
 They could stay up all night arguing fine points of mischievous nonsense.
 Needless to say, few if any of them knew anything about farming or even
 running a factory. Daddy ran the food store.
-ART SCHOOL, LOVE
 
-## AND MARRIAGE
+## ART SCHOOL, LOVE AND MARRIAGE
 *confusion, angst, subjugation*
 
 After graduating from high school, I was free to realize my lifelong
@@ -722,11 +721,10 @@ After my summer of fun, I needed a job. I trudged around San
 Francisco with my fashion-drawing samples until I was desperate. I had
 one last appointment (at Roos Brothers Department Store) before I
 "jumped off the bridge." Jan Miller, the art director, hired me in spite of
-
-## DRAWINGS FOR A ROOS BROS. AD
-*my lack of experience, and said she would teach me "the ropes." Her*
-
+my lack of experience, and said she would teach me "the ropes." Her
 kindness was a life saver and we are friends to this day.
+
+DRAWINGS FOR A ROOS BROS. AD
 I rented a waterfront apartment in Sausalito with my friend Pearl Hecht
 from Jersey Homesteads. Pearl had come to San Francisco to fulfill a
 dream: to find, and marry, a longshoreman. To this end, she took a job
@@ -858,13 +856,7 @@ I did only one painting that year, VIEW FROM N.Y. APARTMENT.
 
 Our move back to San Francisco was a horror, with a three-month-old
 cranky baby, a sick husband, and no place to live. My sister was away so
-
-<!-- page 34 -->
-
-
-## HERB ROSEN, A GIRLFRIEND, ME AND FAT PETER
-*we stayed in her one-room freezing apartment (spring in San Francisco)*
-
+we stayed in her one-room freezing apartment (spring in San Francisco)
 where I stayed in bed most of the day to keep warm. Herman had started
 to work for the Kaiser-Permanente Medical group, but was still so weak
 that he fell into bed when he came home. I was already pregnant with
@@ -880,6 +872,10 @@ Peter and put him out to bask.
 A constant stream of visitors from the East Coast poured through our
 little nest that year. One of them, Herb Rosen, visited us every year until
 he married our friend and neighbor, the artist Maggie Hazel.
+
+<!-- page 34 -->
+
+HERB ROSEN, A GIRLFRIEND, ME AND FAT PETER
 David was born on February 26, 1955, just thirteen months after Peter.
 Davy cried day and night, threw up and had diarrhea, never napped and
 never slept through the night. He was miserable and so was I. The
@@ -1048,15 +1044,13 @@ the mountain, and now the sun come down too close."
 I had thought that I could get around in L.A. without renting a car but
 Los Angeles and the automobile are inseparable. It is not a place to be
 without a car. I saw a city I had never seen before: fine black grit drifting
+over sidewalks with no footprints, rushing rivers of glittering cars, a rare,
+shambling pedestrian, heat and dust. The department stores were bustling
+with people, but no one ever entered the front doors.
 
 <!-- page 37 -->
 
-
-## DAN, FILMING IN NEW YORK
-*over sidewalks with no footprints, rushing rivers of glittering cars, a rare,*
-
-shambling pedestrian, heat and dust. The department stores were bustling
-with people, but no one ever entered the front doors.
+DAN, FILMING IN NEW YORK
 The next time I flew down to see mother, I rented a car and stayed with
 the Steindels. Bea Steindel, Daddy's niece (Dr. Sam's wife), sheltered, fed
 and comforted me during that sad time.
@@ -1150,13 +1144,11 @@ things around them. I encourage students to "listen" to themselves and to
 try to paint from direct, original and focused observation, and to resist the
 tendency to paint a painting that looks like a million others - i.e., the
 picturesque boat, barn or winebottle and drape... the curse of watercolor
-ONE OF THE MANY BEETLE PAINTINGS I DID IN THE PROCESS OF
-
-## TEACHING MYSELF WATERCOLOR TECHNIQUE
-*painting! It's a great pleasure to see an artist take to watercolor and*
-
+painting! It's a great pleasure to see an artist take to watercolor and
 develop a personal style. It doesn't happen often, but when it does I feel
 like a mother with a gifted child.
+
+ONE OF THE MANY BEETLE PAINTINGS I DID IN THE PROCESS OF TEACHING MYSELF WATERCOLOR TECHNIQUE
 One of my students once asked me if I would say something about my
 philosophy of painting, which artists I admire, and why I paint. I mouthed
 some vague generalities, caught myself and said I'd have to think about it.

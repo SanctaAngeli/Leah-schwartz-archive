@@ -11,6 +11,9 @@ const FULLSCREEN_ROUTES = ['/canvas', '/walk'];
 function ContinueRail(): JSX.Element | null {
   const { pathname } = useLocation();
   if (pathname.startsWith('/artwork/')) return null;
+  // Reader sections carry their own prev/next momentum; the walk resumes
+  // from the final section's "continue" door instead.
+  if (pathname.startsWith('/her-words/')) return null;
   const stop = nextStop(pathname);
   if (!stop) return null;
 

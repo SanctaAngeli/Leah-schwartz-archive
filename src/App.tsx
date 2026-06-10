@@ -29,7 +29,6 @@ import IndexPage from './pages/IndexPage';
 import PlacesPage from './pages/PlacesPage';
 import EntityPage from './pages/EntityPage';
 import StudioPage from './pages/StudioPage';
-import LifePage from './pages/LifePage';
 import PreservationPage from './pages/PreservationPage';
 import DailyPage from './pages/DailyPage';
 import PairingsPage from './pages/PairingsPage';
@@ -108,7 +107,8 @@ function AppContent(): JSX.Element {
             <Route path="/people/:entityId" element={<PageTransition><EntityPage kind="person" /></PageTransition>} />
             <Route path="/subjects/:entityId" element={<PageTransition><EntityPage kind="subject" /></PageTransition>} />
             <Route path="/studio" element={<PageTransition><StudioPage /></PageTransition>} />
-            <Route path="/life" element={<PageTransition><LifePage /></PageTransition>} />
+            {/* /life merged into the Her Story wing — same life, told once. */}
+            <Route path="/life" element={<Navigate to="/her-story" replace />} />
             <Route path="/preservation" element={<PageTransition><PreservationPage /></PageTransition>} />
             <Route path="/pairings" element={<PageTransition><PairingsPage /></PageTransition>} />
             <Route path="/pairings/:pairingId" element={<PageTransition><PairingsPage /></PageTransition>} />

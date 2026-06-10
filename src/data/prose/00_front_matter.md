@@ -5,13 +5,7 @@
 
 <!-- page 1 -->
 
-- -
-rr
-rn
-n
-STRAWBERRY
-PRESS
-ILOVE THE PROCESS of what I do. I enjoy the feel of a brush on
+I LOVE THE PROCESS of what I do. I enjoy the feel of a brush on
 canvas, the smell of turpentine, the flow of color on a fresh sheet
 of watercolor paper, and the intense pleasure of making things.
 This compulsion is not a need to create ART but a need to
@@ -39,7 +33,67 @@ right back into production when you have a few moments to spare.
 Interruptions and distractions are deadly.
 Imogen Cunningham, the photographer, once said she had never
 done landscapes because in the early morning or evening, when the
-light was best, she was feeding .her family.
+light was best, she was feeding her family.
+
+<!-- page 14 -->
+
+The first idea for this book was for a small "tasteful" volume of travel
+sketches with excerpts from my travel notebooks. Little by little, through
+the process of "Oh, you can't leave that out," and "I really would like to
+include —," this book has developed into the story of the life of a woman
+who managed to keep painting. So, now you're getting a picture book, an
+autobiography, some travel notes, a touch of homely philosophy and if it
+all works out maybe a recipe or two (but no ARTSPEAK).
+
+I grew up in an era of: "GET A HUSBAND (for protection), KEEP
+AN IMMACULATE HOUSE ('cleanliness is next to Godliness'), HAVE
+CHILDREN (that's what women are for), and NEVER, BUT NEVER
+LET YOURSELF GO (get dowdy)." A woman with talent might take up
+a hobby, but could not allow anyone in the family to be inconvenienced
+by it. So I have managed to fit my work into the spaces between husband,
+children and housekeeping, and I still feel "avant garde" when I leave the
+bed unmade — it takes a long time to get rid of childhood programming.
+
+My early life was completely unconventional. My aspirations were
+totally conventional, with the exception of my knowing, from my earliest
+days, that I was an "artist" and that drawing and painting were an integral
+part of my life. When I had to get a job in order to survive between
+marriages (i.e. being a kept woman), I used my drawing skills... I didn't
+know how to do anything else.
+Even in this emancipated era with many wives working outside the
+home, it is generally the woman who takes responsibility for the children,
+sick care, laundry, marketing, home decorating, making sure there's toilet
+paper and all the miniscule details of creating and maintaining a home.
+Not just a house or apartment, but a home — a haven of comfort, a place
+that helps to hold a family together.
+
+I have been married for more than thirty years to a wonderful man,
+Herman Schwartz M.D. In addition to being an excellent physician
+(cancer specialist), Herman is the publisher of botanical books of great
+beauty. He nurtures an enormous, world famous collection of euphorbias
+and other bizarre and beautiful succulent desert plants, in a
+twenty-thousand-square-foot greenhouse in Bolinas. Bolinas is an odd
+place — it's on a piece of land that juts out into the Pacific Ocean,
+separated from the "mainland" by the San Andreas Fault. We joke about
+it becoming an island after the next big earthquake. Also, there are no
+road signs leading to Bolinas; every time the highway department puts
+one up, it mysteriously disappears.
+
+<!-- page 15 -->
+
+I paint in my studio in Mill Valley during the week and do slave labor
+in Bolinas on weekends. One Sunday, working in the hot greenhouse
+repairing stone retaining walls, I said to Herman, "Honey, y'know we
+could take a luxury cruise, dine in style, wear fancy clothes, be waited on,
+lie around in deck chairs — are we nuts?" "Yeah, sure," he muttered as he
+ran over my foot with his loaded wheel barrow. He was a vision of
+loveliness in a filthy, torn t-shirt, a once-yellow, sagging pair of swim trunks,
+and pendants of sweat dangling from nose and chin. We may be nuts, but
+we love to work, and making things is a great pleasure to both of us.
+But life has not always been quite so wonderful.
+
+<!-- end of her own pages -->
+
 -from the text
 Front Jacket: SPRING THICKET, 11"x15", 1981
 From the collection of Russel Crider
@@ -126,58 +180,3 @@ INDEX 292
 <!-- page 12 -->
 
 AUTOBIOGRAPHY
-
-<!-- page 14 -->
-
-Introduction
-The first idea for this book was for a small "tasteful" volume of travel
-sketches with excerpts from my travel notebooks. Little by little, through
-the process of "Oh, you can't leave that out," and "I really would like to
-include - ," this book has developed into the story of the life of a woman
-who managed to keep painting. So, now you're getting a picture book,
-an autobiography, some travel notes, a touch of homely philosophy and if
-it all works out maybe a recipe or two (but no ARTSPEAK).
-I grew up in an era of: "GET A HUSBAND (for protection), KEEP
-AN IMMACULATE HOUSE (`cleanliness is next to Godliness'), HAVE
-CHILDREN (that's what women are for), and NEVER, BUT NEVER
-LET YOURSELF GO (get dowdy)." A woman with talent might take up
-a hobby, but could not allow anyone in the family to be inconvenienced
-by it. So I have managed to fit my work into the spaces between husband,
-children and housekeeping, and I still feel "avant garde" when I leave the
-bed unmade - it takes a long time to get rid of childhood programming.
-My early life was completely unconventional. My aspirations were
-totally conventional, with the exception of my knowing, from my earliest
-days, that I was an "artist" and that drawing and painting were an integral
-part of my life. When I had to get a job in order to survive between
-marriages (i.e. being a kept woman), I used my drawing skills... I didn't
-know how to do anything else.
-Even in this emancipated era with many wives working outside the
-home, it is generally the woman who takes responsibility for the children,
-sick care, laundry, marketing, home decorating, making sure there's toilet
-paper and all the miniscule details of creating and maintaining a home.
-Not just a house or apartment, but a home - a haven of comfort, a place
-that helps to hold a family together.
-I have been married for more than thirty years to a wonderful man,
-Herman Schwartz M.D. In addition to being an excellent physician
-(cancer specialist), Herman is the publisher of botanical books of great
-beauty. He nurtures an enormous, world famous collection of euphorbias
-and other bizarre and beautiful succulent desert plants, in a twenty-
-
-<!-- page 15 -->
-
-thousand-square-foot greenhouse in Bolinas. Bolinas is an odd place - it's
-on a piece of land that juts out into the Pacific Ocean, separated from the
-"mainland" by the San Andreas Fault. We joke about it becoming an
-island after the next big earthquake. Also, there are no road signs leading
-to Bolinas; every time the highway department puts one up, it mysteri-
-ously disappears.
-I paint in my studio in Mill Valley during the week and do slave labor
-in Bolinas on weekends. One Sunday, working in the hot greenhouse
-repairing stone retaining walls, I said to Herman, "Honey, y'know we
-could take a luxury cruise, dine in style, wear fancy clothes, be waited on,
-lie around in deck chairs - are we nuts?" "Yeah, sure," he muttered as he
-ran over my foot with his loaded wheel barrow. He was a vision of loveli-
-ness in a filthy, torn t-shirt, a once-yellow, sagging pair of swim trunks,
-and pendants of sweat dangling from nose and chin. We may be nuts, but
-we love to work, and making things is a great pleasure to both of us.
-But life has not always been quite so wonderful.

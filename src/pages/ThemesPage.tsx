@@ -37,6 +37,38 @@ function ThemesPage(): JSX.Element {
     return getProseByChapter(themeId) || null;
   }, [themeId]);
 
+  const selectedThemeForHooks = themeId ? themes.find((t) => t.id === themeId) : null;
+  const heroArt = useMemo(() => {
+    if (!selectedThemeForHooks?.heroArtworkId) return undefined;
+    return artworks.find((a) => a.id === selectedThemeForHooks.heroArtworkId);
+  }, [selectedThemeForHooks]);
+
+  // Her essay, split into paragraph blocks so it can breathe BETWEEN the
+  // grid rows instead of standing as a wall in front of them.
+  const essayParagraphs = useMemo(() => {
+    if (!chapterProse || !selectedThemeForHooks) return [];
+    const linked = linkArtworkMentions(
+      stripRedundantChapterHeader(
+        cleanProse(chapterProse.markdown),
+        selectedThemeForHooks.name,
+        selectedThemeForHooks.tagline
+      )
+    );
+    return linked
+      .split(/\n\s*\n+/)
+      .map((p) => p.trim())
+      .filter((p) => {
+        if (!p) return false;
+        // Whole-block painting captions: those works hang in the grid already.
+        if (/^\[[^\]]+\]\(\/artwork\//.test(p) && p.length < 300) return false;
+        // Photo-caption debris (all-caps, no link).
+        const letters = p.replace(/[^a-zA-Z]/g, '');
+        const upper = letters.replace(/[^A-Z]/g, '');
+        if (letters.length > 0 && upper.length / letters.length > 0.7 && !p.includes('](')) return false;
+        return true;
+      });
+  }, [chapterProse, selectedThemeForHooks]);
+
   const getHeroArtwork = (theme: Theme): Artwork | undefined => {
     if (!theme.heroArtworkId) return undefined;
     return artworks.find((a) => a.id === theme.heroArtworkId);
@@ -160,110 +192,175 @@ function ThemesPage(): JSX.Element {
           </p>
         </header>
 
-        {/* Leah's chapter essay */}
-        {chapterProse && (
+        {/* The room opens on a painting, not an essay */}
+        {heroArt && (heroArt.imagePath || heroArt.thumbPath) && (
+          <motion.figure
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+            className="text-center mb-14"
+          >
+            <Link to={`/artwork/${heroArt.id}`} className="group inline-block focus:outline-none">
+              <img
+                src={heroArt.imagePath || heroArt.thumbPath || ''}
+                alt={heroArt.display_title || heroArt.title}
+                className="mx-auto max-h-[62vh] w-auto max-w-full rounded-sm
+                  shadow-[0_22px_70px_rgba(74,62,40,0.24)]
+                  transition-transform duration-700 group-hover:scale-[1.01]"
+              />
+              <figcaption className="mt-4 font-heading italic text-text-secondary text-lg
+                group-hover:text-[#8B7355] transition-colors">
+                {heroArt.display_title || heroArt.title}
+              </figcaption>
+            </Link>
+          </motion.figure>
+        )}
+
+        {/* Two sentences of her voice to set the room, then the paintings */}
+        {essayParagraphs.length > 0 && (
           <motion.section
-            className="max-w-2xl mx-auto mb-16"
+            className="max-w-2xl mx-auto mb-14"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div className="font-heading text-[17px] md:text-[18px] leading-[1.8] text-text-primary prose-leah">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  h1: () => null, // chapter title is already the page header
-                  // Interior headings (the travel chapter's region names) render
-                  // as quiet small-caps dividers; the chapter's own name/tagline
-                  // are stripped from the source before rendering.
-                  h2: ({ children }) => (
-                    <h2
-                      className="font-body text-[13px] tracking-[0.3em] uppercase mt-12 mb-5 text-center"
-                      style={{ color: accent.accent }}
-                    >
-                      {children}
-                    </h2>
-                  ),
-                  em: ({ children }) => <em className="italic text-text-muted">{children}</em>,
-                  p: ({ children }) => (
-                    <p className="mb-5 text-text-primary">{children}</p>
-                  ),
-                  a: ({ href, children }) =>
-                    href && href.startsWith('/') ? (
-                      <Link
-                        to={href}
-                        className="underline decoration-1 underline-offset-4 transition-colors"
-                        style={{ color: accent.accent, textDecorationColor: accent.accent + '55' }}
-                      >
-                        {children}
-                      </Link>
-                    ) : (
-                      <a href={href}>{children}</a>
-                    ),
-                }}
-              >
-                {linkArtworkMentions(
-                  stripRedundantChapterHeader(
-                    cleanProse(chapterProse.markdown),
-                    selectedTheme.name,
-                    selectedTheme.tagline
-                  )
-                )}
-              </ReactMarkdown>
-            </div>
-            <div className="mt-8 text-center">
+            <EssayBand paragraphs={essayParagraphs.slice(0, 1)} accent={accent.accent} />
+            <div className="mt-4 text-center">
               <Link
-                to={`/her-words/${chapterProse.id}`}
-                className="inline-block text-sm font-body text-text-muted hover:text-text-primary transition-colors"
+                to={`/her-words/${chapterProse?.id ?? selectedTheme.id}`}
+                className="font-body text-xs uppercase tracking-[0.2em] text-text-muted hover:text-text-primary transition-colors"
               >
-                Continue reading in Leah's Story →
+                Her full essay, in her own words →
               </Link>
             </div>
           </motion.section>
         )}
 
-        {/* Artwork grid */}
-        {themeArtworks.length > 0 && (
-          <>
-            <div className="text-center mb-8">
-              <p className="font-body text-text-muted uppercase tracking-widest text-xs">
-                The paintings
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {themeArtworks.map((artwork, index) => (
-                <motion.div
-                  key={artwork.id}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.6) }}
-                >
-                  <Link
-                    to={`/artwork/${artwork.id}`}
-                    className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355]/50 rounded-lg"
+        {/* Paintings and her words, interleaved - the room and its wall text */}
+        {buildSegments(themeArtworks.filter((a) => a.id !== heroArt?.id), essayParagraphs.slice(1)).map(
+          (segment, si) =>
+            segment.type === 'works' ? (
+              <div key={si} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
+                {segment.works.map((artwork, index) => (
+                  <motion.div
+                    key={artwork.id}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '0px 0px -40px 0px' }}
+                    transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
                   >
-                    <PlaceholderArtwork
-                      src={artwork.thumbPath || artwork.imagePath}
-                      alt={artwork.title}
-                      color={artwork.placeholderColor}
-                      aspectRatio={artwork.aspectRatio}
-                      className="shadow-soft group-hover:shadow-glass mb-3"
-                    />
-                    <h3 className="font-body text-sm text-text-primary truncate">
-                      {artwork.display_title || artwork.title}
-                    </h3>
-                    {artwork.dimensions && (
-                      <p className="font-body text-xs text-text-muted">
-                        {artwork.dimensions}
-                      </p>
-                    )}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </>
+                    <Link
+                      to={`/artwork/${artwork.id}`}
+                      className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355]/50 rounded-lg"
+                    >
+                      <PlaceholderArtwork
+                        src={artwork.thumbPath || artwork.imagePath}
+                        alt={artwork.title}
+                        color={artwork.placeholderColor}
+                        aspectRatio={artwork.aspectRatio}
+                        className="shadow-soft group-hover:shadow-glass mb-3"
+                      />
+                      <h3 className="font-body text-sm text-text-primary truncate">
+                        {artwork.display_title || artwork.title}
+                      </h3>
+                      {artwork.dimensions && (
+                        <p className="font-body text-xs text-text-muted">
+                          {artwork.dimensions}
+                        </p>
+                      )}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <motion.section
+                key={si}
+                className="max-w-2xl mx-auto my-16"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: '0px 0px -60px 0px' }}
+                transition={{ duration: 0.6 }}
+              >
+                <EssayBand paragraphs={segment.paragraphs} accent={accent.accent} />
+              </motion.section>
+            )
         )}
       </motion.div>
+    </div>
+  );
+}
+
+// ── Interleaving helpers ────────────────────────────────────────────────────
+
+type Segment =
+  | { type: 'works'; works: Artwork[] }
+  | { type: 'prose'; paragraphs: string[] };
+
+const WORKS_PER_BAND = 8;
+const PARAS_PER_BAND = 2;
+
+/** Alternate rows of paintings with short bands of her essay until both run out. */
+function buildSegments(works: Artwork[], paragraphs: string[]): Segment[] {
+  const segments: Segment[] = [];
+  let w = 0;
+  let p = 0;
+  while (w < works.length || p < paragraphs.length) {
+    if (w < works.length) {
+      segments.push({ type: 'works', works: works.slice(w, w + WORKS_PER_BAND) });
+      w += WORKS_PER_BAND;
+    }
+    if (p < paragraphs.length) {
+      // Keep a heading attached to the paragraph that follows it.
+      let take = PARAS_PER_BAND;
+      if (/^#{2,3}\s/.test(paragraphs[p])) take += 1;
+      segments.push({ type: 'prose', paragraphs: paragraphs.slice(p, p + take) });
+      p += take;
+    }
+  }
+  return segments;
+}
+
+function EssayBand({ paragraphs, accent }: { paragraphs: string[]; accent: string }): JSX.Element {
+  return (
+    <div className="font-heading text-[17px] md:text-[18px] leading-[1.8] text-text-primary prose-leah">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: () => null,
+          h2: ({ children }) => (
+            <h2
+              className="font-body text-[13px] tracking-[0.3em] uppercase mt-2 mb-5 text-center"
+              style={{ color: accent }}
+            >
+              {children}
+            </h2>
+          ),
+          h3: ({ children }) => (
+            <h3
+              className="font-body text-[13px] tracking-[0.3em] uppercase mt-2 mb-5 text-center"
+              style={{ color: accent }}
+            >
+              {children}
+            </h3>
+          ),
+          em: ({ children }) => <em className="italic text-text-muted">{children}</em>,
+          p: ({ children }) => <p className="mb-5 text-text-primary">{children}</p>,
+          a: ({ href, children }) =>
+            href && href.startsWith('/') ? (
+              <Link
+                to={href}
+                className="underline decoration-1 underline-offset-4 transition-colors"
+                style={{ color: accent, textDecorationColor: accent + '55' }}
+              >
+                {children}
+              </Link>
+            ) : (
+              <a href={href}>{children}</a>
+            ),
+        }}
+      >
+        {paragraphs.join('\n\n')}
+      </ReactMarkdown>
     </div>
   );
 }

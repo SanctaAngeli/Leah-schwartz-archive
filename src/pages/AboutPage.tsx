@@ -180,10 +180,10 @@ function AboutPage(): JSX.Element {
               Read her autobiography →
             </Link>
             <Link
-              to="/life"
+              to="/at-her-age"
               className="glass-pill px-5 py-2 text-sm text-text-primary hover:bg-white transition-colors"
             >
-              A life in chapters →
+              Her life, year by year →
             </Link>
           </div>
         </motion.div>

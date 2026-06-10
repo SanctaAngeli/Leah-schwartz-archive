@@ -40,7 +40,7 @@ export const WINGS: Wing[] = [
     id: 'her-story',
     path: '/her-story',
     label: 'Her Story',
-    routes: ['/her-story', '/her-words', '/at-her-age', '/life', '/daily'],
+    routes: ['/her-story', '/her-words', '/at-her-age', '/daily'],
   },
   {
     id: 'places',
@@ -131,13 +131,6 @@ export const HER_STORY_DOORS: WingDoor[] = [
     visual: { kind: 'artwork', id: 'self-portrait' },
   },
   {
-    to: '/life',
-    title: 'A Life in Chapters',
-    tagline: 'eight eras',
-    blurb: 'Her biography as a scroll - photos, prose, and paintings intercut.',
-    visual: { kind: 'artwork', id: 'tulips-and-iris' },
-  },
-  {
     to: '/daily',
     title: 'Painting of the Day',
     tagline: 'come back tomorrow',
@@ -168,7 +161,6 @@ export const TOUR_ORDER: TourStop[] = [
   { path: '/her-story',      title: 'Her Story',            blurb: 'the life behind the work' },
   { path: '/her-words',      title: 'In Her Own Words',     blurb: 'the autobiography' },
   { path: '/at-her-age',     title: 'At Her Age',           blurb: '84 years on one slider' },
-  { path: '/life',           title: 'A Life in Chapters',   blurb: 'eight eras' },
   { path: '/studio',         title: 'The Studio',           blurb: 'her table, her tools' },
   { path: '/studio-visit',   title: 'A Studio Visit',       blurb: 'Mill Valley, 1985' },
   { path: '/walk',           title: 'Walk With Her',        blurb: 'a guided drift' },
