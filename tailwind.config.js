@@ -7,10 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        gallery: '#FAFAFA',
-        'text-primary': '#1A1A1A',
-        'text-secondary': '#4A4A4A',
-        'text-muted': '#8A8A8A',
+        // All design tokens point at the CSS variables in globals.css, so
+        // night mode (useTheme flips the vars) carries through every Tailwind
+        // utility. Components reference these as bg-bg-gallery, text-bg-gallery,
+        // bg-bg-glass, border-bg-glass-border, text-text-primary, etc.
+        gallery: 'var(--bg-gallery)',
+        'bg-gallery': 'var(--bg-gallery)',
+        'bg-glass': 'var(--bg-glass)',
+        'bg-glass-border': 'var(--bg-glass-border)',
+        'text-primary': 'var(--text-primary)',
+        'text-secondary': 'var(--text-secondary)',
+        'text-muted': 'var(--text-muted)',
         'accent-soft-blue': '#E8F0F8',
         'accent-warm': '#F5F0EB',
       },
