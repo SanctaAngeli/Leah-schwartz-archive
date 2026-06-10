@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 import artworksData from '../data/artworks.json';
 import photosData from '../data/photos.json';
 import type { Artwork } from '../types';
-import { PROSE_SECTIONS, cleanProse } from '../data/prose';
+import { PROSE_SECTIONS, cleanProse, stripRedundantChapterHeader } from '../data/prose';
 import { linkArtworkMentions } from '../data/proseLinker';
 import { usePageMeta } from '../hooks/usePageMeta';
 
@@ -91,7 +91,12 @@ function HerWordsPage(): JSX.Element {
 
   const active = SECTIONS.find((s) => s.id === activeId) || SECTIONS[1];
   const cleanedMd = useMemo(
-    () => markFirstArtworkLinks(linkArtworkMentions(cleanProse(active.markdown))),
+    () =>
+      markFirstArtworkLinks(
+        linkArtworkMentions(
+          stripRedundantChapterHeader(cleanProse(active.markdown), active.label, active.tagline)
+        )
+      ),
     [active]
   );
 

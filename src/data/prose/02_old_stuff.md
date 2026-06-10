@@ -37,7 +37,7 @@ the painting of a group of children I painted on it.
 
 <!-- page 41 -->
 
-GIRL WITH ARM, 1935 watercolor, 8x1 1
+GIRL WITH ARM, 1935 watercolor, 8x11
 JEANETTE, 1936-37 watercolor, 3x7
 
 <!-- page 43 -->
@@ -52,25 +52,15 @@ reminded me of a trip through the south.
 
 <!-- page 45 -->
 
-LIBERTY SHIP, 1946-47 gouache, 1 lx 1 4
-5t41P31 • --
-e!!!!!!!
-111111111.11'60ifill11111111111 1111.- -
+LIBERTY SHIP, 1946-47 gouache, 11x14
 
 <!-- page 46 -->
 
-MI in 11011111011
-du a
-11111111111111
-** _
 Sketches for this painting were made when
 walking home from work.
 
 <!-- page 47 -->
 
-II
-Ilr""1 .11° sow
-IImill- Elei raniuH. ,14,.......11 „„,...1. li„em,r limiliti th. ri
 I was recently married, pregnant, and doing shoe drawings to earn
 some money, while moaning pigeons drove me crazy and a fat, hairy
 exhibitionist flaunted his charms from the window across the way.

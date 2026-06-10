@@ -17,13 +17,7 @@ paint in the rain.
 
 <!-- page 97 -->
 
-0?`
-;," • 1
-'
-
 <!-- page 101 -->
-
-MINAMINNIMINMIMIIRIIIMMONOSIN 4
 
 <!-- page 104 -->
 
@@ -31,29 +25,14 @@ CHRISTO'S RUNNING FENCE #2, 7x12 (collection of Anne Wienholt)
 
 <!-- page 106 -->
 
-ot,
-
 <!-- page 107 -->
-
--.ANL
 
 <!-- page 108 -->
 
-/44
-
 <!-- page 114 -->
-
-ONO
-4111Pkt,
 
 <!-- page 115 -->
 
-'304,40v.(4,111` '
-
 <!-- page 120 -->
 
-414,44#14 40 lir a...do'
-
 <!-- page 121 -->
-
-K,-

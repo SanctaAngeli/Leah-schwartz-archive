@@ -23,18 +23,24 @@ interface IndexEntry {
 }
 
 type Category = 'all' | 'people' | 'places' | 'subjects' | 'artworks';
+type EntryKind = 'person' | 'place' | 'subject' | 'artwork';
+type TaggedEntry = IndexEntry & { kind: EntryKind };
 
+// The same slug can appear in more than one collection (Mt. Tam is a place
+// AND a subject), so every entry carries its kind explicitly — inferring it
+// by scanning the collections misclassifies those collisions.
 const artworks = artworksData as Artwork[];
-const people = peopleData as IndexEntry[];
-const places = placesData as IndexEntry[];
-const subjects = subjectsData as IndexEntry[];
-const artworksAsIndex: IndexEntry[] = artworks
+const people: TaggedEntry[] = (peopleData as IndexEntry[]).map((e) => ({ ...e, kind: 'person' }));
+const places: TaggedEntry[] = (placesData as IndexEntry[]).map((e) => ({ ...e, kind: 'place' }));
+const subjects: TaggedEntry[] = (subjectsData as IndexEntry[]).map((e) => ({ ...e, kind: 'subject' }));
+const artworksAsIndex: TaggedEntry[] = artworks
   .filter((a) => a.book_page)
   .map((a) => ({
     id: a.id,
     name: a.display_title || a.title,
     book_pages: a.book_page ? [a.book_page] : [],
     artwork_ids: [a.id],
+    kind: 'artwork',
   }));
 
 function displayNameOf(e: IndexEntry): string {
@@ -62,7 +68,7 @@ function IndexPage(): JSX.Element {
     { id: 'artworks', label: 'Artworks', count: artworksAsIndex.length },
   ];
 
-  const entriesForCategory = (cat: Category): IndexEntry[] => {
+  const entriesForCategory = (cat: Category): TaggedEntry[] => {
     switch (cat) {
       case 'people': return people;
       case 'places': return places;
@@ -72,14 +78,7 @@ function IndexPage(): JSX.Element {
     }
   };
 
-  const entryKind = (e: IndexEntry): 'person' | 'place' | 'subject' | 'artwork' => {
-    if (people.some((p) => p.id === e.id)) return 'person';
-    if (places.some((p) => p.id === e.id)) return 'place';
-    if (artworksAsIndex.some((a) => a.id === e.id)) return 'artwork';
-    return 'subject';
-  };
-
-  const { visible, letters } = useMemo(() => {
+  const { visible, letters } = useMemo((): { visible: TaggedEntry[]; letters: string[] } => {
     let list = entriesForCategory(category);
     // Sort by display name
     list = [...list].sort((a, b) =>
@@ -101,7 +100,7 @@ function IndexPage(): JSX.Element {
 
   // Group by first letter for display
   const grouped = useMemo(() => {
-    const g: Record<string, IndexEntry[]> = {};
+    const g: Record<string, TaggedEntry[]> = {};
     visible.forEach((e) => {
       const l = firstLetterOf(displayNameOf(e));
       (g[l] ||= []).push(e);
@@ -109,15 +108,14 @@ function IndexPage(): JSX.Element {
     return g;
   }, [visible]);
 
-  const linkFor = (e: IndexEntry): string | null => {
-    const kind = entryKind(e);
-    if (kind === 'artwork') {
+  const linkFor = (e: TaggedEntry): string | null => {
+    if (e.kind === 'artwork') {
       const aid = e.artwork_ids?.[0];
       return aid ? `/artwork/${aid}` : null;
     }
-    if (kind === 'place')   return `/places/${e.id}`;
-    if (kind === 'person')  return `/people/${e.id}`;
-    if (kind === 'subject') return `/subjects/${e.id}`;
+    if (e.kind === 'place')   return `/places/${e.id}`;
+    if (e.kind === 'person')  return `/people/${e.id}`;
+    if (e.kind === 'subject') return `/subjects/${e.id}`;
     return null;
   };
 
@@ -237,7 +235,7 @@ function IndexPage(): JSX.Element {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2">
               {entries.map((e) => {
                 const link = linkFor(e);
-                const kind = entryKind(e);
+                const kind = e.kind;
                 const label = displayNameOf(e);
                 const relatedCount = (e.artwork_ids || []).length;
                 const body = (
@@ -263,7 +261,7 @@ function IndexPage(): JSX.Element {
                   </div>
                 );
                 return (
-                  <li key={e.id}>
+                  <li key={`${e.kind}-${e.id}`}>
                     {link ? (
                       <Link to={link}>{body}</Link>
                     ) : (

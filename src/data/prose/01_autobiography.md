@@ -87,18 +87,10 @@ ornately framed reproductions of popular paintings: Vigee Lebrun's
 marvelous painting, "Aurora," of a bare-breasted goddess driving a golden
 chariot drawn by great leaping horses across a glorious sky.
 When everything was ready, she put an ad in the newspaper, "WIDOW
-
-## WITH SMALL CHILD MUST SELL HOUSEHOLD GOODS." A
-*stroke of genius! How could people resist getting a bargainand helping a*
-
+WITH SMALL CHILD MUST SELL HOUSEHOLD GOODS." A
+stroke of genius! How could people resist getting a bargain and helping a
 poor 'widow'. Couples came and bought out the whole apartment. She
-
-<!-- page 18 -->
-
-
-## MOTHER AND ME IN CHICAGO
-*would then call my uncle Sam and give him a list of the items to be sent*
-
+would then call my uncle Sam and give him a list of the items to be sent
 to the customers from his warehouse. One customer wanted everything,
 including the spreads and curtains, but my mother pleaded sentimental
 attachment and so was spared having to shut down the operation while
@@ -230,7 +222,7 @@ the Victrola til dawn.
 We soon moved again, to a more wholesome neighborhood near the
 new Olympic Stadium where the 1932 games were to be held. Our
 landlords lived in the front part of the house and we had the back, which
-included a glassed-in sun porch that was my bedroom. My,parents slept in
+included a glassed-in sun porch that was my bedroom. My parents slept in
 the living room on a bed that disappeared into a large drawer during the
 day. The landlord kept rabbits in the backyard under an old fig tree, and
 every Sunday they had fried rabbit (it smelled lovely).
@@ -260,7 +252,7 @@ neighborhood movie house. After I got dressed up in my red voile wrap-
 around blouse, white skirt and white "Olympic Sandals," I was given fif-
 teen cents - ten for the movie and five for a double decker ice cream
 cone. Oh, what enchantment! I would come out of the theater in a trance.
-Iwas Greta Garbo (or Dietrich, Lombard, or Harlow). I was loved by
+I was Greta Garbo (or Dietrich, Lombard, or Harlow). I was loved by
 Clark Gable (or Ronald Colman, Fredric March or Gene Raymond).
 I floated home and bored my mother into a stupor with an interminable
 description of every detail of plot, music, costumes, and verbatim
@@ -302,7 +294,7 @@ hamlets.
 "Alicia" was the main hamlet, the site of adult housing, communal
 dining room, children's house, creamery and dairy barns, horse barn, silos
 and warehouses.
-The second hamlet was the,center for the harvesting and distilling of
+The second hamlet was the center for the harvesting and distilling of
 Peppermint. When the wind was right, the distillery could be smelled a
 mile away.
 The third hamlet was the sheep ranch, with vast barns for shearing and
@@ -411,7 +403,7 @@ class snarled, "JEW!" at one of our brightest. Our Brightest, without a
 nanosecond hesitation, withered him with a scathingly contemptuous,
 "GENTILE!" The hostility between these two different cultures was not
 improved by the "Jew Kids" walking away with all the scholastic honors.
-After a big hassle (no girl hadever even wanted to), I was allowed to
+After a big hassle (no girl had ever even wanted to), I was allowed to
 take the agriculture and shop classes, where I got all A's (How to be
 unpopular in high school!). I didn't care about the local louts; I was madly
 in love with the teacher, Mr. Stevenson, who looked like Henry Fonda.
@@ -522,11 +514,6 @@ green and brown, puffy tweed, topped by an enormous blue-grey fox
 collar. You could get warts on your eyes just looking at it. In desperation,
 after wearing it once I removed the collar, had the coat dyed black, and
 wore it with a long muffler.
-co PrT
-my PrUN
-6 erUCgr
--n-m-c44r TH& alLvTiDIV
-toOrPJT&D
 On the farms, I hadn't been interested in clothes other than riding
 breeches and boots, but living in New York and meeting Tamara was a
 new experience. Tamara had exquisite taste: a couturier wardrobe, Lily
@@ -537,16 +524,16 @@ I even tried to squeeze my feet into her narrower shoes.
 When Lee graduated from Cornell and got a job as a shipping clerk in
 New York, we decided to "move in together". We moved into a fifth floor
 walk-up with skylight (no window), bath-down-the-hall, and hotplate in
-a closet. I left my "au pairnob, and school, and decided (with soulful and
+a closet. I left my "au pair" job, and school, and decided (with soulful and
 emotional renunciation of FINE ART) to become a COMMERCIAL
 ARTIST and make some money. I worked at a rickety table in our garret,
 making drawings of glamorous ladies in high-style clothes. When I had
-enough drawings, I made appointments with the art directors ofVogue,
+enough drawings, I made appointments with the art directors of Vogue,
 Harpers Bazaar, and all the very biggest advertising agencies, and
 proceeded to trudge around in the snow and slush with an enormous black
 portfolio under my arm (and an extra pair of clean white gloves in my
 purse). The only art director who took the time to talk to me was a kindly
-Russian (I think his name was Brodovitch) atHarpers Bazaar who told me
+Russian (I think his name was Brodovitch) at Harpers Bazaar who told me
 that my drawings and renderings showed a lot of talent but little commer-
 cial know-how. Those interviews were excruciating. For a shy and private
 person, I can think of nothing more grueling than showing ones work to
@@ -613,7 +600,7 @@ Monmouth, New Jersey during an air raid alert. I was in labor for twelve
 lonely hours; every few hours a nurse came in with a flashlight to see if I
 was ready to deliver. Just when I was about to fling myself out of the win-
 dow in fear, agony and desperation, I was wheeled into the delivery room
-and produced an eight-poun .cl, healthy baby boy.
+and produced an eight-pound, healthy baby boy.
 At that time, having a baby was treated as a near fatal disease. After
 delivery, the mothers were kept in bed (no toilet privileges) for two weeks.
 After two weeks in bed I fell over when I tried to stand up, and I was
@@ -634,7 +621,7 @@ ning to brown, add liver and jiggle skillet until liver is just barely cooked th
 (cut a piece open to test) and remove from burner. Season to taste and serve over
 rice. The trick is not to overcook the liver - or the rice.
 Living the bohemian (living-in-sin) life had to be revised when, after
-the bombing of Pearl Harbor, the U.S. entered World War H. It suddenly
+the bombing of Pearl Harbor, the U.S. entered World War II. It suddenly
 became important to be married legally, as this would affect Lee's military
 ME WITH BABY DAN AND LEE
 
@@ -651,9 +638,9 @@ favorite dish just as I was serving my amateurish dinner... she was a genius
 cook, but I was too insecure to appreciate her offerings.
 EDA'S ROAST CHICKEN
 (simple and delicious)
-Salt ah,d pepper a plump roasting chicken (excess fat removed) inside and out.
-Brawn chicken on all sides under the broiler, cover and roast at 350 degrees for
-one hour (3/4 hr if chicken is small). Serve over noodles, there's lots ofgravy.
+Salt and pepper a plump roasting chicken (excess fat removed) inside and out.
+Brown chicken on all sides under the broiler, cover and roast at 350 degrees for
+one hour (3/4 hr if chicken is small). Serve over noodles, there's lots of gravy.
 Boris, my father-in-law, was tall and slim with shaggy blond eyebrows
 and tawny thick hair groomed into a "lion's mane." He took meticulous
 care of his clothes and was a bit of a dandy. When he retired, he took on
@@ -732,7 +719,7 @@ Divorcee" when gay meant happy and joyful.
 IN THE MIDDLE OF MY "COLLEGE EDUCATION", BEING STRANGLED
 BY A GIANT KELP IN CARMEL-BY-THE-SEA
 After my summer of fun, I needed a job. I trudged around San
-Francisco with my fashion-thawing samples until I was desperate. I had
+Francisco with my fashion-drawing samples until I was desperate. I had
 one last appointment (at Roos Brothers Department Store) before I
 "jumped off the bridge." Jan Miller, the art director, hired me in spite of
 
@@ -758,25 +745,7 @@ One evening after work and before going to our modern dance class,
 
 <!-- page 31 -->
 
-- . -
-no cur Ma,. Le
-"
-I
-tni69-, -
-e)(
-.12M - -7,'19"4
-r4 .
-t .•
---1 -'"-
----:- --- - '
-- --:------
-- --- "- .,. „.,,,, /,..----_ -_:- - 3,, . ..i .-17 -
-'
-" ---
-' 91 -;-'----- SOME OF THE "SLEEPING PEOPLE" DRA4/INGS ,. -..„:-. ..__
-, cit,(R.)..c(se,,
-lq4 18
-• •
+SOME OF THE "SLEEPING PEOPLE" DRAWINGS
 
 <!-- page 32 -->
 
@@ -808,7 +777,7 @@ chased pigs out of the yard, helped repair Murray's glass-bottomed boat
 At the end of an idyllic two weeks, Herman went back to school in
 Boston and I went back to work in San Francisco. The following Christ-
 mas, Herman and a friend (who owned a big black Buick) drove night
-and day, picked me up in Houston, and drove through a blizzard oh the
+and day, picked me up in Houston, and drove through a blizzard on the
 Pan-American Highway so we could spend a few days together in
 Acapulco.
 By this time I realized that I had better move to Boston, and the follow-
@@ -818,7 +787,7 @@ ing spring I did.
 *good job, good friends, good times*
 
 The day after I arrived in Boston I got a job in an advertising agency,
-rented an apartment on Marlborough.Street and had a big fight with
+rented an apartment on Marlborough Street and had a big fight with
 Herman. Five years later we were married.
 I loved my job. I did layouts and finished art work. I worked with
 brilliant funny people who knew other brilliant funny people, and was
@@ -857,7 +826,7 @@ to Concord), and a few others, now lost.
 Herman and I found a third floor walk-up apartment (two-rooms-with
 kitchenette-in-a-closet) in an old brownstone on West 69th St. near
 Central Park. We lived there for a year. In a violent attack of nest-building,
-we scrubbed and painted the walls and ornate ceiling, refmished the grime-
+we scrubbed and painted the walls and ornate ceiling, refinished the grime-
 encrusted parquet floors (gorgeous!), polished up our Salvation Army
 furniture, bought a new sling-chair and felt very chic.
 Herman made only twenty-five dollars a MONTH as a Medical Resi-
@@ -892,7 +861,6 @@ cranky baby, a sick husband, and no place to live. My sister was away so
 
 <!-- page 34 -->
 
-so►
 
 ## HERB ROSEN, A GIRLFRIEND, ME AND FAT PETER
 *we stayed in her one-room freezing apartment (spring in San Francisco)*
@@ -925,13 +893,13 @@ eight or nine years old. He has grown into a tall, handsome, talented
 young man who loves his parents (in spite of everything). So, mothers of
 problem babies, take heart.
 At that time, a day off to go to the dentist was a real treat (when I
-could fmd a sitter).
+could find a sitter).
 After a year in the dark redwood forest, we moved to a three bedroom
 tract house with a view over the bay and a sea of mud in the back yard.
 I had a fantasy that Herman would help with the children on weekends so
 that I could paint, but Herman discovered gardening and worked every
 weekend transforming the sea of mud into a garden. (Remember, men
-think that whatthey do is of primary importance.) In desperation,
+think that what they do is of primary importance.) In desperation,
 I sculpted a clay head of Davy before he learned how to climb out of his
 play pen. I worked on it at the kitchen sink while Peter napped.
 The only other "art" work I did during the diaper-years was an almost
@@ -971,10 +939,10 @@ what had happened. Without hesitation she said, "Bring them here. We'll
 meet you at the train station tomorrow."
 Getting two squabbling brats, with their luggage and mine, from La
 Guardia airport to North Haven, Connecticut, had been a breeze
-compared to getting same from North. Haven to Philadelphia. At Grand
+compared to getting same from North Haven to Philadelphia. At Grand
 Central Station (while I was trying to get a cab from the vicious pirates
 who would knock you down while grabbing "your" cab) Peter, rubber-
-necking at thelall buildings while running away, ran smack into a metal
+necking at the tall buildings while running away, ran smack into a metal
 post. I caught him and hauled him, bleeding and shrieking, into the cab,
 never for an instant letting go of Davy who was trying to escape.
 Miraculously, I got to Penn Station without losing child or luggage and
@@ -1159,7 +1127,7 @@ architect/urban designer.
 
 One fine day, while browsing the shelves of the Marin County Library,
 I found a large volume of color photographs of beetles from all over the
-world. I was so taken with their color and bizarre forms that I went tight
+world. I was so taken with their color and bizarre forms that I went right
 out and bought watercolors, brushes and paper and tried to paint them.
 I hadn't painted with watercolors since I was a kid, but I remembered
 reading that one should wet the whole paper first, so I did, and painted

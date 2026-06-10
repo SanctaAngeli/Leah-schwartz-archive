@@ -61,7 +61,6 @@ export function linkArtworkMentions(markdown: string): string {
     let match;
     while ((match = entry.regex.exec(markdown))) {
       const leader = match[1];
-      const full = match[0];
       const titleStart = match.index + leader.length;
       const titleEnd = titleStart + match[2].length;
       // Extend past optional surrounding quote marks inside the match

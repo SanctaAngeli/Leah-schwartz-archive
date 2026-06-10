@@ -34,19 +34,14 @@ MRS. WONG ON CLEMENT ST., 22x30 (collection of Don Cohon)
 
 <!-- page 125 -->
 
-BICYCLE WOMEN, 1 8x23. You see these sturdy women tootling
+BICYCLE WOMEN, 18x23. You see these sturdy women tootling
 down highstreets and country roads all over Britain.
 
 <!-- page 128 -->
 
-DREAMING OF MARIE ANTOINETTE, 1 4x1 8. I liked the juxtaposition of the dowdy tourist women and the relics of Marie's frivolity.
+DREAMING OF MARIE ANTOINETTE, 14x18. I liked the juxtaposition of the dowdy tourist women and the relics of Marie's frivolity.
 
 <!-- page 131 -->
-
-It V"
---T mr:,‘•-■
-*OM
-* -Setttlell111111P11
 
 <!-- page 132 -->
 

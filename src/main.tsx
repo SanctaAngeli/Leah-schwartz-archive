@@ -5,7 +5,6 @@ import { ThemeProvider } from './hooks/useTheme'
 import { AmbientSoundProvider } from './hooks/useAmbientSound'
 import { FavoritesProvider } from './hooks/useFavorites'
 import { SearchProvider } from './hooks/useSearch'
-import { KeyboardShortcutsProvider } from './hooks/useKeyboardShortcuts'
 import App from './App'
 import './styles/globals.css'
 
@@ -15,11 +14,9 @@ createRoot(document.getElementById('root')!).render(
       <ThemeProvider>
         <AmbientSoundProvider>
           <FavoritesProvider>
-            <KeyboardShortcutsProvider>
-              <SearchProvider>
-                <App />
-              </SearchProvider>
-            </KeyboardShortcutsProvider>
+            <SearchProvider>
+              <App />
+            </SearchProvider>
           </FavoritesProvider>
         </AmbientSoundProvider>
       </ThemeProvider>

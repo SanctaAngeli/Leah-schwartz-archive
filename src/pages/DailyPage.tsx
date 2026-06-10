@@ -36,6 +36,14 @@ function formatDate(d: Date): string {
   return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 }
 
+/** Mostly-capitals paragraphs are catalog captions from the scan, not prose. */
+function isCaptionDump(p: string): boolean {
+  const letters = p.replace(/[^a-zA-Z]/g, '');
+  if (!letters) return true;
+  const upper = letters.replace(/[^A-Z]/g, '');
+  return upper.length / letters.length > 0.35;
+}
+
 function findProseMention(artwork: Artwork): string | null {
   if (!artwork.chapter) return null;
   const prose = getProseByChapter(artwork.chapter);
@@ -44,7 +52,7 @@ function findProseMention(artwork: Artwork): string | null {
   const title = artwork.title.toUpperCase();
   const paragraphs = body.split(/\n\s*\n+/).map((p) => p.trim()).filter(Boolean);
   for (const p of paragraphs) {
-    if (p.length > 40 && p.toUpperCase().includes(title)) return p;
+    if (p.length > 40 && !isCaptionDump(p) && p.toUpperCase().includes(title)) return p;
   }
   return null;
 }

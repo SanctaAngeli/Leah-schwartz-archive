@@ -55,7 +55,7 @@ export function AmbientSoundProvider({ children }: { children: ReactNode }): JSX
         audioContextRef.current = new AudioContextClass();
         initialized.current = true;
       }
-    } catch (e) {
+    } catch {
       console.warn('Web Audio API not supported');
     }
   }, []);

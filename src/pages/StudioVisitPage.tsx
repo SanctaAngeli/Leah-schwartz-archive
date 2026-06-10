@@ -89,7 +89,9 @@ function SceneBlock({ scene, index }: { scene: Scene; index: number }): JSX.Elem
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  // Gentle parallax. Kept small and clipped by the section (overflow-hidden)
+  // so a drifting image never bleeds into the neighbouring scene's background.
+  const y = useTransform(scrollYProgress, [0, 1], [32, -32]);
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0.4]);
 
   const art = scene.artworkId ? artworks.find((a) => a.id === scene.artworkId) : null;
@@ -100,7 +102,7 @@ function SceneBlock({ scene, index }: { scene: Scene; index: number }): JSX.Elem
     <section
       ref={ref}
       className={`
-        relative min-h-[90vh] flex items-center px-6 py-24
+        relative min-h-[90vh] flex items-center px-6 py-24 overflow-hidden
         ${isDark ? 'bg-[#1A1A1A] text-white' : 'bg-[#F8F3EA] text-text-primary'}
       `}
     >

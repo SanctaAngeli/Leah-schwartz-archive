@@ -51,6 +51,29 @@ export function cleanProse(md: string): string {
     .replace(/\*PDF pages[^*]+\*\s*/g, '');
 }
 
+/** Strip the in-file header block that reader pages already render themselves:
+ *  the top-level `# Title`, a `## NAME` heading matching the page's own label,
+ *  and the standalone `*tagline*` line. Keeps every other heading (the
+ *  autobiography's section headers, the travel chapter's region headers). */
+export function stripRedundantChapterHeader(
+  md: string,
+  label?: string,
+  tagline?: string
+): string {
+  let out = md.replace(/^#\s[^\n]+\n/, '');
+  const escape = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (label) {
+    // The heading plus the standalone *tagline* line right under it, if any.
+    out = out.replace(
+      new RegExp(`^##\\s+${escape(label)}\\s*$\\n(\\s*\\n)*(\\*[^*\\n]+\\*[ \\t]*$\\n?)?`, 'im'),
+    '');
+  }
+  if (tagline) {
+    out = out.replace(new RegExp(`^\\*${escape(tagline)}\\*[ \\t]*$\\n?`, 'im'), '');
+  }
+  return out;
+}
+
 /** Return just the first few paragraphs of a chapter essay, stripped of headings. */
 export function getProseExcerpt(md: string, maxParagraphs = 2): string {
   const cleaned = cleanProse(md);

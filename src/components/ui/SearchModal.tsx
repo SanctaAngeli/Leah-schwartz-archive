@@ -13,9 +13,18 @@ import type { Artwork, Location, Theme } from '../../types';
 const artworks = artworksData as Artwork[];
 const locations = locationsData as Location[];
 const themes = themesData as Theme[];
-const people = peopleData as any[];
-const places = placesData as any[];
-const subjects = subjectsData as any[];
+interface IndexEntity {
+  id: string;
+  name: string;
+  display_name?: string;
+  parenthetical?: string | null;
+  region?: string;
+  artwork_ids?: string[];
+}
+
+const people = peopleData as IndexEntity[];
+const places = placesData as IndexEntity[];
+const subjects = subjectsData as IndexEntity[];
 
 interface SearchResult {
   type: 'artwork' | 'location' | 'theme' | 'page' | 'person' | 'place' | 'subject' | 'prose';
@@ -44,13 +53,23 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
 
     // Add pages
     results.push(
-      { type: 'page', id: 'home', title: 'Home', subtitle: 'Her story, in scroll', path: '/' },
-      { type: 'page', id: 'gallery', title: 'Gallery', subtitle: 'Browse all works', path: '/gallery' },
+      { type: 'page', id: 'home', title: 'Home', subtitle: 'The front door', path: '/' },
+      { type: 'page', id: 'canvas', title: 'Canvas', subtitle: 'All 267 paintings, one drifting wall', path: '/canvas' },
+      { type: 'page', id: 'themes', title: 'Gallery', subtitle: 'The 12 chapters of her book', path: '/themes' },
       { type: 'page', id: 'her-words', title: "Leah's Story", subtitle: 'Autobiography + chapter essays', path: '/her-words' },
-      { type: 'page', id: 'themes', title: 'Themes', subtitle: 'The 12 chapters of her book', path: '/themes' },
+      { type: 'page', id: 'daily', title: 'Painting of the Day', subtitle: 'A daily ritual', path: '/daily' },
+      { type: 'page', id: 'atlas', title: 'Color Atlas', subtitle: 'A lifetime in color', path: '/atlas' },
+      { type: 'page', id: 'obsessions', title: 'Obsessions', subtitle: 'The subjects she returned to', path: '/obsessions' },
+      { type: 'page', id: 'at-her-age', title: 'At Her Age', subtitle: 'Her life and work, year by year', path: '/at-her-age' },
+      { type: 'page', id: 'pairings', title: 'Pairings', subtitle: 'Curated diptychs', path: '/pairings' },
+      { type: 'page', id: 'last-paintings', title: 'The Last Paintings', subtitle: 'A quiet room · 2002-2004', path: '/last-paintings' },
+      { type: 'page', id: 'constellation', title: 'Constellation', subtitle: 'The mind of the archive', path: '/constellation' },
+      { type: 'page', id: 'walk', title: 'Walk With Her', subtitle: 'A guided drift through her career', path: '/walk' },
+      { type: 'page', id: 'studio', title: 'Studio', subtitle: 'Her tools, process, philosophy', path: '/studio' },
+      { type: 'page', id: 'studio-visit', title: 'Studio Visit, 1985', subtitle: 'An afternoon at her easel', path: '/studio-visit' },
       { type: 'page', id: 'places', title: 'Places', subtitle: 'Where she painted', path: '/places' },
       { type: 'page', id: 'index', title: 'Index', subtitle: 'Her own back-of-book index', path: '/index' },
-      { type: 'page', id: 'timeline', title: 'Timeline', subtitle: 'Chronological view', path: '/timeline' },
+      { type: 'page', id: 'life', title: 'A Life in Chapters', subtitle: 'Eight eras, photos and paintings', path: '/life' },
       { type: 'page', id: 'favorites', title: 'Favorites', subtitle: 'Your saved artworks', path: '/favorites' },
       { type: 'page', id: 'about', title: 'About Leah', subtitle: 'Who she was', path: '/about' }
     );

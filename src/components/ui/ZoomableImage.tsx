@@ -122,7 +122,7 @@ function ZoomableImage({
 
   // Double-tap to zoom
   const lastTap = useRef<number>(0);
-  const handleDoubleTap = useCallback((_e: React.MouseEvent | React.TouchEvent) => {
+  const handleDoubleTap = useCallback(() => {
     const now = Date.now();
     if (now - lastTap.current < 300) {
       // Double tap detected

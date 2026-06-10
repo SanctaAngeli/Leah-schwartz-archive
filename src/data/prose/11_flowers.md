@@ -26,7 +26,7 @@ fun. When I was a kid I thought I was the only Leah in the world.
 
 <!-- page 208 -->
 
-WHITE IRIS WITH SAN FRANCISCO SKYLINE, 1 415
+WHITE IRIS WITH SAN FRANCISCO SKYLINE
 
 <!-- page 216 -->
 
@@ -34,20 +34,18 @@ CHARLIE'S ROSES, 15x17 (collection of Bill Niman)
 
 <!-- page 217 -->
 
-iv
 PALE BLUE IRIS
 
 <!-- page 219 -->
 
-WILD BRONZE IRIS, 1 lx1 6
+WILD BRONZE IRIS, 11x16
 
 <!-- page 225 -->
 
-TULIPS AND IRIS, 1 1 xl 5 (collection of Russ Crider)
+TULIPS AND IRIS, 11x15 (collection of Russ Crider)
 
 <!-- page 228 -->
 
-;
 PEACH IRIS WITH UKIYO-E, 15x22 (collection of Joanna Cassidy)
 
 <!-- page 229 -->
@@ -56,21 +54,14 @@ TALL BRONZE IRIS IN A THICKET, 18x25 (early stage), (collection of Shannon and R
 
 <!-- page 231 -->
 
-PURPLE IRIS, 1 4x1 7 (collection of Drs. Dorothee & Phil Perloff)
+PURPLE IRIS, 14x17 (collection of Drs. Dorothee & Phil Perloff)
 
 <!-- page 232 -->
 
-ORNATE PURPLE IRIS, 1 1 xl 1 (collection of Betty and Alex Shrift)
+ORNATE PURPLE IRIS, 11x11 (collection of Betty and Alex Shrift)
 
 <!-- page 233 -->
 
-•
-pi
-?.‘
-FRAGRANT LILIES, 1 1 xl 4
-SCABIOSA WITH NATHAN'S BOOK, 1 Oxl 5 (collection of N. & E. Adler)
-A birthday "card"for Nathan
-..).
-c3:1
-•• 41 .074 1 *W. ■■• - • • •• • • • - •
-°
+FRAGRANT LILIES, 11x14
+SCABIOSA WITH NATHAN'S BOOK, 10x15 (collection of N. & E. Adler)
+A birthday "card" for Nathan

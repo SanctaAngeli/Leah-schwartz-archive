@@ -17,6 +17,3 @@ and I don't worship paint for its own sake so I resumed painting what I
 truly love: the real, funny, beautiful, ironic visual world.
 
 <!-- page 51 -->
-
-It! •
-, -•4

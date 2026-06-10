@@ -19,16 +19,28 @@ const artworks = artworksData as Artwork[];
 const places = placesData as Array<{ id: string; name: string; artwork_ids?: string[] }>;
 const people = peopleData as Array<{ id: string; name: string; display_name?: string; artwork_ids?: string[]; book_pages?: number[] }>;
 
-/** Search chapter prose for a paragraph that mentions this artwork's title. */
+/** A paragraph that is mostly capitals is a catalog-caption block from the
+ *  book scan ("JEANETTE, 1936-37 watercolor, 3x7"), not her prose - showing
+ *  it under "In Leah's own words" reads as a glitch. */
+function isCaptionDump(p: string): boolean {
+  const letters = p.replace(/[^a-zA-Z]/g, '');
+  if (!letters) return true;
+  const upper = letters.replace(/[^A-Z]/g, '');
+  return upper.length / letters.length > 0.35;
+}
+
 function findProseMention(artwork: Artwork): { paragraph: string; chapterSlug: string; sectionLabel: string } | null {
   if (!artwork.chapter) return null;
   const prose = getProseByChapter(artwork.chapter);
   if (!prose) return null;
   const body = cleanProse(prose.markdown);
   const title = artwork.title.toUpperCase();
-  const paragraphs = body.split(/\n\s*\n+/).map((p) => p.trim()).filter(Boolean);
+  const paragraphs = body
+    .split(/\n\s*\n+/)
+    .map((p) => p.trim())
+    .filter((p) => p.length > 40 && !isCaptionDump(p));
   for (const p of paragraphs) {
-    if (p.length > 40 && p.toUpperCase().includes(title)) {
+    if (p.toUpperCase().includes(title)) {
       return { paragraph: p, chapterSlug: prose.id, sectionLabel: prose.label };
     }
   }
@@ -36,7 +48,7 @@ function findProseMention(artwork: Artwork): { paragraph: string; chapterSlug: s
   if (words.length >= 2) {
     const needle = (words[0] + ' ' + words[1]).toUpperCase();
     for (const p of paragraphs) {
-      if (p.length > 40 && p.toUpperCase().includes(needle)) {
+      if (p.toUpperCase().includes(needle)) {
         return { paragraph: p, chapterSlug: prose.id, sectionLabel: prose.label };
       }
     }
@@ -62,7 +74,12 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
   const artwork = artworks.find((a) => a.id === artworkId);
 
   // Panel toggle (press `I` to hide chrome and just see the painting)
-  const [panelOpen, setPanelOpen] = useState(true);
+  // On phones the info panel is a full-screen sheet, so opening it by default
+  // would hide the painting itself; it starts open only where it can sit beside
+  // the art.
+  const [panelOpen, setPanelOpen] = useState<boolean>(
+    () => typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches
+  );
   const [postcardOpen, setPostcardOpen] = useState(false);
 
   // Zoom + pan state

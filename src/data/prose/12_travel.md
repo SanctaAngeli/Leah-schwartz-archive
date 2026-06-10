@@ -5,7 +5,6 @@
 
 <!-- page 236 -->
 
-TRAVEL
 I used to be so petrified at the thought of flying that all I could
 manage was to go on every other overseas trip with my travel-obsessed
 husband. From the day I knew our departure date I was sick with
@@ -25,7 +24,8 @@ books.
 
 <!-- page 237 -->
 
-FRANCE
+## FRANCE
+
 We have, at various times, travelled through the Loire Valley, Brittany,
 the Auvergne, Burgundy, Normandy, Bordeaux, the Riviera and a bit of
 the French Alps, and loved it all. We seem to be on the move most of the
@@ -109,9 +109,6 @@ splendid panorama of Paris.
 
 <!-- page 238 -->
 
-• . ,
-+111111411611.
-511111..
 BRITTANY, 5x7. At the upper right is a glimpse of the classic
 Brittany house, two stories, peaked black roof
 and white stucco walls. Very localized,
@@ -120,19 +117,6 @@ HOTEL BONBONNIERE, 6x8. In the town of Talant, on
 a butte overlooking the city of Dijon.
 
 <!-- page 239 -->
-
-- 1 L
-ti_I
-E
-tTI
-th
-.e, al
-,
-_ __fi
-t
-_
--
-■ Mals••• -.0.11.111011111■••-a.-
 
 <!-- page 240 -->
 
@@ -151,7 +135,8 @@ of life on the main street of this boat-shaped island.
 
 <!-- page 242 -->
 
-ITALY
+## ITALY
+
 September 7, 1974, Monday noon. Mill Valley-Oakland by car.
 Oakland-Bangor-Gatwick by plane. Gatwick-Victoria Station-Dover by
 train. Dover to Calais by boat in a force ten gale. Calais-Paris by train.
@@ -177,7 +162,7 @@ the evening promenade while the others explore the town. M&H bring
 Alfred Frankenstein (The Art Historian and art critic of the San Francisco
 Chronicle) back to have dinner with us. He doesn't want to talk art with
 Maggie and me but doctor stuff with Herman.
-ARE ZZO:
+AREZZO:
 (M&H in Rome for a few days.) Herman and I stayed at the Chiave
 D'Oro on the Piazza San Francesca, next to a shabby, plain old church.
 We dutifully looked inside, thinking it would be grand and glorious
@@ -201,7 +186,7 @@ in the backgrounds of Renaissance paintings. It is small, set upon its
 west-facing hill with the church, monastery, and tomb of St. Francis at the
 north end like a prow, and the church and tomb of St. Clare at the stern.
 St. Clare's body lies on display in a grotto under her church. With the
-help of my opera glasses, I could see the bones ofher face through a mask
+help of my opera glasses, I could see the bones of her face through a mask
 of black wire mesh. The glasses were snatched from my hand by a barrel-
 shaped woman in a flowered dress who then passed them on to a coven
 of pungent nuns who looked and exclaimed, and grabbed the glasses from
@@ -289,25 +274,10 @@ live off the land.
 
 <!-- page 246 -->
 
-ft, _ "EP: ■.•
-r"
-r- 0- 0- re■
-•
-•
-,.p..4-7
-,..,„„ ,...... .._ z 1 Ir....,
-----...
-..........,.
-an- --":#,-- ' l' ir
-, 4-
---,:i
-.A. • .. es,- ,- -.. - A ,...
-. - : t... .
 CHURCH AND WALL, GELLO, 5x8. The wall was an archeological midden.
 It was made of dressed limestone, rough limestone, alabaster
 fragments, bits of crockery and statuary, and
 whatever else the builders had at hand.
-A Y‘
 
 <!-- page 247 -->
 
@@ -315,13 +285,13 @@ SAN TERENZO, ITALIAN RIVIERA, 5x8. Where the poet Shelly was drowned.
 
 <!-- page 248 -->
 
--0 -44)444W-Allsok,41 •
 VERONA, 5x8. Had dinner under the green awning
 with Alfred Frankenstein and the Rosens.
 
 <!-- page 250 -->
 
-GREECE
+## GREECE
+
 My friend Linda Pearman asked me if I would conduct a painting
 workshop in Spain or Portugal. "How about the Greek Islands?" I asked.
 Linda said "OK, which one?" Crete... too big. Mykanos... too small.
@@ -371,7 +341,8 @@ The sign on the building reads:
 
 <!-- page 256 -->
 
-JAPAN
+## JAPAN
+
 We traveled to Japan with a group of good friends who turned out to
 be the jolliest of travel companions. Bill Wilson and Ed Smalle collect and
 sell Japanese antiques and go to Japan frequently, so this was a unique
@@ -409,7 +380,7 @@ raw whelks (feh!), fish soup, raw squid, tofu custard, and rice soup, each
 "course" served in a unique and beautiful dish.
 The next morning I went out at 6a.m., sat on a curbstone and painted
 a street scene until stiff with cold. After breakfast we took the fast, quiet,
-spotlessShinkansen (Bullet Train) to Nagoya where we changed trains for
+spotless Shinkansen (Bullet Train) to Nagoya where we changed trains for
 Takayama. I had a box lunch (Obento) consisting of rice balls, a tiny grilled
 fish, a piece of chicken, pickles, and a perfect whole baby octopus in an
 exquisite, paper-thin, compartmented wooden box.
@@ -440,7 +411,8 @@ Love and kisses, Leah
 
 <!-- page 264 -->
 
-TURKEY
+## TURKEY
+
 We toured Turkey in 1985 in two rented cars with our friends the
 Perloffs, Aulls, and Klausenstocks.
 The first impression of Istanbul is of a rather sooty, crumbly, broken-
@@ -470,7 +442,7 @@ runner's return trip.
 We ate in narrow storefront restaurants with window displays of baking
 pans filled with savory-looking food: stuffed eggplants, peppers and
 squashes, meat balls in brown sauce, white beans in paprika sauce, mutton
-stew, bulgur pilaf, rice pilaf, cacik (pronouncedzhahzheek, cucumber and
+stew, bulgur pilaf, rice pilaf, cacik (pronounced zhahzheek, cucumber and
 yoghurt soup), kebabs, salads, and flaky-sticky desserts. The bread in
 Turkey is sensational. Oh yes, we also saw Topkapi and many mosques.
 The Turks seemed very friendly and honest. In Istanbul we were chased
@@ -527,12 +499,11 @@ saucers.
 
 <!-- page 267 -->
 
-elb-a■ - #••111411134 16 4S -p- , .-dr Ivor
 A view of the sea and a marble-chip floor of surpassing ugliness.
 We had a delicious meal under a crystal chandelier
 in the gas station next door.
 THE PARK HOTELI, 5x8. This was an El Cheapo, with bath down the hall
-that reminded me of some of Mexico's "finest." Everythingleaked,
+that reminded me of some of Mexico's "finest." Everything leaked,
 ingoing and outgoing. It was the only place in town, a large private
 home turned into a tacky Hotel. We drank Raki, sat on the
 crumbling balcony, and laughed alot.
@@ -551,7 +522,6 @@ ciffside, the rooms small but appealing with creamy, bare limestone walls,
 carved alcoves and vaulted ceiling. We could see across the canyon,
 with it's unique limestone formations, to the village of Uchisar
 where many of the houses are also carved out of the marl.
-rf
 I missed my chance to paint the mountains in the
 exquisite evening light - so 6.a.m. had to do.
 
@@ -565,7 +535,8 @@ the muezzin and the cuckoo.
 
 <!-- page 272 -->
 
-INDIA
+## INDIA
+
 February 1986. We (and Judy and Oskar Klausenstock and Phil Perloff)
 arrived in Delhi at 3a.m. The airport was cold and grey with no one inside
 the building except the passengers from our flight (tight security). Near
@@ -597,19 +568,14 @@ lit up the sky in celebration of India's Independence Day.
 
 <!-- page 275 -->
 
-&
-; etpri
-%.,, l i r 0,
-1 ))
-v.14.4 ;7071: • C ,
-AKISI \INC
 SIDE STREET, WOMAN AND PIG, 23x30. I loved seeing animals everywhere. On an ordinary street you see
 cows, pigs, chickens, peacocks, camels, buffalos, dogs, cats, goats, monkeys, mongooses and cobras
 (in baskets). The cow dung is instantly gathered up and plastered against a wall to dry for fuel.
 
 <!-- page 278 -->
 
-NEPAL
+## NEPAL
+
 We flew to Katmandu after a long delay in the Varanesi (Benares)
 airport. The next day we were driven to Chitawan where we slept in tents,
 rode elephants into tall grass to look at rhinos, walked with a guide
@@ -631,7 +597,8 @@ it's haute cuisine.)
 
 <!-- page 282 -->
 
-BOTANIZING IN KENYA
+## BOTANIZING IN KENYA
+
 We were met at the Nairobi airport by tall, handsome Gilfrid Powys
 whom we knew only through correspondence. He and his wife Patricia are
 avid and knowledgeable botanizers, and had corresponded with Herman
@@ -642,9 +609,9 @@ and photographer) to his Rumuruti ranch in his four-seater Cherokee. We
 flew over coffee and tea plantations, herds of elephants, and the river from
 which the ranch gets its water. Patricia very kindly made us welcome,
 though barely recovered from their daughter Anne's great wedding bash.
-LE 1 IER FROM RUMURUTI:
+LETTER FROM RUMURUTI:
 Dear Helen and Davy,
-Pm sitting in our little guest cottage surrounded by hundreds of miles
+I'm sitting in our little guest cottage surrounded by hundreds of miles
 of wilderness. We're at the Powys' home base on the top of a red granite
 escarpment above a river from which the red silty bathwater is pumped.
 The main house, surrounded by broad rough lawns, has a wide veranda
@@ -666,7 +633,7 @@ captured and held prisoner by the Ethiopian border patrol.
 Yesterday we came back from a three day trip to Samburu. All six of
 us drove up in a rugged 4wd Toyota "land rover," over back country dirt
 roads, through herds of antelope, gazelle, elephants and giraffes. Some
-areas were so devastated by .over-grazing (too many cattle) that whole
+areas were so devastated by over-grazing (too many cattle) that whole
 stretches of road were lost to erosion and we had to detour around great
 gullies and crevices.
 The plant collectors went bonkers over little treasures growing under
@@ -699,12 +666,12 @@ safari-ing (safari merely means "on the move"). The rover and truck are
 loaded with food, drink, shovels and spare tires and off we go, driving for
 hours through the bush, stopping now and then to change a tire or collect
 a plant, detour around a mud wallow via a path cut through the bush by
-Gilfrid and his powerfulpangs. The truck got stuck in little stream
+Gilfrid and his powerful pangas. The truck got stuck in little stream
 between two steep banks with fresh lion tracks in the mud. While Gilfrid,
 Herman, Anne and her husband, Ron, Sue and a friend worked on getting
 the truck out, Lali, Sue's five-year-old daughter, played happily in the
 stream. It took three hours to get the truck out. In the meantime, Anne lit
-the charcoal and when it started to rain we moved the grill to a little but
+the charcoal and when it started to rain we moved the grill to a little hut
 near the pumping station. The rain didn't last long, so we soon had the
 Kudu Kebabs ready and had a hilarious picnic of Kudu Kebabs, fruit,
 salad, cheese, bread, pickles, chutney and beer sitting in the middle of a
@@ -746,7 +713,8 @@ crocodiles to this isolated lake.
 
 <!-- page 286 -->
 
-BRITAIN
+## BRITAIN
+
 We have been to England many times and Scotland once. I've put up
 with a lot of cold in order to paint a scene, but I haven't figured out a way
 to paint watercolors in the rain, so I have few sketches of these beautiful
@@ -756,7 +724,6 @@ drab. The last time I was in England I came home with pneumonia.
 
 <!-- page 287 -->
 
-•c
 This was painted with rainwater from a hollow in a stone slab.
 
 <!-- page 289 -->
@@ -777,14 +744,15 @@ THE DUKE OF BEDFORD'S RHINO, 11x15. A birthday "card" for Herman.
 
 <!-- page 292 -->
 
-DESERT
+## DESERT
+
 I've never had enough time to paint in the desert as we are always just
 passing through, the temperature is 120 degrees in the shade and there is
 no shade.
 
 <!-- page 294 -->
 
-NEAR NOGALES, ARIZONA, 9x1 2. The base of the mountain was a network of ghost streets, left by an over-optimistic land developer.
+NEAR NOGALES, ARIZONA, 9x12. The base of the mountain was a network of ghost streets, left by an over-optimistic land developer.
 
 <!-- page 296 -->
 

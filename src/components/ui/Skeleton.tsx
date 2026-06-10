@@ -96,30 +96,6 @@ export function SkeletonGrid({ count = 6, columns = 3, className = '' }: Skeleto
   );
 }
 
-// Era pile skeleton for landing page
-export function SkeletonEraPile(): JSX.Element {
-  return (
-    <div className="space-y-4 animate-pulse" aria-hidden="true">
-      <div className="text-center">
-        <div className="h-8 bg-gray-200 rounded w-40 mx-auto mb-2" />
-        <div className="h-4 bg-gray-200 rounded w-24 mx-auto" />
-      </div>
-      <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4]">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="absolute inset-0 bg-gray-200 rounded-xl"
-            style={{
-              transform: `translateX(${i * 4}px) translateY(${-i * 8}px) rotate(${(i - 1) * 2}deg)`,
-              zIndex: 3 - i,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 // Navigation pill skeleton
 export function SkeletonNav(): JSX.Element {
   return (

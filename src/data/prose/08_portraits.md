@@ -30,7 +30,6 @@ JOEY, 16x16 (collection of Iris Roth)
 
 <!-- page 148 -->
 
-/AIL
 RICHARD, 16x16 (collection of Drs. Dorothee and Phillip Perloff)
 
 <!-- page 153 -->
@@ -39,7 +38,7 @@ SELF PORTRAIT (with floating flowers), 10x14
 
 <!-- page 154 -->
 
-SELF PORTRAIT WITH VLADIMIR, 1 Oxl 4 (collection of N.& E. Adler)
+SELF PORTRAIT WITH VLADIMIR, 10x14 (collection of N.& E. Adler)
 
 <!-- page 156 -->
 
@@ -48,7 +47,7 @@ on SELF PORTRAIT WITH BEVELLED MIRROR).
 Dear Judy,
 I keep thinking about you, in your snug cottage, surrounded by frozen
 rocky shores ...It sounds very satisfying to me. I love the idea of spareness
-and simplicity, yet I surround myself withglut and complications. I've
+and simplicity, yet I surround myself with glut and complications. I've
 worked myself into a corner of my bedroom (after glutting-up my studio)
 with my books and typewriter on the right and work table and watercolors
 next to the window through which I can see the bay and San Francisco.
@@ -70,5 +69,3 @@ LISA, 12x16 (collection of N.& E. Adler)
 JUDY, 10x13 (collection of N. & E. Adler)
 
 <!-- page 159 -->
-
-40,

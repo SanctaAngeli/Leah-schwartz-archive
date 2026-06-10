@@ -115,6 +115,21 @@ function PlaceDetail({ place }: { place: Place }): JSX.Element {
   );
 }
 
+// The place list is static module data, so the region grouping is computed
+// once at module scope (no hook needed - and hooks can't follow the detail
+// view's early returns).
+const groupedByRegion: Record<string, Place[]> = (() => {
+  const g: Record<string, Place[]> = {};
+  places.forEach((p) => {
+    const key = p.region || 'other';
+    (g[key] ||= []).push(p);
+  });
+  Object.keys(g).forEach((k) => {
+    g[k].sort((a, b) => a.name.localeCompare(b.name));
+  });
+  return g;
+})();
+
 function PlacesPage(): JSX.Element {
   const { placeId } = useParams();
   usePageMeta(placeId ? '' : 'Places', 'Every place Leah Schwartz painted, across nine countries · from Mt. Tam to Naxos.');
@@ -135,19 +150,7 @@ function PlacesPage(): JSX.Element {
     return <PlaceDetail place={place} />;
   }
 
-  // Grouped list
-  const grouped = useMemo(() => {
-    const g: Record<string, Place[]> = {};
-    places.forEach((p) => {
-      const key = p.region || 'other';
-      (g[key] ||= []).push(p);
-    });
-    Object.keys(g).forEach((k) => {
-      g[k].sort((a, b) => a.name.localeCompare(b.name));
-    });
-    return g;
-  }, []);
-
+  const grouped = groupedByRegion;
   const geocodedPlaces = places.filter((p) => p.lat != null && p.lng != null);
 
   return (

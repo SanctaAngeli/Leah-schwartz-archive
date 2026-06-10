@@ -394,9 +394,15 @@ function CanvasHint(): JSX.Element | null {
         px-4 py-2 rounded-full border border-white/40 shadow-[0_4px_18px_rgba(0,0,0,0.06)]
         transition-opacity duration-500"
     >
-      Drag to drift · Pinch or ⌘+scroll to zoom · Click any piece
+      {isTouchDevice()
+        ? 'Drag to drift · Pinch to zoom · Tap any piece'
+        : 'Drag to drift · Pinch or ⌘+scroll to zoom · Click any piece'}
     </div>
   );
+}
+
+function isTouchDevice(): boolean {
+  return typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 }
 
 export default InfiniteCanvas;

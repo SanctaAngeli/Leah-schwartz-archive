@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 import PlaceholderArtwork from '../components/ui/PlaceholderArtwork';
 import artworksData from '../data/artworks.json';
 import themesData from '../data/themes.json';
-import { getProseByChapter, cleanProse } from '../data/prose';
+import { getProseByChapter, cleanProse, stripRedundantChapterHeader } from '../data/prose';
 import { linkArtworkMentions } from '../data/proseLinker';
 import { getAccent } from '../data/chapterAccents';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -70,6 +70,9 @@ function ThemesPage(): JSX.Element {
               const count = theme.artworkCount ?? artworks.filter((a) =>
                 a.chapter === theme.id || a.themes.includes(theme.id)
               ).length;
+              // The autobiography chapter has no paintings - it's her life story,
+              // so its card opens the reader instead of an empty room.
+              const isAutobiography = theme.id === 'autobiography';
 
               return (
                 <motion.div
@@ -77,36 +80,44 @@ function ThemesPage(): JSX.Element {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.06 }}
-                  className="group cursor-pointer"
-                  onClick={() => navigate(`/themes/${theme.id}`)}
                 >
-                  <div
-                    className="relative overflow-hidden rounded-2xl shadow-soft group-hover:shadow-glass transition-shadow duration-500 aspect-[4/3]"
-                    style={{ backgroundColor: heroArtwork?.placeholderColor || '#9B8B7A' }}
+                  <Link
+                    to={isAutobiography ? '/her-words/autobiography' : `/themes/${theme.id}`}
+                    className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355]/50 rounded-2xl"
                   >
-                    {heroArtwork?.imagePath && (
-                      <img
-                        src={heroArtwork.thumbPath || heroArtwork.imagePath}
-                        alt={theme.name}
-                        loading="lazy"
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h2 className="font-heading text-2xl md:text-3xl text-white drop-shadow-md">
-                        {theme.name}
-                      </h2>
-                      {theme.tagline && (
-                        <p className="font-leah text-white/90 mt-1 text-2xl leading-none drop-shadow">
-                          {theme.tagline}
-                        </p>
+                    <div
+                      className="relative overflow-hidden rounded-2xl shadow-soft group-hover:shadow-glass transition-shadow duration-500 aspect-[4/3]"
+                      style={{ backgroundColor: heroArtwork?.placeholderColor || '#9B8B7A' }}
+                    >
+                      {/* Slight permanent zoom crops out the scanned book-page
+                          margins (white slabs + printed captions) baked into the
+                          image files until the assets are properly re-cropped. */}
+                      {heroArtwork?.imagePath && (
+                        <img
+                          src={heroArtwork.thumbPath || heroArtwork.imagePath}
+                          alt={theme.name}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover scale-[1.08] transition-transform duration-700 group-hover:scale-[1.12]"
+                        />
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h2 className="font-heading text-2xl md:text-3xl text-white drop-shadow-md">
+                          {theme.name}
+                        </h2>
+                        {theme.tagline && (
+                          <p className="font-leah text-white/90 mt-1 text-2xl leading-none drop-shadow">
+                            {theme.tagline}
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <p className="font-body text-text-muted text-sm mt-3 px-1">
-                    {count} {count === 1 ? 'work' : 'works'}
-                  </p>
+                    <p className="font-body text-text-muted text-sm mt-3 px-1">
+                      {isAutobiography
+                        ? 'Her life, in her own words →'
+                        : `${count} ${count === 1 ? 'work' : 'works'}`}
+                    </p>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -161,8 +172,18 @@ function ThemesPage(): JSX.Element {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  h1: () => null,       // hide the chapter title (already shown above)
-                  h2: () => null,       // and section heading (we show tagline separately)
+                  h1: () => null, // chapter title is already the page header
+                  // Interior headings (the travel chapter's region names) render
+                  // as quiet small-caps dividers; the chapter's own name/tagline
+                  // are stripped from the source before rendering.
+                  h2: ({ children }) => (
+                    <h2
+                      className="font-body text-[13px] tracking-[0.3em] uppercase mt-12 mb-5 text-center"
+                      style={{ color: accent.accent }}
+                    >
+                      {children}
+                    </h2>
+                  ),
                   em: ({ children }) => <em className="italic text-text-muted">{children}</em>,
                   p: ({ children }) => (
                     <p className="mb-5 text-text-primary">{children}</p>
@@ -181,7 +202,13 @@ function ThemesPage(): JSX.Element {
                     ),
                 }}
               >
-                {linkArtworkMentions(cleanProse(chapterProse.markdown))}
+                {linkArtworkMentions(
+                  stripRedundantChapterHeader(
+                    cleanProse(chapterProse.markdown),
+                    selectedTheme.name,
+                    selectedTheme.tagline
+                  )
+                )}
               </ReactMarkdown>
             </div>
             <div className="mt-8 text-center">
@@ -210,24 +237,27 @@ function ThemesPage(): JSX.Element {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.6) }}
-                  className="group cursor-pointer"
-                  onClick={() => navigate(`/artwork/${artwork.id}`)}
                 >
-                  <PlaceholderArtwork
-                    src={artwork.thumbPath || artwork.imagePath}
-                    alt={artwork.title}
-                    color={artwork.placeholderColor}
-                    aspectRatio={artwork.aspectRatio}
-                    className="shadow-soft group-hover:shadow-glass mb-3"
-                  />
-                  <h3 className="font-body text-sm text-text-primary truncate">
-                    {artwork.display_title || artwork.title}
-                  </h3>
-                  {artwork.dimensions && (
-                    <p className="font-body text-xs text-text-muted">
-                      {artwork.dimensions}
-                    </p>
-                  )}
+                  <Link
+                    to={`/artwork/${artwork.id}`}
+                    className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355]/50 rounded-lg"
+                  >
+                    <PlaceholderArtwork
+                      src={artwork.thumbPath || artwork.imagePath}
+                      alt={artwork.title}
+                      color={artwork.placeholderColor}
+                      aspectRatio={artwork.aspectRatio}
+                      className="shadow-soft group-hover:shadow-glass mb-3"
+                    />
+                    <h3 className="font-body text-sm text-text-primary truncate">
+                      {artwork.display_title || artwork.title}
+                    </h3>
+                    {artwork.dimensions && (
+                      <p className="font-body text-xs text-text-muted">
+                        {artwork.dimensions}
+                      </p>
+                    )}
+                  </Link>
                 </motion.div>
               ))}
             </div>

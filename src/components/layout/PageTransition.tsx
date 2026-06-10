@@ -8,6 +8,10 @@ interface PageTransitionProps {
 function PageTransition({ children }: PageTransitionProps): JSX.Element {
   return (
     <motion.div
+      // relative, not static: scroll-linked animations inside pages (useScroll
+      // with a target) measure against the nearest positioned ancestor, and
+      // this wrapper is transformed during the page transition.
+      className="relative"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -20 }}

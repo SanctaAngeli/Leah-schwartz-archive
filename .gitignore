@@ -28,3 +28,4 @@ npm-debug.log*
 
 # Local scratch: Nano Banana reference images (duplicates of public/ assets)
 nano-banana-studio/
+.claude/worktrees/

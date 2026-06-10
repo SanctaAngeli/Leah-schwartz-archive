@@ -22,7 +22,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }): JSX.El
         if (saved) {
           return JSON.parse(saved);
         }
-      } catch (e) {
+      } catch {
         console.warn('Failed to load favorites from localStorage');
       }
     }
@@ -33,7 +33,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }): JSX.El
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
-    } catch (e) {
+    } catch {
       console.warn('Failed to save favorites to localStorage');
     }
   }, [favorites]);

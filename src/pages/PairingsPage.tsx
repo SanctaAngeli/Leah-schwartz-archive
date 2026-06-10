@@ -172,9 +172,13 @@ export default function PairingsPage(): JSX.Element {
   const { pairingId } = useParams();
   const pairing = pairingId ? PAIRINGS.find((p) => p.id === pairingId) : null;
 
-  if (pairingId && pairing) return <PairingDetail pairing={pairing} />;
+  // Hook runs unconditionally (rules of hooks); PairingDetail sets its own meta.
+  usePageMeta(
+    pairing ? `${pairing.title} · Pairings` : 'Pairings',
+    'Curated diptychs and triptychs from Leah Schwartz\'s work · editorial pairings across chapters and years.'
+  );
 
-  usePageMeta('Pairings', 'Curated diptychs and triptychs from Leah Schwartz\'s work · editorial pairings across chapters and years.');
+  if (pairingId && pairing) return <PairingDetail pairing={pairing} />;
 
   return (
     <main className="min-h-screen pt-24 pb-24 px-6">

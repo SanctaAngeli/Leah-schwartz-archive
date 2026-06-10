@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
 // A single-color watercolor wash. One chapter accent (e.g. ABSTRACT's deep
@@ -139,7 +139,20 @@ function lightenedPaper(hex: string): string {
 
 function ShaderQuad({ accent, reducedMotion }: { accent: string; reducedMotion: boolean }): JSX.Element {
   const matRef = useRef<THREE.ShaderMaterial>(null);
+  const invalidate = useThree((s) => s.invalidate);
   const paperHex = useMemo(() => lightenedPaper(accent), [accent]);
+
+  // Demand-driven ~25fps pacing — see WatercolorShader for the rationale.
+  useEffect(() => {
+    if (reducedMotion) {
+      invalidate();
+      return;
+    }
+    const id = window.setInterval(() => {
+      if (!document.hidden) invalidate();
+    }, 40);
+    return () => window.clearInterval(id);
+  }, [reducedMotion, invalidate]);
   const uniforms = useMemo(
     () => ({
       u_time:       { value: 0 },
@@ -156,8 +169,9 @@ function ShaderQuad({ accent, reducedMotion }: { accent: string; reducedMotion: 
     if (matRef.current) {
       matRef.current.uniforms.u_paper.value.set(paperHex);
       matRef.current.uniforms.u_accent.value.set(accent);
+      invalidate();
     }
-  }, [accent, paperHex]);
+  }, [accent, paperHex, invalidate]);
 
   useFrame((state) => {
     if (!matRef.current) return;
@@ -201,8 +215,8 @@ function AccentWashShader({ accent }: AccentWashShaderProps): JSX.Element {
       <Canvas
         orthographic
         camera={{ position: [0, 0, 1], zoom: 1, near: 0.1, far: 10 }}
-        dpr={[1, 2]}
-        frameloop="always"
+        dpr={1}
+        frameloop="demand"
         gl={{ antialias: false, alpha: false, powerPreference: 'low-power' }}
         style={{ width: '100%', height: '100%', display: 'block' }}
       >

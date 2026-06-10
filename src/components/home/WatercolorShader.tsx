@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
 // A fullscreen GLSL backdrop. Three pigment blobs drift and breathe across
@@ -133,6 +133,23 @@ const PIGMENT_SAND  = '#E2CFB7';  // pale warm sand · no longer reads as orange
 
 function ShaderQuad({ reducedMotion }: { reducedMotion: boolean }): JSX.Element {
   const matRef = useRef<THREE.ShaderMaterial>(null);
+  const invalidate = useThree((s) => s.invalidate);
+
+  // The wash drifts so slowly that ~25fps is indistinguishable from 60.
+  // Demand-driven frames (instead of frameloop="always") cut the GPU work
+  // by more than half and stop entirely while the tab is hidden.
+  // Reduced motion renders one static frame and stays still.
+  useEffect(() => {
+    if (reducedMotion) {
+      invalidate();
+      return;
+    }
+    const id = window.setInterval(() => {
+      if (!document.hidden) invalidate();
+    }, 40);
+    return () => window.clearInterval(id);
+  }, [reducedMotion, invalidate]);
+
   const uniforms = useMemo(
     () => ({
       u_time:       { value: 0 },
@@ -187,8 +204,8 @@ function WatercolorShader(): JSX.Element {
       <Canvas
         orthographic
         camera={{ position: [0, 0, 1], zoom: 1, near: 0.1, far: 10 }}
-        dpr={[1, 2]}
-        frameloop="always"
+        dpr={1}
+        frameloop="demand"
         gl={{ antialias: false, alpha: false, powerPreference: 'low-power' }}
         style={{ width: '100%', height: '100%', display: 'block' }}
       >

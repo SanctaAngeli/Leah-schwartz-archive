@@ -39,7 +39,7 @@ function ShareButton({ title, text, url }: ShareButtonProps): JSX.Element {
           url: shareUrl,
         });
         setIsOpen(false);
-      } catch (err) {
+      } catch {
         // User cancelled or error
       }
     }
@@ -54,7 +54,7 @@ function ShareButton({ title, text, url }: ShareButtonProps): JSX.Element {
         setCopied(false);
         setIsOpen(false);
       }, 1500);
-    } catch (err) {
+    } catch {
       console.error('Failed to copy');
     }
   };

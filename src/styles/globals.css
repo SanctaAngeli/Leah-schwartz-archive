@@ -65,6 +65,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Non-static so scroll-linked animations (Framer useScroll with a target)
+     can resolve offsets against the documentElement, their default container. */
+  position: relative;
 }
 
 body {

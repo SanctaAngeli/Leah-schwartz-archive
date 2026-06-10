@@ -17,7 +17,7 @@ natural growth removed. My friend Linda Pearman once brought me a
 bouquet of home-grown golden onions with long, dried tops - gorgeous.
 I painted 5 or 6 watercolors of them; two are shown here. I enjoy
 cooking, as much for the beautiful ingredients, as for liking to eat.
-Most of these still ides are watercolors. I recently returned to painting
+Most of these still lifes are watercolors. I recently returned to painting
 in oils and, feeling very much the beginner, decided to stick to the same
 subject matter until I got it right.
 Pears were in season, varied and plentiful, so I began to paint them
@@ -38,7 +38,7 @@ GOLDEN ONION #2, 11x15 (Collection of Dr. and Mrs. Liff)
 
 <!-- page 181 -->
 
-CARROT, ONION, PARSNIP, AND TURNIP, 11)(20
+CARROT, ONION, PARSNIP, AND TURNIP, 11x20
 
 <!-- page 183 -->
 
@@ -46,7 +46,7 @@ PERSIMMON ON WOOD, 13x17 (collection of Bill Niman)
 
 <!-- page 188 -->
 
-TWO PERSIMMONS ON A STEM, 1 1 xl 5
+TWO PERSIMMONS ON A STEM, 11x15
 
 <!-- page 190 -->
 

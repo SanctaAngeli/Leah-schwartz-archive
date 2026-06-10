@@ -39,28 +39,17 @@ export default function EntityPage({ kind }: Props): JSX.Element {
   const collection = kind === 'person' ? people : subjects;
   const entity = collection.find((e) => e.id === entityId);
 
-  if (!entity) {
-    return (
-      <main className="min-h-screen pt-32 px-6 text-center">
-        <p className="font-body text-text-muted">
-          {kind === 'person' ? 'Person' : 'Subject'} not found in the index.
-        </p>
-        <Link to="/index" className="font-body text-[#8B7355] mt-4 inline-block">
-          ← Back to the Index
-        </Link>
-      </main>
-    );
-  }
-
-  const displayName = entity.display_name || entity.name;
+  // Hooks run unconditionally (rules of hooks) - the not-found return comes after.
+  const displayName = entity ? entity.display_name || entity.name : '';
   usePageMeta(
-    displayName,
+    displayName || 'Not found',
     kind === 'person'
       ? `${displayName} in Leah Schwartz's life · artworks and autobiography mentions.`
       : `${displayName} in Leah Schwartz's book · artworks and references.`
   );
 
   const linkedArtworks = useMemo<Artwork[]>(() => {
+    if (!entity) return [];
     const ids = new Set(entity.artwork_ids || []);
     const byId = artworks.filter((a) => ids.has(a.id));
     // Also include any artworks whose book_page is in this entity's book_pages
@@ -77,9 +66,22 @@ export default function EntityPage({ kind }: Props): JSX.Element {
   }, [entity]);
 
   const proseMentions = useMemo(
-    () => findProseMentions(entity.name, 6),
+    () => (entity ? findProseMentions(entity.name, 6) : []),
     [entity]
   );
+
+  if (!entity) {
+    return (
+      <main className="min-h-screen pt-32 px-6 text-center">
+        <p className="font-body text-text-muted">
+          {kind === 'person' ? 'Person' : 'Subject'} not found in the index.
+        </p>
+        <Link to="/index" className="font-body text-[#8B7355] mt-4 inline-block">
+          ← Back to the Index
+        </Link>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen pt-24 pb-24 px-6">

@@ -5,7 +5,6 @@
 
 <!-- page 298 -->
 
-HIGH SIERRA
 For two weeks in the summer we hike in the high country of
 Desolation Valley. This is in an area just south of Lake Tahoe and a few
 thousand feet higher, and anything but desolate. It is a miracle of white
@@ -17,5 +16,3 @@ beautiful rocky trail. We hike all day and read to each other by kerosene
 lamp at night.
 
 <!-- page 300 -->
-
-a

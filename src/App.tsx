@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
@@ -6,13 +5,11 @@ import SkipLink from './components/layout/SkipLink';
 import PageTransition from './components/layout/PageTransition';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
-import PagePreloader from './components/ui/PagePreloader';
 import WatercolorShader from './components/home/WatercolorShader';
 import AccentWashShader from './components/ui/AccentWashShader';
 import { getAccent } from './data/chapterAccents';
 import { IntroProvider } from './hooks/useIntroComplete';
 import { ShortcutsProvider } from './hooks/useGlobalShortcuts';
-import ScrollStoryPage from './pages/ScrollStoryPage';
 import CanvasPage from './pages/CanvasPage';
 import ColorAtlasPage from './pages/ColorAtlasPage';
 import ObsessionsPage from './pages/ObsessionsPage';
@@ -21,14 +18,9 @@ import LastPaintingsPage from './pages/LastPaintingsPage';
 import ConstellationPage from './pages/ConstellationPage';
 import WalkWithHerPage from './pages/WalkWithHerPage';
 import StudioVisitPage from './pages/StudioVisitPage';
-import CuratedGalleryPage from './pages/CuratedGalleryPage';
 import FrontDoorPage from './pages/FrontDoorPage';
-import HomePage from './pages/HomePage';
-import LandingPage from './pages/LandingPage';
-import TimelinePage from './pages/TimelinePage';
 import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
-import GuidedTourPage from './pages/GuidedTourPage';
 import HerWordsPage from './pages/HerWordsPage';
 import IndexPage from './pages/IndexPage';
 import PlacesPage from './pages/PlacesPage';
@@ -46,21 +38,16 @@ import NotFoundPage from './pages/NotFoundPage';
 
 function AppContent(): JSX.Element {
   const location = useLocation();
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   // The front door is a single reverent painting with its own foot directory,
   // so the global pill nav is hidden there; it returns on every other page.
-  const showNavigation = location.pathname !== '/';
+  // The artwork lightbox is also chrome-free: it covers the full screen with
+  // its own close/zoom controls, and on small screens the pill collides with them.
+  const showNavigation =
+    location.pathname !== '/' && !location.pathname.startsWith('/artwork/');
 
   return (
     <>
-      {/* Show preloader only on initial page load */}
-      {isInitialLoad && (
-        <PagePreloader
-          minDuration={2000}
-          onComplete={() => setIsInitialLoad(false)}
-        />
-      )}
       <SkipLink />
       <div className="min-h-screen bg-bg-gallery transition-colors duration-500 relative">
         {(() => {
@@ -77,11 +64,20 @@ function AppContent(): JSX.Element {
         <main id="main-content" className="relative z-10 focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-            {/* / is the front door · /daily is the returning-visitor ritual · /story parks the scroll-story · /gallery is the era-pile browse. */}
+            {/* / is the front door · /daily is the returning-visitor ritual. */}
             <Route path="/" element={<PageTransition><FrontDoorPage /></PageTransition>} />
             <Route path="/daily" element={<PageTransition><DailyPage /></PageTransition>} />
+            {/* Retired v1 routes — permanent redirects to their living equivalents. */}
             <Route path="/gallery" element={<Navigate to="/themes" replace />} />
-            <Route path="/eras" element={<PageTransition><LandingPage /></PageTransition>} />
+            <Route path="/eras" element={<Navigate to="/at-her-age" replace />} />
+            <Route path="/story" element={<Navigate to="/" replace />} />
+            <Route path="/classic" element={<Navigate to="/" replace />} />
+            <Route path="/timeline" element={<Navigate to="/at-her-age" replace />} />
+            <Route path="/timeline/:year" element={<Navigate to="/at-her-age" replace />} />
+            <Route path="/tour" element={<Navigate to="/themes" replace />} />
+            <Route path="/tour/:chapterId" element={<Navigate to="/themes" replace />} />
+            <Route path="/curated" element={<Navigate to="/themes" replace />} />
+            <Route path="/curated/:eraId" element={<Navigate to="/themes" replace />} />
             <Route path="/canvas" element={<PageTransition><CanvasPage /></PageTransition>} />
             <Route path="/atlas" element={<PageTransition><ColorAtlasPage /></PageTransition>} />
             <Route path="/obsessions" element={<PageTransition><ObsessionsPage /></PageTransition>} />
@@ -90,18 +86,10 @@ function AppContent(): JSX.Element {
             <Route path="/constellation" element={<PageTransition><ConstellationPage /></PageTransition>} />
             <Route path="/walk" element={<PageTransition><WalkWithHerPage /></PageTransition>} />
             <Route path="/studio-visit" element={<PageTransition><StudioVisitPage /></PageTransition>} />
-            <Route path="/story" element={<PageTransition><ScrollStoryPage /></PageTransition>} />
-            <Route path="/curated" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
-            <Route path="/curated/:eraId" element={<PageTransition><CuratedGalleryPage /></PageTransition>} />
-            <Route path="/classic" element={<PageTransition><HomePage /></PageTransition>} />
-            <Route path="/timeline" element={<PageTransition><TimelinePage /></PageTransition>} />
-            <Route path="/timeline/:year" element={<PageTransition><TimelinePage /></PageTransition>} />
             <Route path="/locations" element={<PageTransition><LocationsPage /></PageTransition>} />
             <Route path="/locations/:locationId" element={<PageTransition><LocationsPage /></PageTransition>} />
             <Route path="/themes" element={<PageTransition><ThemesPage /></PageTransition>} />
             <Route path="/themes/:themeId" element={<PageTransition><ThemesPage /></PageTransition>} />
-            <Route path="/tour" element={<PageTransition><GuidedTourPage /></PageTransition>} />
-            <Route path="/tour/:chapterId" element={<PageTransition><GuidedTourPage /></PageTransition>} />
             <Route path="/artwork/:artworkId" element={<PageTransition><ArtworkDetailPage /></PageTransition>} />
             <Route path="/favorites" element={<PageTransition><FavoritesPage /></PageTransition>} />
             <Route path="/compare" element={<PageTransition><ComparePage /></PageTransition>} />

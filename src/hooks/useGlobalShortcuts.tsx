@@ -1,30 +1,32 @@
 // Sitewide keyboard navigation, Gmail-style.
 //
 //   /   focus search
-//   G then H   home         G then G   gallery
+//   R   a random painting
+//   G then H   home         G then G   gallery (themes)
 //   G then S   studio       G then P   pairings
-//   G then T   themes       G then L   places
+//   G then C   canvas       G then L   places
 //   G then W   her words    G then I   index
-//   G then A   about        G then D   (d)aily (home)
+//   G then A   about        G then D   daily painting
 //   ?   show the shortcuts sheet
 
 import { useEffect, useState, useRef, useCallback, createContext, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getRandomArtwork } from './useRandomArtwork';
 
 interface ShortcutRoute { keys: string[]; path: string; label: string; }
 
 const ROUTES: ShortcutRoute[] = [
-  { keys: ['g', 'h'], path: '/',            label: 'Home (Painting of the Day)' },
-  { keys: ['g', 'd'], path: '/',            label: 'Daily painting' },
-  { keys: ['g', 'g'], path: '/gallery',     label: 'Gallery' },
+  { keys: ['g', 'h'], path: '/',            label: 'Home' },
+  { keys: ['g', 'd'], path: '/daily',       label: 'Painting of the Day' },
+  { keys: ['g', 'g'], path: '/themes',      label: 'Gallery (the 12 chapters)' },
+  { keys: ['g', 'c'], path: '/canvas',      label: 'Canvas' },
   { keys: ['g', 's'], path: '/studio',      label: 'Studio' },
   { keys: ['g', 'p'], path: '/pairings',    label: 'Pairings' },
-  { keys: ['g', 't'], path: '/themes',      label: 'Themes' },
+  { keys: ['g', 't'], path: '/themes',      label: 'Gallery (the 12 chapters)' },
   { keys: ['g', 'l'], path: '/places',      label: 'Places' },
   { keys: ['g', 'w'], path: '/her-words',   label: "Leah's Story" },
   { keys: ['g', 'i'], path: '/index',       label: 'Index' },
   { keys: ['g', 'a'], path: '/about',       label: 'About' },
-  { keys: ['g', 'r'], path: '/locations',   label: 'Regions' },
 ];
 
 interface ShortcutsContextValue {
@@ -68,6 +70,13 @@ export function ShortcutsProvider({ children }: { children: React.ReactNode }): 
           e.preventDefault();
           openSearchRef.current();
         }
+        return;
+      }
+
+      // R · wander to a random painting (ported from the retired v1 shortcut hook)
+      if (key === 'r' && (!lastKeyRef.current || lastKeyRef.current.key !== 'g')) {
+        e.preventDefault();
+        navigate(`/artwork/${getRandomArtwork().id}`);
         return;
       }
 
@@ -146,6 +155,10 @@ function Cheatsheet({ onClose }: { onClose: () => void }): JSX.Element {
             <li className="flex items-center justify-between">
               <span className="font-body text-text-primary">Focus search</span>
               <kbd className="font-mono text-xs px-2 py-1 border border-[#E8E2D5] rounded">/</kbd>
+            </li>
+            <li className="flex items-center justify-between">
+              <span className="font-body text-text-primary">A random painting</span>
+              <kbd className="font-mono text-xs px-2 py-1 border border-[#E8E2D5] rounded">R</kbd>
             </li>
             <li className="flex items-center justify-between">
               <span className="font-body text-text-primary">Show this sheet</span>

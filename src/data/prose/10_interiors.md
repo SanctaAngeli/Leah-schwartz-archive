@@ -22,7 +22,4 @@ friend Lisa Adler who lives in the Sierras.
 
 <!-- page 200 -->
 
-I L4 111-
-4 vr , ^"i. •
-AP al
 MILL VALLEY, KITCHEN, 12x16. The stained glass window is also used in the portrait "AMAZING GRACE".

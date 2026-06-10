@@ -316,19 +316,6 @@
     "artwork_ids": []
   },
   {
-    "id": "",
-    "name": "",
-    "parenthetical": null,
-    "book_pages": [
-      292
-    ],
-    "pdf_pages": [
-      305
-    ],
-    "special_refs": [],
-    "artwork_ids": []
-  },
-  {
     "id": "harpers-bazaar",
     "name": "Harpers Bazaar",
     "parenthetical": null,
@@ -930,19 +917,6 @@
     "artwork_ids": []
   },
   {
-    "id": "",
-    "name": "",
-    "parenthetical": null,
-    "book_pages": [
-      293
-    ],
-    "pdf_pages": [
-      306
-    ],
-    "special_refs": [],
-    "artwork_ids": []
-  },
-  {
     "id": "schroeders",
     "name": "Schroeders",
     "parenthetical": null,
@@ -1303,19 +1277,6 @@
     ],
     "pdf_pages": [
       26
-    ],
-    "special_refs": [],
-    "artwork_ids": []
-  },
-  {
-    "id": "",
-    "name": "",
-    "parenthetical": null,
-    "book_pages": [
-      294
-    ],
-    "pdf_pages": [
-      307
     ],
     "special_refs": [],
     "artwork_ids": []

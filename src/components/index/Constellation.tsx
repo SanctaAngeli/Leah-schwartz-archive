@@ -186,7 +186,7 @@ export default function Constellation({ people, places, subjects }: Constellatio
           const opacity = hoverId ? (isLinked ? 0.95 : 0.18) : 0.8;
           return (
             <g
-              key={n.id}
+              key={`${n.kind}-${n.id}`}
               transform={`translate(${n.x}, ${n.y})`}
               style={{ cursor: 'pointer' }}
               onMouseEnter={() => setHoverId(n.id)}
