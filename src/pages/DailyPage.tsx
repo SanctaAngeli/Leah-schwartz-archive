@@ -4,33 +4,13 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import artworksData from '../data/artworks.json';
 import { getProseByChapter, cleanProse } from '../data/prose';
+import { pickArtworkForDay } from '../data/daily';
 import { getAccent, getSeasonalAccent, seasonName } from '../data/chapterAccents';
 import { linkArtworkMentions } from '../data/proseLinker';
 import { usePageMeta } from '../hooks/usePageMeta';
 import ReactMarkdown from 'react-markdown';
 import type { Artwork } from '../types';
-
-const artworks = artworksData as Artwork[];
-
-// Only pick from artworks with a real image so the daily never shows a placeholder.
-const withCleanImages = artworks.filter((a) => a.imagePath && !a.needs_crop);
-const rotation: Artwork[] = withCleanImages.length > 0
-  ? withCleanImages
-  : artworks.filter((a) => a.imagePath);
-
-/** Days since an arbitrary epoch · deterministic index into the rotation. */
-function daysSinceEpoch(date: Date): number {
-  const epoch = Date.UTC(2024, 0, 1);
-  const now = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
-  return Math.floor((now - epoch) / 86_400_000);
-}
-
-function pickArtworkForDay(d: Date): Artwork {
-  const idx = ((daysSinceEpoch(d) % rotation.length) + rotation.length) % rotation.length;
-  return rotation[idx];
-}
 
 function formatDate(d: Date): string {
   return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });

@@ -23,6 +23,7 @@ interface Hotspot {
 const HOTSPOTS: Hotspot[] = [
   { to: '/canvas',      label: 'Paintings',   sub: 'every work, drifting',     x: 52, y: 15, side: 'right' },
   { to: '/themes',      label: 'Themes',      sub: 'twelve rooms',             x: 15, y: 26, side: 'left'  },
+  { to: '/walk',        label: 'Walk With Her', sub: 'a guided drift',         x: 86, y: 28, side: 'left'  },
   { to: '/her-words',   label: 'Her Story',   sub: 'her own voice, in full',   x: 58, y: 53, side: 'right' },
   { to: '/studio-visit',label: 'Studio Visit',sub: 'Mill Valley, 1985',        x: 10, y: 66, side: 'left'  },
   { to: '/at-her-age',  label: 'Her Life',    sub: 'a slider through 84 years',x: 47, y: 86, side: 'left'  },

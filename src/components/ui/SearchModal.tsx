@@ -54,6 +54,8 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
     // Add pages
     results.push(
       { type: 'page', id: 'home', title: 'Home', subtitle: 'The front door', path: '/' },
+      { type: 'page', id: 'paintings', title: 'Paintings', subtitle: 'The work · six ways into 267 paintings', path: '/paintings' },
+      { type: 'page', id: 'her-story', title: 'Her Story', subtitle: 'The life · 1920-2004', path: '/her-story' },
       { type: 'page', id: 'canvas', title: 'Canvas', subtitle: 'All 267 paintings, one drifting wall', path: '/canvas' },
       { type: 'page', id: 'themes', title: 'Gallery', subtitle: 'The 12 chapters of her book', path: '/themes' },
       { type: 'page', id: 'her-words', title: "Leah's Story", subtitle: 'Autobiography + chapter essays', path: '/her-words' },

@@ -15,18 +15,20 @@ import { getRandomArtwork } from './useRandomArtwork';
 
 interface ShortcutRoute { keys: string[]; path: string; label: string; }
 
+// The five wings first, then the most-used rooms inside them.
 const ROUTES: ShortcutRoute[] = [
   { keys: ['g', 'h'], path: '/',            label: 'Home' },
-  { keys: ['g', 'd'], path: '/daily',       label: 'Painting of the Day' },
-  { keys: ['g', 'g'], path: '/themes',      label: 'Gallery (the 12 chapters)' },
-  { keys: ['g', 'c'], path: '/canvas',      label: 'Canvas' },
-  { keys: ['g', 's'], path: '/studio',      label: 'Studio' },
-  { keys: ['g', 'p'], path: '/pairings',    label: 'Pairings' },
-  { keys: ['g', 't'], path: '/themes',      label: 'Gallery (the 12 chapters)' },
+  { keys: ['g', 'p'], path: '/paintings',   label: 'Paintings' },
+  { keys: ['g', 'y'], path: '/her-story',   label: 'Her Story' },
   { keys: ['g', 'l'], path: '/places',      label: 'Places' },
-  { keys: ['g', 'w'], path: '/her-words',   label: "Leah's Story" },
-  { keys: ['g', 'i'], path: '/index',       label: 'Index' },
+  { keys: ['g', 's'], path: '/studio',      label: 'Studio' },
   { keys: ['g', 'a'], path: '/about',       label: 'About' },
+  { keys: ['g', 'c'], path: '/canvas',      label: 'Canvas' },
+  { keys: ['g', 'g'], path: '/themes',      label: 'The Twelve Chapters' },
+  { keys: ['g', 't'], path: '/themes',      label: 'The Twelve Chapters' },
+  { keys: ['g', 'w'], path: '/her-words',   label: 'In Her Own Words' },
+  { keys: ['g', 'd'], path: '/daily',       label: 'Painting of the Day' },
+  { keys: ['g', 'i'], path: '/index',       label: 'The Index' },
 ];
 
 interface ShortcutsContextValue {
@@ -179,7 +181,7 @@ function Cheatsheet({ onClose }: { onClose: () => void }): JSX.Element {
             {ROUTES.filter((r, i, arr) =>
               // Dedupe by label
               arr.findIndex((x) => x.label === r.label) === i
-            ).slice(0, 10).map((r) => (
+            ).slice(0, 12).map((r) => (
               <li key={r.label} className="flex items-center justify-between">
                 <span className="font-body text-text-primary">{r.label}</span>
                 <span className="flex gap-1">

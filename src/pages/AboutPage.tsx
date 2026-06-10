@@ -265,6 +265,44 @@ function AboutPage(): JSX.Element {
         </section>
       )}
 
+      {/* The archive itself · the scholarly doors live in this wing */}
+      <section className="px-6 py-16">
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="text-center mb-8">
+            <p className="font-body text-text-muted uppercase tracking-widest text-xs mb-2">
+              The archive
+            </p>
+            <h2 className="font-heading text-3xl text-text-primary">
+              Ways to study her
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link to="/index" className="group glass-card p-6 text-center hover:shadow-glass transition-shadow">
+              <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">The Index</p>
+              <p className="font-body text-xs text-text-muted mt-1">Her own back-of-book index</p>
+            </Link>
+            <Link to="/constellation" className="group glass-card p-6 text-center hover:shadow-glass transition-shadow">
+              <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">Constellation</p>
+              <p className="font-body text-xs text-text-muted mt-1">The mind of the archive</p>
+            </Link>
+            <Link to="/preservation" className="group glass-card p-6 text-center hover:shadow-glass transition-shadow">
+              <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">Preservation</p>
+              <p className="font-body text-xs text-text-muted mt-1">Data, scans & the book PDF</p>
+            </Link>
+            <Link to="/favorites" className="group glass-card p-6 text-center hover:shadow-glass transition-shadow">
+              <p className="font-heading text-xl text-text-primary group-hover:text-[#8B7355] transition-colors">Favorites</p>
+              <p className="font-body text-xs text-text-muted mt-1">Your saved paintings</p>
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Preservation note */}
       <section className="py-12 px-6 text-center">
         <p className="max-w-2xl mx-auto font-body text-sm text-text-muted leading-relaxed">

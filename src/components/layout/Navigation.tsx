@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCallback, useState, useEffect, useMemo } from 'react';
 import { useSearch } from '../../hooks/useSearch';
 import { useTheme } from '../../hooks/useTheme';
+import { WINGS, wingForPath } from '../../data/wings';
 
 // Detect platform for keyboard shortcuts
 function useIsMac(): boolean {
@@ -43,23 +44,17 @@ function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
     }
   }, [isMobileMenuOpen]);
 
-  // Updated nav items - removed Curated (accessed via era), renamed About
+  // One lobby, five wings. Deep routes light up their wing
+  // (e.g. /atlas highlights Paintings) via the floor plan in data/wings.
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/themes', label: 'Gallery' },
-    { path: '/canvas', label: 'Canvas' },
-    { path: '/her-words', label: "Leah's Story" },
-    { path: '/atlas', label: 'Atlas' },
-    { path: '/obsessions', label: 'Obsessions' },
-    { path: '/at-her-age', label: 'Eras' },
-    { path: '/studio', label: 'Studio' },
-    { path: '/about', label: 'About' },
+    ...WINGS.map((w) => ({ path: w.path, label: w.label })),
   ];
 
-  // Check if current path matches (handle nested routes like /timeline/1977)
+  const activeWingPath = wingForPath(location.pathname)?.path;
   const isActive = (path: string): boolean => {
     if (path === '/') return location.pathname === '/';
-    return location.pathname.startsWith(path);
+    return activeWingPath === path;
   };
 
   // Special handler for home navigation to trigger reverse animation

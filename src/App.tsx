@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
 import SkipLink from './components/layout/SkipLink';
 import PageTransition from './components/layout/PageTransition';
+import ContinueRail from './components/layout/ContinueRail';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
 import WatercolorShader from './components/home/WatercolorShader';
@@ -19,6 +20,8 @@ import ConstellationPage from './pages/ConstellationPage';
 import WalkWithHerPage from './pages/WalkWithHerPage';
 import StudioVisitPage from './pages/StudioVisitPage';
 import FrontDoorPage from './pages/FrontDoorPage';
+import PaintingsWingPage from './pages/PaintingsWingPage';
+import HerStoryWingPage from './pages/HerStoryWingPage';
 import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
 import HerWordsPage from './pages/HerWordsPage';
@@ -78,6 +81,9 @@ function AppContent(): JSX.Element {
             <Route path="/tour/:chapterId" element={<Navigate to="/themes" replace />} />
             <Route path="/curated" element={<Navigate to="/themes" replace />} />
             <Route path="/curated/:eraId" element={<Navigate to="/themes" replace />} />
+            {/* Wing landings · the museum's five doors */}
+            <Route path="/paintings" element={<PageTransition><PaintingsWingPage /></PageTransition>} />
+            <Route path="/her-story" element={<PageTransition><HerStoryWingPage /></PageTransition>} />
             <Route path="/canvas" element={<PageTransition><CanvasPage /></PageTransition>} />
             <Route path="/atlas" element={<PageTransition><ColorAtlasPage /></PageTransition>} />
             <Route path="/obsessions" element={<PageTransition><ObsessionsPage /></PageTransition>} />
@@ -109,6 +115,7 @@ function AppContent(): JSX.Element {
             <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
           </Routes>
           </AnimatePresence>
+          <ContinueRail />
         </main>
         <SettingsPanel />
       </div>
