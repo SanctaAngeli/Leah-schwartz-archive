@@ -11,8 +11,14 @@ project up anywhere, on any device.
 
 ## First-time setup
 
-You need [Git](https://git-scm.com) and [Node.js](https://nodejs.org) (v20 or
-newer — this project is developed on v24).
+**1. Accept the repo invitation.** Log into GitHub as **BeyondTomorrowStudios**
+— the shared studio account we both use — and accept the pending invite at
+https://github.com/SanctaAngeli/Leah-schwartz-archive/invitations
+
+**2. Install the tools.** You need [Git](https://git-scm.com) and
+[Node.js](https://nodejs.org) (v20 or newer — this project is developed on v24).
+
+**3. Clone and run it.**
 
 ```bash
 git clone https://github.com/SanctaAngeli/Leah-schwartz-archive.git
@@ -70,6 +76,15 @@ person is concerned** — an unpushed commit is invisible from the other machine
 Only one person should be actively working at a time. There's no lock enforcing
 this — it's just a matter of saying so. A message along the lines of *"pushed,
 all yours"* is enough.
+
+**This matters more here than on a normal project.** We both commit as the same
+shared account, so Git records every change as `BeyondTomorrowStudios` no matter
+which of us made it. The history can't tell you who did what, and it won't warn
+you that the other person is mid-edit. The only thing keeping us out of each
+other's way is telling each other. Say when you pick it up and say when you put
+it down.
+
+If it ever matters to know who wrote something, put it in the commit message.
 
 If you both edit at once, Git will stop you at the `git pull` with a merge
 conflict. That's Git protecting the work rather than a disaster — nothing is
