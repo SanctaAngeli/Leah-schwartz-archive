@@ -17,12 +17,15 @@ npm run build
 
 ## Documentation
 
+- **[COLLABORATION.md](./docs/COLLABORATION.md)** — **Start here if you're new.** Setup, the pull/push rhythm, deploying
 - **[PLAN.md](./docs/PLAN.md)** — Full project vision, architecture, and implementation phases
 - **[CLAUDE.md](./CLAUDE.md)** — Rules and patterns for Claude Code
 
 ## Project Status
 
-🚧 **Phase 1: Foundation** — Setting up project structure with placeholder content
+**Live** at [leah-schwartz-archive.netlify.app](https://leah-schwartz-archive.netlify.app) — real artwork throughout,
+built out from the 1990 Strawberry Press monograph. The lobby, the five wings,
+the timeline, and the Atlas are all in place.
 
 ## Tech Stack
 
@@ -41,4 +44,4 @@ npm run build
 
 ---
 
-*A project by Harry, built with Claude*
+*A project by Harry and Julie, built with Claude*
