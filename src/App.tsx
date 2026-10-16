@@ -23,6 +23,7 @@ import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
 import HerWordsPage from './pages/HerWordsPage';
 import JournalsPage from './pages/JournalsPage';
+import AdminPage from './pages/AdminPage';
 import IndexPage from './pages/IndexPage';
 import PlacesPage from './pages/PlacesPage';
 import EntityPage from './pages/EntityPage';
@@ -112,6 +113,7 @@ function AppContent(): JSX.Element {
             <Route path="/preservation" element={<PageTransition><PreservationPage /></PageTransition>} />
             <Route path="/pairings" element={<PageTransition><PairingsPage /></PageTransition>} />
             <Route path="/pairings/:pairingId" element={<PageTransition><PairingsPage /></PageTransition>} />
+            <Route path="/admin" element={<PageTransition><AdminPage /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
           </Routes>
           </AnimatePresence>

@@ -37,6 +37,7 @@ export interface Artwork {
   image_full?: string | null;
   image_thumb?: string | null;
   needs_crop?: boolean;        // true when imagePath points to the full book page instead of an isolated crop
+  photo_file?: string;         // the family photo (Aug 2026 album) this image was cropped from
 
   // v1 compatibility · existing components reference these names
   location: string;             // mirrors `chapter` (or "" when undefined)

@@ -330,21 +330,6 @@
     ]
   },
   "kkk-imperial-wizard": {
-    "dominant": "#170C0A",
-    "palette": [
-      "#170C0A",
-      "#0F0906",
-      "#7C6E6F",
-      "#8A2515",
-      "#9C9292"
-    ],
-    "hsl": [
-      9,
-      39,
-      6
-    ]
-  },
-  "the-general-old-soldiers-do": {
     "dominant": "#921C10",
     "palette": [
       "#921C10",
@@ -357,6 +342,21 @@
       6,
       80,
       32
+    ]
+  },
+  "the-general-old-soldiers-do": {
+    "dominant": "#170C0A",
+    "palette": [
+      "#170C0A",
+      "#0F0906",
+      "#7C6E6F",
+      "#8A2515",
+      "#9C9292"
+    ],
+    "hsl": [
+      9,
+      39,
+      6
     ]
   },
   "campaigning-senator": {
@@ -2634,18 +2634,18 @@
     ]
   },
   "white-floating-roses": {
-    "dominant": "#B1BCD2",
+    "dominant": "#A7A495",
     "palette": [
-      "#B1BCD2",
-      "#B8A659",
-      "#5275AF",
-      "#96AACB",
-      "#CABD82"
+      "#A7A495",
+      "#6E8191",
+      "#999077",
+      "#5C768D",
+      "#7D817C"
     ],
     "hsl": [
-      220,
-      27,
-      76
+      50,
+      9,
+      62
     ]
   },
   "four-pots-of-flowers": {
@@ -2784,18 +2784,18 @@
     ]
   },
   "white-rose-in-white-jar": {
-    "dominant": "#D1CFC3",
+    "dominant": "#636E74",
     "palette": [
-      "#D1CFC3",
-      "#E6E3DA",
-      "#362022",
-      "#C28D71",
-      "#B7B19D"
+      "#636E74",
+      "#999B97",
+      "#B9B4A6",
+      "#ACAAA2",
+      "#242424"
     ],
     "hsl": [
-      51,
-      13,
-      79
+      201,
+      8,
+      42
     ]
   },
   "laurel-with-tulips": {
@@ -3429,18 +3429,18 @@
     ]
   },
   "women-in-black-peloponnesus": {
-    "dominant": "#050101",
+    "dominant": "#5F5D59",
     "palette": [
-      "#050101",
-      "#5B4C3F",
-      "#B2AB9B",
-      "#968670",
-      "#72746D"
+      "#5F5D59",
+      "#776244",
+      "#757567",
+      "#DEBC87",
+      "#836546"
     ],
     "hsl": [
-      0,
-      67,
-      1
+      40,
+      3,
+      36
     ]
   },
   "xanthos-ionian-island": {
@@ -4206,6 +4206,786 @@
       4,
       41,
       60
+    ]
+  },
+  "untitled-5195": {
+    "dominant": "#4F211F",
+    "palette": [
+      "#4F211F",
+      "#AD1D1F",
+      "#C2A786",
+      "#527DC0",
+      "#5888D1"
+    ],
+    "hsl": [
+      3,
+      44,
+      22
+    ]
+  },
+  "west-marin-dairy-farm": {
+    "dominant": "#BFB57E",
+    "palette": [
+      "#BFB57E",
+      "#A09D6A",
+      "#879396",
+      "#E0DBC4",
+      "#A7A272"
+    ],
+    "hsl": [
+      51,
+      34,
+      62
+    ]
+  },
+  "lupins-poppies-in-sonoma": {
+    "dominant": "#A2A6A9",
+    "palette": [
+      "#A2A6A9",
+      "#585150",
+      "#77736D",
+      "#736A60",
+      "#464445"
+    ],
+    "hsl": [
+      206,
+      4,
+      65
+    ]
+  },
+  "the-road-to-rodeo-lagoon-2": {
+    "dominant": "#363636",
+    "palette": [
+      "#363636",
+      "#9F8253",
+      "#C2C5BA",
+      "#292A2B",
+      "#201F1F"
+    ],
+    "hsl": [
+      0,
+      0,
+      21
+    ]
+  },
+  "untitled-5222": {
+    "dominant": "#C5C2BF",
+    "palette": [
+      "#C5C2BF",
+      "#B5B2AD",
+      "#A5A3A0",
+      "#666463",
+      "#CBC7C2"
+    ],
+    "hsl": [
+      30,
+      5,
+      76
+    ]
+  },
+  "untitled-5223": {
+    "dominant": "#DACDBD",
+    "palette": [
+      "#DACDBD",
+      "#564E47",
+      "#DFD3C3",
+      "#81776E",
+      "#BBAEA0"
+    ],
+    "hsl": [
+      33,
+      28,
+      80
+    ]
+  },
+  "untitled-5224": {
+    "dominant": "#A69482",
+    "palette": [
+      "#A69482",
+      "#AD9B87",
+      "#A79786",
+      "#B19F8D",
+      "#AB9885"
+    ],
+    "hsl": [
+      30,
+      17,
+      58
+    ]
+  },
+  "untitled-5225": {
+    "dominant": "#9F988D",
+    "palette": [
+      "#9F988D",
+      "#A39E93",
+      "#9B968B",
+      "#A09D92",
+      "#A5A196"
+    ],
+    "hsl": [
+      37,
+      9,
+      59
+    ]
+  },
+  "untitled-5227": {
+    "dominant": "#BBBBB7",
+    "palette": [
+      "#BBBBB7",
+      "#BDBDB8",
+      "#BBBAB5",
+      "#A7A7A2",
+      "#A3A29E"
+    ],
+    "hsl": [
+      60,
+      3,
+      73
+    ]
+  },
+  "untitled-5228": {
+    "dominant": "#9C8F7B",
+    "palette": [
+      "#9C8F7B",
+      "#9D9380",
+      "#A0917C",
+      "#9B917E",
+      "#918471"
+    ],
+    "hsl": [
+      36,
+      14,
+      55
+    ]
+  },
+  "untitled-5229": {
+    "dominant": "#AEA898",
+    "palette": [
+      "#AEA898",
+      "#B7AF9C",
+      "#C3BBA5",
+      "#BDB39E",
+      "#A19786"
+    ],
+    "hsl": [
+      44,
+      12,
+      64
+    ]
+  },
+  "untitled-5230": {
+    "dominant": "#C0BFB5",
+    "palette": [
+      "#C0BFB5",
+      "#AFABA2",
+      "#B8B5AD",
+      "#ACA8A0",
+      "#BBB8AF"
+    ],
+    "hsl": [
+      55,
+      8,
+      73
+    ]
+  },
+  "untitled-5231": {
+    "dominant": "#B3A99A",
+    "palette": [
+      "#B3A99A",
+      "#925F1F",
+      "#AAA296",
+      "#733D11",
+      "#ADA697"
+    ],
+    "hsl": [
+      36,
+      14,
+      65
+    ]
+  },
+  "untitled-5232": {
+    "dominant": "#ADA99F",
+    "palette": [
+      "#ADA99F",
+      "#C1BBAF",
+      "#9C9890",
+      "#B6B1A6",
+      "#A4A39A"
+    ],
+    "hsl": [
+      43,
+      8,
+      65
+    ]
+  },
+  "untitled-5233": {
+    "dominant": "#D8D1C3",
+    "palette": [
+      "#D8D1C3",
+      "#D0C2B1",
+      "#D1C5B4",
+      "#D5CBBC",
+      "#CCC4B4"
+    ],
+    "hsl": [
+      40,
+      21,
+      81
+    ]
+  },
+  "untitled-5234": {
+    "dominant": "#D7D7CF",
+    "palette": [
+      "#D7D7CF",
+      "#B8B5AC",
+      "#656360",
+      "#BEBBB2",
+      "#ADAAA3"
+    ],
+    "hsl": [
+      60,
+      9,
+      83
+    ]
+  },
+  "untitled-5235": {
+    "dominant": "#B1AA9F",
+    "palette": [
+      "#B1AA9F",
+      "#A9A397",
+      "#B3ADA3",
+      "#ACA59A",
+      "#AFA89D"
+    ],
+    "hsl": [
+      37,
+      10,
+      66
+    ]
+  },
+  "untitled-5237": {
+    "dominant": "#D5C3A1",
+    "palette": [
+      "#D5C3A1",
+      "#CFBE9E",
+      "#CAB898",
+      "#D9C8A7",
+      "#827161"
+    ],
+    "hsl": [
+      39,
+      38,
+      73
+    ]
+  },
+  "untitled-5238": {
+    "dominant": "#7D521F",
+    "palette": [
+      "#7D521F",
+      "#7E785E",
+      "#734C21",
+      "#A4865A",
+      "#74694A"
+    ],
+    "hsl": [
+      33,
+      60,
+      31
+    ]
+  },
+  "untitled-5239": {
+    "dominant": "#564F4F",
+    "palette": [
+      "#564F4F",
+      "#CEC2B6",
+      "#59595A",
+      "#D53C35",
+      "#636260"
+    ],
+    "hsl": [
+      0,
+      4,
+      32
+    ]
+  },
+  "untitled-5241": {
+    "dominant": "#7B5B4D",
+    "palette": [
+      "#7B5B4D",
+      "#58545F",
+      "#553D38",
+      "#EAAF73",
+      "#6D5652"
+    ],
+    "hsl": [
+      18,
+      23,
+      39
+    ]
+  },
+  "untitled-5242": {
+    "dominant": "#595141",
+    "palette": [
+      "#595141",
+      "#4B4E52",
+      "#77654A",
+      "#5F5F5C",
+      "#85796E"
+    ],
+    "hsl": [
+      40,
+      16,
+      30
+    ]
+  },
+  "untitled-5243": {
+    "dominant": "#313539",
+    "palette": [
+      "#313539",
+      "#AD6A62",
+      "#BA9382",
+      "#99695E",
+      "#795E56"
+    ],
+    "hsl": [
+      210,
+      8,
+      21
+    ]
+  },
+  "arizona-nativity": {
+    "dominant": "#B9624A",
+    "palette": [
+      "#B9624A",
+      "#836350",
+      "#604F46",
+      "#C69171",
+      "#594139"
+    ],
+    "hsl": [
+      13,
+      44,
+      51
+    ]
+  },
+  "eden-africa": {
+    "dominant": "#9F8369",
+    "palette": [
+      "#9F8369",
+      "#715A4A",
+      "#B9A489",
+      "#836C58",
+      "#5B4C47"
+    ],
+    "hsl": [
+      29,
+      22,
+      52
+    ]
+  },
+  "untitled-5248": {
+    "dominant": "#B9A895",
+    "palette": [
+      "#B9A895",
+      "#AEA090",
+      "#B5A594",
+      "#A99B8C",
+      "#B2A393"
+    ],
+    "hsl": [
+      32,
+      20,
+      65
+    ]
+  },
+  "untitled-5249": {
+    "dominant": "#9D9183",
+    "palette": [
+      "#9D9183",
+      "#A09486",
+      "#A79A8C",
+      "#A69789",
+      "#A99D8F"
+    ],
+    "hsl": [
+      32,
+      12,
+      56
+    ]
+  },
+  "untitled-5254": {
+    "dominant": "#A19B8C",
+    "palette": [
+      "#A19B8C",
+      "#9C937C",
+      "#8C8570",
+      "#59593C",
+      "#61634D"
+    ],
+    "hsl": [
+      43,
+      10,
+      59
+    ]
+  },
+  "untitled-5259": {
+    "dominant": "#B9B0A5",
+    "palette": [
+      "#B9B0A5",
+      "#CCC2B2",
+      "#C4BCB0",
+      "#AFA59A",
+      "#70665F"
+    ],
+    "hsl": [
+      33,
+      12,
+      69
+    ]
+  },
+  "untitled-5260": {
+    "dominant": "#B5AA99",
+    "palette": [
+      "#B5AA99",
+      "#7D7C77",
+      "#BEAF9A",
+      "#AC9272",
+      "#A29A8A"
+    ],
+    "hsl": [
+      36,
+      16,
+      65
+    ]
+  },
+  "untitled-5261": {
+    "dominant": "#887D6D",
+    "palette": [
+      "#887D6D",
+      "#9D9180",
+      "#716656",
+      "#B7A998",
+      "#7A7568"
+    ],
+    "hsl": [
+      36,
+      11,
+      48
+    ]
+  },
+  "untitled-5262": {
+    "dominant": "#BD9C83",
+    "palette": [
+      "#BD9C83",
+      "#C7C4BB",
+      "#4B443F",
+      "#A7AAA7",
+      "#D1B9A6"
+    ],
+    "hsl": [
+      26,
+      31,
+      63
+    ]
+  },
+  "untitled-5263": {
+    "dominant": "#573E38",
+    "palette": [
+      "#573E38",
+      "#36302E",
+      "#9F744C",
+      "#456B7B",
+      "#525349"
+    ],
+    "hsl": [
+      12,
+      22,
+      28
+    ]
+  },
+  "untitled-5264": {
+    "dominant": "#8C8C8B",
+    "palette": [
+      "#8C8C8B",
+      "#DFC4A0",
+      "#D1B296",
+      "#BE7849",
+      "#9F9B96"
+    ],
+    "hsl": [
+      60,
+      0,
+      55
+    ]
+  },
+  "untitled-5265": {
+    "dominant": "#C9B58D",
+    "palette": [
+      "#C9B58D",
+      "#F6CB92",
+      "#E69F1C",
+      "#E4A53C",
+      "#B0A186"
+    ],
+    "hsl": [
+      40,
+      36,
+      67
+    ]
+  },
+  "untitled-5266": {
+    "dominant": "#805231",
+    "palette": [
+      "#805231",
+      "#5F7890",
+      "#4C6480",
+      "#5D6E87",
+      "#718395"
+    ],
+    "hsl": [
+      25,
+      45,
+      35
+    ]
+  },
+  "untitled-5304": {
+    "dominant": "#9BA09C",
+    "palette": [
+      "#9BA09C",
+      "#555E5C",
+      "#403B36",
+      "#879291",
+      "#4D5452"
+    ],
+    "hsl": [
+      132,
+      3,
+      62
+    ]
+  },
+  "untitled-5309": {
+    "dominant": "#8E9595",
+    "palette": [
+      "#8E9595",
+      "#757D82",
+      "#1C1B17",
+      "#20201B",
+      "#A9B3AE"
+    ],
+    "hsl": [
+      180,
+      3,
+      57
+    ]
+  },
+  "untitled-5310": {
+    "dominant": "#9D9D95",
+    "palette": [
+      "#9D9D95",
+      "#746B61",
+      "#B3AE99",
+      "#313233",
+      "#868176"
+    ],
+    "hsl": [
+      60,
+      4,
+      60
+    ]
+  },
+  "untitled-5311": {
+    "dominant": "#674C32",
+    "palette": [
+      "#674C32",
+      "#80A1B2",
+      "#86663F",
+      "#66727D",
+      "#C0CAC2"
+    ],
+    "hsl": [
+      29,
+      35,
+      30
+    ]
+  },
+  "untitled-5312": {
+    "dominant": "#4C888F",
+    "palette": [
+      "#4C888F",
+      "#4C476F",
+      "#7A647F",
+      "#822B22",
+      "#32415F"
+    ],
+    "hsl": [
+      186,
+      31,
+      43
+    ]
+  },
+  "untitled-5314": {
+    "dominant": "#838980",
+    "palette": [
+      "#838980",
+      "#69706A",
+      "#545F59",
+      "#989C93",
+      "#5B472F"
+    ],
+    "hsl": [
+      100,
+      4,
+      52
+    ]
+  },
+  "the-saint-in-the-desert": {
+    "dominant": "#716458",
+    "palette": [
+      "#716458",
+      "#A1A19B",
+      "#808288",
+      "#B3B4A6",
+      "#534D4C"
+    ],
+    "hsl": [
+      29,
+      12,
+      39
+    ]
+  },
+  "untitled-5328": {
+    "dominant": "#972625",
+    "palette": [
+      "#972625",
+      "#D44F48",
+      "#C19894",
+      "#BD3A39",
+      "#DAB2AC"
+    ],
+    "hsl": [
+      1,
+      61,
+      37
+    ]
+  },
+  "untitled-5334": {
+    "dominant": "#CDCDC5",
+    "palette": [
+      "#CDCDC5",
+      "#AAA392",
+      "#8C8A82",
+      "#C2C1B8",
+      "#ADA99C"
+    ],
+    "hsl": [
+      60,
+      7,
+      79
+    ]
+  },
+  "untitled-5335": {
+    "dominant": "#C6C2BF",
+    "palette": [
+      "#C6C2BF",
+      "#CCCAC7",
+      "#B7B5B3",
+      "#D2D1CD",
+      "#BDBAB7"
+    ],
+    "hsl": [
+      26,
+      6,
+      76
+    ]
+  },
+  "untitled-5340": {
+    "dominant": "#817462",
+    "palette": [
+      "#817462",
+      "#ACAAA0",
+      "#CAC2B4",
+      "#908472",
+      "#9D8976"
+    ],
+    "hsl": [
+      35,
+      14,
+      45
+    ]
+  },
+  "untitled-5347": {
+    "dominant": "#D8CBB7",
+    "palette": [
+      "#D8CBB7",
+      "#E4D7C2",
+      "#E9DEC9",
+      "#CDBA9E",
+      "#DCD0BC"
+    ],
+    "hsl": [
+      36,
+      30,
+      78
+    ]
+  },
+  "untitled-5398": {
+    "dominant": "#CCB99D",
+    "palette": [
+      "#CCB99D",
+      "#DAC7AC",
+      "#CFBDA0",
+      "#C6B59A",
+      "#DCCBB0"
+    ],
+    "hsl": [
+      36,
+      32,
+      71
+    ]
+  },
+  "untitled-5399": {
+    "dominant": "#CEA26C",
+    "palette": [
+      "#CEA26C",
+      "#DCAE7A",
+      "#DEB27E",
+      "#D7AA75",
+      "#C39360"
+    ],
+    "hsl": [
+      33,
+      50,
+      62
+    ]
+  },
+  "untitled-5400": {
+    "dominant": "#CDB081",
+    "palette": [
+      "#CDB081",
+      "#D4B98D",
+      "#B89A6C",
+      "#D9BE94",
+      "#C2A373"
+    ],
+    "hsl": [
+      37,
+      43,
+      65
+    ]
+  },
+  "untitled-5436": {
+    "dominant": "#DDD5C8",
+    "palette": [
+      "#DDD5C8",
+      "#E1DACE",
+      "#D3C9B9",
+      "#D6CEBD",
+      "#989187"
+    ],
+    "hsl": [
+      37,
+      24,
+      83
     ]
   }
 }
