@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Netlify builds from GitHub on every push to main; pin Node to what we develop on.
+[build.environment]
+  NODE_VERSION = "24"
+
 # Single-page app: every route is served by index.html and resolved
 # client-side by React Router (deep links like /her-words/immigrants).
 [[redirects]]
