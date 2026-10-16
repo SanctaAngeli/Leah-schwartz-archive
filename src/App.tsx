@@ -22,6 +22,7 @@ import HerStoryWingPage from './pages/HerStoryWingPage';
 import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
 import HerWordsPage from './pages/HerWordsPage';
+import JournalsPage from './pages/JournalsPage';
 import IndexPage from './pages/IndexPage';
 import PlacesPage from './pages/PlacesPage';
 import EntityPage from './pages/EntityPage';
@@ -98,6 +99,8 @@ function AppContent(): JSX.Element {
             <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
             <Route path="/her-words" element={<PageTransition><HerWordsPage /></PageTransition>} />
             <Route path="/her-words/:sectionId" element={<PageTransition><HerWordsPage /></PageTransition>} />
+            <Route path="/journals" element={<PageTransition><JournalsPage /></PageTransition>} />
+            <Route path="/journals/:journalId" element={<PageTransition><JournalsPage /></PageTransition>} />
             <Route path="/index" element={<PageTransition><IndexPage /></PageTransition>} />
             <Route path="/places" element={<PageTransition><PlacesPage /></PageTransition>} />
             <Route path="/places/:placeId" element={<PageTransition><PlacesPage /></PageTransition>} />

@@ -66,6 +66,7 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
       { type: 'page', id: 'canvas', title: 'Canvas', path: '/canvas' },
       { type: 'page', id: 'themes', title: 'Gallery', subtitle: 'The 12 chapters of her book', path: '/themes' },
       { type: 'page', id: 'her-words', title: "Leah's Story", subtitle: 'Autobiography + chapter essays', path: '/her-words' },
+      { type: 'page', id: 'journals', title: 'Journals', path: '/journals' },
       { type: 'page', id: 'daily', title: 'Painting of the Day', path: '/daily' },
       { type: 'page', id: 'atlas', title: 'Color Atlas', path: '/atlas' },
       { type: 'page', id: 'obsessions', title: 'Obsessions', path: '/obsessions' },

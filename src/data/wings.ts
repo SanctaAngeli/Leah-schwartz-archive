@@ -36,7 +36,7 @@ export const WINGS: Wing[] = [
     id: 'her-story',
     path: '/her-story',
     label: 'Her Story',
-    routes: ['/her-story', '/her-words', '/daily'],
+    routes: ['/her-story', '/her-words', '/journals', '/daily'],
   },
   {
     id: 'places',
@@ -99,6 +99,12 @@ export const HER_STORY_DOORS: WingDoor[] = [
     to: '/her-words',
     title: 'In Her Own Words',
     visual: { kind: 'photo', src: '/photos/p028_02.jpg' },
+    hero: true,
+  },
+  {
+    to: '/journals',
+    title: 'Journals',
+    visual: { kind: 'photo', src: '/journals/singapore-1990/03.jpg' },
   },
   {
     to: '/daily',
@@ -126,6 +132,7 @@ export const TOUR_ORDER: TourStop[] = [
   { path: '/pairings',       title: 'Pairings' },
   { path: '/her-story',      title: 'Her Story' },
   { path: '/her-words',      title: 'In Her Own Words' },
+  { path: '/journals',       title: 'Journals' },
   { path: '/studio',         title: 'The Studio' },
   { path: '/walk',           title: 'Walk With Her' },
   { path: '/places',         title: 'Places' },
