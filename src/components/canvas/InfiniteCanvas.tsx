@@ -366,43 +366,8 @@ function InfiniteCanvas({ artworks, layout, onArtworkClick }: InfiniteCanvasProp
           ⊙
         </button>
       </div>
-
-      {/* Hint, fades out after interaction */}
-      <CanvasHint />
     </div>
   );
-}
-
-function CanvasHint(): JSX.Element | null {
-  const [visible, setVisible] = useState(true);
-  useEffect(() => {
-    const hide = (): void => setVisible(false);
-    window.addEventListener('pointerdown', hide, { once: true });
-    window.addEventListener('wheel', hide, { once: true });
-    const t = window.setTimeout(hide, 5000);
-    return () => {
-      window.removeEventListener('pointerdown', hide);
-      window.removeEventListener('wheel', hide);
-      window.clearTimeout(t);
-    };
-  }, []);
-  if (!visible) return null;
-  return (
-    <div
-      className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 z-10
-        font-body text-xs text-text-muted bg-white/80 backdrop-blur-md
-        px-4 py-2 rounded-full border border-white/40 shadow-[0_4px_18px_rgba(0,0,0,0.06)]
-        transition-opacity duration-500"
-    >
-      {isTouchDevice()
-        ? 'Drag to drift · Pinch to zoom · Tap any piece'
-        : 'Drag to drift · Pinch or ⌘+scroll to zoom · Click any piece'}
-    </div>
-  );
-}
-
-function isTouchDevice(): boolean {
-  return typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 }
 
 export default InfiniteCanvas;

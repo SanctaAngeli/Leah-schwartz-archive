@@ -1,6 +1,6 @@
 # Leah Schwartz Digital Archive
 
-A digital museum experience honoring the artistic legacy of Leah Schwartz (1945–2004).
+A digital museum experience honoring the artistic legacy of Leah Schwartz (1920–2017).
 
 ## Quick Start
 

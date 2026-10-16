@@ -1,4 +1,4 @@
-// Curated Pairings · editorial diptychs and triptychs across the collection.
+// Pairings · two or three paintings shown side by side.
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
@@ -49,9 +49,6 @@ function PairingCard({ p }: { p: Pairing }): JSX.Element {
         <h2 className="font-heading text-xl md:text-2xl text-text-primary group-hover:text-text-secondary transition-colors">
           {p.title}
         </h2>
-        <p className="font-leah text-xl md:text-2xl leading-none mt-1" style={{ color: p.accent }}>
-          {p.subtitle}
-        </p>
       </div>
     </Link>
   );
@@ -60,7 +57,7 @@ function PairingCard({ p }: { p: Pairing }): JSX.Element {
 function PairingDetail({ pairing }: { pairing: Pairing }): JSX.Element {
   const navigate = useNavigate();
   const arts = useMemo(() => artworksFor(pairing), [pairing]);
-  usePageMeta(pairing.title, pairing.curatorial.slice(0, 160));
+  usePageMeta(pairing.title, `${pairing.title}: paintings by Leah Schwartz shown side by side.`);
 
   return (
     <main
@@ -80,9 +77,6 @@ function PairingDetail({ pairing }: { pairing: Pairing }): JSX.Element {
           <h1 className="font-heading text-5xl md:text-6xl text-text-primary leading-tight">
             {pairing.title}
           </h1>
-          <p className="font-leah mt-4 text-3xl md:text-4xl leading-none" style={{ color: pairing.accent }}>
-            {pairing.subtitle}
-          </p>
         </header>
 
         {/* Paintings */}
@@ -125,23 +119,16 @@ function PairingDetail({ pairing }: { pairing: Pairing }): JSX.Element {
           ))}
         </motion.div>
 
-        {/* Curatorial note */}
-        <motion.section
-          className="max-w-2xl mx-auto mb-14"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <p className="text-center font-body text-text-muted uppercase tracking-widest text-xs mb-5">
-            Curatorial note
-          </p>
-          <p className="font-heading text-[18px] md:text-[20px] leading-[1.8] text-text-primary text-center">
-            {pairing.curatorial}
-          </p>
-
-          {pairing.quote && (
+        {/* Her words, where the book has them */}
+        {pairing.quote && (
+          <motion.section
+            className="max-w-2xl mx-auto mb-14"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <blockquote
-              className="mt-10 border-l-4 pl-6 py-2 italic font-heading text-[18px] leading-relaxed text-text-secondary"
+              className="border-l-4 pl-6 py-2 italic font-heading text-[18px] leading-relaxed text-text-secondary"
               style={{ borderColor: pairing.accent }}
             >
               "{pairing.quote}"
@@ -151,8 +138,8 @@ function PairingDetail({ pairing }: { pairing: Pairing }): JSX.Element {
                 </footer>
               )}
             </blockquote>
-          )}
-        </motion.section>
+          </motion.section>
+        )}
 
         {/* Back to all pairings */}
         <div className="text-center">
@@ -175,7 +162,7 @@ export default function PairingsPage(): JSX.Element {
   // Hook runs unconditionally (rules of hooks); PairingDetail sets its own meta.
   usePageMeta(
     pairing ? `${pairing.title} · Pairings` : 'Pairings',
-    'Curated diptychs and triptychs from Leah Schwartz\'s work · editorial pairings across chapters and years.'
+    'Paintings by Leah Schwartz shown side by side, in pairs and threes.'
   );
 
   if (pairingId && pairing) return <PairingDetail pairing={pairing} />;
@@ -183,20 +170,9 @@ export default function PairingsPage(): JSX.Element {
   return (
     <main className="min-h-screen pt-24 pb-24 px-6">
       <header className="max-w-3xl mx-auto text-center mb-14">
-        <p className="font-body text-text-muted uppercase tracking-[0.3em] text-xs mb-4">
-          Editorial
-        </p>
         <h1 className="font-heading text-5xl md:text-7xl text-text-primary leading-tight">
           Pairings
         </h1>
-        <p className="font-leah text-text-muted mt-4 text-3xl md:text-4xl leading-none">
-          paintings, next to each other
-        </p>
-        <p className="font-body text-text-secondary mt-6 leading-relaxed">
-          Two or three works at a time · placed side by side to see what they say in
-          chorus. Leah returned to certain subjects: a mountain, a husband, a pear, a window.
-          These are the conversations her paintings have with each other.
-        </p>
       </header>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">

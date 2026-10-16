@@ -16,6 +16,7 @@ import {
 import ProseFlow from '../components/reader/ProseFlow';
 import type { FlowPhoto } from '../components/reader/flowBuilder';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { nextStop } from '../data/wings';
 
 interface BookPhoto extends FlowPhoto {
   size: [number, number];
@@ -66,17 +67,13 @@ const PART_LABEL: Record<ReaderSection['part'], string> = {
 function TableOfContents(): JSX.Element {
   usePageMeta(
     'In Her Own Words',
-    "Leah Schwartz's autobiography and chapter essays, exactly as she wrote them - the table of contents."
+    "Leah Schwartz's autobiography and chapter essays, from her 1990 book."
   );
   const parts: ReaderSection['part'][] = ['introduction', 'autobiography', 'chapters'];
-  const first = READER_SECTIONS[0];
 
   return (
     <main className="min-h-screen pt-28 pb-10 px-6">
       <header className="max-w-2xl mx-auto text-center mb-14">
-        <p className="font-body text-text-muted uppercase tracking-[0.3em] text-xs mb-4">
-          Her story
-        </p>
         {/* Her actual hand · the book's title page signature */}
         <img
           src="/photos/p006_01.jpg"
@@ -87,21 +84,6 @@ function TableOfContents(): JSX.Element {
         <h1 className="font-heading text-[clamp(36px,6vw,60px)] text-text-primary leading-tight">
           In her own words
         </h1>
-        <p className="font-leah text-text-muted mt-3 text-3xl leading-none">
-          direct, funny, unsparing
-        </p>
-        <p className="font-body text-text-secondary mt-6 leading-relaxed">
-          She wrote it all down - the immigrant parents, the seven schools, art school
-          on five dollars a week, the remarkable Herman, the accidental watercolors.
-          Read it the way she arranged it.
-        </p>
-        <Link
-          to={`/her-words/${first.id}`}
-          className="inline-block mt-8 glass-pill px-6 py-3 font-body text-sm
-            text-text-primary hover:shadow-glass transition-shadow"
-        >
-          Start reading →
-        </Link>
       </header>
 
       <div className="max-w-2xl mx-auto">
@@ -148,7 +130,7 @@ function TableOfContents(): JSX.Element {
 function SectionReader({ section }: { section: ReaderSection }): JSX.Element {
   usePageMeta(
     `${displayLabel(section)} · In Her Own Words`,
-    `${section.tagline || displayLabel(section)} - Leah Schwartz's own words, from her book.`
+    `${displayLabel(section)} - from Leah Schwartz's 1990 book.`
   );
 
   // Reading progress hairline, pinned under the nav.
@@ -190,6 +172,8 @@ function SectionReader({ section }: { section: ReaderSection }): JSX.Element {
   const idx = READER_SECTIONS.findIndex((s) => s.id === section.id);
   const prev = idx > 0 ? READER_SECTIONS[idx - 1] : null;
   const next = idx < READER_SECTIONS.length - 1 ? READER_SECTIONS[idx + 1] : null;
+  // After her last section the reader hands off to the next stop on the walk.
+  const afterReader = next ? null : nextStop('/her-words');
 
   return (
     <main className="min-h-screen pt-24 pb-10 px-6">
@@ -269,16 +253,16 @@ function SectionReader({ section }: { section: ReaderSection }): JSX.Element {
                 {displayLabel(next)}
               </span>
             </Link>
-          ) : (
-            <Link to="/at-her-age" className="group inline-block">
+          ) : afterReader ? (
+            <Link to={afterReader.path} className="group inline-block">
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-text-muted">
-                Continue the walk →
+                Next →
               </span>
               <span className="block font-heading text-lg text-text-primary group-hover:text-[#8B7355] transition-colors mt-1">
-                At Her Age
+                {afterReader.title}
               </span>
             </Link>
-          )}
+          ) : null}
         </div>
       </nav>
     </main>

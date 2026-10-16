@@ -12,7 +12,7 @@ const allArtworks = artworksData as Artwork[];
 function CanvasPage(): JSX.Element {
   usePageMeta(
     'Canvas',
-    "Drift across all 267 of Leah Schwartz's paintings on an infinite, draggable canvas.",
+    "All of Leah Schwartz's paintings on one canvas.",
   );
 
   const [selectedId, setSelectedId] = useState<string | null>(null);

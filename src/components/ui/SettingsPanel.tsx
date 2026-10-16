@@ -71,9 +71,6 @@ function SettingsPanel(): JSX.Element {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-body text-text-primary font-medium">Night Mode</p>
-                    <p className="font-body text-sm text-text-muted">
-                      Contemplative viewing experience
-                    </p>
                   </div>
                   <button
                     onClick={toggleTheme}
@@ -112,9 +109,6 @@ function SettingsPanel(): JSX.Element {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-body text-text-primary font-medium">UI Sounds</p>
-                    <p className="font-body text-sm text-text-muted">
-                      Subtle transition sounds
-                    </p>
                   </div>
                   <button
                     onClick={toggleSound}
@@ -168,13 +162,6 @@ function SettingsPanel(): JSX.Element {
                     </motion.div>
                   )}
                 </AnimatePresence>
-
-                {/* Keyboard shortcuts hint */}
-                <div className="pt-4 border-t border-gray-100">
-                  <p className="font-body text-xs text-text-muted">
-                    Press <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">?</kbd> for keyboard shortcuts
-                  </p>
-                </div>
               </div>
             </motion.div>
           </>

@@ -58,7 +58,7 @@ function IndexPage(): JSX.Element {
   const [query, setQuery] = useState('');
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>('list');
-  usePageMeta('The Index', 'Leah Schwartz\'s own back-of-book index · every person, place, and subject, digitized.');
+  usePageMeta('The Index', 'The index of Leah Schwartz\'s book: people, places and subjects, with links to the paintings.');
 
   const categories: { id: Category; label: string; count: number }[] = [
     { id: 'all', label: 'All', count: people.length + places.length + subjects.length + artworksAsIndex.length },
@@ -123,16 +123,9 @@ function IndexPage(): JSX.Element {
     <main className="min-h-screen pt-24 pb-24 px-6">
       {/* Hero */}
       <header className="max-w-4xl mx-auto text-center mb-10">
-        <p className="font-body text-text-muted uppercase tracking-widest text-xs mb-3">
-          Her own index, digitized
-        </p>
         <h1 className="font-heading text-5xl md:text-7xl text-text-primary leading-tight">
           The Index
         </h1>
-        <p className="font-body text-text-secondary mt-6 max-w-2xl mx-auto leading-relaxed">
-          Every name, place, and subject in the back of Leah's book · people she knew,
-          places she painted, and the subjects she returned to. Click through to the works.
-        </p>
       </header>
 
       {/* View toggle · list vs constellation */}

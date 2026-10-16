@@ -23,8 +23,8 @@ function ThemesPage(): JSX.Element {
   usePageMeta(
     selectedTheme ? `${selectedTheme.name} · Themes` : 'Themes',
     selectedTheme
-      ? `${selectedTheme.tagline || selectedTheme.name} · paintings from Leah Schwartz's ${selectedTheme.name} chapter.`
-      : "Leah Schwartz's twelve chapters of painting · abstract to travel."
+      ? `Paintings from the ${selectedTheme.name} chapter of Leah Schwartz's book.`
+      : "The chapters of Leah Schwartz's book, from Old Stuff to Travel."
   );
 
   const themeArtworks = useMemo(() => {
@@ -85,21 +85,15 @@ function ThemesPage(): JSX.Element {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <p className="font-body text-text-muted text-sm tracking-[0.25em] uppercase mb-4">
-              Explore by
-            </p>
             <h1 className="font-heading text-[clamp(32px,6vw,56px)] text-text-primary leading-tight">
               Themes
             </h1>
-            <p className="font-body text-text-secondary mt-6 leading-relaxed">
-              Leah organized her work into twelve chapters. Each has her own words and her own paintings.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {themes.map((theme, index) => {
               const heroArtwork = getHeroArtwork(theme);
-              const count = theme.artworkCount ?? artworks.filter((a) =>
+              const count = artworks.filter((a) =>
                 a.chapter === theme.id || a.themes.includes(theme.id)
               ).length;
               // The autobiography chapter has no paintings - it's her life story,

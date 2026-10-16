@@ -58,12 +58,9 @@ function FavoritesPage(): JSX.Element {
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <h2 className="font-heading text-xl text-text-primary mb-2">
+            <h2 className="font-heading text-xl text-text-primary mb-6">
               No favorites yet
             </h2>
-            <p className="font-body text-text-muted mb-6">
-              Click the heart icon on any artwork to add it to your collection
-            </p>
             <button
               onClick={() => navigate('/gallery')}
               className="glass-pill px-6 py-3 text-text-primary font-medium

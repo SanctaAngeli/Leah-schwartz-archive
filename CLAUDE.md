@@ -2,7 +2,7 @@
 
 ## Project Context
 
-This is a digital museum/archive website for artist Leah Schwartz (1945–2004). The site should feel like walking through a premium gallery—Apple-level design quality with glassmorphism UI, organic animations, and the art as the hero.
+This is a digital museum/archive website for artist Leah Schwartz (1920–2017). The site should feel like walking through a premium gallery—Apple-level design quality with glassmorphism UI, organic animations, and the art as the hero.
 
 **Read `/docs/PLAN.md` before starting any work.** It contains the full vision, architecture, and phase breakdown.
 
@@ -108,7 +108,7 @@ All artwork metadata lives in `src/data/artworks.json`. When adding artworks:
 ### Placeholder Strategy
 
 Until real art arrives, generate placeholder data programmatically:
-- 60+ artworks spanning 1945–2004
+- 60+ artworks spanning 1935–1990 (the dated range of her 1990 book)
 - Distribute across all 9 locations
 - Distribute across all 9 themes
 - Use muted earth-tone colors for rectangles

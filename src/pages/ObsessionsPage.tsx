@@ -17,7 +17,7 @@ function matchesObsession(art: Artwork, match: string[], exclude?: string[]): bo
 function ObsessionsPage(): JSX.Element {
   usePageMeta(
     'Obsessions',
-    'The subjects Leah Schwartz returned to · Mt. Tam, irises, Naxos, pears, kitchens. Serial attention across her work.',
+    'Paintings by Leah Schwartz grouped by repeated subject: Mt. Tam, irises, Naxos, pears, kitchens and more.',
   );
 
   const obsessions = useMemo(() => {
@@ -36,20 +36,9 @@ function ObsessionsPage(): JSX.Element {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="font-body text-text-muted uppercase tracking-[0.3em] text-xs mb-3">
-          Subjects she returned to
-        </p>
         <h1 className="font-heading text-5xl md:text-7xl text-text-primary leading-tight">
           Obsessions
         </h1>
-        <p className="font-leah text-text-muted mt-3 text-3xl md:text-4xl leading-none">
-          serial attention
-        </p>
-        <p className="font-body text-text-secondary mt-6 max-w-2xl mx-auto leading-relaxed">
-          Every painter has subjects they return to. Leah painted Mt. Tam from
-          three vantages, Naxos in seven ways, irises eleven times, pears like
-          a pianist running scales. Each row below is one of those returns.
-        </p>
       </motion.header>
 
       <div className="max-w-6xl mx-auto space-y-24">
@@ -62,26 +51,19 @@ function ObsessionsPage(): JSX.Element {
             transition={{ duration: 0.6, delay: idx * 0.05 }}
             className="text-center"
           >
-            <header className="mb-8">
+            <header className="mb-10">
               <p className="font-body text-text-muted uppercase tracking-[0.25em] text-xs mb-3">
                 {o.artworks.length} paintings
               </p>
               <h2 className="font-heading text-3xl md:text-5xl text-text-primary leading-tight">
                 {o.title}
               </h2>
-              <p className="font-leah text-text-muted text-2xl md:text-3xl leading-none mt-2">
-                {o.subtitle}
-              </p>
               <div
                 className="w-12 h-1 rounded-full mx-auto mt-6"
                 style={{ backgroundColor: o.accent }}
                 aria-hidden="true"
               />
             </header>
-
-            <p className="font-body text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
-              {o.note}
-            </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               {o.artworks.map((art) => (
@@ -119,13 +101,6 @@ function ObsessionsPage(): JSX.Element {
           </motion.section>
         ))}
       </div>
-
-      <p className="max-w-2xl mx-auto text-center mt-24 font-body text-text-muted text-sm leading-relaxed">
-        Clusters are auto-detected from title patterns and hand-curated for tone.
-        Many other repeated subjects live in her work · search or browse{' '}
-        <Link to="/themes" className="text-text-primary underline decoration-1 underline-offset-4">all 267 pieces</Link>{' '}
-        to find your own.
-      </p>
     </main>
   );
 }

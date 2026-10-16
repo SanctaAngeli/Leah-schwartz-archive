@@ -64,17 +64,9 @@ function LocationsPage(): JSX.Element {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-12 max-w-2xl mx-auto">
-            <p className="font-body text-text-muted text-sm tracking-[0.25em] uppercase mb-3">
-              Where she worked
-            </p>
             <h1 className="font-heading text-5xl md:text-6xl text-text-primary leading-tight">
               Locations
             </h1>
-            <p className="font-body text-text-secondary mt-6 leading-relaxed">
-              Home in the Bay Area and eleven countries beyond. Open any region to see the works made there.
-              For individual places (Mt. Tam, Bolinas, Naxos, Kyoto…), visit{' '}
-              <a href="/places" className="underline decoration-[#D5C6A8] underline-offset-4 hover:decoration-[#8B7355]">Places</a>.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

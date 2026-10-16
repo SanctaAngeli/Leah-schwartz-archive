@@ -25,20 +25,10 @@ function NotFoundPage(): JSX.Element {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="font-heading text-3xl text-text-primary mb-4"
+          className="font-heading text-3xl text-text-primary mb-8"
         >
           Page Not Found
         </motion.h1>
-
-        <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-text-secondary mb-8"
-        >
-          The artwork you're looking for may have been moved to a different gallery,
-          or the path you followed doesn't exist.
-        </motion.p>
 
         <motion.div
           initial={{ y: 20, opacity: 0 }}

@@ -139,17 +139,18 @@ Priority order (top first is most impactful):
 
 ## 1. Who Leah was (source of truth)
 
-- **Leah Schwartz**, born Rock Island, Illinois, **28 July 1920** · died **2004**.
-- Immigrant family (Polish-Jewish, Pannemanski → Greenfield at Ellis Island).
-- Childhood in Chicago, Boston, Michigan; art school in New York.
-- Married Herman Schwartz ("the remarkable Herman") — had sons Dan, Peter, and Davy.
-- Rooted in **Mill Valley** (studio) and **Bolinas** (on the San Andreas Fault) from the 1960s on.
-- Primarily a **watercolorist**, also oil, gouache, tempera, collage, ink.
-- Travelled obsessively (with Herman) through France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, the American Desert, the High Sierra.
-- Self-described compulsion: *"a need to preserve ephemeral things that I love to look at… one way of keeping a scrapbook."*
-- Book self-published on **Strawberry Press, Mill Valley, California**.
+Only the book (`src/data/prose/*.md`) is a source. Every fact below is from it unless marked.
 
-The autobiography is explicit, funny, unsparing. Her voice is the site's greatest asset.
+- **Leah Schwartz**, born Rock Island, Illinois, **28 July 1920** · died **2017** (death year confirmed by the family; it is not in the book, which was published in 1990).
+- Her mother's family emigrated from Poland (Pannemanski → Greenfield at Ellis Island). Her father, William Ammerman, left her life when her mother divorced him.
+- Childhood in **Chicago, Los Angeles, Michigan** (Sunrise Farm) and **New Jersey** (Jersey Homesteads); art school in New York. Boston came later, as an adult (after San Francisco).
+- Three sons: **Daniel** with her first husband Lee Drasin; **Peter** (b. 1954) and **David/Davy** (b. 1955) with Herman Schwartz.
+- Met **Herman Schwartz**, then a Harvard medical student, at dinner after work while she was working in San Francisco; married in Boston on 1 November 1952. "The remarkable Herman Schwartz" is from the dedication only.
+- Moved to **Mill Valley** in 1954. Her studio is the top floor of the house she designed on a waterfront lot; its window looks at the bay and San Francisco. The book never says her studio looked at Mt. Tam. Weekdays painting in Mill Valley, weekends working in **Bolinas** (on the San Andreas Fault).
+- Primarily a **watercolorist**, also oil, gouache, tempera, collage, ink.
+- Travelled with Herman (her "travel-obsessed husband") through France, Italy, Greece, Turkey, Japan, India, Nepal, Kenya, Britain, the American Desert, the High Sierra. Dated trips in the book: Italy 1974, Japan 1983, Turkey 1985, India 1986.
+- Self-described compulsion: *"This compulsion is not a need to create ART but a need to preserve ephemeral things that I love to look at, a need to "give out" some of what I take in."*
+- Book published in **1990** by **Strawberry Press, Mill Valley, California** (Herman's publishing company). Nothing in the book dates after 1990, so the "2002–2004 late work" idea is not supported by it. Paintings added from other sources (e.g. her website) carry no book date.
 
 ---
 

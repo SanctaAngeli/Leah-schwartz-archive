@@ -33,18 +33,12 @@ function ContinueRail(): JSX.Element | null {
   return (
     <aside aria-label="Continue the walk" className="relative z-10 px-6 pb-20">
       <div className="max-w-xl mx-auto pt-12 border-t border-[#E2DBC9] text-center">
-        <p className="font-body text-text-muted text-[10px] tracking-[0.3em] uppercase mb-4">
-          Continue the walk
-        </p>
         <Link to={stop.path} className="group inline-block focus:outline-none">
           <span
             className="font-heading text-2xl md:text-3xl text-text-primary
               group-hover:text-[#8B7355] transition-colors duration-300"
           >
             {stop.title}&nbsp;→
-          </span>
-          <span className="block font-leah text-text-muted text-2xl leading-none mt-2">
-            {stop.blurb}
           </span>
         </Link>
       </div>

@@ -49,7 +49,7 @@ export default function PostcardDialog({ artwork, open, onClose }: Props): JSX.E
       '',
       'See it here: ' + artworkUrl,
       '',
-      'From the Leah Schwartz Archive · 267 paintings, 28,660 words, one life.' + fromLine,
+      'From the Leah Schwartz Archive.' + fromLine,
     ].join('\n');
     const mailto = `mailto:${encodeURIComponent(recipientEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
@@ -121,7 +121,6 @@ export default function PostcardDialog({ artwork, open, onClose }: Props): JSX.E
                       type="text"
                       value={recipientName}
                       onChange={(e) => setRecipientName(e.target.value)}
-                      placeholder="A dear friend"
                       className="mt-1 w-full px-3 py-2 rounded-lg border border-[#E8E2D5] bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-[#8B7355]/40"
                     />
                   </label>
@@ -142,7 +141,6 @@ export default function PostcardDialog({ artwork, open, onClose }: Props): JSX.E
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Why did this painting make you think of them?"
                     rows={3}
                     className="mt-1 w-full px-3 py-2 rounded-lg border border-[#E8E2D5] bg-white font-body text-sm focus:outline-none focus:ring-2 focus:ring-[#8B7355]/40 resize-none"
                   />

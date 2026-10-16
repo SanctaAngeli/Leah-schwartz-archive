@@ -9,7 +9,7 @@ const artworks = artworksData as Artwork[];
 
 interface Waypoint {
   artworkId: string;
-  caption: string;
+  caption?: string;
   source?: string;
   dwellMs?: number;
 }
@@ -20,14 +20,14 @@ const WALK: Waypoint[] = [
   {
     artworkId: 'self-portrait',
     caption:
-      'I had done few paintings in Boston · Beacon Street, this one in a black turtleneck, and Autumn Leaves. The earliest pieces I kept.',
+      'I had done few paintings in Boston: BEACON ST. (from sketches done while walking home from work), SELF PORTRAIT (in black turtleneck), AUTUMN LEAVES (after an exhilarating October outing to Concord), and a few others, now lost.',
     source: 'Autobiography · West 69th Street',
     dwellMs: 10000,
   },
   {
     artworkId: 'the-remarkable-herman-arthur-schwartz',
     caption:
-      'This book is dedicated to my dear husband, the remarkable Herman Schwartz.',
+      'Dedicated to my dear husband, the remarkable Herman Schwartz',
     source: 'Dedication',
     dwellMs: 9000,
   },
@@ -41,36 +41,30 @@ const WALK: Waypoint[] = [
   {
     artworkId: 'pale-pink-rose-with-cosmos',
     caption:
-      'I once ruined the simple background I was aiming for in a flower painting. I looked up at a Bellini reproduction that I had pinned to the studio wall and decided to paint it "behind" the flowers. It was fun getting into Bellini\'s mind.',
-    source: 'Autobiography · how she found watercolor',
+      'I once ruined the simple background I was aiming for in a flower painting, exasperating because the flowers had turned out fine. I looked up at a Bellini reproduction that I had pinned to the studio wall and decided to paint it "behind" the flowers.',
+    source: 'Autobiography · Work',
     dwellMs: 13000,
   },
   {
     artworkId: 'one-pear-nine-times',
-    caption:
-      'A single pear, nine times. The form goes from fruit to geometry to something quieter.',
-    source: 'Curator\'s note',
-    dwellMs: 9000,
+    dwellMs: 7000,
   },
   {
     artworkId: 'archway-at-the-top-of-town-naxos',
-    caption:
-      'Two carry-ons, two brushes, a chocolate bar, and a notebook · her travel kit. She painted on location for forty days at a stretch.',
-    source: 'Travel · Naxos, the Greek island in pieces',
-    dwellMs: 11000,
+    dwellMs: 7000,
   },
   {
     artworkId: 'mill-valley-kitchen',
     caption:
-      'The kitchen she actually cooked in. The stained-glass window in the corner is the same window that appears in Amazing Grace · the kitchen made holy, the portrait made domestic.',
-    source: 'Interiors · curator\'s note',
-    dwellMs: 11000,
+      'The stained glass window is also used in the portrait "AMAZING GRACE".',
+    source: 'Interiors · caption',
+    dwellMs: 9000,
   },
   {
     artworkId: 'amazing-grace',
     caption:
       'In the room where I am writing, there is a large oil of chrysanthemums; the flowers are long dead. There is another large oil of a red-haired girl, seated nude, who will never again look the way she did to me at that moment.',
-    source: 'Autobiography · late years',
+    source: 'Autobiography · Work',
     dwellMs: 14000,
   },
 ];
@@ -78,7 +72,7 @@ const WALK: Waypoint[] = [
 function WalkWithHerPage(): JSX.Element {
   usePageMeta(
     'Walk With Her',
-    'A guided walk through eight paintings of Leah Schwartz, with her own words.',
+    'Eight paintings by Leah Schwartz, with passages from her book.',
   );
   const navigate = useNavigate();
 
@@ -234,9 +228,11 @@ function WalkWithHerPage(): JSX.Element {
               {art.display_title || art.title}
               {art.year ? ` · ${art.year}` : ''}
             </p>
-            <p className="font-heading italic text-white text-[18px] md:text-[22px] leading-[1.6]">
-              {current.caption}
-            </p>
+            {current.caption && (
+              <p className="font-heading italic text-white text-[18px] md:text-[22px] leading-[1.6]">
+                {current.caption}
+              </p>
+            )}
             {current.source && (
               <p className="font-body text-white/40 text-xs uppercase tracking-wider mt-4">
                 - {current.source}
@@ -272,9 +268,6 @@ function WalkWithHerPage(): JSX.Element {
                 →
               </button>
             </div>
-            <p className="mt-4 font-body text-white/30 text-[10px] uppercase tracking-widest">
-              ← → · space · P to pause · Esc to exit
-            </p>
           </div>
         </motion.div>
       </AnimatePresence>

@@ -18,23 +18,16 @@ const counts = {
 export default function PreservationPage(): JSX.Element {
   usePageMeta(
     'For scholars',
-    'How the Leah Schwartz Archive is preserved · source files, data exports, and the original book PDF.'
+    'How the Leah Schwartz Archive is stored: data files, exports and the scan of her 1990 book.'
   );
 
   return (
     <main className="min-h-screen pt-24 pb-24 px-6">
       <div className="max-w-3xl mx-auto">
         <header className="text-center mb-14">
-          <p className="font-body text-text-muted uppercase tracking-[0.3em] text-xs mb-3">
-            For archivists, scholars, family
-          </p>
           <h1 className="font-heading text-5xl md:text-6xl text-text-primary leading-tight">
             Preservation
           </h1>
-          <p className="font-body text-text-secondary mt-6 max-w-2xl mx-auto leading-relaxed">
-            Built so Leah's work outlasts any single platform. No proprietary CMS,
-            no database · just JSON, markdown, and image files anyone can read.
-          </p>
         </header>
 
         {/* What's preserved */}
@@ -61,13 +54,9 @@ export default function PreservationPage(): JSX.Element {
         {/* Data exports */}
         <section className="glass-card p-6 md:p-8 mb-10">
           <h2 className="font-heading text-2xl text-text-primary mb-4">Data exports</h2>
-          <p className="font-body text-text-secondary text-sm mb-5">
-            All catalog data is published as plain JSON. Scholars are welcome to
-            cite, mirror, or build upon it.
-          </p>
           <ul className="space-y-2 font-body text-sm">
             {[
-              ['artworks.json',  'All 267 artworks with title, year, medium, dimensions, collection, book page, chapter'],
+              ['artworks.json',  'All artworks with title, year, medium, dimensions, collection, book page, chapter'],
               ['people.json',    'Index of people mentioned in the book'],
               ['places.json',    'Places (with geocodes where known)'],
               ['subjects.json',  'Indexed subjects'],
@@ -92,9 +81,9 @@ export default function PreservationPage(): JSX.Element {
         <section className="glass-card p-6 md:p-8 mb-10">
           <h2 className="font-heading text-2xl text-text-primary mb-4">The original book</h2>
           <p className="font-body text-text-secondary text-sm mb-5 leading-relaxed">
-            Leah self-published her book with Strawberry Press in Mill Valley, California,
-            before her death in 2004. The high-resolution scan that seeded this archive -
-            309 pages, 232 MB · is available on request for archivists and scholars.
+            Her book was published in 1990 by Strawberry Press, Mill Valley, California.
+            The high-resolution scan that seeded this archive - 309 pages, 232 MB · is
+            available on request for archivists and scholars.
           </p>
           <a
             href="/book.pdf"
@@ -102,9 +91,6 @@ export default function PreservationPage(): JSX.Element {
           >
             Request the archival PDF →
           </a>
-          <p className="font-body text-xs text-text-muted mt-3 italic">
-            (For large‑file hosting we'll supply a direct link on request · email forthcoming on the About page.)
-          </p>
         </section>
 
         {/* Principles */}
@@ -113,10 +99,8 @@ export default function PreservationPage(): JSX.Element {
           <ul className="font-body text-sm space-y-2 text-text-secondary">
             <li>• Data is portable · JSON, markdown, JPEG. No lock‑in.</li>
             <li>• Images at full scanner resolution. Thumbnails are derived.</li>
-            <li>• Every prose excerpt cites its book page + PDF page.</li>
             <li>• Static hosting · no server, no database, works on any bucket.</li>
             <li>• Source is in a public GitHub repository. Forks welcome.</li>
-            <li>• Built for generations, not seasons.</li>
           </ul>
         </section>
 
@@ -125,7 +109,7 @@ export default function PreservationPage(): JSX.Element {
           <Link to="/about" className="underline decoration-[#D5C6A8] underline-offset-4 hover:decoration-[#8B7355]">
             About
           </Link>
-          {' '}or email the estate directly.
+          .
         </p>
       </div>
     </main>

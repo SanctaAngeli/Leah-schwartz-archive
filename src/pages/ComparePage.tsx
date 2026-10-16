@@ -51,12 +51,9 @@ function ComparePage(): JSX.Element {
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="font-heading text-3xl text-text-primary mb-2">
+          <h1 className="font-heading text-3xl text-text-primary">
             Compare Artworks
           </h1>
-          <p className="font-body text-text-muted">
-            Select two artworks to view side by side
-          </p>
         </div>
 
         {/* Comparison area */}

@@ -2693,6 +2693,21 @@
       69
     ]
   },
+  "purple-iris-thicket": {
+    "dominant": "#74886C",
+    "palette": [
+      "#74886C",
+      "#78899B",
+      "#5F756D",
+      "#A6A894",
+      "#605685"
+    ],
+    "hsl": [
+      103,
+      11,
+      48
+    ]
+  },
   "white-and-blue-iris": {
     "dominant": "#B6C4D2",
     "palette": [
@@ -3996,6 +4011,201 @@
       47,
       56,
       28
+    ]
+  },
+  "teapot": {
+    "dominant": "#9B977F",
+    "palette": [
+      "#9B977F",
+      "#998E76",
+      "#AE9783",
+      "#8C7561",
+      "#826656"
+    ],
+    "hsl": [
+      51,
+      12,
+      55
+    ]
+  },
+  "shoe-last": {
+    "dominant": "#463932",
+    "palette": [
+      "#463932",
+      "#3C302B",
+      "#64564B",
+      "#C29B6B",
+      "#967150"
+    ],
+    "hsl": [
+      21,
+      17,
+      24
+    ]
+  },
+  "old-stucco-house-east-blithedale": {
+    "dominant": "#85ADCA",
+    "palette": [
+      "#85ADCA",
+      "#6B9486",
+      "#709A9D",
+      "#7C6E68",
+      "#355A60"
+    ],
+    "hsl": [
+      205,
+      39,
+      66
+    ]
+  },
+  "nicasio-shed": {
+    "dominant": "#817A5E",
+    "palette": [
+      "#817A5E",
+      "#D5D4D2",
+      "#CAC7C7",
+      "#B8BCC3",
+      "#A4ABB9"
+    ],
+    "hsl": [
+      48,
+      16,
+      44
+    ]
+  },
+  "mothers-washing-machine": {
+    "dominant": "#837B73",
+    "palette": [
+      "#837B73",
+      "#382E2E",
+      "#58494B",
+      "#AB8D76",
+      "#5F5251"
+    ],
+    "hsl": [
+      30,
+      7,
+      48
+    ]
+  },
+  "mothers-dryer": {
+    "dominant": "#39322B",
+    "palette": [
+      "#39322B",
+      "#2A2623",
+      "#342F2A",
+      "#86593A",
+      "#BEAF9D"
+    ],
+    "hsl": [
+      30,
+      14,
+      20
+    ]
+  },
+  "mothers-cuisinart": {
+    "dominant": "#887664",
+    "palette": [
+      "#887664",
+      "#72635A",
+      "#5D5451",
+      "#665B57",
+      "#504742"
+    ],
+    "hsl": [
+      30,
+      15,
+      46
+    ]
+  },
+  "mister-fixit": {
+    "dominant": "#C1B3A5",
+    "palette": [
+      "#C1B3A5",
+      "#8CB3DA",
+      "#252323",
+      "#665E4B",
+      "#7B5F4B"
+    ],
+    "hsl": [
+      30,
+      18,
+      70
+    ]
+  },
+  "german-automotive": {
+    "dominant": "#6F695F",
+    "palette": [
+      "#6F695F",
+      "#8F7967",
+      "#A6AAA4",
+      "#49543F",
+      "#B5B4AB"
+    ],
+    "hsl": [
+      37,
+      8,
+      40
+    ]
+  },
+  "druids-hall": {
+    "dominant": "#4F4841",
+    "palette": [
+      "#4F4841",
+      "#456261",
+      "#9F9C93",
+      "#D4CBBD",
+      "#CFC7BA"
+    ],
+    "hsl": [
+      30,
+      10,
+      28
+    ]
+  },
+  "cups": {
+    "dominant": "#97826F",
+    "palette": [
+      "#97826F",
+      "#A69A8F",
+      "#A47C61",
+      "#A99383",
+      "#99745B"
+    ],
+    "hsl": [
+      28,
+      16,
+      51
+    ]
+  },
+  "crucible": {
+    "dominant": "#977F6F",
+    "palette": [
+      "#977F6F",
+      "#6E685F",
+      "#6C4635",
+      "#5F3A2E",
+      "#A58166"
+    ],
+    "hsl": [
+      24,
+      16,
+      51
+    ]
+  },
+  "chinese-family-cafe": {
+    "dominant": "#C37671",
+    "palette": [
+      "#C37671",
+      "#80ACD0",
+      "#178295",
+      "#766C64",
+      "#68564D"
+    ],
+    "hsl": [
+      4,
+      41,
+      60
     ]
   }
 }

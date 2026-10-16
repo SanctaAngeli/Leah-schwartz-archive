@@ -76,14 +76,8 @@ function WingDoorCard({ door, index }: Props): JSX.Element {
             <h2 className="font-heading text-2xl md:text-3xl text-white drop-shadow-md">
               {door.title}
             </h2>
-            <p className="font-leah text-white/90 mt-1 text-2xl leading-none drop-shadow">
-              {door.tagline}
-            </p>
           </div>
         </div>
-        <p className="font-body text-text-muted text-sm mt-3 px-1 leading-relaxed">
-          {door.blurb}
-        </p>
       </Link>
     </motion.div>
   );

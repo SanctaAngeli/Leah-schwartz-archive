@@ -161,9 +161,6 @@ function SFBayAreaMap({ locations, artworkCounts }: SFBayAreaMapProps): JSX.Elem
           <div className="w-3 h-3 rounded-full bg-text-primary" />
           <span className="font-body">Location</span>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="font-body">Click to explore works</span>
-        </div>
       </div>
     </div>
   );

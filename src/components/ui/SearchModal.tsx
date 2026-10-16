@@ -26,6 +26,13 @@ const people = peopleData as IndexEntity[];
 const places = placesData as IndexEntity[];
 const subjects = subjectsData as IndexEntity[];
 
+/** Live count of a chapter's works, so the label tracks the catalog. */
+function themeCountLabel(themeId: string): string | undefined {
+  const n = artworks.filter((a) => a.chapter === themeId || a.themes.includes(themeId)).length;
+  if (!n) return undefined;
+  return `${n} ${n === 1 ? 'work' : 'works'}`;
+}
+
 interface SearchResult {
   type: 'artwork' | 'location' | 'theme' | 'page' | 'person' | 'place' | 'subject' | 'prose';
   id: string;
@@ -53,26 +60,23 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
 
     // Add pages
     results.push(
-      { type: 'page', id: 'home', title: 'Home', subtitle: 'The front door', path: '/' },
-      { type: 'page', id: 'paintings', title: 'Paintings', subtitle: 'The work · six ways into 267 paintings', path: '/paintings' },
-      { type: 'page', id: 'her-story', title: 'Her Story', subtitle: 'The life · 1920-2004', path: '/her-story' },
-      { type: 'page', id: 'canvas', title: 'Canvas', subtitle: 'All 267 paintings, one drifting wall', path: '/canvas' },
+      { type: 'page', id: 'home', title: 'Home', path: '/' },
+      { type: 'page', id: 'paintings', title: 'Paintings', path: '/paintings' },
+      { type: 'page', id: 'her-story', title: 'Her Story', path: '/her-story' },
+      { type: 'page', id: 'canvas', title: 'Canvas', path: '/canvas' },
       { type: 'page', id: 'themes', title: 'Gallery', subtitle: 'The 12 chapters of her book', path: '/themes' },
       { type: 'page', id: 'her-words', title: "Leah's Story", subtitle: 'Autobiography + chapter essays', path: '/her-words' },
-      { type: 'page', id: 'daily', title: 'Painting of the Day', subtitle: 'A daily ritual', path: '/daily' },
-      { type: 'page', id: 'atlas', title: 'Color Atlas', subtitle: 'A lifetime in color', path: '/atlas' },
-      { type: 'page', id: 'obsessions', title: 'Obsessions', subtitle: 'The subjects she returned to', path: '/obsessions' },
-      { type: 'page', id: 'at-her-age', title: 'At Her Age', subtitle: 'Her life and work, year by year', path: '/at-her-age' },
-      { type: 'page', id: 'pairings', title: 'Pairings', subtitle: 'Curated diptychs', path: '/pairings' },
-      { type: 'page', id: 'last-paintings', title: 'The Last Paintings', subtitle: 'A quiet room · 2002-2004', path: '/last-paintings' },
-      { type: 'page', id: 'constellation', title: 'Constellation', subtitle: 'The mind of the archive', path: '/constellation' },
-      { type: 'page', id: 'walk', title: 'Walk With Her', subtitle: 'A guided drift through her career', path: '/walk' },
-      { type: 'page', id: 'studio', title: 'Studio', subtitle: 'Her tools, process, philosophy', path: '/studio' },
-      { type: 'page', id: 'studio-visit', title: 'Studio Visit, 1985', subtitle: 'An afternoon at her easel', path: '/studio-visit' },
-      { type: 'page', id: 'places', title: 'Places', subtitle: 'Where she painted', path: '/places' },
-      { type: 'page', id: 'index', title: 'Index', subtitle: 'Her own back-of-book index', path: '/index' },
+      { type: 'page', id: 'daily', title: 'Painting of the Day', path: '/daily' },
+      { type: 'page', id: 'atlas', title: 'Color Atlas', path: '/atlas' },
+      { type: 'page', id: 'obsessions', title: 'Obsessions', path: '/obsessions' },
+      { type: 'page', id: 'pairings', title: 'Pairings', path: '/pairings' },
+      { type: 'page', id: 'constellation', title: 'Constellation', path: '/constellation' },
+      { type: 'page', id: 'walk', title: 'Walk With Her', path: '/walk' },
+      { type: 'page', id: 'studio', title: 'Studio', path: '/studio' },
+      { type: 'page', id: 'places', title: 'Places', path: '/places' },
+      { type: 'page', id: 'index', title: 'Index', subtitle: 'The book\'s index', path: '/index' },
       { type: 'page', id: 'favorites', title: 'Favorites', subtitle: 'Your saved artworks', path: '/favorites' },
-      { type: 'page', id: 'about', title: 'About Leah', subtitle: 'Who she was', path: '/about' }
+      { type: 'page', id: 'about', title: 'About Leah', path: '/about' }
     );
 
     // Add reader sections (her autobiography sections + chapter essays)
@@ -133,7 +137,7 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
         type: 'theme',
         id: theme.id,
         title: theme.name,
-        subtitle: theme.description,
+        subtitle: themeCountLabel(theme.id),
         path: `/themes/${theme.id}`,
       });
     });

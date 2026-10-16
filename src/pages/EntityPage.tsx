@@ -43,9 +43,7 @@ export default function EntityPage({ kind }: Props): JSX.Element {
   const displayName = entity ? entity.display_name || entity.name : '';
   usePageMeta(
     displayName || 'Not found',
-    kind === 'person'
-      ? `${displayName} in Leah Schwartz's life · artworks and autobiography mentions.`
-      : `${displayName} in Leah Schwartz's book · artworks and references.`
+    `${displayName}, in the index of Leah Schwartz's book: related paintings and passages.`
   );
 
   const linkedArtworks = useMemo<Artwork[]>(() => {
@@ -196,8 +194,7 @@ export default function EntityPage({ kind }: Props): JSX.Element {
 
         {proseMentions.length === 0 && linkedArtworks.length === 0 && (
           <p className="text-center font-body text-text-muted py-12">
-            This {kind} is in Leah's index but we haven't linked a mention yet. Try the{' '}
-            <Link to="/her-words" className="underline">full autobiography</Link>.
+            No paintings or passages are linked to this entry yet.
           </p>
         )}
       </div>

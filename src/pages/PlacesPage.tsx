@@ -107,7 +107,7 @@ function PlaceDetail({ place }: { place: Place }): JSX.Element {
           </div>
         ) : (
           <p className="text-center text-text-muted font-body py-12">
-            This place is mentioned in Leah's index but no paintings are yet linked to it.
+            No paintings are linked to this place yet.
           </p>
         )}
       </div>
@@ -132,7 +132,7 @@ const groupedByRegion: Record<string, Place[]> = (() => {
 
 function PlacesPage(): JSX.Element {
   const { placeId } = useParams();
-  usePageMeta(placeId ? '' : 'Places', 'Every place Leah Schwartz painted, across nine countries · from Mt. Tam to Naxos.');
+  usePageMeta(placeId ? '' : 'Places', 'Places named in the index of Leah Schwartz\'s book, with the paintings made there.');
 
   // Detail view
   if (placeId) {
@@ -156,16 +156,9 @@ function PlacesPage(): JSX.Element {
   return (
     <main className="min-h-screen pt-24 pb-24 px-6">
       <header className="max-w-4xl mx-auto text-center mb-12">
-        <p className="font-body text-text-muted uppercase tracking-widest text-xs mb-3">
-          Where she painted
-        </p>
         <h1 className="font-heading text-5xl md:text-7xl text-text-primary leading-tight">
           Places
         </h1>
-        <p className="font-body text-text-secondary mt-6 max-w-2xl mx-auto leading-relaxed">
-          From Mount Tam to Naxos, from Death Valley to Kenya. Every place Leah painted or wrote about,
-          pulled from the index of her book.
-        </p>
       </header>
 
       {/* Map */}

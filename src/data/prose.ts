@@ -19,14 +19,14 @@ import highSierra from './prose/13_high_sierra.md?raw';
 export interface ProseSection {
   id: string;                   // section slug · matches chapter slug where applicable
   label: string;                // display title
-  tagline: string;              // Leah's subtitle phrase
+  tagline?: string;             // Leah's own italic subtitle, where the book has one
   markdown: string;             // raw markdown content
   chapter: string | null;       // chapter this relates to, for cross-linking
 }
 
 export const PROSE_SECTIONS: ProseSection[] = [
-  { id: 'front',          label: 'Introduction',    tagline: 'Why this book exists',            markdown: frontMatter,    chapter: null },
-  { id: 'autobiography',  label: 'Autobiography',   tagline: 'A life, in her own words',        markdown: autobiography,  chapter: 'autobiography' },
+  { id: 'front',          label: 'Introduction',    markdown: frontMatter,    chapter: null },
+  { id: 'autobiography',  label: 'Autobiography',   markdown: autobiography,  chapter: 'autobiography' },
   { id: 'old-stuff',      label: 'Old Stuff',       tagline: 'Salvage of thirty years',         markdown: oldStuff,       chapter: 'old-stuff' },
   { id: 'abstract',       label: 'Abstract',        tagline: 'Trying to be trendy',             markdown: abstract,       chapter: 'abstract' },
   { id: 'social-comment', label: 'Social Comment',  tagline: 'Rising from yeasty times',        markdown: socialComment,  chapter: 'social-comment' },
@@ -37,8 +37,8 @@ export const PROSE_SECTIONS: ProseSection[] = [
   { id: 'still-life',     label: 'Still Life',      tagline: 'In love with simple objects',     markdown: stillLife,      chapter: 'still-life' },
   { id: 'interiors',      label: 'Interiors',       tagline: 'Gimme shelter',                   markdown: interiors,      chapter: 'interiors' },
   { id: 'flowers',        label: 'Flowers',         tagline: 'In love with bloom',              markdown: flowers,        chapter: 'flowers' },
-  { id: 'travel',         label: 'Travel',          tagline: 'Nine countries, one notebook',    markdown: travel,         chapter: 'travel' },
-  { id: 'high-sierra',    label: 'High Sierra',     tagline: 'Two weeks of granite every summer', markdown: highSierra,   chapter: null },
+  { id: 'travel',         label: 'Travel',          markdown: travel,         chapter: 'travel' },
+  { id: 'high-sierra',    label: 'High Sierra',     markdown: highSierra,   chapter: null },
 ];
 
 export function getProseByChapter(chapterId: string): ProseSection | undefined {

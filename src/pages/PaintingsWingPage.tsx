@@ -3,12 +3,12 @@ import WingDoorCard from '../components/wings/WingDoorCard';
 import { PAINTINGS_DOORS } from '../data/wings';
 import { usePageMeta } from '../hooks/usePageMeta';
 
-// Wing landing · THE WORK. Six doors into the 267 paintings.
+// Wing landing · THE WORK. Doors into the paintings.
 
 function PaintingsWingPage(): JSX.Element {
   usePageMeta(
     'Paintings',
-    'Six ways into the 267 paintings of Leah Schwartz · the canvas, the twelve chapters, the color atlas, her obsessions, pairings, and the last paintings.'
+    'The paintings of Leah Schwartz: the canvas, the chapters of her book, the color atlas, obsessions and pairings.'
   );
 
   return (
@@ -20,19 +20,9 @@ function PaintingsWingPage(): JSX.Element {
         transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
       >
         <header className="text-center mb-14 max-w-2xl mx-auto">
-          <p className="font-body text-text-muted text-xs tracking-[0.3em] uppercase mb-4">
-            The work
-          </p>
           <h1 className="font-heading text-[clamp(36px,6vw,60px)] text-text-primary leading-tight">
             Paintings
           </h1>
-          <p className="font-leah text-text-muted mt-3 text-3xl leading-none">
-            267 works · six ways in
-          </p>
-          <p className="font-body text-text-secondary mt-6 leading-relaxed">
-            Wander the whole wall, walk the book's twelve chapters, or follow her
-            colors and obsessions across six decades.
-          </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

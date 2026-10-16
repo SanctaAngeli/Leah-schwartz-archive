@@ -12,7 +12,7 @@ import { WINGS, LOBBY_QUOTES } from '../data/wings';
 // required to "get it".
 
 function FrontDoorPage(): JSX.Element {
-  usePageMeta('', 'A digital archive of the artist Leah Schwartz (1920-2004) · American watercolorist, Mill Valley, California.');
+  usePageMeta('', 'Leah Schwartz (1920–2017), painter, Mill Valley, California. Her paintings and her book, in her own words.');
   const navigate = useNavigate();
   const [showEntrance, setShowEntrance] = useState(false);
 
@@ -82,7 +82,7 @@ function FrontDoorPage(): JSX.Element {
               LEAH SCHWARTZ
             </h1>
             <p className="font-body text-text-muted mt-3 text-[12px] tracking-[0.14em] uppercase">
-              1920 – 2004 · watercolors · Mill Valley, California
+              1920 – 2017 · watercolors · Mill Valley, California
             </p>
             <p className="font-heading italic text-text-muted/80 mt-2 text-[12px] tracking-[0.06em]">
               {artwork.display_title || artwork.title}

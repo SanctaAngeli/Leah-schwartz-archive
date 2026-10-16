@@ -461,10 +461,6 @@ function ArtworkModal({ artworkId: propArtworkId, onClose }: ArtworkModalProps):
                   </div>
                 </section>
               )}
-
-              <p className="mt-12 text-[11px] font-body text-white/30 tracking-widest uppercase">
-                Press I to hide · F to favourite · +/− zoom
-              </p>
             </motion.aside>
           )}
         </AnimatePresence>

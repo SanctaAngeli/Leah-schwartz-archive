@@ -14,11 +14,8 @@ import { ShortcutsProvider } from './hooks/useGlobalShortcuts';
 import CanvasPage from './pages/CanvasPage';
 import ColorAtlasPage from './pages/ColorAtlasPage';
 import ObsessionsPage from './pages/ObsessionsPage';
-import AtHerAgePage from './pages/AtHerAgePage';
-import LastPaintingsPage from './pages/LastPaintingsPage';
 import ConstellationPage from './pages/ConstellationPage';
 import WalkWithHerPage from './pages/WalkWithHerPage';
-import StudioVisitPage from './pages/StudioVisitPage';
 import FrontDoorPage from './pages/FrontDoorPage';
 import PaintingsWingPage from './pages/PaintingsWingPage';
 import HerStoryWingPage from './pages/HerStoryWingPage';
@@ -71,11 +68,11 @@ function AppContent(): JSX.Element {
             <Route path="/daily" element={<PageTransition><DailyPage /></PageTransition>} />
             {/* Retired v1 routes — permanent redirects to their living equivalents. */}
             <Route path="/gallery" element={<Navigate to="/themes" replace />} />
-            <Route path="/eras" element={<Navigate to="/at-her-age" replace />} />
+            <Route path="/eras" element={<Navigate to="/her-story" replace />} />
             <Route path="/story" element={<Navigate to="/" replace />} />
             <Route path="/classic" element={<Navigate to="/" replace />} />
-            <Route path="/timeline" element={<Navigate to="/at-her-age" replace />} />
-            <Route path="/timeline/:year" element={<Navigate to="/at-her-age" replace />} />
+            <Route path="/timeline" element={<Navigate to="/her-story" replace />} />
+            <Route path="/timeline/:year" element={<Navigate to="/her-story" replace />} />
             <Route path="/tour" element={<Navigate to="/themes" replace />} />
             <Route path="/tour/:chapterId" element={<Navigate to="/themes" replace />} />
             <Route path="/curated" element={<Navigate to="/themes" replace />} />
@@ -86,11 +83,11 @@ function AppContent(): JSX.Element {
             <Route path="/canvas" element={<PageTransition><CanvasPage /></PageTransition>} />
             <Route path="/atlas" element={<PageTransition><ColorAtlasPage /></PageTransition>} />
             <Route path="/obsessions" element={<PageTransition><ObsessionsPage /></PageTransition>} />
-            <Route path="/at-her-age" element={<PageTransition><AtHerAgePage /></PageTransition>} />
-            <Route path="/last-paintings" element={<PageTransition><LastPaintingsPage /></PageTransition>} />
+            <Route path="/at-her-age" element={<Navigate to="/her-story" replace />} />
+            <Route path="/last-paintings" element={<Navigate to="/paintings" replace />} />
             <Route path="/constellation" element={<PageTransition><ConstellationPage /></PageTransition>} />
             <Route path="/walk" element={<PageTransition><WalkWithHerPage /></PageTransition>} />
-            <Route path="/studio-visit" element={<PageTransition><StudioVisitPage /></PageTransition>} />
+            <Route path="/studio-visit" element={<Navigate to="/studio" replace />} />
             <Route path="/locations" element={<PageTransition><LocationsPage /></PageTransition>} />
             <Route path="/locations/:locationId" element={<PageTransition><LocationsPage /></PageTransition>} />
             <Route path="/themes" element={<PageTransition><ThemesPage /></PageTransition>} />

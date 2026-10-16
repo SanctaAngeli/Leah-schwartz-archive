@@ -82,7 +82,6 @@
   {
     "id": "travel",
     "name": "Travel",
-    "tagline": "nine countries, one notebook",
     "description": "59 works",
     "heroArtworkId": "temple-steps-udaipur",
     "artworkCount": 59
@@ -90,7 +89,6 @@
   {
     "id": "autobiography",
     "name": "Autobiography",
-    "tagline": "a life in her own words",
     "description": "",
     "heroArtworkId": null,
     "artworkCount": 0

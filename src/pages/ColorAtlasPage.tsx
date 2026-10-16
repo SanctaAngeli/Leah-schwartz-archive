@@ -140,7 +140,6 @@ const SpectrumBand = memo(function SpectrumBand({ arts, showAxis, onHover, onPic
 interface Section {
   numeral: string;
   title: string;
-  line: string;
   mode: 'sequence' | 'hue' | 'lightness';
 }
 
@@ -148,19 +147,16 @@ const SECTIONS: Section[] = [
   {
     numeral: 'I',
     title: 'Her Sequence',
-    line: 'Left to right, this is the order she gave her own life’s work — the book as she arranged it.',
     mode: 'sequence',
   },
   {
     numeral: 'II',
     title: 'By Hue',
-    line: 'The same paintings, re-laid by colour — the whole spectrum she reached for, end to end.',
     mode: 'hue',
   },
   {
     numeral: 'III',
     title: 'Dark to Light',
-    line: 'The same paintings once more, rising out of shadow into bloom.',
     mode: 'lightness',
   },
 ];
@@ -168,7 +164,7 @@ const SECTIONS: Section[] = [
 function ColorAtlasPage(): JSX.Element {
   usePageMeta(
     'A Lifetime in Color',
-    "Every painting in Leah Schwartz's life, distilled to its pigment and laid out three ways — by her own sequence, by hue, and by light.",
+    "Leah Schwartz's paintings by dominant color: in book order, by hue, and from dark to light.",
   );
   const navigate = useNavigate();
   const [hovered, setHovered] = useState<string | null>(null);
@@ -207,10 +203,7 @@ function ColorAtlasPage(): JSX.Element {
           A Lifetime in Color
         </h1>
         <p className="font-heading italic text-text-muted/80 mt-5 text-[15px] tracking-[0.04em]">
-          {base.length} paintings · her chromatic life, in her own pigment
-        </p>
-        <p className="font-body text-text-muted/70 mt-5 text-[11px] tracking-[0.28em] uppercase">
-          The same work, ordered three ways · scroll
+          {base.length} paintings
         </p>
         <div className="mx-auto mt-6 h-px w-10 bg-text-muted/40" aria-hidden="true" />
       </motion.header>
@@ -231,10 +224,6 @@ function ColorAtlasPage(): JSX.Element {
             <h2 className="font-heading text-text-primary text-[clamp(26px,3.4vw,42px)] leading-none">
               {s.title}
             </h2>
-            <p className="font-heading italic text-text-muted/80 mt-4
-              text-[14px] max-w-xl mx-auto leading-relaxed">
-              {s.line}
-            </p>
           </div>
           <SpectrumBand
             arts={ordered[s.mode]}
@@ -245,10 +234,6 @@ function ColorAtlasPage(): JSX.Element {
         </motion.section>
       ))}
 
-      <p className="max-w-2xl mx-auto text-center mt-28 font-body
-        text-text-muted text-[13px] leading-relaxed">
-        Hover any band to bring its painting forward; click to open it.
-      </p>
 
       {/* Fixed reading · always in view, never clipped, generously sized.
           Sits on its own soft cream shelf so it stays legible over the bands. */}

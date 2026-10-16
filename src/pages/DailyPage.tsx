@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { getProseByChapter, cleanProse } from '../data/prose';
 import { pickArtworkForDay } from '../data/daily';
-import { getAccent, getSeasonalAccent, seasonName } from '../data/chapterAccents';
+import { getAccent, getSeasonalAccent } from '../data/chapterAccents';
 import { linkArtworkMentions } from '../data/proseLinker';
 import { usePageMeta } from '../hooks/usePageMeta';
 import ReactMarkdown from 'react-markdown';
@@ -42,7 +42,6 @@ export default function DailyPage(): JSX.Element {
   const artwork = useMemo(() => pickArtworkForDay(date), []);
   const accent = getAccent(artwork.chapter);
   const seasonal = getSeasonalAccent(date);
-  const season = seasonName(date);
 
   usePageMeta(
     'Today',
@@ -169,14 +168,6 @@ export default function DailyPage(): JSX.Element {
             The Studio
           </Link>
         </div>
-
-        {/* Seasonal hint · unannounced, just present */}
-        <p
-          className="mt-12 font-leah text-2xl text-center"
-          style={{ color: seasonal.accent + 'aa' }}
-        >
-          {season}
-        </p>
       </div>
     </main>
   );

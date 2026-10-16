@@ -36,14 +36,13 @@ const stalledEraExemplar = artworks.find((a) => a.id === 'migraine');
 const influences = [
   { name: 'The cave painters of Lascaux', note: '' },
   { name: 'The Flemish masters', note: 'at the Metropolitan Museum · magnifying glass on a crucifixion' },
-  { name: 'Bellini · Botticelli · Boudin · Degas', note: 'the masters she grew up with' },
   { name: 'Ben Shahn', note: 'who showed her how to prepare egg-yolk emulsion' },
   { name: 'Imogen Cunningham', note: 'the photographer · on why she never shot landscapes' },
   { name: 'Richard Diebenkorn', note: '' },
 ];
 
 export default function StudioPage(): JSX.Element {
-  usePageMeta('The Studio', "How Leah Schwartz worked · her kit, her influences, her philosophy.");
+  usePageMeta('The Studio', "How Leah Schwartz worked, from her book: watercolor, her travel kit, the painters she admired.");
   return (
     <main className="min-h-screen pt-24 pb-24 px-6 bg-[#FAF8F2]">
       {/* The table · the studio render, used as the section's menu */}
@@ -51,13 +50,6 @@ export default function StudioPage(): JSX.Element {
 
       {/* Hero */}
       <header className="max-w-3xl mx-auto text-center mb-20">
-        <motion.p
-          className="font-body text-text-muted uppercase tracking-[0.3em] text-xs mb-4"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          How she worked
-        </motion.p>
         <motion.h1
           className="font-heading text-6xl md:text-8xl text-text-primary leading-none"
           initial={{ opacity: 0, y: 20 }}
@@ -66,14 +58,6 @@ export default function StudioPage(): JSX.Element {
         >
           The Studio
         </motion.h1>
-        <motion.p
-          className="font-leah text-text-muted mt-4 text-4xl md:text-5xl leading-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          the accidental watercolorist
-        </motion.p>
       </header>
 
       {/* The compulsion · opening quote from page 1 */}
@@ -104,12 +88,6 @@ export default function StudioPage(): JSX.Element {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="font-body text-center text-text-muted uppercase tracking-[0.3em] text-xs mb-3">
-              Leah, working
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl text-text-primary text-center mb-10">
-              Photographs from the studio years
-            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {studioPhotos.map((p, idx) => (
                 <figure
@@ -118,7 +96,7 @@ export default function StudioPage(): JSX.Element {
                 >
                   <img
                     src={`/photos/${p.file}`}
-                    alt="Leah Schwartz photograph"
+                    alt="Photograph from her book"
                     loading="lazy"
                     className="w-full h-auto rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
                   />
@@ -184,31 +162,28 @@ export default function StudioPage(): JSX.Element {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading text-3xl text-text-primary text-center mb-3">
-            The kit she carried everywhere
+            Her travel kit
           </h2>
           <p className="font-body text-center text-text-muted italic mb-10">
             "I travel light, with one carry-on bag and a small backpack…"
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
             {[
-              { item: 'Small plastic paintbox', detail: 'pocket-sized, lived in the backpack' },
-              { item: 'Two good watercolor brushes', detail: 'no more, no less' },
-              { item: 'Sketch book', detail: 'paper for wet-on-wet experiments' },
-              { item: 'Small water bottle', detail: 'the crucial one' },
-              { item: 'A chocolate bar', detail: 'fuel' },
-              { item: 'Quilted tea-cozy', detail: 'doubled as a cushion' },
-              { item: 'Dime-store notebook', detail: 'for daily travel notes' },
-              { item: 'Camera', detail: 'black-and-white photographs on location' },
-            ].map((k) => (
+              'Small plastic paintbox',
+              'Two good watercolor brushes',
+              'Sketch book',
+              'Small water bottle',
+              'A chocolate bar',
+              'Quilted tea-cozy',
+              'Dime-store notebook',
+              'Camera',
+            ].map((item) => (
               <div
-                key={k.item}
+                key={item}
                 className="glass-card p-5 text-left"
               >
                 <p className="font-heading text-[17px] text-text-primary leading-snug">
-                  {k.item}
-                </p>
-                <p className="font-body text-xs text-text-muted mt-2 italic">
-                  {k.detail}
+                  {item}
                 </p>
               </div>
             ))}
@@ -228,7 +203,7 @@ export default function StudioPage(): JSX.Element {
             Whom she admired
           </h2>
           <p className="font-body text-text-muted italic mb-8">
-            "I admire many painters, from the cave painters of Lascaux to Diebenkorn."
+            "I admire many painters, from the cave painters of Lascaux to Deibenkorn, and I paint because it is a compulsion."
           </p>
           <ul className="space-y-4">
             {influences.map((i) => (
@@ -291,8 +266,7 @@ export default function StudioPage(): JSX.Element {
           </p>
           <p>
             <em>"Being 'number-blind' has been an embarrassment all my life,"</em>{' '}
-            she wrote about failing to master Ansel Adams' zone system · but the
-            search for other hands to use kept the working body alive.
+            she wrote, of never mastering the "zone system" of photographic exposure.
           </p>
         </motion.div>
       </section>
@@ -311,7 +285,9 @@ export default function StudioPage(): JSX.Element {
             philosophy of painting, who were the artists I admire, and why I paint.
             I mouthed some vague generalities, caught myself and said I'd have to
             think about it. After a while I said, <strong>'I guess I don't know
-            what a philosophy of painting is, I just do it.'</strong>"
+            what a philosophy of painting is, I just do it. I admire many painters,
+            from the cave painters of Lascaux to Deibenkorn, and I paint because it
+            is a compulsion.'</strong>"
           </p>
           <footer className="font-body text-sm text-text-muted mt-4 tracking-wider">
             · LEAH SCHWARTZ
@@ -322,12 +298,9 @@ export default function StudioPage(): JSX.Element {
       {/* Every medium she used · small reel of works */}
       {techniqueReel.length > 0 && (
         <section className="max-w-5xl mx-auto mb-24">
-          <h2 className="font-heading text-3xl text-text-primary text-center mb-3">
-            Every medium she reached for
+          <h2 className="font-heading text-3xl text-text-primary text-center mb-10">
+            Media
           </h2>
-          <p className="font-body text-center text-text-muted mb-10">
-            One piece from each: oil, watercolor, tempera, collage, mixed media, ink.
-          </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {techniqueReel.map((a) => (
               <Link key={a.id} to={`/artwork/${a.id}`} className="group block">

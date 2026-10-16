@@ -9,7 +9,8 @@ import { PROSE_SECTIONS, cleanProse } from './prose';
 
 export interface ReaderSection {
   id: string;
-  /** Verbatim from the book (her headings are set in caps). */
+  /** Her section headings, verbatim (set in caps); the opening pages have
+   *  no heading in the book, so they carry a plain 'Introduction' label. */
   label: string;
   tagline: string;
   /** Which part of the book this belongs to. */
@@ -101,8 +102,8 @@ function introSection(): ReaderSection {
   }
   return {
     id: 'introduction',
-    label: 'WHY I PAINT',
-    tagline: 'her opening pages',
+    label: 'INTRODUCTION',
+    tagline: '',
     part: 'introduction',
     body,
     chapter: null,
@@ -118,7 +119,7 @@ const chapterSections: ReaderSection[] = PROSE_SECTIONS.filter(
 ).map((s) => ({
   id: s.id,
   label: s.label.toUpperCase(),
-  tagline: s.tagline.toLowerCase(),
+  tagline: (s.tagline ?? '').toLowerCase(),
   part: 'chapters' as const,
   body: s.markdown,
   chapter: s.chapter,
