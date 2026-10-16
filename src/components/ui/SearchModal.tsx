@@ -74,6 +74,8 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
       { type: 'page', id: 'constellation', title: 'Constellation', path: '/constellation' },
       { type: 'page', id: 'walk', title: 'Walk With Her', path: '/walk' },
       { type: 'page', id: 'studio', title: 'Studio', path: '/studio' },
+      { type: 'page', id: 'architecture', title: 'Architecture', path: '/studio/architecture' },
+      { type: 'page', id: 'objects', title: 'Objects', path: '/studio/objects' },
       { type: 'page', id: 'places', title: 'Places', path: '/places' },
       { type: 'page', id: 'index', title: 'Index', subtitle: 'The book\'s index', path: '/index' },
       { type: 'page', id: 'favorites', title: 'Favorites', subtitle: 'Your saved artworks', path: '/favorites' },

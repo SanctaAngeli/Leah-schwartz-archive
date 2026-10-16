@@ -24,6 +24,8 @@ import ThemesPage from './pages/ThemesPage';
 import HerWordsPage from './pages/HerWordsPage';
 import JournalsPage from './pages/JournalsPage';
 import AdminPage from './pages/AdminPage';
+import StudioCollectionPage from './pages/StudioCollectionPage';
+import { ARCHITECTURE, OBJECTS } from './data/studioCollections';
 import IndexPage from './pages/IndexPage';
 import PlacesPage from './pages/PlacesPage';
 import EntityPage from './pages/EntityPage';
@@ -108,6 +110,10 @@ function AppContent(): JSX.Element {
             <Route path="/people/:entityId" element={<PageTransition><EntityPage kind="person" /></PageTransition>} />
             <Route path="/subjects/:entityId" element={<PageTransition><EntityPage kind="subject" /></PageTransition>} />
             <Route path="/studio" element={<PageTransition><StudioPage /></PageTransition>} />
+            <Route path="/studio/architecture" element={<PageTransition><StudioCollectionPage collection={ARCHITECTURE} description="Leah Schwartz's architectural designs: house plans, elevations and renderings, from photographs of the originals." /></PageTransition>} />
+            <Route path="/studio/architecture/:itemId" element={<PageTransition><StudioCollectionPage collection={ARCHITECTURE} description="Leah Schwartz's architectural designs: house plans, elevations and renderings, from photographs of the originals." /></PageTransition>} />
+            <Route path="/studio/objects" element={<PageTransition><StudioCollectionPage collection={OBJECTS} description="Leah Schwartz's found-object boxes and sculpture, from photographs of the originals." /></PageTransition>} />
+            <Route path="/studio/objects/:itemId" element={<PageTransition><StudioCollectionPage collection={OBJECTS} description="Leah Schwartz's found-object boxes and sculpture, from photographs of the originals." /></PageTransition>} />
             {/* /life merged into the Her Story wing — same life, told once. */}
             <Route path="/life" element={<Navigate to="/her-story" replace />} />
             <Route path="/preservation" element={<PageTransition><PreservationPage /></PageTransition>} />

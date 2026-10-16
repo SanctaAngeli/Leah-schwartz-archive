@@ -8,6 +8,8 @@ import photosData from '../data/photos.json';
 import type { Artwork } from '../types';
 import { usePageMeta } from '../hooks/usePageMeta';
 import StudioTableMenu from '../components/studio/StudioTableMenu';
+import WingDoorCard from '../components/wings/WingDoorCard';
+import { ARCHITECTURE, OBJECTS } from '../data/studioCollections';
 
 const artworks = artworksData as Artwork[];
 const photos = photosData as Array<{ file: string; pdf_page: number; likely_photo: boolean; chroma: number }>;
@@ -189,6 +191,19 @@ export default function StudioPage(): JSX.Element {
             ))}
           </div>
         </motion.div>
+      </section>
+
+      {/* Her architecture and objects · from the family's photographs */}
+      <section className="max-w-4xl mx-auto mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[ARCHITECTURE, OBJECTS].map((c, i) => (
+            <WingDoorCard
+              key={c.path}
+              index={i}
+              door={{ to: c.path, title: c.title, visual: { kind: 'photo', src: c.items[0]?.photos[0]?.thumb ?? '' } }}
+            />
+          ))}
+        </div>
       </section>
 
       {/* Influences */}
