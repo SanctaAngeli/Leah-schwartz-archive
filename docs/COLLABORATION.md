@@ -92,21 +92,16 @@ without pushing. That's what the two habits above are for.
 
 ## Deploying
 
-The live site does **not** update automatically when you push. It's published
-manually from Harry's machine:
+**Push is publish.** Every push to `main` on GitHub makes Netlify build and
+publish the live site by itself, usually within a minute or two. Neither of us
+needs a Netlify login or to deploy by hand.
 
-```bash
-npm run build
-netlify deploy --prod
-```
+So only push to `main` when you're happy for it to be live. For work that isn't
+ready, push to a branch instead (`git push origin my-branch`); branches don't
+deploy.
 
-This means Julia cannot currently deploy — the Netlify project sits under
-Harry's personal account.
-
-**This is worth fixing.** Connecting the Netlify project to the GitHub repo
-would make every push to `main` deploy itself, and neither person would need
-Netlify credentials at all. Push becomes publish. See
-`Netlify → Project configuration → Build & deploy → Link repository`.
+If a build fails, the live site stays on the last good version. Ask Harry to
+check the deploy log in Netlify, or ask Claude Code.
 
 ---
 
