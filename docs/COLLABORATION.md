@@ -1,7 +1,6 @@
 # Working on this together
 
-Harry and Julie both work on this site from different machines, sharing one
-Claude Code account. Everything lives in GitHub so either person can pick the
+Harry and Julia both work on this site from different machines. Everything lives in GitHub so either person can pick the
 project up anywhere, on any device.
 
 **Repo:** https://github.com/SanctaAngeli/Leah-schwartz-archive
@@ -11,9 +10,9 @@ project up anywhere, on any device.
 
 ## First-time setup
 
-**1. Accept the repo invitation.** Log into GitHub as **BeyondTomorrowStudios**
-— the shared studio account we both use — and accept the pending invite at
-https://github.com/SanctaAngeli/Leah-schwartz-archive/invitations
+**1. Accept the repo invitation.** Log into GitHub as **ojuliaspinola** (Julia's
+own account, invited with write access on 16 Oct 2026) and accept the pending
+invite at https://github.com/SanctaAngeli/Leah-schwartz-archive/invitations
 
 **2. Install the tools.** You need [Git](https://git-scm.com) and
 [Node.js](https://nodejs.org) (v20 or newer — this project is developed on v24).
@@ -77,14 +76,9 @@ Only one person should be actively working at a time. There's no lock enforcing
 this — it's just a matter of saying so. A message along the lines of *"pushed,
 all yours"* is enough.
 
-**This matters more here than on a normal project.** We both commit as the same
-shared account, so Git records every change as `BeyondTomorrowStudios` no matter
-which of us made it. The history can't tell you who did what, and it won't warn
-you that the other person is mid-edit. The only thing keeping us out of each
-other's way is telling each other. Say when you pick it up and say when you put
-it down.
-
-If it ever matters to know who wrote something, put it in the commit message.
+Git won't warn you that the other person is mid-edit. The only thing keeping
+us out of each other's way is telling each other. Say when you pick it up and
+say when you put it down.
 
 If you both edit at once, Git will stop you at the `git pull` with a merge
 conflict. That's Git protecting the work rather than a disaster — nothing is
@@ -106,7 +100,7 @@ npm run build
 netlify deploy --prod
 ```
 
-This means Julie cannot currently deploy — the Netlify project sits under
+This means Julia cannot currently deploy — the Netlify project sits under
 Harry's personal account.
 
 **This is worth fixing.** Connecting the Netlify project to the GitHub repo
