@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { resolveItem } from '../../data/tour';
 import type { ResolvedItem, TourItemRef } from '../../data/tour';
@@ -14,7 +15,12 @@ interface Props {
 }
 
 function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null {
-  const resolved = useMemo(() => items.map(resolveItem).filter((r): r is ResolvedItem => Boolean(r)), [items]);
+  const resolved = useMemo(() => {
+    const seen = new Set<string>();
+    return items
+      .map(resolveItem)
+      .filter((r): r is ResolvedItem => Boolean(r) && !seen.has(r!.key) && Boolean(seen.add(r!.key)));
+  }, [items]);
   const [open, setOpen] = useState<number | null>(null);
 
   useEffect(() => onLightboxChange(open !== null), [open, onLightboxChange]);
@@ -49,7 +55,7 @@ function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null
         ))}
       </ul>
 
-      {current && (
+      {current && createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -82,7 +88,8 @@ function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null
               Next picture →
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import TourProgress from '../components/tour/TourProgress';
@@ -56,7 +57,9 @@ function TourPage(): JSX.Element {
 
   if (!stop) return <Navigate to="/tour" replace />;
 
-  const resume = !stopId && saved && saved !== TOUR_STOPS[0].id ? TOUR_STOPS.find((s) => s.id === saved) : null;
+  // Offer to carry on, unless they never got past the start or already finished.
+  const lastId = TOUR_STOPS[TOUR_STOPS.length - 1].id;
+  const resume = !stopId && saved && saved !== TOUR_STOPS[0].id && saved !== lastId ? TOUR_STOPS.find((s) => s.id === saved) : null;
 
   return (
     <main className="min-h-screen pt-24 md:pt-28 pb-40 px-6">
@@ -90,9 +93,12 @@ function TourPage(): JSX.Element {
 
       <TourMore key={`more-${stop.id}`} items={stop.more} label={stop.moreLabel} onLightboxChange={setLightboxOpen} />
 
-      {/* Always visible: Back, where you are, Next */}
+      {/* Always visible: Back, where you are, Next. Rendered into <body> so the
+          page-change animation (a transform) can't unpin it from the screen. */}
+      {createPortal(
       <div className="fixed bottom-0 inset-x-0 z-40 px-4 pb-4 pointer-events-none">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 pointer-events-auto">
+        {/* Right padding keeps Next clear of the settings button in the corner. */}
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 pr-14 pointer-events-auto">
           {prev ? (
             <Link to={`/tour/${prev.id}`} className="glass-pill px-6 py-4 font-body text-base text-text-primary hover:shadow-glass">
               ← Back
@@ -114,7 +120,9 @@ function TourPage(): JSX.Element {
             <span />
           )}
         </div>
-      </div>
+      </div>,
+        document.body
+      )}
     </main>
   );
 }

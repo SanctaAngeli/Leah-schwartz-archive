@@ -6,17 +6,21 @@
 import tourData from './tour.json';
 import artworksData from './artworks.json';
 import { ARCHITECTURE, OBJECTS } from './studioCollections';
+import { getJournal } from './journals';
 import type { Artwork } from '../types';
 
 export type TourItemRef =
   | { kind: 'artwork'; id: string }
   | { kind: 'photo'; file: string }
   | { kind: 'architecture'; id: string }
-  | { kind: 'object'; id: string };
+  | { kind: 'object'; id: string }
+  | { kind: 'journal'; id: string; page?: number };
 
 export interface TourStop {
   id: string;
   title: string;
+  /** Her own tagline for this part, e.g. a chapter subtitle from the book. */
+  subtitle?: string | null;
   type: 'intro' | 'image' | 'video' | 'journal' | 'canvas';
   image: TourItemRef | null;
   caption: string | null;
@@ -82,6 +86,21 @@ export function resolveItem(ref: TourItemRef): ResolvedItem | null {
       const p = item.photos[0];
       return { key: `${ref.kind}:${item.id}`, thumb: p.thumb, full: p.src, title: item.title, href: `${collection.path}/${item.id}` };
     }
+    case 'journal': {
+      const journal = getJournal(ref.id);
+      if (!journal) return null;
+      const page = ref.page ? journal.pages[ref.page - 1] : null;
+      const image = page?.image ?? journal.cover.image;
+      return {
+        key: `journal:${journal.id}:${ref.page ?? 'cover'}`,
+        thumb: image,
+        full: image,
+        title: `${journal.title} journal`,
+        href: `/journals/${journal.id}${ref.page ? `?page=${ref.page}` : ''}`,
+      };
+    }
+    default:
+      return null;
   }
 }
 

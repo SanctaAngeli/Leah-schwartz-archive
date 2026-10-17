@@ -15,7 +15,9 @@ function Words({ stop }: Props): JSX.Element {
     <div>
       <p className="font-body text-xs uppercase tracking-[0.2em] text-text-muted">
         {stop.chapter.title}
-        {stop.chapter.subtitle && <span className="normal-case tracking-normal"> · {stop.chapter.subtitle}</span>}
+        {(stop.subtitle || stop.chapter.subtitle) && (
+          <span className="normal-case tracking-normal"> · {stop.subtitle || stop.chapter.subtitle}</span>
+        )}
       </p>
       <h1 className="font-heading text-[clamp(32px,4.5vw,52px)] text-text-primary leading-tight mt-2">{stop.title}</h1>
       {stop.fact && <p className="font-body text-text-secondary mt-4">{stop.fact.text}</p>}

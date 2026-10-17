@@ -3,9 +3,3364 @@
     {
       "id": "meet-leah",
       "title": "Meet Leah",
+      "subtitle": "the life of a woman who managed to keep painting",
+      "stops": [
+        {
+          "id": "meet-leah",
+          "title": "Leah Schwartz",
+          "type": "intro",
+          "image": null,
+          "caption": null,
+          "quote": null,
+          "fact": null,
+          "more": []
+        },
+        {
+          "id": "leah",
+          "title": "Her story",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p029_02.jpg"
+          },
+          "caption": "ON MY WAY HOME TO MOTHER, I STOPPED IN CHICAGO WHERE MY COUSIN SIMON TOOK THIS PICTURE",
+          "quote": {
+            "text": "So, now you're getting a picture book, an autobiography, some travel notes, a touch of homely philosophy and if it all works out maybe a recipe or two (but no ARTSPEAK).",
+            "label": "From the opening pages of her book"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "jeanette"
+            },
+            {
+              "kind": "artwork",
+              "id": "galaxy"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-voter"
+            },
+            {
+              "kind": "artwork",
+              "id": "footlong-hotdog"
+            },
+            {
+              "kind": "artwork",
+              "id": "six-days-on-the-petaluma-river"
+            },
+            {
+              "kind": "artwork",
+              "id": "bus-stop-two-women"
+            },
+            {
+              "kind": "artwork",
+              "id": "amazing-grace"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-red-pears"
+            },
+            {
+              "kind": "artwork",
+              "id": "mill-valley-bathroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "pink-cosmos-and-botticelli"
+            },
+            {
+              "kind": "artwork",
+              "id": "window-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-woman-and-pig"
+            },
+            {
+              "kind": "artwork",
+              "id": "druids-hall"
+            },
+            {
+              "kind": "artwork",
+              "id": "teapot"
+            }
+          ],
+          "moreLabel": "A first look at her work"
+        },
+        {
+          "id": "fitting-it-in",
+          "title": "Fitting it in",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "self-portrait-with-chrysanths"
+          },
+          "caption": "Self Portrait With Chrysanths",
+          "quote": {
+            "text": "So I have managed to fit my work in the spaces between my husband, children and housekeeping, and I still feel “avant garde” when I leave the bed unmade. As a woman painter who married, raised children, and kept the house (with all that it entails), I have found the most precious work-necessity to be continuity, and like most precious things, it is rare.",
+            "label": "From her artist statement"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "mill-valley-kitchen"
+            },
+            {
+              "kind": "artwork",
+              "id": "mill-valley-bathroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-washing-machine"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-dryer"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-cuisinart"
+            },
+            {
+              "kind": "artwork",
+              "id": "teapot"
+            },
+            {
+              "kind": "artwork",
+              "id": "cups"
+            },
+            {
+              "kind": "photo",
+              "file": "p034_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p035_02.jpg"
+            }
+          ],
+          "moreLabel": "Home and work"
+        },
+        {
+          "id": "leah-reads",
+          "title": "Leah reads from her journal",
+          "subtitle": null,
+          "type": "video",
+          "image": null,
+          "caption": null,
+          "quote": {
+            "text": "Oh yes, I also carry a pocket-size dime store notebook for daily travel notes.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "journal",
+              "id": "singapore-1990"
+            },
+            {
+              "kind": "journal",
+              "id": "devon"
+            }
+          ],
+          "moreLabel": "Her two notebooks"
+        }
+      ]
+    },
+    {
+      "id": "growing-up",
+      "title": "Growing up",
       "subtitle": null,
       "stops": [
-        { "id": "who-she-was", "title": "Leah Schwartz", "type": "intro", "image": null, "caption": null, "quote": null, "fact": null, "more": [] }
+        {
+          "id": "rock-island",
+          "title": "Rock Island, Illinois",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p017_01.jpg"
+          },
+          "caption": null,
+          "quote": {
+            "text": "This was the first divorce in the family and considered so shameful that his name was never mentioned, he was cut out of group pictures, and it wasn't until after my mother died that I found this picture, after having seen this one all my life.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "Her mother divorced her father, William Ammerman, when Leah was an infant."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p018_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p018_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p020_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p021_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p022_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p023_01.jpg"
+            }
+          ],
+          "moreLabel": "Family photographs from her book"
+        },
+        {
+          "id": "chicago",
+          "title": "Chicago",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p018_02.jpg"
+          },
+          "caption": "IN THE MIDDLE OF COUSINS",
+          "quote": {
+            "text": "At the Steiners, my cousins Mel and Simon and I used to draw pictures on a shared easel-slate. The boys would draw cars, boats and cowboys, and I would draw pretty ladies with curly hair.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "After the divorce her mother moved to Chicago."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p017_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p018_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p020_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p021_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p022_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p023_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p029_02.jpg"
+            }
+          ],
+          "moreLabel": "Family photographs from her book"
+        },
+        {
+          "id": "los-angeles",
+          "title": "Los Angeles",
+          "subtitle": "always the new kid at school",
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p020_01.jpg"
+          },
+          "caption": "IN RESEDA: THE NEW CAR, MOTHERS \"FRIEND\", BETTY AND ME",
+          "quote": {
+            "text": "Mother was handy at everything. She taught me how to sew, to make electrical repairs, and to be intolerant of shoddiness.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "Between the ages of six and ten she went to seven different schools."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p017_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p018_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p018_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p021_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p022_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p023_01.jpg"
+            }
+          ],
+          "moreLabel": "Family photographs from her book"
+        },
+        {
+          "id": "michigan",
+          "title": "Michigan",
+          "subtitle": "how I stopped learning French and started shovelling manure",
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p022_01.jpg"
+          },
+          "caption": "SHOWING OFF ON \"MAX\"",
+          "quote": {
+            "text": "I drew a lot of horses during the farm years, some from life and some copied from farm journals. I also painted some landscapes on cardboard with cheap poster paint.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "The family moved to “Sunrise Farm,” a collective farm near Saginaw, Michigan."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p017_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p018_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p018_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p020_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p021_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p023_01.jpg"
+            }
+          ],
+          "moreLabel": "Family photographs from her book"
+        },
+        {
+          "id": "earliest-paintings",
+          "title": "Her earliest paintings",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "girl-with-arm"
+          },
+          "caption": "Girl With Arm, 1935",
+          "quote": {
+            "text": "When I was sixteen I received an anonymous gift, a complete set of oil paints, brushes, linseed oil, turpentine and palette in a beautiful wooden box (I still have the box).",
+            "label": "From her book: OLD STUFF"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "girl-with-arm"
+            },
+            {
+              "kind": "artwork",
+              "id": "jeanette"
+            },
+            {
+              "kind": "artwork",
+              "id": "self-portrait"
+            },
+            {
+              "kind": "artwork",
+              "id": "old-ferry-slip"
+            },
+            {
+              "kind": "artwork",
+              "id": "liberty-ship"
+            },
+            {
+              "kind": "artwork",
+              "id": "autumn-leaves"
+            },
+            {
+              "kind": "photo",
+              "file": "p024_01.jpg"
+            }
+          ],
+          "moreLabel": "Her earliest surviving work"
+        }
+      ]
+    },
+    {
+      "id": "learning-to-paint",
+      "title": "Learning to paint",
+      "subtitle": null,
+      "stops": [
+        {
+          "id": "art-school",
+          "title": "Art school in New York",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p024_01.jpg"
+          },
+          "caption": "MY FIRST ART SCHOOL PAINTING (just like the teacher's)",
+          "quote": {
+            "text": "We plunged directly into oil painting, no fooling around with learning how to draw, perspective, color, painting techniques... just paint like the teacher. So I did.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "After high school she went to art school in New York City."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p024_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p025_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p025_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p026_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p026_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p030_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p031_01.jpg"
+            }
+          ],
+          "moreLabel": "Photographs and drawings from these years"
+        },
+        {
+          "id": "ben-shahn",
+          "title": "Ben Shahn",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p026_02.jpg"
+          },
+          "caption": "ME, SAM (learning to knit), AND CHARLOTTE IN OUR \"BOHEMIAN\" LIVING-ROOM-STUDIO",
+          "quote": {
+            "text": "He also gave me a panel of beautiful paper glued to masonite that I was afraid to \"ruin.\" It was dauntingly elegant. When he found out that I hadn't painted anything on it, he guessed why and took a brush loaded with watercolor, smeared it over the board and said, \"There, now go ahead and paint something!\"",
+            "label": "From her book: OLD STUFF"
+          },
+          "fact": {
+            "text": "The artists Ben and Bernarda Shahn lived nearby and encouraged young artists."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p026_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p025_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p027_02.jpg"
+            },
+            {
+              "kind": "artwork",
+              "id": "togetherness"
+            },
+            {
+              "kind": "artwork",
+              "id": "cream-tartar"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-on-a-raft"
+            }
+          ],
+          "moreLabel": "More from these years"
+        },
+        {
+          "id": "daniel",
+          "title": "Daniel",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p028_02.jpg"
+          },
+          "caption": "DANIEL AND ME",
+          "quote": {
+            "text": "Nine months later our son Daniel was born in a blacked out hospital in Monmouth, New Jersey during an air raid alert.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "During the war she and Lee Drasin were married secretly in Alexandria, Virginia."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p024_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p025_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p027_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p037_02.jpg"
+            }
+          ],
+          "moreLabel": "Photographs from her book"
+        },
+        {
+          "id": "beetles",
+          "title": "Beetles",
+          "subtitle": "the accidental watercolorist",
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p038_01.jpg"
+          },
+          "caption": "ONE OF THE MANY BEETLE PAINTINGS I DID IN THE PROCESS OF TEACHING MYSELF WATERCOLOR TECHNIQUE",
+          "quote": {
+            "text": "One fine day, while browsing the shelves of the Marin County Library, I found a large volume of color photographs of beetles from all over the world. I was so taken with their color and bizarre forms that I went right out and bought watercolors, brushes and paper and tried to paint them.",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "untitled-5231"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-floating-roses"
+            },
+            {
+              "kind": "artwork",
+              "id": "winter-sunrise"
+            },
+            {
+              "kind": "artwork",
+              "id": "peeled-apple"
+            },
+            {
+              "kind": "artwork",
+              "id": "purple-iris"
+            }
+          ],
+          "moreLabel": "Her watercolors"
+        },
+        {
+          "id": "teaching",
+          "title": "Teaching",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "plugs"
+          },
+          "caption": "Plugs",
+          "quote": {
+            "text": "I've tried to make my students (many of them exhibiting artists in other media) aware of the ordinary things around them. … It's a great pleasure to see an artist take to watercolor and develop a personal style. It doesn't happen often, but when it does I feel like a mother with a gifted child.",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "togetherness"
+            },
+            {
+              "kind": "artwork",
+              "id": "yellow-apple-with-red-boxes"
+            },
+            {
+              "kind": "artwork",
+              "id": "tomato-half"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-assyrians"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-on-a-raft"
+            },
+            {
+              "kind": "artwork",
+              "id": "cream-tartar"
+            },
+            {
+              "kind": "artwork",
+              "id": "mrs-stewart-and-the-great-africa-remedy"
+            },
+            {
+              "kind": "artwork",
+              "id": "still-life-with-white-glue-bottle"
+            }
+          ],
+          "moreLabel": "Ordinary things"
+        }
+      ]
+    },
+    {
+      "id": "mill-valley",
+      "title": "Mill Valley",
+      "subtitle": "roots, more roots and FINALLY ROOTED",
+      "stops": [
+        {
+          "id": "herman",
+          "title": "Herman",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "the-remarkable-herman-arthur-schwartz"
+          },
+          "caption": "The Remarkable Herman Arthur Schwartz",
+          "quote": {
+            "text": "…a tall, dark, handsome young man who said he was on his way to Mexico to explore caves for blind fish. (The rest of the year he was a Harvard medical student.) I had never heard of blind fish so I fell in love.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "Leah and Herman Schwartz were married in Boston on November 1, 1952."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p030_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p032_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p033_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p035_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p039_01.jpg"
+            },
+            {
+              "kind": "artwork",
+              "id": "happy-birthday-dearest-herman"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-duke-of-bedford-s-rhino"
+            }
+          ],
+          "moreLabel": "Photographs and paintings"
+        },
+        {
+          "id": "peter-and-david",
+          "title": "Peter and David",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p034_02.jpg"
+          },
+          "caption": "WITH MY HANDS FULL (literally and figuratively) OF PETER AND DAVY",
+          "quote": {
+            "text": "In desperation, I sculpted a clay head of Davy before he learned how to climb out of his play pen. I worked on it at the kitchen sink while Peter napped.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "Peter was born in January 1954 and David in February 1955."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p034_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p035_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p039_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p037_02.jpg"
+            },
+            {
+              "kind": "artwork",
+              "id": "david-schwartz-3-son"
+            }
+          ],
+          "moreLabel": "Family photographs and a portrait"
+        },
+        {
+          "id": "the-house",
+          "title": "The house by the bay",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "mill-valley-kitchen"
+          },
+          "caption": "Mill Valley, Kitchen",
+          "quote": {
+            "text": "After a few years, we bought a waterfront lot across the street and I then designed, and we had built, a white clapboard, three-story house with a vaguely New England look.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "In 1954 the family moved to California and found a house in Mill Valley."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "mill-valley-bathroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "sunrise-from-my-bedroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "edge-of-richardson-bay"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-iris-with-san-francisco-skyline"
+            },
+            {
+              "kind": "artwork",
+              "id": "zinnias-with-skyline"
+            },
+            {
+              "kind": "artwork",
+              "id": "blithedale-canyon-mill-valley"
+            },
+            {
+              "kind": "artwork",
+              "id": "old-stucco-house-east-blithedale"
+            },
+            {
+              "kind": "artwork",
+              "id": "amazing-grace"
+            }
+          ],
+          "moreLabel": "Mill Valley in her paintings"
+        },
+        {
+          "id": "time-to-paint",
+          "title": "Time to paint",
+          "subtitle": "if everything else is taken care of",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "hilaritas-house"
+          },
+          "caption": "Hilaritas House, 1958-59",
+          "quote": {
+            "text": "When the children started going to school full time I began painting full time, 9:30 to 3, five days a week, unless the kids had to be taken to doctor, dentist, orthodontist, orthopedist (broken bones), Little League, swimming lessons... the whole goddamned middle class suburban trip.",
+            "label": "From her autobiography"
+          },
+          "fact": {
+            "text": "She had her first one-man show in San Francisco in the sixties."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "four-views-of-mt-tam"
+            },
+            {
+              "kind": "artwork",
+              "id": "winter-sunrise"
+            },
+            {
+              "kind": "artwork",
+              "id": "marin-headlands"
+            },
+            {
+              "kind": "artwork",
+              "id": "golden-gate-bridge-and-marin-headlands"
+            },
+            {
+              "kind": "artwork",
+              "id": "highway-101-marin"
+            },
+            {
+              "kind": "artwork",
+              "id": "road-to-rodeo-lagoon"
+            }
+          ],
+          "moreLabel": "Marin in her paintings"
+        },
+        {
+          "id": "bolinas",
+          "title": "Bolinas",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "bolinas-kitchen"
+          },
+          "caption": "Bolinas, Kitchen",
+          "quote": {
+            "text": "I paint in my studio in Mill Valley during the week and do slave labor in Bolinas on weekends. … We may be nuts, but we love to work, and making things is a great pleasure to both of us.",
+            "label": "From the opening pages of her book"
+          },
+          "fact": {
+            "text": "Herman kept a world-famous collection of succulent plants in a greenhouse in Bolinas."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "bolinas-before-remodeling"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-bathroom-bedroom-and-view-to-the-sea"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-dining-alcove"
+            },
+            {
+              "kind": "artwork",
+              "id": "bill-s-pond-bolinas"
+            },
+            {
+              "kind": "artwork",
+              "id": "mesa-road-bolinas"
+            },
+            {
+              "kind": "artwork",
+              "id": "calendulas-in-bolinas"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-soccer-team-on-san-andreas-fault"
+            },
+            {
+              "kind": "artwork",
+              "id": "giant-euphorbias-at-lake-chala"
+            }
+          ],
+          "moreLabel": "Bolinas in her paintings"
+        },
+        {
+          "id": "house-designs",
+          "title": "Her house designs",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "architecture",
+            "id": "1-650-sq-ft-house-for-small-waterfront-lot"
+          },
+          "caption": "1,650 sq. ft. house for small waterfront lot",
+          "quote": {
+            "text": "I have a secret yearning to be an architect and I designed the house we live in, converted our Bolinas barn-shack to a farm house, and was delighted to be asked to design a house for my young friend Lisa Adler who lives in the Sierras.",
+            "label": "From her book: INTERIORS"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "architecture",
+              "id": "world-deli-novato"
+            },
+            {
+              "kind": "architecture",
+              "id": "1-650-sq-ft-house-for-small-waterfront-lot"
+            },
+            {
+              "kind": "architecture",
+              "id": "solar-house"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-33"
+            },
+            {
+              "kind": "architecture",
+              "id": "proposed-one-bedrm-rental-unit-for-los-robles-beach-san-diego-co-ca"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-1"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-2"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-3"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-4"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-5"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-6"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-7"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-8"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-9"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-10"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-11"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-12"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-13"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-14"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-15"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-16"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-17"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-18"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-19"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-20"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-21"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-22"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-23"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-24"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-25"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-26"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-27"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-28"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-29"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-30"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-31"
+            },
+            {
+              "kind": "architecture",
+              "id": "house-design-32"
+            }
+          ],
+          "moreLabel": "All 37 house designs and drawings"
+        }
+      ]
+    },
+    {
+      "id": "the-paintings",
+      "title": "The paintings",
+      "subtitle": null,
+      "stops": [
+        {
+          "id": "old-stuff",
+          "title": "Old Stuff",
+          "subtitle": "salvage of thirty years",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "self-portrait"
+          },
+          "caption": "Self Portrait, 1949-50",
+          "quote": {
+            "text": "These paintings were done during the unsettled years of my life. Until I was almost forty, I didn't have the kind of stability or free time necessary for producing a consistent body of work.",
+            "label": "From her book: OLD STUFF"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "girl-with-arm"
+            },
+            {
+              "kind": "artwork",
+              "id": "jeanette"
+            },
+            {
+              "kind": "artwork",
+              "id": "self-portrait"
+            },
+            {
+              "kind": "artwork",
+              "id": "old-ferry-slip"
+            },
+            {
+              "kind": "artwork",
+              "id": "wool-hap-town"
+            },
+            {
+              "kind": "artwork",
+              "id": "liberty-ship"
+            },
+            {
+              "kind": "artwork",
+              "id": "autumn-leaves"
+            },
+            {
+              "kind": "artwork",
+              "id": "beacon-street-boston"
+            },
+            {
+              "kind": "artwork",
+              "id": "view-from-new-york-apartment"
+            },
+            {
+              "kind": "artwork",
+              "id": "hilaritas-house"
+            }
+          ],
+          "moreLabel": "All 10 early paintings"
+        },
+        {
+          "id": "abstract",
+          "title": "Abstract",
+          "subtitle": "trying to be trendy",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "space-matter"
+          },
+          "caption": "Space Matter",
+          "quote": {
+            "text": "In the early sixties I had a brief fling with flinging. I smeared, spattered and poured paint onto canvases spread on the floor. … It was fun for awhile, but I don't think abstractly and I don't worship paint for its own sake so I resumed painting what I truly love: the real, funny, beautiful, ironic visual world.",
+            "label": "From her book: ABSTRACT"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "crystal-inclusion"
+            },
+            {
+              "kind": "artwork",
+              "id": "space-matter"
+            },
+            {
+              "kind": "artwork",
+              "id": "migraine"
+            },
+            {
+              "kind": "artwork",
+              "id": "galaxy"
+            }
+          ],
+          "moreLabel": "All 4 abstract paintings"
+        },
+        {
+          "id": "social-comment",
+          "title": "Social Comment",
+          "subtitle": "rising from yeasty times",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "kent-state"
+          },
+          "caption": "Kent State",
+          "quote": {
+            "text": "In the sixties and seventies, when the U.S was in a ferment of civil rights demonstrations and Vietnam war protests, I expressed my concern in painting, multimedia constructions, and collages which were seen by thousands of people at the huge Sausalito Arts Festival.",
+            "label": "From her book: SOCIAL COMMENT"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "assassination"
+            },
+            {
+              "kind": "artwork",
+              "id": "kent-state"
+            },
+            {
+              "kind": "artwork",
+              "id": "sit-in-demonstration"
+            },
+            {
+              "kind": "artwork",
+              "id": "target"
+            },
+            {
+              "kind": "artwork",
+              "id": "an-american-family"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-senator-on-an-in-vestigating-committee"
+            },
+            {
+              "kind": "artwork",
+              "id": "american-legion"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-sec-y-of-state-with-puppet"
+            },
+            {
+              "kind": "artwork",
+              "id": "kkk-imperial-wizard"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-general-old-soldiers-do"
+            },
+            {
+              "kind": "artwork",
+              "id": "campaigning-senator"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-governor-on-the-campaign-trail"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-voter"
+            },
+            {
+              "kind": "artwork",
+              "id": "hawaiian-vacationers"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-mayor-s-hawaiian-junket"
+            },
+            {
+              "kind": "artwork",
+              "id": "one-mickey-two-anns"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-gov-man-and-image"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-boys-from-liverpool"
+            },
+            {
+              "kind": "artwork",
+              "id": "silent-spring"
+            },
+            {
+              "kind": "artwork",
+              "id": "springtime-in-the-rockies"
+            },
+            {
+              "kind": "artwork",
+              "id": "kitchen-bouquet"
+            },
+            {
+              "kind": "artwork",
+              "id": "ken-barbie-after-the-fall"
+            },
+            {
+              "kind": "artwork",
+              "id": "buddies"
+            },
+            {
+              "kind": "artwork",
+              "id": "ken-and-zilphia"
+            },
+            {
+              "kind": "artwork",
+              "id": "charmer"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-organization-man"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5195"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5227"
+            }
+          ],
+          "moreLabel": "All 28 Social Comment works"
+        },
+        {
+          "id": "on-the-road",
+          "title": "On the Road",
+          "subtitle": "facades of obscure lives",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "chris-s-2-cafe"
+          },
+          "caption": "Chris's #2 Cafe",
+          "quote": {
+            "text": "I create scenarios, in my mind, of the lives of the people involved with these places. Every detail is part of the fabric of someone's life, so I spend a lot of time getting the details right. A crumpled bit of trash has to look authentic; it adds to the feeling of time and place.",
+            "label": "From her book: ON THE ROAD"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "demartile-bros"
+            },
+            {
+              "kind": "artwork",
+              "id": "meekers-welding"
+            },
+            {
+              "kind": "artwork",
+              "id": "black-point-general-store"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-meadows"
+            },
+            {
+              "kind": "artwork",
+              "id": "chris-s-2-cafe"
+            },
+            {
+              "kind": "artwork",
+              "id": "san-pedro-cafe"
+            },
+            {
+              "kind": "artwork",
+              "id": "nob-hill-market-billboard"
+            },
+            {
+              "kind": "artwork",
+              "id": "buzz-s"
+            },
+            {
+              "kind": "artwork",
+              "id": "sav-a-lot"
+            },
+            {
+              "kind": "artwork",
+              "id": "fish-bait-shack"
+            },
+            {
+              "kind": "artwork",
+              "id": "p-r-surplus"
+            },
+            {
+              "kind": "artwork",
+              "id": "sausalito-bait-shop"
+            },
+            {
+              "kind": "artwork",
+              "id": "george-and-marsha-s"
+            },
+            {
+              "kind": "artwork",
+              "id": "bonnie-and-bill-s-rainbow-inn"
+            },
+            {
+              "kind": "artwork",
+              "id": "berkeley-city-limits"
+            },
+            {
+              "kind": "artwork",
+              "id": "footlong-hotdog"
+            },
+            {
+              "kind": "artwork",
+              "id": "united-cafe"
+            },
+            {
+              "kind": "artwork",
+              "id": "courtland-market"
+            },
+            {
+              "kind": "artwork",
+              "id": "valley-ford-market"
+            }
+          ],
+          "moreLabel": "All 19 On the Road paintings"
+        },
+        {
+          "id": "landscape",
+          "title": "Landscape",
+          "subtitle": "vanishing verdant valleys",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "knuckle-hill"
+          },
+          "caption": "Knuckle Hill",
+          "quote": {
+            "text": "I used to paint landscapes from my old Ford Econoline van that had an engine housing between the front seats. The top of the housing was flat and formed a convenient table for paints, and the steering wheel was at a good angle for watercolor painting. In my portable studio I could even paint in the rain.",
+            "label": "From her book: LANDSCAPE"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "four-views-of-mt-tam"
+            },
+            {
+              "kind": "artwork",
+              "id": "four-views-of-sonoma"
+            },
+            {
+              "kind": "artwork",
+              "id": "mt-tam-golden-gate-bridge-sausalito-from-san-francisco"
+            },
+            {
+              "kind": "artwork",
+              "id": "mt-tam-from-sonoma"
+            },
+            {
+              "kind": "artwork",
+              "id": "golden-gate-bridge-and-marin-headlands"
+            },
+            {
+              "kind": "artwork",
+              "id": "marin-headlands"
+            },
+            {
+              "kind": "artwork",
+              "id": "winter-sunrise"
+            },
+            {
+              "kind": "artwork",
+              "id": "christo-s-running-fence-1"
+            },
+            {
+              "kind": "artwork",
+              "id": "christo-s-running-fence-2"
+            },
+            {
+              "kind": "artwork",
+              "id": "petaluma-river"
+            },
+            {
+              "kind": "artwork",
+              "id": "banks-of-the-petaluma-river-red-barn"
+            },
+            {
+              "kind": "artwork",
+              "id": "knuckle-hill"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-fence-sonoma"
+            },
+            {
+              "kind": "artwork",
+              "id": "sunrise-from-my-bedroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "petaluma-river-with-farm"
+            },
+            {
+              "kind": "artwork",
+              "id": "highway-101-marin"
+            },
+            {
+              "kind": "artwork",
+              "id": "six-days-on-the-petaluma-river"
+            },
+            {
+              "kind": "artwork",
+              "id": "bill-s-pond-bolinas"
+            },
+            {
+              "kind": "artwork",
+              "id": "edge-of-richardson-bay"
+            },
+            {
+              "kind": "artwork",
+              "id": "a-curve-of-black-angus"
+            },
+            {
+              "kind": "artwork",
+              "id": "black-angus-on-a-hill"
+            },
+            {
+              "kind": "artwork",
+              "id": "blithedale-canyon-mill-valley"
+            },
+            {
+              "kind": "artwork",
+              "id": "cattle-on-a-distant-hill-sun-and-shadow"
+            },
+            {
+              "kind": "artwork",
+              "id": "old-eucalyptus"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-country-road"
+            },
+            {
+              "kind": "artwork",
+              "id": "bear-valley-road"
+            },
+            {
+              "kind": "artwork",
+              "id": "eucalyptus-lane"
+            },
+            {
+              "kind": "artwork",
+              "id": "dogtown"
+            },
+            {
+              "kind": "artwork",
+              "id": "mesa-road-bolinas"
+            },
+            {
+              "kind": "artwork",
+              "id": "road-to-rodeo-lagoon"
+            },
+            {
+              "kind": "artwork",
+              "id": "summer-near-nicasio"
+            },
+            {
+              "kind": "artwork",
+              "id": "marin-county-spring-with-trucks"
+            },
+            {
+              "kind": "artwork",
+              "id": "black-angus-and-burnt-field"
+            },
+            {
+              "kind": "artwork",
+              "id": "holsteins-in-shade"
+            },
+            {
+              "kind": "artwork",
+              "id": "west-marin-dairy-farm"
+            },
+            {
+              "kind": "artwork",
+              "id": "lupins-poppies-in-sonoma"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-road-to-rodeo-lagoon-2"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5223"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5233"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5234"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5235"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5254"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5347"
+            }
+          ],
+          "moreLabel": "All 43 landscapes"
+        },
+        {
+          "id": "street-scenes",
+          "title": "Street Scenes",
+          "subtitle": "the random moment",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "walking-the-dog"
+          },
+          "caption": "Walking The Dog",
+          "quote": {
+            "text": "I love these glimpses of people on the street, walking their dogs, waiting for buses, standing on street corners waiting for the light to change. I'm also interested in \"street furniture\": bus shelters, mailboxes, poles, posts, mysterious black boxes, hydrants, curbs, manhole covers - things we all see but rarely notice.",
+            "label": "From her book: STREET SCENES"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "jeff-s-jeans"
+            },
+            {
+              "kind": "artwork",
+              "id": "mrs-wong-on"
+            },
+            {
+              "kind": "artwork",
+              "id": "bicycle-women"
+            },
+            {
+              "kind": "artwork",
+              "id": "dijon-market"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-end-of-the-picnic"
+            },
+            {
+              "kind": "artwork",
+              "id": "dreaming-of-marie-antoinette"
+            },
+            {
+              "kind": "artwork",
+              "id": "walking-the-dog"
+            },
+            {
+              "kind": "artwork",
+              "id": "nike-of-the-avenues"
+            },
+            {
+              "kind": "artwork",
+              "id": "tenderloin"
+            },
+            {
+              "kind": "artwork",
+              "id": "bus-stop-two-men"
+            },
+            {
+              "kind": "artwork",
+              "id": "bus-stop-two-women"
+            },
+            {
+              "kind": "artwork",
+              "id": "bus-stop-woman-and-man"
+            },
+            {
+              "kind": "artwork",
+              "id": "joanne-in-nogales"
+            },
+            {
+              "kind": "artwork",
+              "id": "cannery-women-noyo-harbor"
+            },
+            {
+              "kind": "artwork",
+              "id": "baptists-carmel-river"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-soccer-team-on-san-andreas-fault"
+            }
+          ],
+          "moreLabel": "All 16 street scenes"
+        },
+        {
+          "id": "portraits",
+          "title": "Portraits",
+          "subtitle": "beauty and self-possession",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "bevelled-mirror"
+          },
+          "caption": "Bevelled Mirror",
+          "quote": {
+            "text": "I've been working on a series of watercolors of a bunch of spring flowers (with self-portrait in the background). At first the flowers are fresh and bright and I am dim and dull ...but as the flowers fade I look better and better ...Ha Ha, they fade faster than I do!",
+            "label": "From a letter to Judy Adler, in her book: PORTRAITS"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "the-remarkable-herman-arthur-schwartz"
+            },
+            {
+              "kind": "artwork",
+              "id": "david-schwartz-3-son"
+            },
+            {
+              "kind": "artwork",
+              "id": "helen-fellenbaum-herman-s-sister"
+            },
+            {
+              "kind": "artwork",
+              "id": "fahkri"
+            },
+            {
+              "kind": "artwork",
+              "id": "curtis"
+            },
+            {
+              "kind": "artwork",
+              "id": "amazing-grace"
+            },
+            {
+              "kind": "artwork",
+              "id": "joey"
+            },
+            {
+              "kind": "artwork",
+              "id": "richard"
+            },
+            {
+              "kind": "artwork",
+              "id": "brian"
+            },
+            {
+              "kind": "artwork",
+              "id": "kitty"
+            },
+            {
+              "kind": "artwork",
+              "id": "coffee-break"
+            },
+            {
+              "kind": "artwork",
+              "id": "judy-and-volker"
+            },
+            {
+              "kind": "artwork",
+              "id": "chris"
+            },
+            {
+              "kind": "artwork",
+              "id": "self-portrait-with-floating-flowers"
+            },
+            {
+              "kind": "artwork",
+              "id": "self-portrait-with-chrysanths"
+            },
+            {
+              "kind": "artwork",
+              "id": "self-portrait-with-vladimir"
+            },
+            {
+              "kind": "artwork",
+              "id": "bevelled-mirror"
+            },
+            {
+              "kind": "artwork",
+              "id": "self-portrait-with-scarf"
+            },
+            {
+              "kind": "artwork",
+              "id": "lisa"
+            },
+            {
+              "kind": "artwork",
+              "id": "marianna"
+            },
+            {
+              "kind": "artwork",
+              "id": "judy"
+            },
+            {
+              "kind": "artwork",
+              "id": "gina-sleeping"
+            },
+            {
+              "kind": "artwork",
+              "id": "ellen-with-red-pillow"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5238"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5304"
+            }
+          ],
+          "moreLabel": "All 25 portraits"
+        },
+        {
+          "id": "still-life",
+          "title": "Still Life",
+          "subtitle": "in love with simple objects",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "christmas-persimmons"
+          },
+          "caption": "Christmas Persimmons",
+          "quote": {
+            "text": "In recent years I've done a lot of still lifes, mostly fruits and vegetables. Patient, colorful and varied in shape, they make ideal models, they last longer than flowers, and they never get restless.",
+            "label": "From her book: STILL LIFE"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "togetherness"
+            },
+            {
+              "kind": "artwork",
+              "id": "yellow-apple-with-red-boxes"
+            },
+            {
+              "kind": "artwork",
+              "id": "plugs"
+            },
+            {
+              "kind": "artwork",
+              "id": "tomato-half"
+            },
+            {
+              "kind": "artwork",
+              "id": "red-persimmon-and-yellow"
+            },
+            {
+              "kind": "artwork",
+              "id": "watermelon-on-white"
+            },
+            {
+              "kind": "artwork",
+              "id": "lemon-with-brushes"
+            },
+            {
+              "kind": "artwork",
+              "id": "watermelon-on-green"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-assyrians"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-on-a-raft"
+            },
+            {
+              "kind": "artwork",
+              "id": "cream-tartar"
+            },
+            {
+              "kind": "artwork",
+              "id": "mrs-stewart-and-the-great-africa-remedy"
+            },
+            {
+              "kind": "artwork",
+              "id": "peeled-apple"
+            },
+            {
+              "kind": "artwork",
+              "id": "peeled-apple-one-week-later"
+            },
+            {
+              "kind": "artwork",
+              "id": "two-and-three-quarters-jonathan-apples"
+            },
+            {
+              "kind": "artwork",
+              "id": "onion-on-a-table"
+            },
+            {
+              "kind": "artwork",
+              "id": "halved-quince"
+            },
+            {
+              "kind": "artwork",
+              "id": "golden-onion-2"
+            },
+            {
+              "kind": "artwork",
+              "id": "purple-cabbage"
+            },
+            {
+              "kind": "artwork",
+              "id": "golden-onion-1"
+            },
+            {
+              "kind": "artwork",
+              "id": "turnip-rutabaga-and-persimmon"
+            },
+            {
+              "kind": "artwork",
+              "id": "turnip-rutabaga-persimmon-and-apple-core"
+            },
+            {
+              "kind": "artwork",
+              "id": "carrot-onion-parsnip-and-turnip"
+            },
+            {
+              "kind": "artwork",
+              "id": "nectarine-potato-onion-and-turnip"
+            },
+            {
+              "kind": "artwork",
+              "id": "persimmon-on-wood"
+            },
+            {
+              "kind": "artwork",
+              "id": "christmas-persimmons"
+            },
+            {
+              "kind": "artwork",
+              "id": "one-pear-nine-times"
+            },
+            {
+              "kind": "artwork",
+              "id": "one-pear"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-turnips"
+            },
+            {
+              "kind": "artwork",
+              "id": "two-persimmons-on-a-stem"
+            },
+            {
+              "kind": "artwork",
+              "id": "four-bartletts"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-basking-boscs"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-red-pears"
+            },
+            {
+              "kind": "artwork",
+              "id": "leaning-bosc-with-fat-and-lean-pears"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-boscs-with-a-comice"
+            },
+            {
+              "kind": "artwork",
+              "id": "three-red-and-yellow-pears"
+            },
+            {
+              "kind": "artwork",
+              "id": "still-life-with-white-glue-bottle"
+            },
+            {
+              "kind": "artwork",
+              "id": "four-pots-one-persimmon"
+            }
+          ],
+          "moreLabel": "All 38 still lifes"
+        },
+        {
+          "id": "interiors",
+          "title": "Interiors",
+          "subtitle": "gimme shelter",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "bolinas-bathroom-bedroom-and-view-to-the-sea"
+          },
+          "caption": "Bolinas, Bathroom, Bedroom, And View To The Sea",
+          "quote": {
+            "text": "From my mother I inherited a love of houses (God knows we lived in a great number and variety of dwellings). … Most people don't give a damn about southern exposures, covered entries, convenient kitchens, \"traffic flow,\" closet space, where the sun rises in the winter time, or whether a room has enough corners. I do.",
+            "label": "From her book: INTERIORS"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "mill-valley-bathroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "mill-valley-kitchen"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-before-remodeling"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-kitchen"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-bathroom-bedroom-and-view-to-the-sea"
+            },
+            {
+              "kind": "artwork",
+              "id": "bolinas-dining-alcove"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5222"
+            }
+          ],
+          "moreLabel": "All 7 interiors"
+        },
+        {
+          "id": "flowers",
+          "title": "Flowers",
+          "subtitle": "in love with bloom",
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "white-iris-with-san-francisco-skyline"
+          },
+          "caption": "White Iris With San Francisco Skyline",
+          "quote": {
+            "text": "Most of my flower watercolors were painted from my husband's dazzling flower garden on the edge of the bay with the San Francisco skyline for a backdrop (which I have used in several paintings).",
+            "label": "From her book: FLOWERS"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "white-floating-roses"
+            },
+            {
+              "kind": "artwork",
+              "id": "four-pots-of-flowers"
+            },
+            {
+              "kind": "artwork",
+              "id": "lavender-irises"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-iris-with-san-francisco-skyline"
+            },
+            {
+              "kind": "artwork",
+              "id": "purple-iris-thicket"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-and-blue-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "pale-pink-rose-with-cosmos"
+            },
+            {
+              "kind": "artwork",
+              "id": "happy-birthday-dearest-herman"
+            },
+            {
+              "kind": "artwork",
+              "id": "roses-and-pinks"
+            },
+            {
+              "kind": "artwork",
+              "id": "calendulas-in-bolinas"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-rose-in-white-jar"
+            },
+            {
+              "kind": "artwork",
+              "id": "laurel-with-tulips"
+            },
+            {
+              "kind": "artwork",
+              "id": "charlie-s-roses"
+            },
+            {
+              "kind": "artwork",
+              "id": "narcissus-close-up"
+            },
+            {
+              "kind": "artwork",
+              "id": "pale-blue-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "paper-narcissus"
+            },
+            {
+              "kind": "artwork",
+              "id": "wild-bronze-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "bronze-iris-with-pinks"
+            },
+            {
+              "kind": "artwork",
+              "id": "zinnias-with-skyline"
+            },
+            {
+              "kind": "artwork",
+              "id": "california-poppies"
+            },
+            {
+              "kind": "artwork",
+              "id": "pink-cosmos-and-botticelli"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-rose-with-botticelli"
+            },
+            {
+              "kind": "artwork",
+              "id": "tulips-and-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "dark-pink-rose-with-renaissance-prince"
+            },
+            {
+              "kind": "artwork",
+              "id": "hachiguchi-goyo-with-white-rose"
+            },
+            {
+              "kind": "artwork",
+              "id": "peach-iris-with-ukiyo-e"
+            },
+            {
+              "kind": "artwork",
+              "id": "tall-bronze-iris-in-a-thicket"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-dutch-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "purple-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "ornate-purple-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "fragrant-lillies"
+            },
+            {
+              "kind": "artwork",
+              "id": "scabiosa-with-nathan-s-book"
+            },
+            {
+              "kind": "artwork",
+              "id": "spring-thicket"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5230"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5239"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5328"
+            }
+          ],
+          "moreLabel": "All 36 flower paintings"
+        },
+        {
+          "id": "high-sierra",
+          "title": "High Sierra",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "white-granite-with-yellow-flowers"
+          },
+          "caption": "White Granite With Yellow Flowers",
+          "quote": {
+            "text": "It is a miracle of white granite boulders, spring flowers, crystal lakes, cascading streams and occasionally a grassy, flower-spangled meadow. … We hike all day and read to each other by kerosene lamp at night.",
+            "label": "From her book: HIGH SIERRA"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "hidden-lake"
+            },
+            {
+              "kind": "artwork",
+              "id": "rocks-at-the-snow-line"
+            },
+            {
+              "kind": "artwork",
+              "id": "rocks-above-the-cabin"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-granite-with-yellow-flowers"
+            },
+            {
+              "kind": "artwork",
+              "id": "echo-lake-cabin"
+            }
+          ],
+          "moreLabel": "All 5 High Sierra paintings"
+        }
+      ]
+    },
+    {
+      "id": "travels",
+      "title": "Travels",
+      "subtitle": null,
+      "stops": [
+        {
+          "id": "travel",
+          "title": "Travel",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "honfleur"
+          },
+          "caption": "Honfleur",
+          "quote": {
+            "text": "I used to be so petrified at the thought of flying that all I could manage was to go on every other overseas trip with my travel-obsessed husband.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "brittany"
+            },
+            {
+              "kind": "artwork",
+              "id": "hotel-bonbonniere"
+            },
+            {
+              "kind": "artwork",
+              "id": "honfleur"
+            },
+            {
+              "kind": "artwork",
+              "id": "st-emilion"
+            },
+            {
+              "kind": "artwork",
+              "id": "ile-st-louis"
+            },
+            {
+              "kind": "artwork",
+              "id": "pont-louis-phillipe"
+            },
+            {
+              "kind": "artwork",
+              "id": "kitchen-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "window-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "doorway-down-the-stairs-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "church-and-wall-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "lerici-italian-riviera"
+            },
+            {
+              "kind": "artwork",
+              "id": "san-terenzo-italian-riviera"
+            },
+            {
+              "kind": "artwork",
+              "id": "verona"
+            },
+            {
+              "kind": "artwork",
+              "id": "naxos-from-the-breakwater"
+            },
+            {
+              "kind": "artwork",
+              "id": "smoke-trees-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "archway-at-the-top-of-town-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "courtyard-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "passageway-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "passage-to-the-kouros-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "women-in-black-peloponnesus"
+            },
+            {
+              "kind": "artwork",
+              "id": "xanthos-ionian-island"
+            },
+            {
+              "kind": "artwork",
+              "id": "tokyo-side-street"
+            },
+            {
+              "kind": "artwork",
+              "id": "our-room-at-mr-sakura-s-ryokan"
+            },
+            {
+              "kind": "artwork",
+              "id": "takayama-bridge-looking-upstream"
+            },
+            {
+              "kind": "artwork",
+              "id": "takayama-bridge"
+            },
+            {
+              "kind": "artwork",
+              "id": "kyoto-canal-with-yellow-irises"
+            },
+            {
+              "kind": "artwork",
+              "id": "kyoto-canal-with-blue-truck"
+            },
+            {
+              "kind": "artwork",
+              "id": "istanbul-from-hotel-dilson-taksim-square"
+            },
+            {
+              "kind": "artwork",
+              "id": "motel-room-on-the-aegean-coast-at-anamur"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-park-hoteli"
+            },
+            {
+              "kind": "artwork",
+              "id": "bathroom-bodrum"
+            },
+            {
+              "kind": "artwork",
+              "id": "taurus-mountains-antalya"
+            },
+            {
+              "kind": "artwork",
+              "id": "view-from-club-med-uchisar"
+            },
+            {
+              "kind": "artwork",
+              "id": "uchisar-cappodocia"
+            },
+            {
+              "kind": "artwork",
+              "id": "houses-of-parliament-new-delhi"
+            },
+            {
+              "kind": "artwork",
+              "id": "temple-steps-udaipur"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-woman-and-pig"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-wall-painting"
+            },
+            {
+              "kind": "artwork",
+              "id": "machu-puchare-and-annapurna"
+            },
+            {
+              "kind": "artwork",
+              "id": "machu-puchare"
+            },
+            {
+              "kind": "artwork",
+              "id": "giant-euphorbias-at-lake-chala"
+            },
+            {
+              "kind": "artwork",
+              "id": "powys-house-rumuruti"
+            },
+            {
+              "kind": "artwork",
+              "id": "mt-kenya-at-dawn-rumuruti"
+            },
+            {
+              "kind": "artwork",
+              "id": "stonehenge-drab-and-dreary"
+            },
+            {
+              "kind": "artwork",
+              "id": "edinburgh"
+            },
+            {
+              "kind": "artwork",
+              "id": "oxford"
+            },
+            {
+              "kind": "artwork",
+              "id": "waterbeach-near-cambridge"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-duke-of-bedford-s-rhino"
+            },
+            {
+              "kind": "artwork",
+              "id": "anza-borego-desert"
+            },
+            {
+              "kind": "artwork",
+              "id": "oasis"
+            },
+            {
+              "kind": "artwork",
+              "id": "near-nogales-arizona"
+            },
+            {
+              "kind": "artwork",
+              "id": "panamint-mountains"
+            },
+            {
+              "kind": "artwork",
+              "id": "zabriski-point-death-valley"
+            },
+            {
+              "kind": "artwork",
+              "id": "hidden-lake"
+            },
+            {
+              "kind": "artwork",
+              "id": "rocks-at-the-snow-line"
+            },
+            {
+              "kind": "artwork",
+              "id": "rocks-above-the-cabin"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-granite-with-yellow-flowers"
+            },
+            {
+              "kind": "artwork",
+              "id": "echo-lake-cabin"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5261"
+            }
+          ],
+          "moreLabel": "All 60 travel paintings"
+        },
+        {
+          "id": "gello",
+          "title": "Gello, Italy",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "kitchen-gello"
+          },
+          "caption": "Kitchen, Gello",
+          "quote": {
+            "text": "The next day HH&M went off to Siena for the day and I had Gello to myself (except for the Padre, who didn't surface, and a herd of black goats that did). I took this opportunity to paint a watercolor of the kitchen and cook some onions, peppers and tomatoes (from the farmer down the road) for a pasta sauce.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": {
+            "text": "In September 1974 she and Herman drove to Italy with their friends Herb and Maggie Rosen."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "brittany"
+            },
+            {
+              "kind": "artwork",
+              "id": "hotel-bonbonniere"
+            },
+            {
+              "kind": "artwork",
+              "id": "honfleur"
+            },
+            {
+              "kind": "artwork",
+              "id": "st-emilion"
+            },
+            {
+              "kind": "artwork",
+              "id": "ile-st-louis"
+            },
+            {
+              "kind": "artwork",
+              "id": "pont-louis-phillipe"
+            },
+            {
+              "kind": "artwork",
+              "id": "kitchen-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "window-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "doorway-down-the-stairs-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "church-and-wall-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "lerici-italian-riviera"
+            },
+            {
+              "kind": "artwork",
+              "id": "san-terenzo-italian-riviera"
+            },
+            {
+              "kind": "artwork",
+              "id": "verona"
+            }
+          ],
+          "moreLabel": "Italy and France"
+        },
+        {
+          "id": "naxos",
+          "title": "Naxos, Greece",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "naxos-from-the-breakwater"
+          },
+          "caption": "Naxos From The Breakwater",
+          "quote": {
+            "text": "I gave a painting demonstration every morning, we painted on location all day, and had an exhibition and critique with our Metaxa in the evening before going out to dinner. After a bit of Metaxa, everything looked just dandy.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": {
+            "text": "Her friend Linda Pearman asked her to lead a painting workshop; they chose the Greek island of Naxos."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "naxos-from-the-breakwater"
+            },
+            {
+              "kind": "artwork",
+              "id": "smoke-trees-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "archway-at-the-top-of-town-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "courtyard-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "passageway-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "passage-to-the-kouros-naxos"
+            },
+            {
+              "kind": "artwork",
+              "id": "women-in-black-peloponnesus"
+            },
+            {
+              "kind": "artwork",
+              "id": "xanthos-ionian-island"
+            }
+          ],
+          "moreLabel": "Greece"
+        },
+        {
+          "id": "japan",
+          "title": "Japan",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "tokyo-side-street"
+          },
+          "caption": "Tokyo Side Street",
+          "quote": {
+            "text": "The next morning I went out at 6a.m., sat on a curbstone and painted a street scene until stiff with cold.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": {
+            "text": "In May 1983 she travelled to Japan with a group of friends."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "tokyo-side-street"
+            },
+            {
+              "kind": "artwork",
+              "id": "our-room-at-mr-sakura-s-ryokan"
+            },
+            {
+              "kind": "artwork",
+              "id": "takayama-bridge-looking-upstream"
+            },
+            {
+              "kind": "artwork",
+              "id": "takayama-bridge"
+            },
+            {
+              "kind": "artwork",
+              "id": "kyoto-canal-with-yellow-irises"
+            },
+            {
+              "kind": "artwork",
+              "id": "kyoto-canal-with-blue-truck"
+            },
+            {
+              "kind": "artwork",
+              "id": "istanbul-from-hotel-dilson-taksim-square"
+            },
+            {
+              "kind": "artwork",
+              "id": "motel-room-on-the-aegean-coast-at-anamur"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-park-hoteli"
+            },
+            {
+              "kind": "artwork",
+              "id": "bathroom-bodrum"
+            },
+            {
+              "kind": "artwork",
+              "id": "taurus-mountains-antalya"
+            },
+            {
+              "kind": "artwork",
+              "id": "view-from-club-med-uchisar"
+            },
+            {
+              "kind": "artwork",
+              "id": "uchisar-cappodocia"
+            },
+            {
+              "kind": "artwork",
+              "id": "houses-of-parliament-new-delhi"
+            },
+            {
+              "kind": "artwork",
+              "id": "temple-steps-udaipur"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-woman-and-pig"
+            },
+            {
+              "kind": "artwork",
+              "id": "side-street-wall-painting"
+            },
+            {
+              "kind": "artwork",
+              "id": "machu-puchare-and-annapurna"
+            },
+            {
+              "kind": "artwork",
+              "id": "machu-puchare"
+            },
+            {
+              "kind": "artwork",
+              "id": "giant-euphorbias-at-lake-chala"
+            },
+            {
+              "kind": "artwork",
+              "id": "powys-house-rumuruti"
+            },
+            {
+              "kind": "artwork",
+              "id": "mt-kenya-at-dawn-rumuruti"
+            }
+          ],
+          "moreLabel": "Japan, Turkey, India, Nepal and Kenya"
+        },
+        {
+          "id": "travel-notebook",
+          "title": "Her travel notebooks",
+          "subtitle": null,
+          "type": "journal",
+          "image": null,
+          "caption": null,
+          "journal": {
+            "id": "devon",
+            "page": 20
+          },
+          "quote": {
+            "text": "I once sat on a fallen Stonehenge rock and painted, using the fresh rain water in a hollow of the rock. The painting is dismal, dreary and drab.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "stonehenge-drab-and-dreary"
+            },
+            {
+              "kind": "artwork",
+              "id": "edinburgh"
+            },
+            {
+              "kind": "artwork",
+              "id": "oxford"
+            },
+            {
+              "kind": "artwork",
+              "id": "waterbeach-near-cambridge"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-duke-of-bedford-s-rhino"
+            },
+            {
+              "kind": "artwork",
+              "id": "anza-borego-desert"
+            },
+            {
+              "kind": "artwork",
+              "id": "oasis"
+            },
+            {
+              "kind": "artwork",
+              "id": "near-nogales-arizona"
+            },
+            {
+              "kind": "artwork",
+              "id": "panamint-mountains"
+            },
+            {
+              "kind": "artwork",
+              "id": "zabriski-point-death-valley"
+            },
+            {
+              "kind": "journal",
+              "id": "singapore-1990"
+            }
+          ],
+          "moreLabel": "Britain, the desert, and her other notebook"
+        }
+      ]
+    },
+    {
+      "id": "her-studio",
+      "title": "Her studio",
+      "subtitle": null,
+      "stops": [
+        {
+          "id": "watercolor",
+          "title": "Watercolor",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "six-days-on-the-petaluma-river"
+          },
+          "caption": "Six Days On The Petaluma River",
+          "quote": {
+            "text": "The trick with watercolor is to let the color flow but not to let it get away from you. The battle between letting go and control is the basic way of watercolor.",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "winter-sunrise"
+            },
+            {
+              "kind": "artwork",
+              "id": "petaluma-river"
+            },
+            {
+              "kind": "artwork",
+              "id": "sunrise-from-my-bedroom"
+            },
+            {
+              "kind": "artwork",
+              "id": "white-floating-roses"
+            },
+            {
+              "kind": "artwork",
+              "id": "purple-iris"
+            },
+            {
+              "kind": "artwork",
+              "id": "peeled-apple"
+            },
+            {
+              "kind": "artwork",
+              "id": "lavender-irises"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5231"
+            }
+          ],
+          "moreLabel": "More watercolors"
+        },
+        {
+          "id": "making-things",
+          "title": "Making things",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "object",
+            "id": "object-2"
+          },
+          "caption": "Papier-mâché cow",
+          "quote": {
+            "text": "I love the process of what I do. I enjoy the feel of a brush on canvas, the smell of turpentine, the flow of color on a fresh sheet of watercolor paper, and the intense pleasure of making things (it must be genetic).",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "object",
+              "id": "object-1"
+            },
+            {
+              "kind": "object",
+              "id": "object-5"
+            },
+            {
+              "kind": "artwork",
+              "id": "shoe-last"
+            },
+            {
+              "kind": "artwork",
+              "id": "crucible"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-cuisinart"
+            },
+            {
+              "kind": "artwork",
+              "id": "ken-barbie-after-the-fall"
+            }
+          ],
+          "moreLabel": "Things she made and kept"
+        },
+        {
+          "id": "things-to-look-at",
+          "title": "Things to look at",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "object",
+            "id": "object-6"
+          },
+          "caption": "Tin of found objects",
+          "quote": {
+            "text": "This compulsion is not a need to create ART but a need to preserve ephemeral things that I love to look at, a need to \"give out\" some of what I take in. The things I love to look at might be anything: newspaper clippings, flowers, pieces of junk or local landscapes.",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "object",
+              "id": "object-1"
+            },
+            {
+              "kind": "object",
+              "id": "object-3"
+            },
+            {
+              "kind": "object",
+              "id": "object-5"
+            },
+            {
+              "kind": "artwork",
+              "id": "silent-spring"
+            },
+            {
+              "kind": "artwork",
+              "id": "kitchen-bouquet"
+            },
+            {
+              "kind": "artwork",
+              "id": "springtime-in-the-rockies"
+            }
+          ],
+          "moreLabel": "Her collections, and junk turned into art"
+        },
+        {
+          "id": "travel-kit",
+          "title": "Her travel kit",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "object",
+            "id": "object-3"
+          },
+          "caption": "Jars of sand from her travels",
+          "quote": {
+            "text": "I travel light, with one carry-on bag and a small backpack with camera and painting gear, small plastic paintbox, 2 good watercolor brushes, sketch book, small water bottle, and a chocolate bar, all fitted into a quilted tea-cozy which makes a good cushion.",
+            "label": "From her book: TRAVEL"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "brittany"
+            },
+            {
+              "kind": "artwork",
+              "id": "st-emilion"
+            },
+            {
+              "kind": "artwork",
+              "id": "ile-st-louis"
+            },
+            {
+              "kind": "artwork",
+              "id": "window-gello"
+            },
+            {
+              "kind": "artwork",
+              "id": "takayama-bridge"
+            },
+            {
+              "kind": "artwork",
+              "id": "uchisar-cappodocia"
+            },
+            {
+              "kind": "artwork",
+              "id": "oxford"
+            },
+            {
+              "kind": "artwork",
+              "id": "hidden-lake"
+            },
+            {
+              "kind": "journal",
+              "id": "devon"
+            },
+            {
+              "kind": "journal",
+              "id": "singapore-1990"
+            }
+          ],
+          "moreLabel": "Small sketches made on the road"
+        }
+      ]
+    },
+    {
+      "id": "the-book-and-after",
+      "title": "The book and after",
+      "subtitle": null,
+      "stops": [
+        {
+          "id": "the-book",
+          "title": "The book, 1990",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "photo",
+            "file": "p001_03.jpg"
+          },
+          "caption": "Front Jacket: SPRING THICKET, 11\"x15\", 1981",
+          "quote": {
+            "text": "The first idea for this book was for a small \"tasteful\" volume of travel sketches with excerpts from my travel notebooks. Little by little, through the process of \"Oh, you can't leave that out,\" and \"I really would like to include —,\" this book has developed into the story of the life of a woman who managed to keep painting.",
+            "label": "From the opening pages of her book"
+          },
+          "fact": {
+            "text": "The book was published in 1990 by Strawberry Press in Mill Valley."
+          },
+          "more": [
+            {
+              "kind": "photo",
+              "file": "p001_02.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p001_04.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p006_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p010_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p001_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p007_01.jpg"
+            },
+            {
+              "kind": "artwork",
+              "id": "spring-thicket"
+            },
+            {
+              "kind": "artwork",
+              "id": "dijon-market"
+            },
+            {
+              "kind": "artwork",
+              "id": "christmas-persimmons"
+            }
+          ],
+          "moreLabel": "The book's covers and opening pages"
+        },
+        {
+          "id": "printing-the-book",
+          "title": "Printing the book",
+          "subtitle": null,
+          "type": "journal",
+          "image": null,
+          "caption": null,
+          "journal": {
+            "id": "singapore-1990",
+            "page": 6
+          },
+          "quote": {
+            "text": "check proofs very bad proof of Peach Iris- plate had to be remade-",
+            "label": "From her Singapore notebook"
+          },
+          "fact": {
+            "text": "The book was printed in Singapore."
+          },
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "peach-iris-with-ukiyo-e"
+            },
+            {
+              "kind": "artwork",
+              "id": "spring-thicket"
+            },
+            {
+              "kind": "photo",
+              "file": "p001_03.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p007_01.jpg"
+            },
+            {
+              "kind": "photo",
+              "file": "p006_01.jpg"
+            }
+          ],
+          "moreLabel": "The painting she mentions, and the finished book"
+        },
+        {
+          "id": "not-in-the-book",
+          "title": "Paintings not in the book",
+          "subtitle": null,
+          "type": "image",
+          "image": {
+            "kind": "artwork",
+            "id": "chinese-family-cafe"
+          },
+          "caption": "Chinese Family Cafe",
+          "quote": {
+            "text": "My \"Ideal\" is to paint to my heart's content and drop the finished work down a hole in the floor and let someone else deal with it. But that's not the way the world works.",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": [
+            {
+              "kind": "artwork",
+              "id": "teapot"
+            },
+            {
+              "kind": "artwork",
+              "id": "shoe-last"
+            },
+            {
+              "kind": "artwork",
+              "id": "old-stucco-house-east-blithedale"
+            },
+            {
+              "kind": "artwork",
+              "id": "nicasio-shed"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-washing-machine"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-dryer"
+            },
+            {
+              "kind": "artwork",
+              "id": "mothers-cuisinart"
+            },
+            {
+              "kind": "artwork",
+              "id": "mister-fixit"
+            },
+            {
+              "kind": "artwork",
+              "id": "german-automotive"
+            },
+            {
+              "kind": "artwork",
+              "id": "druids-hall"
+            },
+            {
+              "kind": "artwork",
+              "id": "cups"
+            },
+            {
+              "kind": "artwork",
+              "id": "crucible"
+            },
+            {
+              "kind": "artwork",
+              "id": "chinese-family-cafe"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5195"
+            },
+            {
+              "kind": "artwork",
+              "id": "west-marin-dairy-farm"
+            },
+            {
+              "kind": "artwork",
+              "id": "lupins-poppies-in-sonoma"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-road-to-rodeo-lagoon-2"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5222"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5223"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5224"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5225"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5227"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5228"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5229"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5230"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5231"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5232"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5233"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5234"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5235"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5237"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5238"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5239"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5241"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5242"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5243"
+            },
+            {
+              "kind": "artwork",
+              "id": "arizona-nativity"
+            },
+            {
+              "kind": "artwork",
+              "id": "eden-africa"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5248"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5249"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5254"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5259"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5260"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5261"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5262"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5263"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5264"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5265"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5266"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5304"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5309"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5310"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5311"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5312"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5314"
+            },
+            {
+              "kind": "artwork",
+              "id": "the-saint-in-the-desert"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5328"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5334"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5335"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5340"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5347"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5398"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5399"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5400"
+            },
+            {
+              "kind": "artwork",
+              "id": "untitled-5436"
+            }
+          ],
+          "moreLabel": "All 65 works not in the book"
+        },
+        {
+          "id": "all-of-her-work",
+          "title": "All of her work",
+          "subtitle": null,
+          "type": "canvas",
+          "image": null,
+          "caption": null,
+          "quote": {
+            "text": "So, here's a portion of my life's work that did get finished.",
+            "label": "From her autobiography"
+          },
+          "fact": null,
+          "more": []
+        }
       ]
     }
   ]
