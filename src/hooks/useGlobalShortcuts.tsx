@@ -15,17 +15,18 @@ import { getRandomArtwork } from './useRandomArtwork';
 
 interface ShortcutRoute { keys: string[]; path: string; label: string; }
 
-// The five wings first, then the most-used rooms inside them.
+// The three experiences first, then the most-used archive pages.
 const ROUTES: ShortcutRoute[] = [
   { keys: ['g', 'h'], path: '/',            label: 'Home' },
-  { keys: ['g', 'p'], path: '/paintings',   label: 'Paintings' },
-  { keys: ['g', 'y'], path: '/her-story',   label: 'Her Story' },
+  { keys: ['g', 'r'], path: '/tour',        label: 'Guided tour' },
+  { keys: ['g', 'b'], path: '/archive',     label: 'Browse the archive' },
+  { keys: ['g', 'p'], path: '/archive/paintings', label: 'Paintings' },
+  { keys: ['g', 'j'], path: '/journals',    label: 'Journals' },
   { keys: ['g', 'l'], path: '/places',      label: 'Places' },
-  { keys: ['g', 's'], path: '/studio',      label: 'Studio' },
+  { keys: ['g', 's'], path: '/studio',      label: 'Explore her studio' },
   { keys: ['g', 'a'], path: '/about',       label: 'About' },
   { keys: ['g', 'c'], path: '/canvas',      label: 'Canvas' },
   { keys: ['g', 'g'], path: '/themes',      label: 'The Twelve Chapters' },
-  { keys: ['g', 't'], path: '/themes',      label: 'The Twelve Chapters' },
   { keys: ['g', 'w'], path: '/her-words',   label: 'In Her Own Words' },
   { keys: ['g', 'd'], path: '/daily',       label: 'Painting of the Day' },
   { keys: ['g', 'i'], path: '/index',       label: 'The Index' },

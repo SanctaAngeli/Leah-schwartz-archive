@@ -16,7 +16,6 @@ import {
 import ProseFlow from '../components/reader/ProseFlow';
 import type { FlowPhoto } from '../components/reader/flowBuilder';
 import { usePageMeta } from '../hooks/usePageMeta';
-import { nextStop } from '../data/wings';
 
 interface BookPhoto extends FlowPhoto {
   size: [number, number];
@@ -172,8 +171,8 @@ function SectionReader({ section }: { section: ReaderSection }): JSX.Element {
   const idx = READER_SECTIONS.findIndex((s) => s.id === section.id);
   const prev = idx > 0 ? READER_SECTIONS[idx - 1] : null;
   const next = idx < READER_SECTIONS.length - 1 ? READER_SECTIONS[idx + 1] : null;
-  // After her last section the reader hands off to the next stop on the walk.
-  const afterReader = next ? null : nextStop('/her-words');
+  // After her last section, her journals are the natural next read.
+  const afterReader = next ? null : { path: '/journals', title: 'Her journals' };
 
   return (
     <main className="min-h-screen pt-24 pb-10 px-6">

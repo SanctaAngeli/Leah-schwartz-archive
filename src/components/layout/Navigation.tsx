@@ -1,16 +1,18 @@
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useCallback, useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useSearch } from '../../hooks/useSearch';
 import { useTheme } from '../../hooks/useTheme';
-import { WINGS, wingForPath } from '../../data/wings';
+import { ARCHIVE, MODES, modeForPath } from '../../data/siteTree';
+import ArchiveTreeLinks from './ArchiveTreeLinks';
 
-// Detect platform for keyboard shortcuts
+// The menu bar on every page except the home page (which is itself the
+// choice between the three experiences). It names the three experiences,
+// highlights the one you're in, and always has Search. "Browse the archive"
+// opens a panel showing the whole archive tree, so no page is out of reach.
+
 function useIsMac(): boolean {
-  return useMemo(() => {
-    if (typeof navigator === 'undefined') return false;
-    return /Mac|iPod|iPhone|iPad/.test(navigator.platform);
-  }, []);
+  return useMemo(() => typeof navigator !== 'undefined' && /Mac|iPod|iPhone|iPad/.test(navigator.platform), []);
 }
 
 interface NavigationProps {
@@ -18,248 +20,178 @@ interface NavigationProps {
 }
 
 function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
-  const navigate = useNavigate();
   const location = useLocation();
   const { open: openSearch } = useSearch();
   const { isNight } = useTheme();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
   const isMac = useIsMac();
-
-  // Platform-aware shortcut display
   const searchShortcut = isMac ? '⌘K' : 'Ctrl+K';
+  const mode = modeForPath(location.pathname);
 
-  // Close mobile menu on route change
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+    setMobileOpen(false);
+    setArchiveOpen(false);
+  }, [location.pathname, location.search]);
 
-  // Close mobile menu on escape key
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    if (!mobileOpen && !archiveOpen) return;
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        setArchiveOpen(false);
+      }
     };
-    if (isMobileMenuOpen) {
-      document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
-    }
-  }, [isMobileMenuOpen]);
-
-  // One lobby, five wings. Deep routes light up their wing
-  // (e.g. /atlas highlights Paintings) via the floor plan in data/wings.
-  const navItems = [
-    { path: '/', label: 'Home' },
-    ...WINGS.map((w) => ({ path: w.path, label: w.label })),
-  ];
-
-  const activeWingPath = wingForPath(location.pathname)?.path;
-  const isActive = (path: string): boolean => {
-    if (path === '/') return location.pathname === '/';
-    return activeWingPath === path;
-  };
-
-  // Special handler for home navigation to trigger reverse animation
-  const handleHomeClick = useCallback(
-    (e: React.MouseEvent): void => {
-      e.preventDefault();
-      navigate('/', { state: { fromGallery: location.pathname !== '/' } });
-    },
-    [navigate, location.pathname]
-  );
-
-  // Theme-aware styles
-  const activeTextClass = isNight ? 'text-gray-900' : 'text-white';
-  const inactiveHoverBg = isNight ? 'hover:bg-white/10' : 'hover:bg-white/50';
-  const pillBgClass = isNight ? 'bg-gray-100' : 'bg-text-primary';
-  const iconButtonClass = `relative z-10 w-9 h-9 flex items-center justify-center rounded-full text-text-secondary
-    hover:text-text-primary transition-colors duration-200
-    ${isNight ? 'hover:bg-white/10' : 'hover:bg-white/50'}`;
+    const onClick = (e: MouseEvent): void => {
+      if (archiveOpen && panelRef.current && !panelRef.current.contains(e.target as Node)) setArchiveOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onClick);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onClick);
+    };
+  }, [mobileOpen, archiveOpen]);
 
   if (!visible) return null;
+
+  const activeText = isNight ? 'text-gray-900' : 'text-white';
+  const activeBg = isNight ? 'bg-gray-100' : 'bg-text-primary';
+  const idle = `text-text-secondary hover:text-text-primary ${isNight ? 'hover:bg-white/10' : 'hover:bg-white/60'}`;
+  const pill = 'relative z-10 px-3.5 py-2 rounded-full text-sm font-body font-medium transition-colors duration-200 whitespace-nowrap';
+
+  const searchButton = (
+    <button
+      type="button"
+      onClick={openSearch}
+      className={`${pill} ${idle} flex items-center gap-2`}
+      aria-label={`Search (${searchShortcut})`}
+    >
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <span className="hidden lg:inline">Search</span>
+    </button>
+  );
 
   return (
     <>
       <motion.nav
+        aria-label="Main"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed top-4 md:top-6 inset-x-0 mx-auto w-fit z-50"
+        className="fixed top-4 md:top-6 inset-x-0 mx-auto w-fit max-w-[calc(100vw-1rem)] z-50"
+        ref={panelRef}
       >
-        <div className="glass-pill px-2 py-2 flex items-center justify-center gap-1">
-          {/* Left icon group - fixed width for balance */}
-          <div className="hidden md:flex items-center gap-1 w-[88px] justify-start">
-            {/* Search button */}
-            <button
-              onClick={openSearch}
-              className={`${iconButtonClass} ${isNight ? 'bg-white/10' : 'bg-black/5'}`}
-              aria-label={`Search (${searchShortcut})`}
-              title={`Search (${searchShortcut})`}
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+        <div className="glass-pill px-2 py-2 flex items-center gap-1">
+          <Link to="/" className={`${pill} ${idle} font-heading text-base`}>
+            Leah Schwartz
+          </Link>
+          <div className={`hidden md:block w-px h-5 mx-1 ${isNight ? 'bg-gray-600' : 'bg-gray-200'}`} aria-hidden="true" />
 
-            <div className={`w-px h-5 mx-1 ${isNight ? 'bg-gray-600' : 'bg-gray-200'}`} aria-hidden="true" />
-          </div>
-
-          {/* Desktop nav items - the visual center */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => {
-              const active = isActive(item.path);
-
+            {MODES.map((m) => {
+              const active = mode === m.id;
+              if (m.id === 'archive') {
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    onClick={() => setArchiveOpen((o) => !o)}
+                    aria-expanded={archiveOpen}
+                    aria-controls="archive-panel"
+                    className={`${pill} ${active ? `${activeBg} ${activeText}` : idle} flex items-center gap-1.5`}
+                  >
+                    {m.title}
+                    <svg className={`w-3.5 h-3.5 transition-transform ${archiveOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                );
+              }
               return (
-                <div key={item.path} className="relative">
-                  {/* Sliding pill indicator */}
-                  {active && (
-                    <motion.div
-                      layoutId="nav-pill"
-                      className={`absolute inset-0 ${pillBgClass} rounded-full`}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 350,
-                        damping: 25,
-                        mass: 0.8,
-                      }}
-                    />
-                  )}
-
-                  {/* Nav link/button */}
-                  {item.path === '/' ? (
-                    <button
-                      onClick={handleHomeClick}
-                      className={`
-                        relative z-10 px-3 py-2 rounded-full
-                        text-sm font-body font-medium
-                        transition-colors duration-200
-                        ${active
-                          ? activeTextClass
-                          : `text-text-secondary hover:text-text-primary ${inactiveHoverBg}`
-                        }
-                      `}
-                    >
-                      {item.label}
-                    </button>
-                  ) : (
-                    <NavLink
-                      to={item.path}
-                      className={`
-                        relative z-10 px-3 py-2 rounded-full block
-                        text-sm font-body font-medium
-                        transition-colors duration-200 whitespace-nowrap
-                        ${active
-                          ? activeTextClass
-                          : `text-text-secondary hover:text-text-primary ${inactiveHoverBg}`
-                        }
-                      `}
-                    >
-                      {item.label}
-                    </NavLink>
-                  )}
-                </div>
+                <NavLink key={m.id} to={m.path} className={`${pill} ${active ? `${activeBg} ${activeText}` : idle}`}>
+                  {m.title}
+                </NavLink>
               );
             })}
+            <div className={`w-px h-5 mx-1 ${isNight ? 'bg-gray-600' : 'bg-gray-200'}`} aria-hidden="true" />
+            {searchButton}
           </div>
 
-          {/* Mobile: search + menu toggle */}
           <div className="md:hidden flex items-center gap-1">
+            {searchButton}
             <button
-              onClick={openSearch}
-              className={`${iconButtonClass} ${isNight ? 'bg-white/10' : 'bg-black/5'}`}
-              aria-label={`Search (${searchShortcut})`}
-              title={`Search (${searchShortcut})`}
+              type="button"
+              onClick={() => setMobileOpen((o) => !o)}
+              className={`${pill} ${idle}`}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={iconButtonClass}
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileOpen ? 'Close' : 'Menu'}
             </button>
           </div>
+        </div>
 
-          {/* Right spacer - settings lives in the floating SettingsPanel
-              (bottom-right), so the pill keeps a single, unambiguous gear-free
-              right edge that mirrors the search button on the left. */}
-          <div className="hidden md:flex items-center gap-1 w-[88px] justify-end" aria-hidden="true" />
+        {/* Desktop: the whole archive tree */}
+        {/* Centred by this outer box; only the inner box animates (an animated
+            transform would override the centring). */}
+        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[min(960px,calc(100vw-2rem))]">
+          <AnimatePresence>
+            {archiveOpen && (
+              <motion.div
+                id="archive-panel"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.18 }}
+                className="glass-card p-6 max-h-[75vh] overflow-y-auto"
+              >
+                <Link to={ARCHIVE.path} className="font-heading text-2xl text-text-primary hover:underline">
+                  Browse the archive
+                </Link>
+                <ArchiveTreeLinks className="mt-5 grid grid-cols-3 gap-x-8 gap-y-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.nav>
 
-      {/* Mobile menu overlay */}
+      {/* Phone: the three experiences and the whole archive tree */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {mobileOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => setMobileOpen(false)}
             />
-
-            {/* Menu */}
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-20 left-4 right-4 z-50 glass-card p-4 md:hidden"
+              className="fixed top-20 left-4 right-4 bottom-4 z-50 glass-card p-5 md:hidden overflow-y-auto"
             >
-              <nav className="space-y-1">
-                {navItems.map((item) => {
-                  const active = isActive(item.path);
-
-                  return item.path === '/' ? (
-                    <button
-                      key={item.path}
-                      onClick={(e) => {
-                        handleHomeClick(e);
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className={`
-                        w-full text-left px-4 py-3 rounded-xl
-                        text-base font-body font-medium
-                        transition-colors duration-200
-                        ${active
-                          ? `${pillBgClass} ${activeTextClass}`
-                          : 'text-text-secondary hover:text-text-primary hover:bg-black/5'
-                        }
-                      `}
-                    >
-                      {item.label}
-                    </button>
-                  ) : (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`
-                        block px-4 py-3 rounded-xl
-                        text-base font-body font-medium
-                        transition-colors duration-200
-                        ${active
-                          ? `${pillBgClass} ${activeTextClass}`
-                          : 'text-text-secondary hover:text-text-primary hover:bg-black/5'
-                        }
-                      `}
-                    >
-                      {item.label}
-                    </NavLink>
-                  );
-                })}
+              <nav aria-label="Main" className="space-y-1">
+                {MODES.map((m) => (
+                  <NavLink
+                    key={m.id}
+                    to={m.path}
+                    className={`block px-4 py-3 rounded-xl text-base font-body font-medium ${
+                      mode === m.id ? `${activeBg} ${activeText}` : 'text-text-primary hover:bg-black/5'
+                    }`}
+                  >
+                    {m.title}
+                  </NavLink>
+                ))}
               </nav>
+              <ArchiveTreeLinks className="mt-6 space-y-5 px-1" />
             </motion.div>
           </>
         )}

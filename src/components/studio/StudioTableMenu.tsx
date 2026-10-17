@@ -21,7 +21,7 @@ interface Hotspot {
 const HOTSPOTS: Hotspot[] = [
   { to: '/canvas',      label: 'Paintings',     x: 52, y: 15, side: 'right' },
   { to: '/themes',      label: 'Themes',        x: 15, y: 26, side: 'left'  },
-  { to: '/walk',        label: 'Walk With Her', x: 86, y: 28, side: 'left'  },
+  { to: '/tour',        label: 'Guided tour',   x: 86, y: 28, side: 'left'  },
   { to: '/her-words',   label: 'Her Story',     x: 58, y: 53, side: 'right' },
   { to: '/index',       label: 'The Index',     x: 93, y: 82, side: 'left'  },
 ]

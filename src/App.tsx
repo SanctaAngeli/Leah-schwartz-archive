@@ -3,7 +3,6 @@ import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
 import SkipLink from './components/layout/SkipLink';
 import PageTransition from './components/layout/PageTransition';
-import ContinueRail from './components/layout/ContinueRail';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import SettingsPanel from './components/ui/SettingsPanel';
 import WatercolorShader from './components/home/WatercolorShader';
@@ -15,15 +14,16 @@ import CanvasPage from './pages/CanvasPage';
 import ColorAtlasPage from './pages/ColorAtlasPage';
 import ObsessionsPage from './pages/ObsessionsPage';
 import ConstellationPage from './pages/ConstellationPage';
-import WalkWithHerPage from './pages/WalkWithHerPage';
-import FrontDoorPage from './pages/FrontDoorPage';
-import PaintingsWingPage from './pages/PaintingsWingPage';
-import HerStoryWingPage from './pages/HerStoryWingPage';
+import HomePage from './pages/HomePage';
 import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
 import HerWordsPage from './pages/HerWordsPage';
 import JournalsPage from './pages/JournalsPage';
 import AdminPage from './pages/AdminPage';
+import ArchivePage from './pages/ArchivePage';
+import PeoplePage from './pages/PeoplePage';
+import Breadcrumb from './components/layout/Breadcrumb';
+import SiteFooter from './components/layout/SiteFooter';
 import StudioCollectionPage from './pages/StudioCollectionPage';
 import { ARCHITECTURE, OBJECTS } from './data/studioCollections';
 import IndexPage from './pages/IndexPage';
@@ -32,7 +32,6 @@ import EntityPage from './pages/EntityPage';
 import StudioPage from './pages/StudioPage';
 import PreservationPage from './pages/PreservationPage';
 import DailyPage from './pages/DailyPage';
-import PairingsPage from './pages/PairingsPage';
 import ArtworkDetailPage from './pages/ArtworkDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
 import ComparePage from './pages/ComparePage';
@@ -42,8 +41,8 @@ import NotFoundPage from './pages/NotFoundPage';
 function AppContent(): JSX.Element {
   const location = useLocation();
 
-  // The front door is a single reverent painting with its own foot directory,
-  // so the global pill nav is hidden there; it returns on every other page.
+  // The home page is itself the choice between the three experiences, so the
+  // menu bar is hidden there; it returns on every other page.
   // The artwork lightbox is also chrome-free: it covers the full screen with
   // its own close/zoom controls, and on small screens the pill collides with them.
   const showNavigation =
@@ -64,33 +63,34 @@ function AppContent(): JSX.Element {
           return <WatercolorShader />;
         })()}
         <Navigation visible={showNavigation} />
+        <Breadcrumb />
         <main id="main-content" className="relative z-10 focus:outline-none" tabIndex={-1}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-            {/* / is the front door · /daily is the returning-visitor ritual. */}
-            <Route path="/" element={<PageTransition><FrontDoorPage /></PageTransition>} />
+            {/* / is the home page with the three doors. */}
+            <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
             <Route path="/daily" element={<PageTransition><DailyPage /></PageTransition>} />
             {/* Retired v1 routes — permanent redirects to their living equivalents. */}
             <Route path="/gallery" element={<Navigate to="/themes" replace />} />
-            <Route path="/eras" element={<Navigate to="/her-story" replace />} />
+            <Route path="/eras" element={<Navigate to="/archive/her-life" replace />} />
             <Route path="/story" element={<Navigate to="/" replace />} />
             <Route path="/classic" element={<Navigate to="/" replace />} />
-            <Route path="/timeline" element={<Navigate to="/her-story" replace />} />
-            <Route path="/timeline/:year" element={<Navigate to="/her-story" replace />} />
+            <Route path="/timeline" element={<Navigate to="/archive/her-life" replace />} />
+            <Route path="/timeline/:year" element={<Navigate to="/archive/her-life" replace />} />
             <Route path="/tour" element={<Navigate to="/themes" replace />} />
             <Route path="/tour/:chapterId" element={<Navigate to="/themes" replace />} />
             <Route path="/curated" element={<Navigate to="/themes" replace />} />
             <Route path="/curated/:eraId" element={<Navigate to="/themes" replace />} />
             {/* Wing landings · the museum's five doors */}
-            <Route path="/paintings" element={<PageTransition><PaintingsWingPage /></PageTransition>} />
-            <Route path="/her-story" element={<PageTransition><HerStoryWingPage /></PageTransition>} />
+            <Route path="/paintings" element={<Navigate to="/archive/paintings" replace />} />
+            <Route path="/her-story" element={<Navigate to="/archive/her-words" replace />} />
             <Route path="/canvas" element={<PageTransition><CanvasPage /></PageTransition>} />
             <Route path="/atlas" element={<PageTransition><ColorAtlasPage /></PageTransition>} />
             <Route path="/obsessions" element={<PageTransition><ObsessionsPage /></PageTransition>} />
-            <Route path="/at-her-age" element={<Navigate to="/her-story" replace />} />
+            <Route path="/at-her-age" element={<Navigate to="/archive/her-life" replace />} />
             <Route path="/last-paintings" element={<Navigate to="/paintings" replace />} />
             <Route path="/constellation" element={<PageTransition><ConstellationPage /></PageTransition>} />
-            <Route path="/walk" element={<PageTransition><WalkWithHerPage /></PageTransition>} />
+            <Route path="/walk" element={<Navigate to="/tour" replace />} />
             <Route path="/studio-visit" element={<Navigate to="/studio" replace />} />
             <Route path="/locations" element={<PageTransition><LocationsPage /></PageTransition>} />
             <Route path="/locations/:locationId" element={<PageTransition><LocationsPage /></PageTransition>} />
@@ -115,15 +115,18 @@ function AppContent(): JSX.Element {
             <Route path="/studio/objects" element={<PageTransition><StudioCollectionPage collection={OBJECTS} description="Leah Schwartz's found-object boxes and sculpture, from photographs of the originals." /></PageTransition>} />
             <Route path="/studio/objects/:itemId" element={<PageTransition><StudioCollectionPage collection={OBJECTS} description="Leah Schwartz's found-object boxes and sculpture, from photographs of the originals." /></PageTransition>} />
             {/* /life merged into the Her Story wing — same life, told once. */}
-            <Route path="/life" element={<Navigate to="/her-story" replace />} />
+            <Route path="/life" element={<Navigate to="/archive/her-life" replace />} />
             <Route path="/preservation" element={<PageTransition><PreservationPage /></PageTransition>} />
-            <Route path="/pairings" element={<PageTransition><PairingsPage /></PageTransition>} />
-            <Route path="/pairings/:pairingId" element={<PageTransition><PairingsPage /></PageTransition>} />
+            <Route path="/pairings" element={<Navigate to="/archive/paintings" replace />} />
+            <Route path="/pairings/:pairingId" element={<Navigate to="/archive/paintings" replace />} />
+            <Route path="/archive" element={<PageTransition><ArchivePage /></PageTransition>} />
+            <Route path="/archive/people" element={<PageTransition><PeoplePage /></PageTransition>} />
+            <Route path="/archive/:section" element={<PageTransition><ArchivePage /></PageTransition>} />
             <Route path="/admin" element={<PageTransition><AdminPage /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
           </Routes>
           </AnimatePresence>
-          <ContinueRail />
+          <SiteFooter />
         </main>
         <SettingsPanel />
       </div>

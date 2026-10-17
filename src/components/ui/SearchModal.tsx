@@ -8,6 +8,7 @@ import peopleData from '../../data/people.json';
 import placesData from '../../data/places.json';
 import subjectsData from '../../data/subjects.json';
 import { READER_SECTIONS, displayLabel } from '../../data/readerSections';
+import { MODES, FOOTER_LINKS, allNodes } from '../../data/siteTree';
 import type { Artwork, Location, Theme } from '../../types';
 
 const artworks = artworksData as Artwork[];
@@ -59,28 +60,18 @@ function SearchModal({ isOpen, onClose }: SearchModalProps): JSX.Element | null 
     const results: SearchResult[] = [];
 
     // Add pages
-    results.push(
-      { type: 'page', id: 'home', title: 'Home', path: '/' },
-      { type: 'page', id: 'paintings', title: 'Paintings', path: '/paintings' },
-      { type: 'page', id: 'her-story', title: 'Her Story', path: '/her-story' },
-      { type: 'page', id: 'canvas', title: 'Canvas', path: '/canvas' },
-      { type: 'page', id: 'themes', title: 'Gallery', subtitle: 'The 12 chapters of her book', path: '/themes' },
-      { type: 'page', id: 'her-words', title: "Leah's Story", subtitle: 'Autobiography + chapter essays', path: '/her-words' },
-      { type: 'page', id: 'journals', title: 'Journals', path: '/journals' },
-      { type: 'page', id: 'daily', title: 'Painting of the Day', path: '/daily' },
-      { type: 'page', id: 'atlas', title: 'Color Atlas', path: '/atlas' },
-      { type: 'page', id: 'obsessions', title: 'Obsessions', path: '/obsessions' },
-      { type: 'page', id: 'pairings', title: 'Pairings', path: '/pairings' },
-      { type: 'page', id: 'constellation', title: 'Constellation', path: '/constellation' },
-      { type: 'page', id: 'walk', title: 'Walk With Her', path: '/walk' },
-      { type: 'page', id: 'studio', title: 'Studio', path: '/studio' },
-      { type: 'page', id: 'architecture', title: 'Architecture', path: '/studio/architecture' },
-      { type: 'page', id: 'objects', title: 'Objects', path: '/studio/objects' },
-      { type: 'page', id: 'places', title: 'Places', path: '/places' },
-      { type: 'page', id: 'index', title: 'Index', subtitle: 'The book\'s index', path: '/index' },
-      { type: 'page', id: 'favorites', title: 'Favorites', subtitle: 'Your saved artworks', path: '/favorites' },
-      { type: 'page', id: 'about', title: 'About Leah', path: '/about' }
-    );
+    // Every page in the site map, plus the three experiences and the footer pages.
+    const seen = new Set<string>();
+    [
+      { title: 'Home', path: '/' },
+      ...MODES.map((m) => ({ title: m.title, path: m.path })),
+      ...allNodes(),
+      ...FOOTER_LINKS,
+    ].forEach((n) => {
+      if (seen.has(n.path)) return;
+      seen.add(n.path);
+      results.push({ type: 'page', id: n.path, title: n.title, subtitle: 'note' in n ? n.note : undefined, path: n.path });
+    });
 
     // Add reader sections (her autobiography sections + chapter essays)
     READER_SECTIONS.forEach((s) => {
