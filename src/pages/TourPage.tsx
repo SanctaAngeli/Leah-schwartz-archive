@@ -34,18 +34,22 @@ function TourPage(): JSX.Element {
   useEffect(() => {
     if (!stop) return;
     window.scrollTo({ top: 0 });
+    // /tour itself shows the first stop; saving there would wipe the visitor's place.
+    if (!stopId) return;
     try {
       localStorage.setItem(TOUR_PROGRESS_KEY, stop.id);
     } catch {
       // Private browsing: the tour just won't remember the place.
     }
-  }, [stop]);
+  }, [stop, stopId]);
 
   const go = useCallback((id: string | undefined) => id && navigate(`/tour/${id}`), [navigate]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
-      if (lightboxOpen) return;
+      if (lightboxOpen || e.repeat || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      // Leave the arrows alone while a dialog (search, shortcuts) is open.
+      if (document.querySelector('[role="dialog"]')) return;
       const tag = (e.target as HTMLElement | null)?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || tag === 'VIDEO') return;
       if (e.key === 'ArrowRight') go(next?.id);

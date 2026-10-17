@@ -18,7 +18,7 @@ function ArchiveTreeLinks({ className = '' }: Props): JSX.Element {
         <div key={section.path}>
           <Link
             to={section.path}
-            aria-current={current.has(section.path) ? 'true' : undefined}
+            aria-current={pathname === section.path ? 'page' : current.has(section.path) ? 'location' : undefined}
             className="font-body text-sm font-semibold text-text-primary hover:underline"
           >
             {section.title}

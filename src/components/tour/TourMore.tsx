@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { resolveItem } from '../../data/tour';
+import { useFocusTrap } from '../../hooks/useFocusTrap';
 import type { ResolvedItem, TourItemRef } from '../../data/tour';
 
 // "Dig deeper" under a tour stop: more of the work from this part of her
@@ -22,6 +23,8 @@ function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null
       .filter((r): r is ResolvedItem => Boolean(r) && !seen.has(r!.key) && Boolean(seen.add(r!.key)));
   }, [items]);
   const [open, setOpen] = useState<number | null>(null);
+  // Keeps keyboard focus inside the large view, and returns it to the thumbnail on close.
+  const dialogRef = useFocusTrap<HTMLDivElement>({ enabled: open !== null });
 
   useEffect(() => onLightboxChange(open !== null), [open, onLightboxChange]);
 
@@ -45,7 +48,7 @@ function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null
       <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-7 mt-6">
         {resolved.map((r, i) => (
           <li key={r.key}>
-            <button type="button" onClick={() => setOpen(i)} className="group block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355]/50 rounded-lg">
+            <button type="button" onClick={() => setOpen(i)} aria-label={`${r.label}, open large`} className="group block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355]/50 rounded-lg">
               <div className="aspect-square bg-white/60 rounded-lg overflow-hidden flex items-center justify-center">
                 <img src={r.thumb} alt="" loading="lazy" className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-[1.04]" />
               </div>
@@ -57,9 +60,10 @@ function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null
 
       {current && createPortal(
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
-          aria-label={current.title ?? 'Picture'}
+          aria-label={current.label}
           className="fixed inset-0 z-[70] bg-black/85 flex flex-col"
           onClick={() => setOpen(null)}
         >
@@ -70,7 +74,7 @@ function TourMore({ items, label, onLightboxChange }: Props): JSX.Element | null
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center px-4 min-h-0" onClick={(e) => e.stopPropagation()}>
-            <img src={current.full} alt={current.title ?? ''} className="max-w-full max-h-full object-contain rounded" />
+            <img src={current.full} alt={current.label} className="max-w-full max-h-full object-contain rounded" />
           </div>
           <div className="flex items-center justify-between gap-4 p-4 text-white font-body" onClick={(e) => e.stopPropagation()}>
             <button type="button" disabled={open === 0} onClick={() => setOpen(open! - 1)} className="px-5 py-3 rounded-full bg-white/15 hover:bg-white/25 disabled:opacity-30">

@@ -101,7 +101,7 @@ function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
                     type="button"
                     onClick={() => setArchiveOpen((o) => !o)}
                     aria-expanded={archiveOpen}
-                    aria-controls="archive-panel"
+                    aria-controls={archiveOpen ? 'archive-panel' : undefined}
                     className={`${pill} ${active ? `${activeBg} ${activeText}` : idle} flex items-center gap-1.5`}
                   >
                     {m.title}
@@ -112,7 +112,7 @@ function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
                 );
               }
               return (
-                <NavLink key={m.id} to={m.path} className={`${pill} ${active ? `${activeBg} ${activeText}` : idle}`}>
+                <NavLink key={m.id} to={m.path} end className={`${pill} ${active ? `${activeBg} ${activeText}` : idle}`}>
                   {m.title}
                 </NavLink>
               );
@@ -128,7 +128,7 @@ function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
               onClick={() => setMobileOpen((o) => !o)}
               className={`${pill} ${idle}`}
               aria-expanded={mobileOpen}
-              aria-controls="mobile-menu"
+              aria-controls={mobileOpen ? 'mobile-menu' : undefined}
             >
               {mobileOpen ? 'Close' : 'Menu'}
             </button>
@@ -148,6 +148,7 @@ function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.18 }}
                 className="glass-card p-6 max-h-[75vh] overflow-y-auto"
+                onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setArchiveOpen(false); }}
               >
                 <Link to={ARCHIVE.path} className="font-heading text-2xl text-text-primary hover:underline">
                   Browse the archive
@@ -177,12 +178,14 @@ function Navigation({ visible = true }: NavigationProps): JSX.Element | null {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
               className="fixed top-20 left-4 right-4 bottom-4 z-50 glass-card p-5 md:hidden overflow-y-auto"
+              onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setMobileOpen(false); }}
             >
-              <nav aria-label="Main" className="space-y-1">
+              <nav aria-label="Choose an experience" className="space-y-1">
                 {MODES.map((m) => (
                   <NavLink
                     key={m.id}
                     to={m.path}
+                    end
                     className={`block px-4 py-3 rounded-xl text-base font-body font-medium ${
                       mode === m.id ? `${activeBg} ${activeText}` : 'text-text-primary hover:bg-black/5'
                     }`}

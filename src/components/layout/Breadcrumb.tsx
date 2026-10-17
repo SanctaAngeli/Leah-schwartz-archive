@@ -5,7 +5,8 @@ import { trailFor } from '../../data/siteTree';
 // "You are here": Browse the archive › Paintings › The book's chapters.
 // Sits just under the menu bar on every archive page.
 
-const HIDDEN = ['/', '/canvas', '/tour', '/admin'];
+// /studio is the "Explore her studio" experience, so it has no archive trail.
+const HIDDEN = ['/', '/canvas', '/tour', '/admin', '/studio'];
 
 function Breadcrumb(): JSX.Element | null {
   const { pathname, search } = useLocation();

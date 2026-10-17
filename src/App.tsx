@@ -24,6 +24,7 @@ import AdminPage from './pages/AdminPage';
 import ArchivePage from './pages/ArchivePage';
 import PeoplePage from './pages/PeoplePage';
 import Breadcrumb from './components/layout/Breadcrumb';
+import ScrollToTop from './components/layout/ScrollToTop';
 import SiteFooter from './components/layout/SiteFooter';
 import StudioCollectionPage from './pages/StudioCollectionPage';
 import { ARCHITECTURE, OBJECTS } from './data/studioCollections';
@@ -63,6 +64,7 @@ function AppContent(): JSX.Element {
           }
           return <WatercolorShader />;
         })()}
+        <ScrollToTop />
         <Navigation visible={showNavigation} />
         <Breadcrumb />
         <main id="main-content" className="relative z-10 focus:outline-none" tabIndex={-1}>

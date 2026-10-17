@@ -2,11 +2,13 @@
 //
 //   /   focus search
 //   R   a random painting
-//   G then H   home         G then G   gallery (themes)
-//   G then S   studio       G then P   pairings
-//   G then C   canvas       G then L   places
-//   G then W   her words    G then I   index
-//   G then A   about        G then D   daily painting
+//   G then H   home         G then R   guided tour
+//   G then B   archive      G then S   her studio
+//   G then P   paintings    G then J   journals
+//   G then G   chapters     G then C   canvas (the wall)
+//   G then W   her book     G then L   places
+//   G then A   about        G then I   index
+//   G then D   painting of the day
 //   ?   show the shortcuts sheet
 
 import { useEffect, useState, useRef, useCallback, createContext, useContext } from 'react';
@@ -57,7 +59,7 @@ export function ShortcutsProvider({ children }: { children: React.ReactNode }): 
       // Never hijack when the user is typing
       const target = e.target as HTMLElement;
       const tag = target?.tagName;
-      if (tag === 'INPUT' || tag === 'TEXTAREA' || target?.isContentEditable) return;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target?.isContentEditable) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
 
       const key = e.key.toLowerCase();
@@ -182,7 +184,7 @@ function Cheatsheet({ onClose }: { onClose: () => void }): JSX.Element {
             {ROUTES.filter((r, i, arr) =>
               // Dedupe by label
               arr.findIndex((x) => x.label === r.label) === i
-            ).slice(0, 12).map((r) => (
+            ).map((r) => (
               <li key={r.label} className="flex items-center justify-between">
                 <span className="font-body text-text-primary">{r.label}</span>
                 <span className="flex gap-1">

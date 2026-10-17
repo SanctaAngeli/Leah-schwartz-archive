@@ -5,7 +5,7 @@
 
 import tourData from './tour.json';
 import artworksData from './artworks.json';
-import { ARCHITECTURE, OBJECTS } from './studioCollections';
+import { ARCHITECTURE, OBJECTS, itemName } from './studioCollections';
 import { getJournal } from './journals';
 import type { Artwork } from '../types';
 
@@ -57,6 +57,8 @@ export interface ResolvedItem {
   thumb: string;
   full: string;
   title: string | null;
+  /** Accessible name, always present (falls back to a plain description). */
+  label: string;
   /** Archive page for this item, for "see it in the archive". */
   href: string | null;
 }
@@ -73,18 +75,20 @@ export function resolveItem(ref: TourItemRef): ResolvedItem | null {
         thumb: a.thumbPath || a.imagePath || '',
         full: a.imagePath || a.thumbPath || '',
         title: a.year_raw ? `${title}, ${a.year_raw}` : title,
+        label: a.year_raw ? `${title}, ${a.year_raw}` : title,
         href: `/artwork/${a.id}`,
       };
     }
     case 'photo':
-      return { key: `photo:${ref.file}`, thumb: `/photos/${ref.file}`, full: `/photos/${ref.file}`, title: null, href: null };
+      return { key: `photo:${ref.file}`, thumb: `/photos/${ref.file}`, full: `/photos/${ref.file}`, title: null, label: 'Photograph from her book', href: null };
     case 'architecture':
     case 'object': {
       const collection = ref.kind === 'architecture' ? ARCHITECTURE : OBJECTS;
       const item = collection.items.find((i) => i.id === ref.id);
       if (!item) return null;
       const p = item.photos[0];
-      return { key: `${ref.kind}:${item.id}`, thumb: p.thumb, full: p.src, title: item.title, href: `${collection.path}/${item.id}` };
+      const name = itemName(collection, item);
+      return { key: `${ref.kind}:${item.id}`, thumb: p.thumb, full: p.src, title: name, label: name, href: `${collection.path}/${item.id}` };
     }
     case 'journal': {
       const journal = getJournal(ref.id);
@@ -96,6 +100,7 @@ export function resolveItem(ref: TourItemRef): ResolvedItem | null {
         thumb: image,
         full: image,
         title: `${journal.title} journal`,
+        label: `${journal.title} journal`,
         href: `/journals/${journal.id}${ref.page ? `?page=${ref.page}` : ''}`,
       };
     }

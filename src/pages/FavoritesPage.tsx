@@ -62,7 +62,7 @@ function FavoritesPage(): JSX.Element {
               No favorites yet
             </h2>
             <button
-              onClick={() => navigate('/gallery')}
+              onClick={() => navigate('/archive/paintings')}
               className="glass-pill px-6 py-3 text-text-primary font-medium
                 hover:bg-white/90 transition-colors"
             >

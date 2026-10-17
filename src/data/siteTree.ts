@@ -122,7 +122,7 @@ export type ModeId = (typeof MODES)[number]['id'];
 export function modeForPath(pathname: string): ModeId | null {
   if (pathname === '/') return null;
   if (pathname === '/tour' || pathname.startsWith('/tour/')) return 'tour';
-  if (pathname === '/studio') return 'studio';
+  if (pathname === '/studio') return 'studio'; // /studio/architecture etc. sit in the archive
   return 'archive';
 }
 

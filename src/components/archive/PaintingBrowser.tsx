@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import artworksData from '../../data/artworks.json';
 import themesData from '../../data/themes.json';
 import placesData from '../../data/places.json';
@@ -60,16 +60,19 @@ function FilterSelect({ label, value, onChange, options }: {
 
 function PaintingBrowser(): JSX.Element {
   const [params, setParams] = useSearchParams();
-  const chapter = params.get('chapter') ?? '';
-  const source = params.get('source') ?? '';
-  const medium = params.get('medium') ?? '';
-  const place = params.get('place') ?? '';
+  const location = useLocation();
+  // Ignore unknown values in the address so the dropdowns and the list agree.
+  const valid = (v: string | null, ok: string[]): string => (v && ok.includes(v) ? v : '');
+  const chapter = valid(params.get('chapter'), chapters.map((c) => c.id));
+  const source = valid(params.get('source'), SOURCES.map((s) => s.id));
+  const medium = valid(params.get('medium'), MEDIUMS);
+  const place = valid(params.get('place'), places.map((p) => p.id));
 
   const set = (key: string, value: string): void => {
     const next = new URLSearchParams(params);
     if (value) next.set(key, value);
     else next.delete(key);
-    setParams(next, { replace: true });
+    setParams(next, { replace: true, state: { fromFilter: true } });
   };
 
   const shown = useMemo(() => {
@@ -86,9 +89,18 @@ function PaintingBrowser(): JSX.Element {
 
   const filtered = Boolean(chapter || source || medium || place);
 
+  // Arriving from a link to a filtered list (e.g. "Not in the book"): show the list.
+  useEffect(() => {
+    if (filtered && !(location.state as { fromFilter?: boolean } | null)?.fromFilter) {
+      document.getElementById('all-paintings')?.scrollIntoView({ block: 'start' });
+    }
+    // Only when the address changes, not on every render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.key]);
+
   return (
-    <section aria-labelledby="all-paintings" className="mt-16">
-      <h2 id="all-paintings" className="font-heading text-3xl text-text-primary">All paintings</h2>
+    <section aria-labelledby="all-paintings" className="mt-16 scroll-mt-28">
+      <h2 id="all-paintings" className="font-heading text-3xl text-text-primary scroll-mt-32">All paintings</h2>
       <div className="flex flex-wrap items-end gap-4 mt-5">
         <FilterSelect label="Chapter" value={chapter} onChange={(v) => set('chapter', v)} options={chapters.map((c) => ({ value: c.id, label: c.name }))} />
         <FilterSelect label="Source" value={source} onChange={(v) => set('source', v)} options={SOURCES.map((s) => ({ value: s.id, label: s.label }))} />
@@ -98,7 +110,7 @@ function PaintingBrowser(): JSX.Element {
           Showing {shown.length} of {artworks.length}
         </p>
         {filtered && (
-          <button type="button" onClick={() => setParams({}, { replace: true })} className="font-body text-sm text-text-secondary underline pb-2">
+          <button type="button" onClick={() => setParams({}, { replace: true, state: { fromFilter: true } })} className="font-body text-sm text-text-secondary underline pb-2">
             Clear filters
           </button>
         )}
