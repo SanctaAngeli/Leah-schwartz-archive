@@ -15,6 +15,7 @@ import ColorAtlasPage from './pages/ColorAtlasPage';
 import ObsessionsPage from './pages/ObsessionsPage';
 import ConstellationPage from './pages/ConstellationPage';
 import HomePage from './pages/HomePage';
+import TourPage from './pages/TourPage';
 import LocationsPage from './pages/LocationsPage';
 import ThemesPage from './pages/ThemesPage';
 import HerWordsPage from './pages/HerWordsPage';
@@ -77,8 +78,8 @@ function AppContent(): JSX.Element {
             <Route path="/classic" element={<Navigate to="/" replace />} />
             <Route path="/timeline" element={<Navigate to="/archive/her-life" replace />} />
             <Route path="/timeline/:year" element={<Navigate to="/archive/her-life" replace />} />
-            <Route path="/tour" element={<Navigate to="/themes" replace />} />
-            <Route path="/tour/:chapterId" element={<Navigate to="/themes" replace />} />
+            <Route path="/tour" element={<PageTransition><TourPage /></PageTransition>} />
+            <Route path="/tour/:stopId" element={<PageTransition><TourPage /></PageTransition>} />
             <Route path="/curated" element={<Navigate to="/themes" replace />} />
             <Route path="/curated/:eraId" element={<Navigate to="/themes" replace />} />
             {/* Wing landings · the museum's five doors */}

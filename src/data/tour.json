@@ -1,0 +1,12 @@
+{
+  "chapters": [
+    {
+      "id": "meet-leah",
+      "title": "Meet Leah",
+      "subtitle": null,
+      "stops": [
+        { "id": "who-she-was", "title": "Leah Schwartz", "type": "intro", "image": null, "caption": null, "quote": null, "fact": null, "more": [] }
+      ]
+    }
+  ]
+}

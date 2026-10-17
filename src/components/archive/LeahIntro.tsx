@@ -22,9 +22,11 @@ const OVERVIEW = [
 interface Props {
   /** Show the overview of her work under the introduction. */
   overview?: boolean;
+  /** Link the overview and statement to archive pages (off inside the tour). */
+  linked?: boolean;
 }
 
-function LeahIntro({ overview = true }: Props): JSX.Element {
+function LeahIntro({ overview = true, linked = true }: Props): JSX.Element {
   return (
     <section aria-labelledby="leah-intro-title">
       <motion.div
@@ -51,8 +53,13 @@ function LeahIntro({ overview = true }: Props): JSX.Element {
           <blockquote className="font-heading text-lg md:text-xl italic text-text-primary leading-relaxed mt-6 border-l-2 border-[#E2DBC9] pl-5">
             <p>{ARTIST_STATEMENT[0]}</p>
             <footer className="font-body text-sm not-italic text-text-muted mt-3">
-              Leah Schwartz ·{' '}
-              <Link to="/about" className="underline hover:text-text-primary">her full statement and biography</Link>
+              Leah Schwartz
+              {linked && (
+                <>
+                  {' · '}
+                  <Link to="/about" className="underline hover:text-text-primary">her full statement and biography</Link>
+                </>
+              )}
             </footer>
           </blockquote>
         </div>
@@ -62,10 +69,17 @@ function LeahIntro({ overview = true }: Props): JSX.Element {
         <ul className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-14" aria-label="What the archive holds">
           {OVERVIEW.map((o) => (
             <li key={o.label}>
-              <Link to={o.to} className="block glass-card p-5 h-full hover:shadow-glass transition-shadow">
-                <span className="block font-heading text-4xl text-text-primary">{o.count}</span>
-                <span className="block font-body text-sm text-text-secondary mt-1">{o.label}</span>
-              </Link>
+              {linked ? (
+                <Link to={o.to} className="block glass-card p-5 h-full hover:shadow-glass transition-shadow">
+                  <span className="block font-heading text-4xl text-text-primary">{o.count}</span>
+                  <span className="block font-body text-sm text-text-secondary mt-1">{o.label}</span>
+                </Link>
+              ) : (
+                <div className="glass-card p-5 h-full">
+                  <span className="block font-heading text-4xl text-text-primary">{o.count}</span>
+                  <span className="block font-body text-sm text-text-secondary mt-1">{o.label}</span>
+                </div>
+              )}
             </li>
           ))}
         </ul>
